@@ -56,6 +56,16 @@
 > - Rückblick Selbsteinschätzung (siehe oben)
 > - Gefühlszustand - 0-1 (0 = sehr schlecht, 1 = sehr gut)
 
+### #6 IssuePlanning of Website
+
+#### #7 Task State of the Art-Analyse (Website)
+> Wir wollten keine einfache Webseite erstellen sondern einen wow effekt erzeugen. Daher ist unsere Grundidee
+> ![img.png](img.png)
+> von einem Dashboard schnell auf etwas künstlerisches umgeschwenkt. Wir haben uns inspirieren lassen.
+> ![img_1.png](img_1.png)
+> womit wir dann zum folgenden Ergebnis gekommen sind.
+> ![img_2.png](img_2.png)
+
 
 
 
