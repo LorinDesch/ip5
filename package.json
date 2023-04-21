@@ -1,0 +1,7 @@
+{
+  "name": "sustainability",
+  "version": "1.0.0",
+  "dependencies": {
+    "coreapi": "^0.1.1"
+  }
+}
