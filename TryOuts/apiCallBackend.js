@@ -1,43 +1,36 @@
 const http = require('http');
 const fs = require('fs');
 const coreapi = require('coreapi');
+const NodeTransport = require('coreapi-node-transport');
 
 const server = http.createServer((req, res) => {
     if (req.method === 'GET') {
-        res.setHeader('Content-type', 'application/json');
-        res.setHeader('Access-Control-Allow-Origin', '*'); // Enable CORS for all origins
-        res.writeHead(200);
+        res.writeHead(200, {
+            'Content-Type': 'application/json',
+            'Access-Control-Allow-Origin': '*'
+        });
 
         fs.readFile('loginData.txt', 'utf8', (err, data) => {
-            if (err) {
-                console.error(err);
-                res.end(JSON.stringify({error: 'Internal server error'}));
-                return;
-            }
+            if (err) throw err;
 
             const [username, password] = data.trim().split('\n');
 
-            const client = new coreapi.Client();
-            client.get('http://86.119.43.87/docs/').then(schema => {
-                const action = ['account', 'create'];
-                const params = {username, password};
-                client.action(schema, action, params).then(result => {
-                    res.end(JSON.stringify(result));
-                }).catch(err => {
-                    console.error(err);
-                    res.end(JSON.stringify({error: 'Internal server error'}));
-                });
-            }).catch(err => {
+            const transport = new NodeTransport('http://86.119.43.87/docs/');
+            const client = new coreapi.Client({ transport: transport });
+            client.action(['account', 'create'], { username: username, password: password }).then((result) => {
+                res.end(JSON.stringify(result));
+            }).catch((err) => {
                 console.error(err);
-                res.end(JSON.stringify({error: 'Internal server error'}));
+                res.statusCode = 500;
+                res.end('Internal Server Error');
             });
         });
     } else {
-        res.writeHead(405); // Method Not Allowed
-        res.end();
+        res.statusCode = 405;
+        res.end('Method Not Allowed');
     }
 });
 
 server.listen(3000, () => {
-    console.log('Starting server on port 3000...');
+    console.log('Server running at http://localhost:3000/');
 });

@@ -4,12 +4,26 @@ function Login() {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
 
-    const handleSubmit = (event) => {
+    const handleSubmit = async (event) => {
         event.preventDefault();
         console.log(`Username: ${username}, Password: ${password}`);
 
-        // Make an API call to authenticate the user
+        try {
+            const response = await fetch('http://localhost:3000/login', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ username, password }),
+            });
+            const data = await response.json();
+            console.log(data);
+            // Redirect the user to the dashboard page or update the application state accordingly
+        } catch (error) {
+            console.error(error);
+            // Display an error message to the user or update the application state accordingly
+        }
     };
+
+
 
     return (
         <div>
