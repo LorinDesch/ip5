@@ -8,19 +8,7 @@ function Login() {
         event.preventDefault();
         console.log(`Username: ${username}, Password: ${password}`);
 
-        try {
-            const response = await fetch('http://localhost:3000/login', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ username, password }),
-            });
-            const data = await response.json();
-            console.log(data);
-            // Redirect the user to the dashboard page or update the application state accordingly
-        } catch (error) {
-            console.error(error);
-            // Display an error message to the user or update the application state accordingly
-        }
+
     };
 
 
