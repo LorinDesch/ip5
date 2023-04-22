@@ -32,8 +32,34 @@ app.post('/account/', (req, res) => {
         proxyRes.pipe(res);
     });
 
+    console.log(req);
+
     req.pipe(proxyReq);
 });
+
+app.get('/groups', async (req, res) => {
+    try {
+        const token = req.headers.authorization.split(' ')[1];
+        const options = {
+            hostname: '86.119.43.87',
+            port: 80,
+            path: '/groups/',
+            method: 'GET',
+            headers: {
+                Authorization: `Token ${token}`
+            }
+        };
+        const proxyReq = http.request(options, (proxyRes) => {
+            res.writeHead(proxyRes.statusCode, proxyRes.headers);
+            proxyRes.pipe(res);
+        });
+        req.pipe(proxyReq);
+    } catch (error) {
+        console.error(error);
+        res.status(500).send('Server Error');
+    }
+});
+
 
 app.listen(3000, () => {
     console.log('Server listening on port 3000');

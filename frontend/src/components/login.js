@@ -22,12 +22,24 @@ function Login() {
             const data = await response.json();
             console.log(data);
 
-            // TODO: save the user token in local storage or a state variable
+            const groupsResponse = await fetch('http://localhost:3000/groups/', {
+                headers: { 'Authorization': `Token ${data.token}` }
+            });
+
+            if (!groupsResponse.ok) {
+                console.log(groupsResponse);
+                throw new Error('Failed to fetch groups');
+            }
+
+            const groupsData = await groupsResponse.json();
+            console.log(groupsData);
+
         } catch (error) {
             console.error(error);
             // TODO: show an error message to the user
         }
     };
+
 
     return (
         <div>
