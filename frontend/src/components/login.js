@@ -6,12 +6,26 @@ function Login() {
 
     const handleSubmit = async (event) => {
         event.preventDefault();
-        console.log ("username: " + username);
-        console.log ("password: " + password);
 
+        try {
+            const response = await fetch('http://localhost:3000/account/', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ username, password })
+            });
 
+            if (!response.ok) {
+                throw new Error('Invalid credentials');
+            }
 
+            const data = await response.json();
+            console.log(data);
 
+            // TODO: save the user token in local storage or a state variable
+        } catch (error) {
+            console.error(error);
+            // TODO: show an error message to the user
+        }
     };
 
     return (

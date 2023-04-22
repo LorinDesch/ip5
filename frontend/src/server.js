@@ -1,31 +1,40 @@
+const express = require('express');
+const cors = require('cors');
 const http = require('http');
-const httpProxy = require('http-proxy');
 
-const target = 'http://localhost:3000'; // Replace with your development server URL
-const proxy = httpProxy.createProxyServer();
+const app = express();
 
-const server = http.createServer((req, res) => {
-    const { method, url, headers } = req;
+const allowedOrigins = ['http://localhost:3001'];
 
-    // Log the request method, URL, and headers
-    console.log(`Received ${method} request to ${url}`);
-    console.log(`Headers: ${JSON.stringify(headers, null, 2)}`);
+// enable CORS for the allowed origins
+app.use(cors({
+    origin: function(origin, callback) {
+        if (!origin || allowedOrigins.indexOf(origin) !== -1) {
+            callback(null, true);
+        } else {
+            callback(new Error('Not allowed by CORS'));
+        }
+    }
+}));
 
-    // Parse the request body
-    let body = '';
-    req.on('data', (chunk) => {
-        body += chunk;
+// handle POST requests to the /account/ route
+app.post('/account/', (req, res) => {
+    const options = {
+        hostname: '86.119.43.87',
+        port: 80,
+        path: '/account/',
+        method: req.method,
+        headers: req.headers
+    };
+
+    const proxyReq = http.request(options, (proxyRes) => {
+        res.writeHead(proxyRes.statusCode, proxyRes.headers);
+        proxyRes.pipe(res);
     });
-    req.on('end', () => {
-        const { username, password } = JSON.parse(body);
 
-        // Log the username and password
-        console.log(`Username: ${username}`);
-        console.log(`Password: ${password}`);
-
-        // Forward the request to the development server
-        proxy.web(req, res, { target });
-    });
+    req.pipe(proxyReq);
 });
 
-server.listen(8000); // Listen on port 8000
+app.listen(3000, () => {
+    console.log('Server listening on port 3000');
+});
