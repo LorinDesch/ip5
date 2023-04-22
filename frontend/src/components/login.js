@@ -6,12 +6,13 @@ function Login() {
 
     const handleSubmit = async (event) => {
         event.preventDefault();
-        console.log(`Username: ${username}, Password: ${password}`);
+        console.log ("username: " + username);
+        console.log ("password: " + password);
+
+
 
 
     };
-
-
 
     return (
         <div>
@@ -19,11 +20,21 @@ function Login() {
             <form onSubmit={handleSubmit}>
                 <div>
                     <label htmlFor="username">Username:</label>
-                    <input type="text" id="username" value={username} onChange={(event) => setUsername(event.target.value)} />
+                    <input
+                        type="text"
+                        id="username"
+                        value={username}
+                        onChange={(event) => setUsername(event.target.value)}
+                    />
                 </div>
                 <div>
                     <label htmlFor="password">Password:</label>
-                    <input type="password" id="password" value={password} onChange={(event) => setPassword(event.target.value)} />
+                    <input
+                        type="password"
+                        id="password"
+                        value={password}
+                        onChange={(event) => setPassword(event.target.value)}
+                    />
                 </div>
                 <button type="submit">Submit</button>
             </form>
