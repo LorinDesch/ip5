@@ -1,7 +1,10 @@
+import React from 'react';
+import Dashboard from "./component/dashboard";
+
 function App() {
     return (
         <div>
-            <h1>App</h1>
+            <Dashboard/>
         </div>
     );
 }
