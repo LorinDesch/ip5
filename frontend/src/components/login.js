@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate  } from 'react-router-dom';
+import Cookies from 'js-cookie';
 
 function Login() {
     const [username, setUsername] = useState('');
@@ -13,10 +14,14 @@ function Login() {
             const response = await fetch('http://localhost:3000/account/', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ username, password })
+                body: JSON.stringify({ username, password }),
             });
 
-            if (!response.ok) {
+
+            if (response.ok) {
+                // redirect to dashboard
+                navigate('/dashboard');
+            } else {
                 console.log(response);
                 throw new Error('Invalid credentials');
             }
@@ -24,8 +29,11 @@ function Login() {
             const data = await response.json();
             console.log(data);
 
+            // Set the cookie
+            Cookies.set('token', data.token);
+
             const groupsResponse = await fetch('http://localhost:3000/groups/', {
-                headers: { 'Authorization': `Token ${data.token}` }
+                headers: { Authorization: `Token ${data.token}` },
             });
 
             if (!groupsResponse.ok) {
@@ -35,17 +43,12 @@ function Login() {
 
             const groupsData = await groupsResponse.json();
             console.log(groupsData);
-
-            if (response.ok) {
-                // redirect to dashboard
-                navigate('/dashboard');
-            }
-
         } catch (error) {
             console.error(error);
             // TODO: show an error message to the user
         }
     };
+
 
 
     return (

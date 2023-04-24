@@ -1,6 +1,8 @@
 const express = require('express');
 const cors = require('cors');
 const http = require('http');
+const jwt = require('jsonwebtoken');
+const cookie = require('cookie');
 
 const app = express();
 
@@ -28,14 +30,26 @@ app.post('/account/', (req, res) => {
     };
 
     const proxyReq = http.request(options, (proxyRes) => {
-        res.writeHead(proxyRes.statusCode, proxyRes.headers);
-        proxyRes.pipe(res);
-    });
+        let data = '';
+        proxyRes.on('data', (chunk) => {
+            data += chunk;
+        });
+        proxyRes.on('end', () => {
+            res.writeHead(proxyRes.statusCode, proxyRes.headers);
+            res.end(data);
 
-    console.log(req);
+            const jsonData = JSON.parse(data);
+            if(jsonData.token) {
+                console.log("Besmath Token: "+jsonData.token);
+            } else {
+                console.log("No token");
+            }
+        });
+    });
 
     req.pipe(proxyReq);
 });
+
 
 app.get('/groups', async (req, res) => {
     try {
@@ -59,6 +73,8 @@ app.get('/groups', async (req, res) => {
         res.status(500).send('Server Error');
     }
 });
+
+
 
 
 app.listen(3000, () => {
