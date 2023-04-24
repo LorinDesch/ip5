@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
+import { useNavigate  } from 'react-router-dom';
 
 function Login() {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
+    const navigate = useNavigate ();
 
     const handleSubmit = async (event) => {
         event.preventDefault();
@@ -33,6 +35,11 @@ function Login() {
 
             const groupsData = await groupsResponse.json();
             console.log(groupsData);
+
+            if (response.ok) {
+                // redirect to dashboard
+                navigate('/dashboard');
+            }
 
         } catch (error) {
             console.error(error);
