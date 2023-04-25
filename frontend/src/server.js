@@ -6,7 +6,7 @@ const cookie = require('cookie');
 
 const app = express();
 
-const allowedOrigins = ['http://localhost:3001'];
+const allowedOrigins = ['http://localhost:3000'];
 
 // enable CORS for the allowed origins
 app.use(cors({
@@ -151,6 +151,6 @@ app.get('/diary/', async (req, res) => {
 
 
 
-app.listen(3000, () => {
-    console.log('Server listening on port 3000');
+app.listen(3001, () => {
+    console.log('Server listening on port 3001');
 });

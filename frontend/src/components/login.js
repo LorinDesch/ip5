@@ -1,14 +1,12 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 
 function Login() {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
-    const navigate = useNavigate();
 
     const handleDiaryData = async (responseData) => {
         try {
-            const diaryResponse = await fetch('http://localhost:3000/diary/', {
+            const diaryResponse = await fetch('http://localhost:3001/diary/', {
                 headers: { Authorization: `Token ${responseData.token}` },
             });
 
@@ -32,7 +30,7 @@ function Login() {
 
     const handleChallengeData = async (responseData) => {
         try {
-            const challengesResponse = await fetch('http://localhost:3000/challenges/', {
+            const challengesResponse = await fetch('http://localhost:3001/challenges/', {
                 headers: { Authorization: `Token ${responseData.token}` },
             });
 
@@ -58,7 +56,7 @@ function Login() {
 
     const handleGroupData = async (responseData) => {
         try {
-            const groupsResponse = await fetch('http://localhost:3000/groups/', {
+            const groupsResponse = await fetch('http://localhost:3001/groups/', {
                 headers: { Authorization: `Token ${responseData.token}` },
             });
 
@@ -76,7 +74,7 @@ function Login() {
             };
 
             for (const group of groupsData) {
-                const groupMembersResponse = await fetch(`http://localhost:3000/groups/${group.id}/groupAffiliations/`, {
+                const groupMembersResponse = await fetch(`http://localhost:3001/groups/${group.id}/groupAffiliations/`, {
                     headers: { Authorization: `Token ${responseData.token}` },
                 });
 
@@ -110,7 +108,7 @@ function Login() {
 
     const handleLogin = async () => {
         try {
-            const response = await fetch('http://localhost:3000/account/', {
+            const response = await fetch('http://localhost:3001/account/', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ username, password }),
@@ -136,7 +134,6 @@ function Login() {
         try {
             const newData = await handleLogin();
             console.log(newData);
-            navigate('/dashboard');
         } catch (error) {
             console.error(error);
         }
