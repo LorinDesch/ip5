@@ -6,9 +6,85 @@ function Login() {
     const [password, setPassword] = useState('');
     const navigate = useNavigate();
 
+    const handleChallengeData = async (responseData) => {
+        try {
+            const challengesResponse = await fetch('http://localhost:3000/challenges/', {
+                headers: { Authorization: `Token ${responseData.token}` },
+            });
+
+            if (!challengesResponse.ok) {
+                throw new Error('Failed to fetch challenges');
+            }
+
+            const challengesData = await challengesResponse.json();
+
+            const newData = {
+                ...responseData,
+                challenges: challengesData,
+            };
+
+
+            return newData;
+        } catch (error) {
+            console.error(error);
+            throw error;
+        }
+    }
+
+    const handleGroupData = async (responseData) => {
+        try {
+            const groupsResponse = await fetch('http://localhost:3000/groups/', {
+                headers: { Authorization: `Token ${responseData.token}` },
+            });
+
+            if (!groupsResponse.ok) {
+                throw new Error('Failed to fetch groups');
+            }
+
+            const groupsData = await groupsResponse.json();
+
+            const newData = {
+                username: responseData.username,
+                token: responseData.token,
+                userId: responseData.user_id,
+                groups: [],
+            };
+
+            for (const group of groupsData) {
+                const groupMembersResponse = await fetch(`http://localhost:3000/groups/${group.id}/groupAffiliations/`, {
+                    headers: { Authorization: `Token ${responseData.token}` },
+                });
+
+                if (!groupMembersResponse.ok) {
+                    throw new Error('Failed to fetch group members');
+                }
+
+                const groupMembersData = await groupMembersResponse.json();
+                const groupMembersReadableData = JSON.stringify(groupMembersData);
+
+                const groupObject = {
+                    groupId: group.id,
+                    groupName: group.group_name,
+                    members: groupMembersData.map((groupMember) => ({
+                        memberId: groupMember.member,
+                        adminStatus: groupMember.admin_status,
+                    })),
+                };
+
+                newData.groups.push(groupObject);
+            }
+
+            const challengeData = await handleChallengeData(responseData);
+
+            return { ...newData, challenges: challengeData.challenges };
+        } catch (error) {
+            console.error(error);
+            throw error;
+        }
+    }
+
     const handleLogin = async () => {
         try {
-            // Call the login API
             const response = await fetch('http://localhost:3000/account/', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
@@ -21,51 +97,7 @@ function Login() {
 
             const responseData = await response.json();
 
-            // Call the groups API with the token
-            const groupsResponse = await fetch('http://localhost:3000/groups/', {
-                headers: { Authorization: `Token ${responseData.token}` },
-            });
-
-            if (!groupsResponse.ok) {
-                throw new Error('Failed to fetch groups');
-            }
-
-            const groupsData = await groupsResponse.json();
-
-            // Build the data object with the API response data
-            const newData = {
-                username: responseData.username,
-                token: responseData.token,
-                userId: responseData.user_id,
-                groups: [],
-            };
-
-            for (const group of groupsData) {
-                // Call the group members API with the token
-                const groupMembersResponse = await fetch(`http://localhost:3000/groups/${group.id}/groupAffiliations/`, {
-                    headers: { Authorization: `Token ${responseData.token}` },
-                });
-
-                if (!groupMembersResponse.ok) {
-                    throw new Error('Failed to fetch group members');
-                }
-
-                const groupMembersData = await groupMembersResponse.json();
-                const groupMembersReadableData = JSON.stringify(groupMembersData);
-
-                // Add group members to the group object
-                const groupObject = {
-                    groupId: group.id,
-                    groupName: group.group_name,
-                    members: groupMembersData.map((groupMember) => ({
-                        memberId: groupMember.member,
-                        adminStatus: groupMember.admin_status,
-                    })),
-                };
-
-                // Add the group object to the newData object
-                newData.groups.push(groupObject);
-            }
+            const newData = await handleGroupData(responseData);
 
             return newData;
         } catch (error) {
@@ -74,15 +106,12 @@ function Login() {
         }
     };
 
-
     const handleSubmit = async (event) => {
         event.preventDefault();
 
         try {
             const newData = await handleLogin();
             console.log(newData);
-
-            // Redirect to dashboard
             navigate('/dashboard');
         } catch (error) {
             console.error(error);
@@ -115,6 +144,7 @@ function Login() {
             </form>
         </div>
     );
+
 }
 
 export default Login;

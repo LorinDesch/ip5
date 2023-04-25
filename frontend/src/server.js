@@ -50,7 +50,7 @@ app.post('/account/', (req, res) => {
     req.pipe(proxyReq);
 });
 
-
+//Handle GET requests to the /groups/ route
 app.get('/groups', async (req, res) => {
     try {
         const token = req.headers.authorization.split(' ')[1];
@@ -74,6 +74,7 @@ app.get('/groups', async (req, res) => {
     }
 });
 
+//Handle GET requests to the /groups/:groupId/groupAffiliations/ route
 app.get('/groups/:groupId/groupAffiliations/', async (req, res) => {
     try {
         const token = req.headers.authorization.split(' ')[1];
@@ -86,6 +87,30 @@ app.get('/groups/:groupId/groupAffiliations/', async (req, res) => {
             headers: {
                 Authorization: `Token ${token}`,
             },
+        };
+        const proxyReq = http.request(options, (proxyRes) => {
+            res.writeHead(proxyRes.statusCode, proxyRes.headers);
+            proxyRes.pipe(res);
+        });
+        req.pipe(proxyReq);
+    } catch (error) {
+        console.error(error);
+        res.status(500).send('Server Error');
+    }
+});
+
+//Handle GET requests to the /groups/ route
+app.get('/challenges', async (req, res) => {
+    try {
+        const token = req.headers.authorization.split(' ')[1];
+        const options = {
+            hostname: '86.119.43.87',
+            port: 80,
+            path: '/challenges/',
+            method: 'GET',
+            headers: {
+                Authorization: `Token ${token}`
+            }
         };
         const proxyReq = http.request(options, (proxyRes) => {
             res.writeHead(proxyRes.statusCode, proxyRes.headers);
