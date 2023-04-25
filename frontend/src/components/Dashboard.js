@@ -22,8 +22,8 @@ function Dashboard() {
         setSelectedOption2(event.target.value);
     };
 
-    const handleChange3 = (selectedOptions) => {
-        setSelectedOption3(selectedOptions.map((option) => option.value));
+    const handleChange3 = (event) => {
+        setSelectedOption3(event);
     };
 
     const handleCheckboxChange = (event, optionValue) => {
@@ -39,28 +39,12 @@ function Dashboard() {
             <div style={{ display: 'flex', alignItems: 'center' }}>
                 <Dropdown1 selectedOption={selectedOption1} handleChange={handleChange1} />
             </div>
-
             <div style={{ display: 'flex', alignItems: 'center' }}>
                 <Dropdown2 selectedOption={selectedOption2} handleChange={handleChange2} />
-            </div>
-
-            <div style={{ position: 'relative' }}>
-                {selectedOption1 === 'Meine Klasse' && (
-                    <div style={{ display: 'flex', alignItems: 'center' }}>
-                        {options3.map((option) => (
-                            <label key={option.value} style={{ display: 'flex', alignItems: 'center', marginRight: '1rem' }}>
-                                <input type="checkbox" checked={selectedClasses.includes(option.value)} onChange={(event) => handleCheckboxChange(event, option.value)} style={{ marginRight: '0.5rem' }} />
-                                {option.label}
-                            </label>
-                        ))}
-                    </div>
-                )}
             </div>
             <Dropdown3 options={options3} selectedOptions={selectedOption3} handleChange={handleChange3} handleCheckboxChange={handleCheckboxChange} />
         </div>
     );
-
-
 }
 
 export default Dashboard;
