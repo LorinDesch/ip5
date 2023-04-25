@@ -7,6 +7,7 @@ function Login() {
     const [password, setPassword] = useState('');
     const navigate = useNavigate ();
 
+
     const handleSubmit = async (event) => {
         event.preventDefault();
 
@@ -17,7 +18,6 @@ function Login() {
                 body: JSON.stringify({ username, password }),
             });
 
-
             if (response.ok) {
                 // redirect to dashboard
                 navigate('/dashboard');
@@ -26,14 +26,12 @@ function Login() {
                 throw new Error('Invalid credentials');
             }
 
-            const data = await response.json();
-            console.log(data);
+            const responseData = await response.json();
+            console.log(responseData);
 
-            // Set the cookie
-            Cookies.set('token', data.token);
 
             const groupsResponse = await fetch('http://localhost:3000/groups/', {
-                headers: { Authorization: `Token ${data.token}` },
+                headers: { Authorization: `Token ${responseData.token}` },
             });
 
             if (!groupsResponse.ok) {
@@ -43,12 +41,23 @@ function Login() {
 
             const groupsData = await groupsResponse.json();
             console.log(groupsData);
+
+            // update data object with API response data
+            const newData = {
+                username: responseData.username,
+                groups: groupsData.map((group) => ({
+                    groupId: group.id,
+                    group_name: group.group_name,
+
+                })),
+            };
+
+            console.log(newData);
+
         } catch (error) {
             console.error(error);
-            // TODO: show an error message to the user
         }
     };
-
 
 
     return (
