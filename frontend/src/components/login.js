@@ -35,11 +35,37 @@ function Login() {
             // Build the data object with the API response data
             const newData = {
                 username: responseData.username,
-                groups: groupsData.map((group) => ({
+                token: responseData.token,
+                userId: responseData.user_id,
+                groups: [],
+            };
+
+            for (const group of groupsData) {
+                // Call the group members API with the token
+                const groupMembersResponse = await fetch(`http://localhost:3000/groups/${group.id}/groupAffiliations/`, {
+                    headers: { Authorization: `Token ${responseData.token}` },
+                });
+
+                if (!groupMembersResponse.ok) {
+                    throw new Error('Failed to fetch group members');
+                }
+
+                const groupMembersData = await groupMembersResponse.json();
+                const groupMembersReadableData = JSON.stringify(groupMembersData);
+
+                // Add group members to the group object
+                const groupObject = {
                     groupId: group.id,
                     groupName: group.group_name,
-                })),
-            };
+                    members: groupMembersData.map((groupMember) => ({
+                        memberId: groupMember.member,
+                        adminStatus: groupMember.admin_status,
+                    })),
+                };
+
+                // Add the group object to the newData object
+                newData.groups.push(groupObject);
+            }
 
             return newData;
         } catch (error) {
@@ -47,6 +73,7 @@ function Login() {
             throw error;
         }
     };
+
 
     const handleSubmit = async (event) => {
         event.preventDefault();
