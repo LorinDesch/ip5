@@ -6,6 +6,30 @@ function Login() {
     const [password, setPassword] = useState('');
     const navigate = useNavigate();
 
+    const handleDiaryData = async (responseData) => {
+        try {
+            const diaryResponse = await fetch('http://localhost:3000/diary/', {
+                headers: { Authorization: `Token ${responseData.token}` },
+            });
+
+            if (!diaryResponse.ok) {
+                throw new Error('Failed to fetch Diary');
+            }
+
+            const diaryData = await diaryResponse.json();
+
+            const newData = {
+                ...responseData,
+                diary: diaryData,
+            };
+
+            return newData;
+        } catch (error) {
+            console.error(error);
+            throw error;
+        }
+    };
+
     const handleChallengeData = async (responseData) => {
         try {
             const challengesResponse = await fetch('http://localhost:3000/challenges/', {
@@ -23,13 +47,14 @@ function Login() {
                 challenges: challengesData,
             };
 
+            const diaryData = await handleDiaryData(responseData);
 
-            return newData;
+            return { ...newData, diary: diaryData.diary };
         } catch (error) {
             console.error(error);
             throw error;
         }
-    }
+    };
 
     const handleGroupData = async (responseData) => {
         try {
@@ -60,7 +85,6 @@ function Login() {
                 }
 
                 const groupMembersData = await groupMembersResponse.json();
-                const groupMembersReadableData = JSON.stringify(groupMembersData);
 
                 const groupObject = {
                     groupId: group.id,
@@ -75,13 +99,14 @@ function Login() {
             }
 
             const challengeData = await handleChallengeData(responseData);
+            const diaryData = await handleDiaryData(responseData);
 
-            return { ...newData, challenges: challengeData.challenges };
+            return { ...newData, challenges: challengeData.challenges, diary: diaryData.diary };
         } catch (error) {
             console.error(error);
             throw error;
         }
-    }
+    };
 
     const handleLogin = async () => {
         try {
@@ -108,7 +133,6 @@ function Login() {
 
     const handleSubmit = async (event) => {
         event.preventDefault();
-
         try {
             const newData = await handleLogin();
             console.log(newData);
@@ -117,7 +141,6 @@ function Login() {
             console.error(error);
         }
     };
-
     return (
         <div>
             <h1>Login</h1>
@@ -144,7 +167,5 @@ function Login() {
             </form>
         </div>
     );
-
 }
-
 export default Login;
