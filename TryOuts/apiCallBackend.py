@@ -11,10 +11,8 @@ class APIRequestHandler(BaseHTTPRequestHandler):
         self.send_header('Access-Control-Allow-Origin', '*')  # Enable CORS for all origins
         self.end_headers()
 
-        with open('loginData.txt') as f:
-            data = f.readlines()
-            username = data[0].strip()
-            password = data[1].strip()
+        username = "test"
+        password = "test"
 
         client = coreapi.Client()
         schema = client.get("http://86.119.43.87/docs/")
