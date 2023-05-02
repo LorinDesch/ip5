@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import Dropdown1 from './Dropdown1';
 import Dropdown2 from './Dropdown2';
 import Dropdown3 from './Dropdown3';
+import ToggleSwitch from "./ToggleSwitch";
 
 function Dashboard() {
     const [selectedOption1, setSelectedOption1] = useState('Ich');
@@ -35,15 +36,24 @@ function Dashboard() {
     };
 
     return (
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderBottom: '1px solid black', paddingBottom: '1rem' }}>
-            <div style={{ display: 'flex', alignItems: 'center', marginRight: '1rem' }}>
-                <Dropdown1 selectedOption={selectedOption1} handleChange={handleChange1} />
-            </div>
-            <div style={{ display: 'flex', alignItems: 'center', marginRight: '1rem' }}>
-                <Dropdown2 selectedOption={selectedOption2} handleChange={handleChange2} />
-            </div>
-            <div style={{ display: 'flex', alignItems: 'center', position: 'relative' }}>
-                <Dropdown3 options={options3} selectedOptions={selectedOption3} onChange={handleChange3} />
+        <div>
+            <div style={{
+                display: 'flex',
+                justifyContent: 'space-between',
+                alignItems: 'center',
+                borderBottom: '1px solid black',
+                paddingBottom: '1rem'
+            }}>
+                <div style={{display: 'flex', alignItems: 'center', marginRight: '1rem'}}>
+                    <Dropdown1 selectedOption={selectedOption1} handleChange={handleChange1}/>
+                </div>
+                <div style={{display: 'flex', alignItems: 'center', marginRight: '1rem'}}>
+                    <Dropdown2 selectedOption={selectedOption2} handleChange={handleChange2}/>
+                </div>
+                <ToggleSwitch leftText="Fake Data" rightText="Real Data" />
+                <div style={{display: 'flex', alignItems: 'center', position: 'relative'}}>
+                    <Dropdown3 options={options3} selectedOptions={selectedOption3} onChange={handleChange3}/>
+                </div>
             </div>
         </div>
     );
