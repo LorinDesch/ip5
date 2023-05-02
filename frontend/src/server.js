@@ -10,7 +10,7 @@ const allowedOrigins = ['http://localhost:3000'];
 
 // enable CORS for the allowed origins
 app.use(cors({
-    origin: function(origin, callback) {
+    origin: function (origin, callback) {
         if (!origin || allowedOrigins.indexOf(origin) !== -1) {
             callback(null, true);
         } else {
@@ -39,8 +39,8 @@ app.post('/account/', (req, res) => {
             res.end(data);
 
             const jsonData = JSON.parse(data);
-            if(jsonData.token) {
-                console.log("Besmath Token: "+jsonData.token);
+            if (jsonData.token) {
+                console.log("Besmath Token: " + jsonData.token);
             } else {
                 console.log("No token");
             }
@@ -48,7 +48,20 @@ app.post('/account/', (req, res) => {
     });
 
     req.pipe(proxyReq);
+
+    proxyReq.on('error', (err) => {
+
+        console.log(err);
+
+        if (err.code === 'ECONNREFUSED') {
+            res.status(500).send('Server Error: Connection Refused');
+        } else {
+            res.status(401).send('Invalid Credentials');
+        }
+    });
+
 });
+
 
 //Handle GET requests to the /groups/ route
 app.get('/groups', async (req, res) => {
@@ -69,7 +82,7 @@ app.get('/groups', async (req, res) => {
         });
         req.pipe(proxyReq);
     } catch (error) {
-        console.error(error);
+        console.log("Error in /groups/ route: " + error);
         res.status(500).send('Server Error');
     }
 });
@@ -118,7 +131,7 @@ app.get('/challenges', async (req, res) => {
         });
         req.pipe(proxyReq);
     } catch (error) {
-        console.error(error);
+        console.log("Error in /challenges/ route: " + error);
         res.status(500).send('Server Error');
     }
 });
@@ -142,13 +155,10 @@ app.get('/diary/', async (req, res) => {
         });
         req.pipe(proxyReq);
     } catch (error) {
-        console.error(error);
+        console.log("Error in /diary/ route: " + error);
         res.status(500).send('Server Error');
     }
 });
-
-
-
 
 
 app.listen(3001, () => {

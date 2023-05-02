@@ -159,7 +159,7 @@ function Login() {
                         onChange={(event) => setPassword(event.target.value)}
                     />
                 </div>
-                <button type="submit">Submit</button>
+                <button type="submit">Use Real Data</button>
             </form>
         </div>
     );
