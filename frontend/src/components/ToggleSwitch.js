@@ -1,12 +1,6 @@
 import React, { useState } from 'react';
 
-const ToggleSwitch = ({ leftText, rightText }) => {
-    const [isOn, setIsOn] = useState(false);
-
-    const handleToggle = () => {
-        setIsOn(!isOn);
-    };
-
+const ToggleSwitch = ({ leftText, rightText, isOn, handleToggle }) => {
     const styles = {
         toggleContainer: {
             display: 'flex',
@@ -64,7 +58,7 @@ const ToggleSwitch = ({ leftText, rightText }) => {
                 <p>{leftText}</p>
             </div>
             <label style={styles.switch}>
-                <input type="checkbox" checked={isOn} onChange={handleToggle} />
+                <input type="checkbox" checked={isOn} onChange={(e) => handleToggle(e.target.checked)} />
                 <span style={{ ...styles.slider, ...(isOn && styles.sliderChecked) }}>
           <span style={{ ...styles.sliderRound, ...(isOn && styles.sliderCheckedRound) }}></span>
         </span>
