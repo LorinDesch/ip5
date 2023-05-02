@@ -22,8 +22,8 @@ function Dashboard() {
         setSelectedOption2(event.target.value);
     };
 
-    const handleChange3 = (event) => {
-        setSelectedOption3(event);
+    const handleChange3 = (selectedValues) => {
+        setSelectedOption3(selectedValues);
     };
 
     const handleCheckboxChange = (event, optionValue) => {
@@ -35,17 +35,18 @@ function Dashboard() {
     };
 
     return (
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-            <div style={{ display: 'flex', alignItems: 'center' }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderBottom: '1px solid black', paddingBottom: '1rem' }}>
+            <div style={{ display: 'flex', alignItems: 'center', marginRight: '1rem' }}>
                 <Dropdown1 selectedOption={selectedOption1} handleChange={handleChange1} />
             </div>
-            <div style={{ display: 'flex', alignItems: 'center' }}>
+            <div style={{ display: 'flex', alignItems: 'center', marginRight: '1rem' }}>
                 <Dropdown2 selectedOption={selectedOption2} handleChange={handleChange2} />
             </div>
-            <Dropdown3 options={options3} selectedOptions={selectedOption3} handleChange={handleChange3} handleCheckboxChange={handleCheckboxChange} />
+            <div style={{ display: 'flex', alignItems: 'center', position: 'relative' }}>
+                <Dropdown3 options={options3} selectedOptions={selectedOption3} onChange={handleChange3} />
+            </div>
         </div>
     );
 }
 
 export default Dashboard;
-
