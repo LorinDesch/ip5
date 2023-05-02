@@ -1,0 +1,9 @@
+{
+  "Navbar": [
+    {
+      "propName": "123",
+      "propType": "string",
+      "defaultValue": "123"
+    }
+  ]
+}
