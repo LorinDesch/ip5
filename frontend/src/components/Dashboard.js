@@ -35,7 +35,7 @@ function Dashboard() {
     };
 
     return (
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderBottom: '1px solid black' }}>
             <div style={{ display: 'flex', alignItems: 'center' }}>
                 <Dropdown1 selectedOption={selectedOption1} handleChange={handleChange1} />
             </div>
@@ -45,6 +45,7 @@ function Dashboard() {
             <Dropdown3 options={options3} selectedOptions={selectedOption3} handleChange={handleChange3} handleCheckboxChange={handleCheckboxChange} />
         </div>
     );
+
 }
 
 export default Dashboard;
