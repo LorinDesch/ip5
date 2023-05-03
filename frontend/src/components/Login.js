@@ -9,7 +9,8 @@ function Login() {
     const handleSubmit = async (event) => {
         event.preventDefault();
         try {
-            const newData = await handleLogin(username, password);
+            const newData = "realData" /*await handleLogin(username, password);*/ //TODO: replace with real data
+            sessionStorage.setItem("realData", JSON.stringify(newData));
             console.log(newData);
         } catch (error) {
             console.error(error);

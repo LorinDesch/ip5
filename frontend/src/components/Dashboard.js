@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, {useEffect, useState} from 'react';
 import Dropdown1 from './Dropdown1';
 import Dropdown2 from './Dropdown2';
 import Dropdown3 from './Dropdown3';
@@ -28,6 +28,16 @@ function Dashboard() {
     const handleChange3 = (selectedValues) => {
         setSelectedOption3(selectedValues);
     };
+
+    useEffect(() => {
+        const fakeData = "fakeData" //TODO: replace with real data
+
+        // check if fakeData is already stored in sessionStorage
+        const storedData = sessionStorage.getItem('fakeData');
+        if (!storedData) {
+            sessionStorage.setItem('fakeData', JSON.stringify(fakeData));
+        }
+    }, []);
 
     const handleCheckboxChange = (event, optionValue) => {
         if (event.target.checked) {
