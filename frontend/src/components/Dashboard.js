@@ -49,6 +49,7 @@ function Dashboard() {
 
     const handleToggle = (checked) => {
         setIsOn(checked);
+
     };
 
     return (
