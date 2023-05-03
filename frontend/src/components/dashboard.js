@@ -44,26 +44,46 @@ function Dashboard() {
     return (
         <div>
             <div style={{
-                display: 'flex',
-                justifyContent: 'space-between',
+                display: 'grid',
+                gridTemplateColumns: '1.2fr 2fr 1fr auto',
                 alignItems: 'center',
                 borderBottom: '1px solid black',
-                paddingBottom: '1rem'
+                paddingBottom: '1rem',
+                filter: isOn ? 'blur(5px)' : 'none' /* Filter hinzufügen */
             }}>
-                <div style={{display: 'flex', alignItems: 'center', marginRight: '1rem'}}>
+                <div style={{gridColumn: '1'}}>
                     <Dropdown1 selectedOption={selectedOption1} handleChange={handleChange1}/>
                 </div>
-                <div style={{display: 'flex', alignItems: 'center', marginRight: '1rem'}}>
+                <div style={{gridColumn: '2', justifySelf: 'center'}}>
                     <Dropdown2 selectedOption={selectedOption2} handleChange={handleChange2}/>
                 </div>
-                <ToggleSwitch leftText="Fake Data" rightText="Real Data" isOn={isOn} handleToggle={handleToggle} />
-                <div style={{display: 'flex', alignItems: 'center', position: 'relative'}}>
+                <div style={{gridColumn: '3', justifySelf: 'end', marginRight: '2rem'}}>
+                    <ToggleSwitch leftText="Fake Data" rightText="Real Data" isOn={isOn} handleToggle={handleToggle} style={{marginRight: '1rem'}}/>
+                </div>
+                <div style={{gridColumn: '4', justifySelf: 'end', marginRight: '0.5rem'}}>
                     <Dropdown3 options={options3} selectedOptions={selectedOption3} onChange={handleChange3}/>
                 </div>
             </div>
-            {isOn && <Login />}
+            {isOn && (
+                <div onClick={() => handleToggle(false)} style={{
+                    display: 'flex',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    height: '100vh',
+                    position: 'fixed',
+                    top: 0,
+                    left: 0,
+                    right: 0,
+                    bottom: 0,
+                    background: 'rgba(255, 255, 255, 0.01)', /* Hintergrund hinzufügen */
+                    zIndex: 999 /* Z-Index hinzufügen */
+                }}>
+                    <Login />
+                </div>
+            )}
         </div>
     );
+
 }
 
 export default Dashboard;
