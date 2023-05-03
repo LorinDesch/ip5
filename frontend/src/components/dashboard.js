@@ -65,7 +65,7 @@ function Dashboard() {
                 </div>
             </div>
             {isOn && (
-                <div onClick={() => handleToggle(false)} style={{
+                <div style={{
                     display: 'flex',
                     justifyContent: 'center',
                     alignItems: 'center',
@@ -75,7 +75,7 @@ function Dashboard() {
                     left: 0,
                     right: 0,
                     bottom: 0,
-                    background: 'rgba(255, 255, 255, 0.01)', /* Hintergrund hinzufügen */
+                    //background: 'rgba(255, 255, 255, 0.01)', /* Hintergrund hinzufügen */
                     zIndex: 999 /* Z-Index hinzufügen */
                 }}>
                     <Login />
