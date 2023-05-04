@@ -2,9 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import * as d3 from 'd3';
 
 function CommitmentsBar({ data, width, height }) {
-
-
-    data = [200, 30, 160, 50, 300, 400];
+    data = [28, 1, 28, 5, 24, 20];
 
     const svgRef = useRef();
 
@@ -20,7 +18,7 @@ function CommitmentsBar({ data, width, height }) {
             .padding(0.5);
 
         const yScale = d3.scaleLinear()
-            .domain([0, height])
+            .domain([0, 28])
             .range([height, 0]);
 
         const xAxis = d3.axisBottom(xScale)
