@@ -3,17 +3,18 @@ import * as d3 from 'd3';
 
 function CommitmentsBar({ data, width, height }) {
     data = [
-        0.5, 0.8, 0.2, 0.0,
+        0.5, 0.8, 0.2, 0.1,
         0.8, 0.7, 0.8, 0.8,
-        0.5, 0.8, 0.2, 0.0,
+        0.5, 0.8, 0.2, 0.1,
         0.8, 0.7, 0.8, 0.8,
-        0.5, 0.8, 0.2, 0.0,
+        0.5, 0.8, 0.2, 0.1,
         0.8, 0.7, 0.8, 0.8,
         0.5, 0.8, 0.2, 0.1,
     ];
 
     const colors = ['green', 'grey', 'red', 'blue'];
     const yAxisLabels = ['schlecht', 'gelassen', 'grossartig'];
+    const xAxisLabels = ["Tag 1", "Tag 2", "Tag 3", "Tag 4", "Tag 5", "Tag 6", "Tag 7"]
 
     const svgRef = useRef();
     useEffect(() => {
@@ -28,8 +29,19 @@ function CommitmentsBar({ data, width, height }) {
             .padding(0.5);
 
         const xAxis = d3.axisBottom(xScale)
-            .tickValues(d3.range(0, 28, 4))
-            .tickFormat((d, i) => `Tag ${i + 1}`);
+            .tickValues([])
+            .tickSize(0);
+
+
+        svg.selectAll('.x-axis-label')
+            .data(xAxisLabels)
+            .enter()
+            .append('text')
+            .attr('class', 'x-axis-label')
+            .attr('x', (d, i) => xScale(i) + xScale.bandwidth() / 7 + i*90) //TODO center text
+            .attr('y', height + 20)
+            .attr('text-anchor', 'middle')
+            .text(d => d);
 
 
         const yScale = d3.scaleLinear()
@@ -49,11 +61,27 @@ function CommitmentsBar({ data, width, height }) {
         svg.selectAll('.bar')
             .data(data)
             .join('rect')
+            .attr('class', 'bar')
             .attr('x', (value, index) => xScale(index))
             .attr('y', yScale)
             .attr('width', xScale.bandwidth())
             .attr('height', value => height - yScale(value))
-            .attr('fill', (value, index) => colors[index % colors.length]);
+            .attr('fill', (value, index) => colors[index % colors.length])
+            .each(function(d, i) {
+                if (i % 4 === 3) {
+                    // Append a line to every 4th bar
+                    d3.select(this.parentNode)
+                        .append('line')
+                        .attr('class', 'line')
+                        .attr('x1', xScale(i) + xScale.bandwidth() / 2 + 15)
+                        .attr('y1', yScale(1))
+                        .attr('x2', xScale(i) + xScale.bandwidth() / 2 + 15)
+                        .attr('y2', yScale(0))
+                        .attr('stroke', 'grey')
+                        .attr('stroke-width', 1);
+                }
+            });
+
 
         const legendWidth = 80 * colors.length;
         const legend = svg.append('g')
