@@ -96,7 +96,7 @@ function Dashboard() {
                     <Login onClose={() => setIsOn(false)}/>
                 </div>
             )}
-            <div style={{ display: 'grid', gridTemplateColumns: '2fr 1fr 2fr', gridGap: '1rem', marginLeft: "50px" }}>
+            <div style={{ display: 'grid', gridTemplateColumns: '2fr 1fr 2fr', gridGap: '1rem', marginLeft: "50px", marginTop: "50px" }}>
                 <div>
                     <FeelingsBar data={data} width={800} height={400} />
                 </div>
