@@ -4,6 +4,7 @@ import Dropdown2 from './Dropdown2';
 import Dropdown3 from './Dropdown3';
 import ToggleSwitch from "./ToggleSwitch";
 import Login from "./Login";
+import TreeImages from "./TreeImages";
 
 function Dashboard() {
     const [selectedOption1, setSelectedOption1] = useState('Ich');
@@ -92,6 +93,7 @@ function Dashboard() {
                     <Login />
                 </div>
             )}
+            <TreeImages leftIndex="28" rightIndex="28" />
         </div>
     );
 
