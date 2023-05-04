@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 
-import {handleLogin } from '../api';
+import { handleLogin } from '../api';
 
-function Login() {
+function Login({ onClose }) {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
 
@@ -12,12 +12,18 @@ function Login() {
             const newData = "realData" /*await handleLogin(username, password);*/ //TODO: replace with real data
             sessionStorage.setItem("realData", JSON.stringify(newData));
             console.log(newData);
+            onClose(); // Schließe das Login-Fenster, wenn der Login erfolgreich ist
         } catch (error) {
             console.error(error);
         }
     };
+
+    const handleCancel = () => {
+        onClose(); // Schließe das Login-Fenster, wenn der Benutzer auf "Abbrechen" klickt
+    }
+
     return (
-        <div>
+        <div style={{ padding: '1rem' }}>
             <form onSubmit={handleSubmit}>
                 <div>
                     <label htmlFor="username">Username:</label>
@@ -37,9 +43,13 @@ function Login() {
                         onChange={(event) => setPassword(event.target.value)}
                     />
                 </div>
-                <button type="submit">Use Real Data</button>
+                <div style={{ marginTop: '1rem' }}>
+                    <button type="submit" style={{ marginRight: '0.5rem' }}>Use Real Data</button>
+                    <button type="button" onClick={handleCancel} style={{ backgroundColor: 'grey', color: 'white' }}>Cancel</button> {/* Neuer Button zum Schließen des Login-Fensters */}
+                </div>
             </form>
         </div>
     );
 }
+
 export default Login;
