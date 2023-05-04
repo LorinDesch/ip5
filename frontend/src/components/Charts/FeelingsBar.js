@@ -14,7 +14,7 @@ function CommitmentsBar({ data, width, height }) {
 
     const colors = ['green', 'grey', 'red', 'blue'];
     const yAxisLabels = ['schlecht', 'gelassen', 'grossartig'];
-    const xAxisLabels = ["Tag 1", "Tag 2", "Tag 3", "Tag 4", "Tag 5", "Tag 6", "Tag 7"]
+    const groups = ["Tag 1", "Tag 2", "Tag 3", "Tag 4", "Tag 5", "Tag 6", "Tag 7"]
 
     const svgRef = useRef();
     useEffect(() => {
@@ -31,18 +31,6 @@ function CommitmentsBar({ data, width, height }) {
         const xAxis = d3.axisBottom(xScale)
             .tickValues([])
             .tickSize(0);
-
-
-        svg.selectAll('.x-axis-label')
-            .data(xAxisLabels)
-            .enter()
-            .append('text')
-            .attr('class', 'x-axis-label')
-            .attr('x', (d, i) => xScale(i) + xScale.bandwidth() / 7 + i*90) //TODO center text
-            .attr('y', height + 20)
-            .attr('text-anchor', 'middle')
-            .text(d => d);
-
 
         const yScale = d3.scaleLinear()
             .domain([0, 1])
@@ -69,7 +57,8 @@ function CommitmentsBar({ data, width, height }) {
             .attr('fill', (value, index) => colors[index % colors.length])
             .each(function(d, i) {
                 if (i % 4 === 3) {
-                    // Append a line to every 4th bar
+                    // Append a line and text to every 4th bar
+                    const groupIndex = Math.floor(i / 4);
                     d3.select(this.parentNode)
                         .append('line')
                         .attr('class', 'line')
@@ -79,8 +68,17 @@ function CommitmentsBar({ data, width, height }) {
                         .attr('y2', yScale(0))
                         .attr('stroke', 'grey')
                         .attr('stroke-width', 1);
+                    d3.select(this.parentNode)
+                        .append('text')
+                        .attr('class', 'group-text')
+                        .attr('x', xScale(i) + xScale.bandwidth() / 2 - 40)
+                        .attr('y', yScale(0) + 20)
+                        .attr('text-anchor', 'middle')
+                        .attr('fill', 'black')
+                        .text(groups[groupIndex]);
                 }
             });
+
 
 
         const legendWidth = 80 * colors.length;
@@ -104,6 +102,7 @@ function CommitmentsBar({ data, width, height }) {
                     .attr('y', -height + 13)
                     .text((value, index) => `Woche ${index + 1}`);
             });
+
 
 
 
