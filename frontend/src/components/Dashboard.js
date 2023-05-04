@@ -96,9 +96,9 @@ function Dashboard() {
                     <Login onClose={() => setIsOn(false)}/>
                 </div>
             )}
-            <div style={{ display: 'grid', gridTemplateColumns: '2fr 1fr 2fr', gridGap: '1rem' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: '2fr 1fr 2fr', gridGap: '1rem', marginLeft: "50px" }}>
                 <div>
-                    <FeelingsBar data={data} width={500} height={500} />
+                    <FeelingsBar data={data} width={800} height={400} />
                 </div>
                 <div style={{ display: 'flex', justifyContent: 'center' }}>
                     <TreeImages leftIndex="20" rightIndex="28" isOn={isOn} />

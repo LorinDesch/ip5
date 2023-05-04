@@ -2,6 +2,10 @@ import React, { useEffect, useRef } from 'react';
 import * as d3 from 'd3';
 
 function CommitmentsBar({ data, width, height }) {
+
+
+    data = [200, 30, 160, 50, 300, 400];
+
     const svgRef = useRef();
 
     useEffect(() => {
