@@ -92,7 +92,7 @@ function Dashboard() {
                     <Login />
                 </div>
             )}
-            <TreeImages leftIndex="28" rightIndex="28" isOn={isOn} />
+            <TreeImages leftIndex="20" rightIndex="28" isOn={isOn} />
         </div>
     );
 

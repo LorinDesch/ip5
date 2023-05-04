@@ -1,8 +1,8 @@
 import React from 'react';
 
 const TreeImages = ({ leftIndex, rightIndex, isOn }) => {
-    const leftImagePath = `${process.env.PUBLIC_URL}/images/tree_left/l${leftIndex}-min.png`;
-    const rightImagePath = `${process.env.PUBLIC_URL}/images/tree_right/r${rightIndex}-min.png`;
+    const leftImagePath = `${process.env.PUBLIC_URL}/images/tree_left/l${leftIndex}-min-min.png`;
+    const rightImagePath = `${process.env.PUBLIC_URL}/images/tree_right/r${rightIndex}-min-min.png`;
 
     const containerStyles = {
         display: 'flex',
