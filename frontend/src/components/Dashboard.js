@@ -6,7 +6,7 @@ import ToggleSwitch from "./ToggleSwitch";
 import Login from "./Login";
 import TreeImages from "./TreeImages";
 import CommitmentsBar from "./Charts/CommitmentsBar";
-import FeelingsBar from "./Charts/feelingsBar";
+import FeelingsBar from "./Charts/FeelingsBar";
 
 function Dashboard() {
     const [selectedOption1, setSelectedOption1] = useState('Ich');
