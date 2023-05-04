@@ -89,7 +89,7 @@ function Dashboard() {
                     //background: 'rgba(255, 255, 255, 0.01)', /* Hintergrund hinzufügen */
                     zIndex: 999 /* Z-Index hinzufügen */
                 }}>
-                    <Login />
+                    <Login onClose={() => setIsOn(false)}/>
                 </div>
             )}
             <TreeImages leftIndex="20" rightIndex="28" isOn={isOn} />
