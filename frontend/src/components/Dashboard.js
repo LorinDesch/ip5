@@ -1,10 +1,12 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import Dropdown1 from './Dropdown1';
 import Dropdown2 from './Dropdown2';
 import Dropdown3 from './Dropdown3';
 import ToggleSwitch from "./ToggleSwitch";
 import Login from "./Login";
 import TreeImages from "./TreeImages";
+import CommitmentsBar from "./Charts/CommitmentsBar";
+import FeelingsBar from "./Charts/feelingsBar";
 
 function Dashboard() {
     const [selectedOption1, setSelectedOption1] = useState('Ich');
@@ -12,6 +14,7 @@ function Dashboard() {
     const [selectedOption3, setSelectedOption3] = useState([]);
     const [selectedClasses, setSelectedClasses] = useState([]);
     const [isOn, setIsOn] = useState(false);
+    const [data] = useState([200, 30, 160, 50, 300, 400]);
 
     const options3 = Array.from(Array(10), (_, index) => ({
         value: `Klasse ${index + 1}`,
@@ -69,7 +72,8 @@ function Dashboard() {
                     <Dropdown2 selectedOption={selectedOption2} handleChange={handleChange2}/>
                 </div>
                 <div style={{gridColumn: '3', justifySelf: 'end', marginRight: '2rem'}}>
-                    <ToggleSwitch leftText="Fake Data" rightText="Real Data" isOn={isOn} handleToggle={handleToggle} style={{marginRight: '1rem'}}/>
+                    <ToggleSwitch leftText="Fake Data" rightText="Real Data" isOn={isOn} handleToggle={handleToggle}
+                                  style={{marginRight: '1rem'}}/>
                 </div>
                 <div style={{gridColumn: '4', justifySelf: 'end', marginRight: '0.5rem'}}>
                     <Dropdown3 options={options3} selectedOptions={selectedOption3} onChange={handleChange3}/>
@@ -92,7 +96,18 @@ function Dashboard() {
                     <Login onClose={() => setIsOn(false)}/>
                 </div>
             )}
-            <TreeImages leftIndex="20" rightIndex="28" isOn={isOn} />
+            <div style={{ display: 'grid', gridTemplateColumns: '2fr 1fr 2fr', gridGap: '1rem' }}>
+                <div>
+                    <FeelingsBar data={data} width={500} height={500} />
+                </div>
+                <div style={{ display: 'flex', justifyContent: 'center' }}>
+                    <TreeImages leftIndex="20" rightIndex="28" isOn={isOn} />
+                </div>
+                <div>
+                    <CommitmentsBar data={data} width={500} height={500} />
+                </div>
+            </div>
+
         </div>
     );
 
