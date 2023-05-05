@@ -5,8 +5,9 @@ function DifficultyBar({ data, width, height }) {
     const leftLabel = ["leicht", "mittel", "schwer"];
     const rightLabel = ["leicht", "mittel", "stark"];
     const klassen = ["Klasse 1", "Klasse 2", "Klasse 3", "Klasse 4", "Klasse 5", "Klasse 6"];
-    const yAxisLabelLeft = "Schwierigkeit";
-    const yAxisLabelRight = "Einschränkung";
+    const label = ["Schwieirgkeit", "Einschränkung"]
+
+    const colors = ["blue","orange"]
     const dataRight = [0.5, 0.1, 0.8, 0.7, 1, 0.3];
     const dataLeft = [0.7, 0.2, 0.1, 0.3, 0.5, 0.3];
 
@@ -50,7 +51,7 @@ function DifficultyBar({ data, width, height }) {
             .attr('y', d => yScale(d))
             .attr('width', xScale.bandwidth()/2)
             .attr('height', d => height - yScale(d) - margin.bottom)
-            .attr('fill', 'steelblue');
+            .attr('fill', colors[0]);
 
         const rightBars = svg.append('g')
             .attr('class', 'right-bars')
@@ -74,13 +75,13 @@ function DifficultyBar({ data, width, height }) {
             .attr('class', 'y-axis')
             .attr('transform', `translate(${margin.left}, 0)`)
             .call(leftYAxis)
-            .style('color', 'steelblue');
+            .style('color', colors[0]);
 
         svg.append('g')
             .attr('class', 'y-axis')
             .attr('transform', `translate(${width - margin.right}, 0)`)
             .call(rightYAxis)
-            .style('color', 'orange');
+            .style('color', colors[1]);
 
         // Add left y-axis label
         svg.append('text')
@@ -90,8 +91,8 @@ function DifficultyBar({ data, width, height }) {
             .attr('text-anchor', 'middle')
             .attr('alignment-baseline', 'central')
             .attr('transform', 'rotate(-90, ' + (margin.left - 50) + ', ' + (height / 2) + ')')
-            .text(yAxisLabelLeft)
-            .style('fill', 'steelblue');
+            .text(label[0])
+            .style('fill', colors[0]);
 
         // Add right y-axis label
         svg.append('text')
@@ -101,8 +102,30 @@ function DifficultyBar({ data, width, height }) {
             .attr('text-anchor', 'middle')
             .attr('alignment-baseline', 'central')
             .attr('transform', 'rotate(-90, ' + (width - margin.right + 50) + ', ' + (height / 2) + ')')
-            .text(yAxisLabelRight)
-            .style('fill', 'orange');
+            .text(label[1])
+            .style('fill', colors[1]);
+
+        const legendWidth = 80 * colors.length;
+        const legend = svg.append('g')
+            .attr('transform', `translate(${(width - legendWidth) / 2}, ${height - 20})`);
+
+        legend.selectAll('.legend-item')
+            .data(colors)
+            .join('g')
+            .attr('class', 'legend-item')
+            .attr('transform', (value, index) => `translate(${index * 120}, 0)`)
+            .call(g => {
+                g.append('rect')
+                    .attr('x', 0)
+                    .attr('y', -height)
+                    .attr('width', 15)
+                    .attr('height', 15)
+                    .attr('fill', value => value);
+                g.append('text')
+                    .attr('x', 20)
+                    .attr('y', -height + 13)
+                    .text((value, index) => label[index])
+            });
 
     }, [data, height, width]);
 
