@@ -38,7 +38,8 @@ function CommitmentsBar({ data, width, height }) {
 
         const yAxis = d3.axisLeft(yScale)
             .tickValues([0, 0.5, 1])
-            .tickFormat(d => yAxisLabels[d * 2]);
+            .tickFormat(d => yAxisLabels[d * 2])
+
 
         svg.append('g')
             .call(xAxis)

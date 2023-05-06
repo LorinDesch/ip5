@@ -38,24 +38,28 @@ function Dashboard() {
 
             <div style={{
                 display: 'grid',
-                gridTemplateColumns: '2fr 1fr 2fr',
+                gridTemplateColumns: '1.2fr 2fr 1fr',
+                gridTemplateRows: 'auto',
                 gridGap: '1rem',
-                marginLeft: "15 0px", // increase the marginLeft value to create space for the Navbar
+                alignItems: 'center',
+                marginLeft: "150px", // adjust the marginLeft value to make space for the Navbar
                 marginTop: "50px"
             }}>
                 <div>
                     <FeelingsBar data={data} width={800} height={400}/>
                 </div>
-                <div style={{display: 'flex', justifyContent: 'center'}}>
+
+                <div style={{justifySelf: 'center'}}>
                     <TreeImages leftIndex="20" rightIndex="28" isOn={isOn}/>
                 </div>
-                <div>
+
+                <div style={{justifySelf: 'end'}}>
                     <CommitmentsBar data={data} width={500} height={500}/>
                 </div>
             </div>
-
         </div>
     );
+
 
 }
 
