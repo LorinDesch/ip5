@@ -3,6 +3,7 @@ import TreeImages from "./TreeImages";
 import CommitmentsBar from "./Charts/CommitmentsBar";
 import FeelingsBar from "./Charts/FeelingsBar";
 import TopNavbar from "./TopNavbar";
+import Navbar from "./Navbar";
 
 function Dashboard() {
     const [selectedClasses, setSelectedClasses] = useState([]);
@@ -31,6 +32,7 @@ function Dashboard() {
     return (
         <div>
             <TopNavbar isOn={isOn} setIsOn={setIsOn} />
+            <Navbar isOn={isOn} setIsOn={setIsOn} />
 
             <div style={{
                 display: 'grid',
