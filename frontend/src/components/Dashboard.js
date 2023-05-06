@@ -31,14 +31,16 @@ function Dashboard() {
 
     return (
         <div>
-            <TopNavbar isOn={isOn} setIsOn={setIsOn} />
-            <Navbar isOn={isOn} setIsOn={setIsOn} />
+            <div style={{marginLeft: "100px"}}>
+                <TopNavbar isOn={isOn} setIsOn={setIsOn}/>
+            </div>
+            <Navbar/>
 
             <div style={{
                 display: 'grid',
                 gridTemplateColumns: '2fr 1fr 2fr',
                 gridGap: '1rem',
-                marginLeft: "50px",
+                marginLeft: "15 0px", // increase the marginLeft value to create space for the Navbar
                 marginTop: "50px"
             }}>
                 <div>

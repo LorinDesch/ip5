@@ -36,8 +36,8 @@ const Navbar = () => {
             borderRadius: '10%',
             padding: '0.5rem',
             flexGrow: 1,
-            maxWidth: '100',
-            maxHeight: '100',
+            maxWidth: '50',
+            maxHeight: '50',
         }
 
     };
