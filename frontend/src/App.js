@@ -2,11 +2,11 @@ import React from 'react';
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import Dashboard from "./components/Dashboard";
 import DifficultyComparison from "./components/DifficultyComparison";
-import RestrictionComparison from "./components/RestrictionComparison";
-import EnvironmentComparison from "./components/EnvironmentComparison";
-import CurrentContributionComparison from "./components/CurrentContributionComparison";
-import AllowsMeToComparison from "./components/AllowsMeToComparison";
-import SustainableDevelopmentComparison from "./components/SustainableDevelopmentComparison";
+import RestrictionComparison from "./components/comparisons/RestrictionComparison";
+import EnvironmentComparison from "./components/comparisons/EnvironmentComparison";
+import CurrentContributionComparison from "./components/comparisons/CurrentContributionComparison";
+import AllowsMeToComparison from "./components/comparisons/AllowsMeToComparison";
+import SustainableDevelopmentComparison from "./components/comparisons/SustainableDevelopmentComparison";
 
 const App = () => {
     return (

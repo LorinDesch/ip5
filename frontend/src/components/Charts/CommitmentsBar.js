@@ -4,8 +4,8 @@ import * as d3 from 'd3';
 function CommitmentsBar({ data, width, height }) {
 
 
-    data = [28, 1, 28, 5];
-    const groups = ['Klasse 1', 'Klasse 2', 'Klasse 3', 'Klasse 4'];
+    data = [28, 1, 28, 5, 24, 23, 15,5, 8, 20];
+    const groups = ['Klasse 1', 'Klasse 2', 'Klasse 3', 'Klasse 4', 'Klasse 5', 'Klasse 6', 'Klasse 7', 'Klasse 8', 'Klasse 9', 'Klasse 10'];
 
     const svgRef = useRef();
 

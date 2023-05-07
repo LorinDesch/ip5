@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
-import TopNavbar from './TopNavbar';
-import Difficulty from "./Charts/Difficulty";
-import Navbar from "./Navbar";
+import TopNavbar from '../TopNavbar';
+import Difficulty from "../Charts/Difficulty";
+import Navbar from "../Navbar";
 
 const DifficultyComparison = ({data, width, height}) => {
     const [isOn, setIsOn] = useState(false);
@@ -27,22 +27,22 @@ const DifficultyComparison = ({data, width, height}) => {
             }}>
                 <div style={{gridColumn: '1', gridRow: '1', maxWidth: '70%'}}>
                     <h1>
-                        Environment Comparison</h1>
+                        Current Contribution Comparison</h1>
                 </div>
                 <div style={{gridColumn: '2', gridRow: '1'}}>
-                    <Difficulty data={data} width={600} height={400}/>
+                    <Difficulty data={data} width={800} height={350}/>
                 </div>
                 <div style={{gridColumn: '1', gridRow: '2'}}>
-                    <Difficulty data={data} width={600} height={400}/>
+                    <Difficulty data={data} width={800} height={350}/>
                 </div>
                 <div style={{gridColumn: '2', gridRow: '2'}}>
-                    <Difficulty data={data} width={600} height={400}/>
+                    <Difficulty data={data} width={800} height={350}/>
                 </div>
                 <div style={{gridColumn: '1', gridRow: '3'}}>
-                    <Difficulty data={data} width={600} height={400}/>
+                    <Difficulty data={data} width={800} height={350}/>
                 </div>
                 <div style={{gridColumn: '2', gridRow: '3'}}>
-                    <Difficulty data={data} width={600} height={400}/>
+                    <Difficulty data={data} width={800} height={350}/>
                 </div>
             </div>
         </div>
