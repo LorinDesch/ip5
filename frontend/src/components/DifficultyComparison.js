@@ -15,18 +15,44 @@ const DifficultyComparison = ({data, width, height}) => {
             </div>
             <Navbar/>
 
-            <h1>Difficulty Comparison</h1>
             <div style={{
-                display: "flex",
-                flexDirection: "column",
-                alignItems: "center",
-                justifyContent: "center",
-                height: "100vh"
+                display: "grid",
+                gridTemplateColumns: 'repeat(2, 1fr)',
+                gridTemplateRows: 'repeat(3, 1fr)',
+                gridGap: '1rem',
+                alignItems: 'center',
+                justifyItems: 'center',
+                marginLeft: '50px',
+                marginTop: '150px'
             }}>
-                <Difficulty data={data} width={600} height={400}/>
+                <div style={{gridColumn: '1', gridRow: '1', maxWidth: '70%'}}>
+                    <h1>
+                        Ein Balkendiagramm ist eine häufig verwendete Grafik, die verwendet wird, um numerische Daten
+                        darzustellen und zu vergleichen. Es besteht aus rechteckigen Balken, die senkrecht oder
+                        horizontal ausgerichtet sein können und deren Länge proportional zu den Werten der dargestellten
+                        Daten ist.</h1>
+                </div>
+                <div style={{gridColumn: '2', gridRow: '1'}}>
+                    <Difficulty data={data} width={600} height={400}/>
+                </div>
+                <div style={{gridColumn: '1', gridRow: '2'}}>
+                    <Difficulty data={data} width={600} height={400}/>
+                </div>
+                <div style={{gridColumn: '2', gridRow: '2'}}>
+                    <Difficulty data={data} width={600} height={400}/>
+                </div>
+                <div style={{gridColumn: '1', gridRow: '3'}}>
+                    <Difficulty data={data} width={600} height={400}/>
+                </div>
+                <div style={{gridColumn: '2', gridRow: '3'}}>
+                    <Difficulty data={data} width={600} height={400}/>
+                </div>
             </div>
         </div>
     );
 };
 
 export default DifficultyComparison;
+
+
+// <Difficulty data={data} width={600} height={400}/>

@@ -7,7 +7,7 @@ function DifficultyBar({ data, width, height }) {
     const klassen = ["Klasse 1", "Klasse 2", "Klasse 3", "Klasse 4", "Klasse 5", "Klasse 6"];
     const label = ["Schwieirgkeit", "Einschränkung"]
 
-    const colors = ["blue","orange"]
+    const colors = ["#85B3B7", "#D4E09B"];
     const dataRight = [0.5, 0.1, 0.8, 0.7, 1, 0.3];
     const dataLeft = [0.7, 0.2, 0.1, 0.3, 0.5, 0.3];
 
@@ -63,7 +63,7 @@ function DifficultyBar({ data, width, height }) {
             .attr('y', d => yScale(d))
             .attr('width', xScale.bandwidth()/2)
             .attr('height', d => height - yScale(d) - margin.bottom)
-            .attr('fill', 'orange');
+            .attr('fill', '#D4E09B');
 
         svg.append('g')
             .attr('class', 'x-axis')
