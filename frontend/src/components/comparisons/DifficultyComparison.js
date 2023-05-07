@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
-import TopNavbar from './TopNavbar';
-import Difficulty from "./Charts/Difficulty";
-import Navbar from "./Navbar";
+import TopNavbar from '../TopNavbar';
+import Difficulty from "../Charts/Difficulty";
+import Navbar from "../Navbar";
 
 const DifficultyComparison = ({data, width, height}) => {
     const [isOn, setIsOn] = useState(false);
@@ -26,26 +26,22 @@ const DifficultyComparison = ({data, width, height}) => {
                 marginTop: '70px'
             }}>
                 <div style={{gridColumn: '1', gridRow: '1', maxWidth: '70%'}}>
-                    <h1>
-                        Ein Balkendiagramm ist eine häufig verwendete Grafik, die verwendet wird, um numerische Daten
-                        darzustellen und zu vergleichen. Es besteht aus rechteckigen Balken, die senkrecht oder
-                        horizontal ausgerichtet sein können und deren Länge proportional zu den Werten der dargestellten
-                        Daten ist.</h1>
+                    <h1>Difficulty Comparison</h1>
                 </div>
                 <div style={{gridColumn: '2', gridRow: '1'}}>
-                    <Difficulty data={data} width={600} height={400}/>
+                    <Difficulty data={data} width={800} height={350}/>
                 </div>
                 <div style={{gridColumn: '1', gridRow: '2'}}>
-                    <Difficulty data={data} width={600} height={400}/>
+                    <Difficulty data={data} width={800} height={350}/>
                 </div>
                 <div style={{gridColumn: '2', gridRow: '2'}}>
-                    <Difficulty data={data} width={600} height={400}/>
+                    <Difficulty data={data} width={800} height={350}/>
                 </div>
                 <div style={{gridColumn: '1', gridRow: '3'}}>
-                    <Difficulty data={data} width={600} height={400}/>
+                    <Difficulty data={data} width={800} height={350}/>
                 </div>
                 <div style={{gridColumn: '2', gridRow: '3'}}>
-                    <Difficulty data={data} width={600} height={400}/>
+                    <Difficulty data={data} width={800} height={350}/>
                 </div>
             </div>
         </div>
