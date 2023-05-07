@@ -2,6 +2,8 @@ import React, { useEffect, useRef } from 'react';
 import * as d3 from 'd3';
 
 function CommitmentsBar({ data, width, height }) {
+
+
     data = [
         0.5, 0.8, 0.2, 0.1,
         0.8, 0.7, 0.8, 0.8,

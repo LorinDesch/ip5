@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import TopNavbar from './TopNavbar';
 import Difficulty from "./Charts/Difficulty";
+import Navbar from "./Navbar";
 
 const DifficultyComparison = ({data, width, height}) => {
     const [isOn, setIsOn] = useState(false);
@@ -9,7 +10,10 @@ const DifficultyComparison = ({data, width, height}) => {
 
     return (
         <div>
-            <TopNavbar isOn={isOn} setIsOn={setIsOn}/>
+            <div style={{marginLeft: "100px"}}>
+                <TopNavbar isOn={isOn} setIsOn={setIsOn}/>
+            </div>
+            <Navbar/>
 
             <h1>Difficulty Comparison</h1>
             <div style={{

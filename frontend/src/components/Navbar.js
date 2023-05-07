@@ -55,7 +55,7 @@ const Navbar = () => {
     return (
         <div style={styles.navbar}>
             <FaHome style={styles.icon} onMouseEnter={handleIconHover} onMouseLeave={handleIconLeave} />
-            <FaChartBar style={styles.icon} onMouseEnter={handleIconHover} onMouseLeave={handleIconLeave} />
+            <FaChartBar style={styles.icon} onMouseEnter={handleIconHover} onMouseLeave={handleIconLeave} onClick={() => window.location.href = '/difficulty'} />
             <FaChartBar style={styles.icon} onMouseEnter={handleIconHover} onMouseLeave={handleIconLeave} />
             <FaChartBar style={styles.icon} onMouseEnter={handleIconHover} onMouseLeave={handleIconLeave} />
             <FaChartBar style={styles.icon} onMouseEnter={handleIconHover} onMouseLeave={handleIconLeave} />
