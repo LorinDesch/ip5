@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { FaHome, FaChartBar } from 'react-icons/fa';
+import React, {useState, useEffect} from 'react';
+import {FaHome, FaChartBar} from 'react-icons/fa';
 
 const Navbar = () => {
     const [containerHeight, setContainerHeight] = useState(0);
@@ -54,13 +54,19 @@ const Navbar = () => {
 
     return (
         <div style={styles.navbar}>
-            <FaHome style={styles.icon} onMouseEnter={handleIconHover} onMouseLeave={handleIconLeave} />
-            <FaChartBar style={styles.icon} onMouseEnter={handleIconHover} onMouseLeave={handleIconLeave} onClick={() => window.location.href = '/difficulty'} />
-            <FaChartBar style={styles.icon} onMouseEnter={handleIconHover} onMouseLeave={handleIconLeave} />
-            <FaChartBar style={styles.icon} onMouseEnter={handleIconHover} onMouseLeave={handleIconLeave} />
-            <FaChartBar style={styles.icon} onMouseEnter={handleIconHover} onMouseLeave={handleIconLeave} />
-            <FaChartBar style={styles.icon} onMouseEnter={handleIconHover} onMouseLeave={handleIconLeave} />
-            <FaChartBar style={{ ...styles.icon, marginRight: 0 }} onMouseEnter={handleIconHover} onMouseLeave={handleIconLeave} />
+            <FaHome style={styles.icon} onMouseEnter={handleIconHover} onMouseLeave={handleIconLeave} onClick={() => window.location.href = '/'}/>
+            <FaChartBar style={styles.icon} onMouseEnter={handleIconHover} onMouseLeave={handleIconLeave}
+                        onClick={() => window.location.href = '/difficulty'}/>
+            <FaChartBar style={styles.icon} onMouseEnter={handleIconHover} onMouseLeave={handleIconLeave}
+                        onClick={() => window.location.href = '/restriction'}/>
+            <FaChartBar style={styles.icon} onMouseEnter={handleIconHover} onMouseLeave={handleIconLeave}
+                        onClick={() => window.location.href = '/environment'}/>
+            <FaChartBar style={styles.icon} onMouseEnter={handleIconHover} onMouseLeave={handleIconLeave}
+                        onClick={() => window.location.href = '/currentcontribution'}/>
+            <FaChartBar style={styles.icon} onMouseEnter={handleIconHover} onMouseLeave={handleIconLeave}
+                        onClick={() => window.location.href = '/allowsmeto'}/>
+            <FaChartBar style={{...styles.icon, marginRight: 0}} onMouseEnter={handleIconHover}
+                        onMouseLeave={handleIconLeave} onClick={() => window.location.href = 'sustainabledevelopment'}/>
         </div>
     );
 };

@@ -27,10 +27,7 @@ const DifficultyComparison = ({data, width, height}) => {
             }}>
                 <div style={{gridColumn: '1', gridRow: '1', maxWidth: '70%'}}>
                     <h1>
-                        Ein Balkendiagramm ist eine häufig verwendete Grafik, die verwendet wird, um numerische Daten
-                        darzustellen und zu vergleichen. Es besteht aus rechteckigen Balken, die senkrecht oder
-                        horizontal ausgerichtet sein können und deren Länge proportional zu den Werten der dargestellten
-                        Daten ist.</h1>
+                        Sustainable Development Comparison</h1>
                 </div>
                 <div style={{gridColumn: '2', gridRow: '1'}}>
                     <Difficulty data={data} width={600} height={400}/>
