@@ -83,6 +83,7 @@ function DifficultyBar({ data, width, height }) {
             .call(rightYAxis)
             .style('color', colors[1]);
 
+        /* //TODO: think of axis labels on the side
         // Add left y-axis label
         svg.append('text')
             .attr('class', 'axis-label')
@@ -104,6 +105,8 @@ function DifficultyBar({ data, width, height }) {
             .attr('transform', 'rotate(-90, ' + (width - margin.right + 50) + ', ' + (height / 2) + ')')
             .text(label[1])
             .style('fill', colors[1]);
+
+         */
 
         const legendWidth = 80 * colors.length;
         const legend = svg.append('g')
