@@ -5,7 +5,7 @@ function DifficultyBar({ data, width, height }) {
     const leftLabel = ["leicht", "mittel", "schwer"];
     const rightLabel = ["leicht", "mittel", "stark"];
     const klassen = ["Klasse 1", "Klasse 2", "Klasse 3", "Klasse 4", "Klasse 5", "Klasse 6"];
-    const label = ["Schwieirgkeit", "Einschränkung"]
+    const label = ["Schwierigkeit", "Einschränkung"]
 
     const colors = ["#85B3B7", "#D4E09B"];
     const dataRight = [0.5, 0.1, 0.8, 0.7, 1, 0.3];
