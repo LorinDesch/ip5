@@ -25,20 +25,19 @@ function Dashboard() {
 
     return (
         <div>
-            <div style={{marginLeft: "100px"}}>
+            <div style={{marginLeft: '6vw'}}>
                 <TopNavbar isOn={isOn} setIsOn={setIsOn}/>
             </div>
             <Navbar/>
 
             <div style={{
                 display: 'grid',
-                gridTemplateColumns: '700px 500px 700px',
-                gridTemplateRows: '400px 400px',
-                // gridGap: '1rem',
+                gridTemplateColumns: '35vw 30vw 35vw',
+                gridTemplateRows: '30vw 30vw',
                 alignItems: 'center',
                 justifyItems: 'center',
-                marginLeft: "85px", // adjust the marginLeft value to make space for the Navbar
-                // marginTop: "50px"
+                marginLeft: '4vw', // adjust the marginLeft value to make space for the Navbar
+
             }}>
                 <div style={{justifySelf: 'center', transform: 'scale(0.7)'}}>
                     <SchluesseAusChallenge data={data}/>
@@ -48,27 +47,26 @@ function Dashboard() {
                     { /* empty div for grid layout */}
                 </div>
 
-                <div style={{gridColumn: '2', gridRow: '2', justifySelf: 'center', transform: 'scale(1)', marginBottom: '260px'}}>
-                    <TreeImages leftIndex="28" rightIndex="28" isOn={isOn}/>
+                <div style={{gridColumn: '2', gridRow: '2', justifySelf: 'center', transform: 'scale(1)', marginBottom: '15.4vw'}}>
+                    <TreeImages leftIndex='28' rightIndex='20' isOn={isOn}/>
                 </div>
 
                 <div style={{justifySelf: 'center', transform: 'scale(0.7)'}}>
                     <SchluesseAusChallenge data={data}/>
                 </div>
+                <div style={{position: 'fixed', bottom: '0', left: '0', width: '100%', height: '2.1vw', backgroundColor: 'black'}}></div>
 
-                <div style={{justifySelf: 'center', transform: 'scale(0.7)', marginTop: '400px'}}>
-                    <FeelingsBar data={data} width={800} height={400}/>
+                <div style={{justifySelf: 'center', transform: 'scale(0.7)', marginTop: '25vw', marginLeft: '6.25vw'}}>
+                    <FeelingsBar data={data} width={1000} height={400}/>
                 </div>
 
-                <div style={{justifySelf: 'center', transform: 'scale(0.7)', marginTop: '400px'}}>
-                    <CommitmentsBar data={data} width={800} height={400}/>
+                <div style={{justifySelf: 'center', transform: 'scale(0.7)', marginTop: '25vw'}}>
+                    <CommitmentsBar data={data} width={1000} height={400}/>
                 </div>
             </div>
 
         </div>
     );
-
-
-}
+};
 
 export default Dashboard;

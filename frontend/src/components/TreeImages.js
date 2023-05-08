@@ -11,17 +11,18 @@ const TreeImages = ({ leftIndex, rightIndex, isOn }) => {
     };
 
     const imageStylesRight = {
-        marginLeft: '-30rem',
-        width: '60rem',
-        height: 'auto',
+        marginLeft: '-25vw',
+        width: '50vw',
+        height: '50vw',
         filter: isOn ? 'blur(5px)' : 'none'
     };
     const imageStylesLeft = {
-        marginRight: '-30rem',
-        width: '60rem',
-        height: 'auto',
+        marginRight: '-25vw',
+        width: '50vw',
+        height: '50vw',
         filter: isOn ? 'blur(5px)' : 'none'
     };
+
 
     return (
         <div style={containerStyles}>

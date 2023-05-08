@@ -8,21 +8,21 @@ const SchluesseAusChallenge = ({data}) => {
 
 
     return (
-        <div>
+        <div style={{fontSize: '1vw'}}>
 
-            <h1> Schlüsse aus der Challenge</h1>
+            <h1 style={{fontSize: '2vw'}}> Schlüsse aus der Challenge</h1>
 
-            <h2>bei dir selbst</h2>
-            <p>{beiDirSelbst}</p>
+            <h2 style={{fontSize: '1.5vw'}}>bei dir selbst</h2>
+            <p style={{fontSize: '1vw'}}>{beiDirSelbst}</p>
 
-            <h2>in deinem sozialen Umfeld</h2>
-            <p>{sozialUmfeld}</p>
+            <h2 style={{fontSize: '1.5vw'}}>in deinem sozialen Umfeld</h2>
+            <p style={{fontSize: '1vw'}}>{sozialUmfeld}</p>
 
-            <h2>auf politischer Ebene</h2>
-            <p>{politisch}</p>
+            <h2 style={{fontSize: '1.5vw'}}>auf politischer Ebene</h2>
+            <p style={{fontSize: '1vw'}}>{politisch}</p>
 
-            <h2>auf Ebene Produktherstellung</h2>
-            <p>{produkt}</p>
+            <h2 style={{fontSize: '1.5vw'}}>auf Ebene Produktherstellung</h2>
+            <p style={{fontSize: '1vw'}}>{produkt}</p>
         </div>
     );
 }

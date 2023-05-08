@@ -77,8 +77,8 @@ function CommitmentsBar({data, width, height}) {
                         .attr('x', xScale(i) + xScale.bandwidth() / 2 - 40)
                         .attr('y', yScale(0) + 20)
                         .attr('text-anchor', 'middle')
-                        .attr('fill', 'black')
-                        .text(groups[groupIndex]);
+                        .attr('fill', 'white')
+                        .text(groups[groupIndex])
                 }
             });
 
@@ -108,10 +108,9 @@ function CommitmentsBar({data, width, height}) {
 
     return <svg ref={svgRef}>
         <text x={width / 2} y={-40} textAnchor="middle" fontWeight="bold">
-            Wie hast du dich über den Verlauf des Selfcomitments gefühlt?
+            Wie hast du dich über den Verlauf des Selfcommitments gefühlt?
         </text>
     </svg>
-
 
         ;
 }
