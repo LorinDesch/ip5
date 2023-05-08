@@ -61,7 +61,7 @@ const TopNavbar = ({ isOn, setIsOn }) => { // Receive isOn and setIsOn as props
                 <div style={{gridColumn: '1'}}>
                     <Dropdown1 selectedOption={selectedOption1} handleChange={handleChange1} styling={dropDownStyling}/>
                 </div>
-                <div style={{gridColumn: '2', justifySelf: 'center', marginLeft: "12rem"}}>
+                <div style={{gridColumn: '2', justifySelf: 'center'}}>
                     <Dropdown2 selectedOption={selectedOption2} handleChange={handleChange2} styling = {dropDownStyling} />
                 </div>
                 <div style={{gridColumn: '3', justifySelf: 'end', marginRight: '2rem'}}>
