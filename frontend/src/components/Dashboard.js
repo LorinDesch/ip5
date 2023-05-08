@@ -32,34 +32,35 @@ function Dashboard() {
 
             <div style={{
                 display: 'grid',
-                gridTemplateColumns: '1.2fr 1fr 2fr',
-                gridTemplateRows: 'auto',
-                gridGap: '1rem',
+                gridTemplateColumns: '700px 500px 700px',
+                gridTemplateRows: '400px 400px',
+                // gridGap: '1rem',
                 alignItems: 'center',
-                marginLeft: "150px", // adjust the marginLeft value to make space for the Navbar
-                marginTop: "50px"
+                justifyItems: 'center',
+                marginLeft: "85px", // adjust the marginLeft value to make space for the Navbar
+                // marginTop: "50px"
             }}>
-                <div>
+                <div style={{justifySelf: 'center', transform: 'scale(0.7)'}}>
                     <SchluesseAusChallenge data={data}/>
-                </div>
-
-                <div style={{justifySelf: 'center'}}>
-                    <TreeImages leftIndex="20" rightIndex="28" isOn={isOn}/>
-                </div>
-
-                <div>
-                    <SchluesseAusChallenge data={data}/>
-                </div>
-
-                <div>
-                    <FeelingsBar data={data} width={800} height={400}/>
                 </div>
 
                 <div>
                     { /* empty div for grid layout */}
                 </div>
 
-                <div style={{justifySelf: 'end'}}>
+                <div style={{gridColumn: '2', gridRow: '2', justifySelf: 'center', transform: 'scale(1)', marginBottom: '260px'}}>
+                    <TreeImages leftIndex="28" rightIndex="28" isOn={isOn}/>
+                </div>
+
+                <div style={{justifySelf: 'center', transform: 'scale(0.7)'}}>
+                    <SchluesseAusChallenge data={data}/>
+                </div>
+
+                <div style={{justifySelf: 'center', transform: 'scale(0.7)', marginTop: '400px'}}>
+                    <FeelingsBar data={data} width={800} height={400}/>
+                </div>
+
+                <div style={{justifySelf: 'center', transform: 'scale(0.7)', marginTop: '400px'}}>
                     <CommitmentsBar data={data} width={800} height={400}/>
                 </div>
             </div>
