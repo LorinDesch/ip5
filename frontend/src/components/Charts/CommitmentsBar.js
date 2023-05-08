@@ -5,6 +5,7 @@ function CommitmentsBar({ data, width, height }) {
 
 
     data = [28, 1, 28, 5, 24, 23, 15,5, 8, 20];
+    const colors = ["blue"];
     const groups = ['Klasse 1', 'Klasse 2', 'Klasse 3', 'Klasse 4', 'Klasse 5', 'Klasse 6', 'Klasse 7', 'Klasse 8', 'Klasse 9', 'Klasse 10'];
 
     const svgRef = useRef();
@@ -21,18 +22,21 @@ function CommitmentsBar({ data, width, height }) {
             .padding(0.5);
 
         const yScale = d3.scaleLinear()
-            .domain([0, 30]) // update y-axis scale domain to [0, 28]
+            .domain([0, 28])
             .range([height, 0]);
 
         const xAxis = d3.axisBottom(xScale)
-            .tickFormat([])
-            .tickSize(0);
+            .tickFormat((value, index) => groups[index])
+            .tickSize(3);
+
         const yAxis = d3.axisLeft(yScale)
-            .ticks(5);
+            .ticks(6)
+            .tickValues([5, 10, 15, 20, 25, 28]);
 
         svg.append('g')
             .call(xAxis)
             .attr('transform', `translate(0, ${height})`);
+
         svg.append('g')
             .call(yAxis);
 
@@ -44,17 +48,32 @@ function CommitmentsBar({ data, width, height }) {
             .attr('y', yScale)
             .attr('width', xScale.bandwidth())
             .attr('height', value => height - yScale(value))
-            .attr('fill', 'blue'); // set the fill color of the bars
+            .attr('fill', 'blue');
 
-        svg.selectAll('.label')
-            .data(data)
-            .join('text')
-            .attr('class', 'label')
-            .attr('x', (value, index) => xScale(index) + xScale.bandwidth() / 2)
-            .attr('y', 0)
-            .attr('transform', (value, index) => `rotate(-45 ${xScale(index) + xScale.bandwidth() / 2} 0)`)
-            .text((value, index) => groups[index]);
+        const legendWidth = 80 * colors.length;
+        const legend = svg.append('g')
+            .attr('transform', `translate(${(width - legendWidth) / 2}, ${height - 20})`);
+
+        legend.selectAll('.legend-item')
+            .data(colors)
+            .join('g')
+            .attr('class', 'legend-item')
+            .attr('transform', (value, index) => `translate(${index * 80}, 0)`)
+            .call(g => {
+                g.append('rect')
+                    .attr('x', 0)
+                    .attr('y', -height)
+                    .attr('width', 15)
+                    .attr('height', 15)
+                    .attr('fill', value => value);
+                g.append('text')
+                    .attr('x', 20)
+                    .attr('y', -height + 13)
+                    .text(`Eingelöste Commitments`);
+            });
+
     }, [data, groups, height, width]);
+
 
 
 
