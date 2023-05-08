@@ -11,6 +11,21 @@ const TopNavbar = ({ isOn, setIsOn }) => { // Receive isOn and setIsOn as props
     const [selectedOption2, setSelectedOption2] = useState('Challenge');
     const [selectedOption3, setSelectedOption3] = useState([]);
 
+    const dropDownStyling = {
+        padding: '12px 38px 12px 12px',
+        border: '2px solid black',
+        borderRadius: '4px',
+        backgroundColor: '#fff',
+        appearance: 'none',
+        fontFamily: 'sans-serif',
+        fontSize: '20px',
+        cursor: 'pointer',
+        backgroundImage: 'url("data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'10\' height=\'6\' viewBox=\'0 0 10 6\'%3E%3Cpath fill=\'%23000000\' fill-rule=\'evenodd\' d=\'M5 6L0 .666666667 1.11111111 0l3.88888889 3.666666667L8.88888889 0 10 .666666667\'/%3E%3C/svg%3E")',
+        backgroundPosition: 'right 10px center',
+        backgroundRepeat: 'no-repeat',
+        backgroundSize: 'auto 30%', // Adjust the size of the arrow here
+    };
+
     const options3 = Array.from(Array(10), (_, index) => ({
         value: `Klasse ${index + 1}`,
         label: `Klasse ${index + 1}`,
@@ -44,10 +59,10 @@ const TopNavbar = ({ isOn, setIsOn }) => { // Receive isOn and setIsOn as props
                 filter: isOn ? 'blur(5px)' : 'none' /* Filter hinzufügen */
             }}>
                 <div style={{gridColumn: '1'}}>
-                    <Dropdown1 selectedOption={selectedOption1} handleChange={handleChange1}/>
+                    <Dropdown1 selectedOption={selectedOption1} handleChange={handleChange1} styling={dropDownStyling}/>
                 </div>
                 <div style={{gridColumn: '2', justifySelf: 'center', marginLeft: "12rem"}}>
-                    <Dropdown2 selectedOption={selectedOption2} handleChange={handleChange2}/>
+                    <Dropdown2 selectedOption={selectedOption2} handleChange={handleChange2} styling = {dropDownStyling} />
                 </div>
                 <div style={{gridColumn: '3', justifySelf: 'end', marginRight: '2rem'}}>
                     <ToggleSwitch leftText="Fake Data" rightText="Real Data" isOn={isOn} handleToggle={handleToggle}

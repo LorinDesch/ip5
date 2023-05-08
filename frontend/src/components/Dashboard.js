@@ -13,7 +13,7 @@ function Dashboard() {
 
 
     useEffect(() => {
-        /*
+
                 const fakeData = {
                     user: "Fake User",
                     inGroup: {
@@ -29,9 +29,9 @@ function Dashboard() {
                     selfCommitments: {
                     }
               }
-         */
 
-        const fakeData = "fakeData" //TODO: replace with real data
+
+        //const fakeData = "fakeData" //TODO: replace with real data
 
         // check if fakeData is already stored in sessionStorage
         const storedData = sessionStorage.getItem('fakeData');
