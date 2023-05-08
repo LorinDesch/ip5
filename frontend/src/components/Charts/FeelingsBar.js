@@ -1,7 +1,7 @@
-import React, { useEffect, useRef } from 'react';
+import React, {useEffect, useRef} from 'react';
 import * as d3 from 'd3';
 
-function CommitmentsBar({ data, width, height }) {
+function CommitmentsBar({data, width, height}) {
 
 
     data = [
@@ -58,7 +58,7 @@ function CommitmentsBar({ data, width, height }) {
             .attr('width', xScale.bandwidth())
             .attr('height', value => height - yScale(value))
             .attr('fill', (value, index) => colors[index % colors.length])
-            .each(function(d, i) {
+            .each(function (d, i) {
                 if (i % 4 === 3) {
                     // Append a line and text to every 4th bar
                     const groupIndex = Math.floor(i / 4);
@@ -83,7 +83,6 @@ function CommitmentsBar({ data, width, height }) {
             });
 
 
-
         const legendWidth = 80 * colors.length;
         const legend = svg.append('g')
             .attr('transform', `translate(${(width - legendWidth) / 2}, ${height - 20})`);
@@ -105,15 +104,16 @@ function CommitmentsBar({ data, width, height }) {
                     .attr('y', -height + 13)
                     .text((value, index) => `Woche ${index + 1}`);
             });
-
-
-
-
     }, [data, height, width, colors]);
 
+    return <svg ref={svgRef}>
+        <text x={width / 2} y={-40} textAnchor="middle" fontWeight="bold">
+            Wie hast du dich über den Verlauf des Selfcomitments gefühlt?
+        </text>
+    </svg>
 
 
-    return <svg ref={svgRef} />;
+        ;
 }
 
 export default CommitmentsBar;

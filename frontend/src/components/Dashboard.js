@@ -4,6 +4,7 @@ import CommitmentsBar from "./Charts/CommitmentsBar";
 import FeelingsBar from "./Charts/FeelingsBar";
 import TopNavbar from "./TopNavbar";
 import Navbar from "./Navbar";
+import SchlüsseAusChallenge from "./SchlüsseAusChallenge";
 
 function Dashboard() {
     const [selectedClasses, setSelectedClasses] = useState([]);
@@ -38,7 +39,7 @@ function Dashboard() {
 
             <div style={{
                 display: 'grid',
-                gridTemplateColumns: '1.2fr 2fr 1fr',
+                gridTemplateColumns: '1.2fr 1fr 2fr',
                 gridTemplateRows: 'auto',
                 gridGap: '1rem',
                 alignItems: 'center',
@@ -46,17 +47,30 @@ function Dashboard() {
                 marginTop: "50px"
             }}>
                 <div>
-                    <FeelingsBar data={data} width={800} height={400}/>
+                    <SchlüsseAusChallenge data={data}/>
                 </div>
 
                 <div style={{justifySelf: 'center'}}>
                     <TreeImages leftIndex="20" rightIndex="28" isOn={isOn}/>
                 </div>
 
+                <div>
+                    <SchlüsseAusChallenge data={data}/>
+                </div>
+
+                <div>
+                    <FeelingsBar data={data} width={800} height={400}/>
+                </div>
+
+                <div>
+                    { /* empty div for grid layout */ }
+                </div>
+
                 <div style={{justifySelf: 'end'}}>
-                    <CommitmentsBar data={data} width={500} height={500}/>
+                    <CommitmentsBar data={data} width={800} height={400}/>
                 </div>
             </div>
+
         </div>
     );
 
