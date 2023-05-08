@@ -64,6 +64,22 @@ const Dropdown3 = ({ options, selectedOptions, onChange, styling }) => {
         userSelect: 'none',
     };
 
+    const checkboxStyle = {
+        marginRight: '10px',
+        transform: 'scale(1.5)',
+        cursor: 'pointer',
+    };
+
+    const labelStyle = {
+        display: 'inline-flex',
+        alignItems: 'center',
+        cursor: 'pointer',
+    };
+
+    const labelTextStyle = {
+        marginLeft: '5px',
+    };
+
     return (
         <div style={dropdownStyle}>
             <button style={buttonStyle} onClick={handleToggleDropdown}>
@@ -72,8 +88,16 @@ const Dropdown3 = ({ options, selectedOptions, onChange, styling }) => {
             <ul style={ulStyle}>
                 {options.map((option) => (
                     <li key={option.value} style={liStyle}>
-                        <input type="checkbox" checked={selectedOptions.includes(option.value)} onChange={(event) => handleCheckboxChange(event, option.value)} style={{ marginRight: '10px' }} />
-                        {option.label}
+                        <label htmlFor={option.value} style={labelStyle}>
+                            <input
+                                type="checkbox"
+                                id={option.value}
+                                checked={selectedOptions.includes(option.value)}
+                                onChange={(event) => handleCheckboxChange(event, option.value)}
+                                style={checkboxStyle}
+                            />
+                            <span style={labelTextStyle}>{option.label}</span>
+                        </label>
                     </li>
                 ))}
             </ul>

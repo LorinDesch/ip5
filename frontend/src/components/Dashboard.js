@@ -23,14 +23,6 @@ function Dashboard() {
         }
     }, []);
 
-    const handleCheckboxChange = (event, optionValue) => {
-        if (event.target.checked) {
-            setSelectedClasses([...selectedClasses, optionValue]);
-        } else {
-            setSelectedClasses(selectedClasses.filter((value) => value !== optionValue));
-        }
-    };
-
     return (
         <div>
             <div style={{marginLeft: "100px"}}>
