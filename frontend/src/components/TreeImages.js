@@ -14,13 +14,13 @@ const TreeImages = ({ leftIndex, rightIndex, isOn }) => {
         marginLeft: '-30rem',
         width: '60rem',
         height: 'auto',
-        filter: isOn ? 'blur(5px)' : 'none'
+        //filter: isOn ? 'blur(5px)' : 'none'
     };
     const imageStylesLeft = {
         marginRight: '-30rem',
         width: '60rem',
         height: 'auto',
-        filter: isOn ? 'blur(5px)' : 'none'
+        //filter: isOn ? 'blur(5px)' : 'none'
     };
 
     return (

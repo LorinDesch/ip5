@@ -6,27 +6,12 @@ import TopNavbar from "./TopNavbar";
 import SideNavbar from "./SideNavbar";
 import SchluesseAusChallenge from "./SchluesseAusChallenge";
 
-function Dashboard() {
-    const [selectedClasses, setSelectedClasses] = useState([]);
-    const [isOn, setIsOn] = useState(false);
-    const [data] = useState([200, 30, 160, 50, 300, 400]);
-
-
-    useEffect(() => {
-
-        const fakeData = "fakeData" //TODO: replace with real data
-
-        // check if fakeData is already stored in sessionStorage
-        const storedData = sessionStorage.getItem('fakeData');
-        if (!storedData) {
-            sessionStorage.setItem('fakeData', JSON.stringify(fakeData));
-        }
-    }, []);
+function Dashboard({fakeData, isOn, setIsOn}) {
 
     return (
         <div>
             <div style={{marginLeft: "100px"}}>
-                <TopNavbar isOn={isOn} setIsOn={setIsOn}/>
+                <TopNavbar isOn={isOn} setIsOn={setIsOn} fakeData={fakeData}/>
             </div>
             <SideNavbar/>
 
@@ -40,7 +25,7 @@ function Dashboard() {
                 marginTop: "50px"
             }}>
                 <div>
-                    <SchluesseAusChallenge data={data}/>
+                    <SchluesseAusChallenge data={fakeData}/>
                 </div>
 
                 <div style={{justifySelf: 'center'}}>
@@ -48,11 +33,11 @@ function Dashboard() {
                 </div>
 
                 <div>
-                    <SchluesseAusChallenge data={data}/>
+                    <SchluesseAusChallenge data={fakeData}/>
                 </div>
 
                 <div>
-                    <FeelingsBar data={data} width={800} height={400}/>
+                    <FeelingsBar data={fakeData} width={800} height={400}/>
                 </div>
 
                 <div>
@@ -60,7 +45,7 @@ function Dashboard() {
                 </div>
 
                 <div style={{justifySelf: 'end'}}>
-                    <CommitmentsBar data={data} width={800} height={400}/>
+                    <CommitmentsBar data={fakeData} width={800} height={400}/>
                 </div>
             </div>
 

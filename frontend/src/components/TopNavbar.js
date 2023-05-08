@@ -6,7 +6,7 @@ import Dropdown3 from "./Dropdown3";
 import React from "react";
 import Login from "./Login";
 
-const TopNavbar = ({ isOn, setIsOn }) => { // Receive isOn and setIsOn as props
+const TopNavbar = ({fakeData, isOn, setIsOn}) => { // Receive isOn and setIsOn as props
     const [selectedOption1, setSelectedOption1] = useState('Ich');
     const [selectedOption2, setSelectedOption2] = useState('Challenge');
     const [selectedOption3, setSelectedOption3] = useState([]);
@@ -48,6 +48,7 @@ const TopNavbar = ({ isOn, setIsOn }) => { // Receive isOn and setIsOn as props
         setIsOn(checked);
     };
 
+
     return (
         <div>
             <div style={{
@@ -62,14 +63,15 @@ const TopNavbar = ({ isOn, setIsOn }) => { // Receive isOn and setIsOn as props
                     <Dropdown1 selectedOption={selectedOption1} handleChange={handleChange1} styling={dropDownStyling}/>
                 </div>
                 <div style={{gridColumn: '2', justifySelf: 'center'}}>
-                    <Dropdown2 selectedOption={selectedOption2} handleChange={handleChange2} styling = {dropDownStyling} />
+                    <Dropdown2 selectedOption={selectedOption2} handleChange={handleChange2} styling={dropDownStyling}/>
                 </div>
                 <div style={{gridColumn: '3', justifySelf: 'end', marginRight: '2rem'}}>
                     <ToggleSwitch leftText="Fake Data" rightText="Real Data" isOn={isOn} handleToggle={handleToggle}
                                   style={{marginRight: '1rem'}}/>
                 </div>
                 <div style={{gridColumn: '4', justifySelf: 'end', marginRight: '0.5rem'}}>
-                    <Dropdown3 options={options3} selectedOptions={selectedOption3} onChange={handleChange3}  styling = {dropDownStyling} />
+                    <Dropdown3 options={options3} selectedOptions={selectedOption3} onChange={handleChange3}
+                               styling={dropDownStyling}/>
                 </div>
             </div>
             {isOn && (
@@ -86,7 +88,7 @@ const TopNavbar = ({ isOn, setIsOn }) => { // Receive isOn and setIsOn as props
                     //background: 'rgba(255, 255, 255, 0.01)', /* Hintergrund hinzufügen */
                     zIndex: 999 /* Z-Index hinzufügen */
                 }}>
-                    <Login onClose={() => setIsOn(false)}/>
+                    <Login onClose={() => setIsOn(false)} setIsOn={setIsOn}/> {/* Pass setIsOn down to Login */}
                 </div>
             )}
         </div>
