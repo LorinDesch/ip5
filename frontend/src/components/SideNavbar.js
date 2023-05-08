@@ -44,8 +44,6 @@ const SideNavbar = () => {
             flexGrow: 1,
             maxWidth: '50',
             maxHeight: '50',
-            // fügen Sie hier das id-Attribut hinzu
-            id: '',
         },
 
         text: {
@@ -103,6 +101,8 @@ const SideNavbar = () => {
         e.target.style.transform = 'scale(1.2)';
     };
 
+
+
     return (
         <div style={styles.navbar}>
             <div style={styles.iconWrapper}>
@@ -111,8 +111,8 @@ const SideNavbar = () => {
                     id="home"
                     style={
                         selectedTab === "home"
-                            ? { ...styles.icon, color: "#5E7839", transform: "scale(1.2)" }
-                            : { ...styles.icon, color: "black" }
+                            ? {...styles.icon, color: "#5E7839", transform: "scale(1.2)"}
+                            : {...styles.icon, color: "black"}
                     }
                     onMouseEnter={handleIconHover}
                     onMouseLeave={handleIconLeave}
@@ -125,8 +125,8 @@ const SideNavbar = () => {
                     id="difficulty"
                     style={
                         selectedTab === "difficulty"
-                            ? { ...styles.icon, color: "#5E7839", transform: "scale(1.2)" }
-                            : { ...styles.icon, color: "black" }
+                            ? {...styles.icon, color: "#5E7839", transform: "scale(1.2)"}
+                            : {...styles.icon, color: "black"}
                     }
                     onMouseEnter={handleIconHover}
                     onMouseLeave={handleIconLeave}
@@ -139,8 +139,8 @@ const SideNavbar = () => {
                     id="restriction"
                     style={
                         selectedTab === "restriction"
-                            ? { ...styles.icon, color: "#5E7839", transform: "scale(1.2)" }
-                            : { ...styles.icon, color: "black" }
+                            ? {...styles.icon, color: "#5E7839", transform: "scale(1.2)"}
+                            : {...styles.icon, color: "black"}
                     }
                     onMouseEnter={handleIconHover}
                     onMouseLeave={handleIconLeave}
@@ -153,22 +153,22 @@ const SideNavbar = () => {
                     id="environment"
                     style={
                         selectedTab === "environment"
-                            ? { ...styles.icon, color: "#5E7839", transform: "scale(1.2)" }
-                            : { ...styles.icon, color: "black" }
+                            ? {...styles.icon, color: "#5E7839", transform: "scale(1.2)"}
+                            : {...styles.icon, color: "black"}
                     }
                     onMouseEnter={handleIconHover}
                     onMouseLeave={handleIconLeave}
                     onClick={handleIconClick}
                 />
             </div>
-            <div style={{ marginLeft: "0.9rem" }}>
+            <div style={{marginLeft: "0.9rem"}}>
                 <div style={styles.text}>Current Contribution</div>
                 <FaChartBar
                     id="currentcontribution"
                     style={
                         selectedTab === "currentcontribution"
-                            ? { ...styles.icon, color: "#5E7839", transform: "scale(1.2)" }
-                            : { ...styles.icon, color: "black" }
+                            ? {...styles.icon, color: "#5E7839", transform: "scale(1.2)"}
+                            : {...styles.icon, color: "black"}
                     }
                     onMouseEnter={handleIconHover}
                     onMouseLeave={handleIconLeave}
@@ -181,22 +181,22 @@ const SideNavbar = () => {
                     id="allowsmeto"
                     style={
                         selectedTab === "allowsmeto"
-                            ? { ...styles.icon, color: "#5E7839", transform: "scale(1.2)" }
-                            : { ...styles.icon, color: "black" }
+                            ? {...styles.icon, color: "#5E7839", transform: "scale(1.2)"}
+                            : {...styles.icon, color: "black"}
                     }
                     onMouseEnter={handleIconHover}
                     onMouseLeave={handleIconLeave}
                     onClick={handleIconClick}
                 />
             </div>
-            <div style={{ marginLeft: "0.9rem" }}>
+            <div style={styles.iconWrapper}>
                 <div style={styles.text}>Sustainable Development</div>
                 <FaChartBar
                     id="sustainabledevelopment"
                     style={
                         selectedTab === "sustainabledevelopment"
-                            ? { ...styles.icon, color: "#5E7839", transform: "scale(1.2)" }
-                            : { ...styles.icon, color: "black" }
+                            ? {...styles.icon, color: "#5E7839", transform: "scale(1.2)"}
+                            : {...styles.icon, color: "black"}
                     }
                     onMouseEnter={handleIconHover}
                     onMouseLeave={handleIconLeave}
