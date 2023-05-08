@@ -4,7 +4,7 @@ import CommitmentsBar from "./Charts/CommitmentsBar";
 import FeelingsBar from "./Charts/FeelingsBar";
 import TopNavbar from "./TopNavbar";
 import Navbar from "./Navbar";
-import SchlüsseAusChallenge from "./SchlüsseAusChallenge";
+import SchluesseAusChallenge from "./SchluesseAusChallenge";
 
 function Dashboard() {
     const [selectedClasses, setSelectedClasses] = useState([]);
@@ -47,7 +47,7 @@ function Dashboard() {
                 marginTop: "50px"
             }}>
                 <div>
-                    <SchlüsseAusChallenge data={data}/>
+                    <SchluesseAusChallenge data={data}/>
                 </div>
 
                 <div style={{justifySelf: 'center'}}>
@@ -55,7 +55,7 @@ function Dashboard() {
                 </div>
 
                 <div>
-                    <SchlüsseAusChallenge data={data}/>
+                    <SchluesseAusChallenge data={data}/>
                 </div>
 
                 <div>
