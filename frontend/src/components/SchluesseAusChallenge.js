@@ -9,16 +9,19 @@ const SchluesseAusChallenge = ({data}) => {
 
     return (
         <div>
-            <h1>bei dir selbst</h1>
+
+            <h1> Schlüsse aus der Challenge</h1>
+
+            <h2>bei dir selbst</h2>
             <p>{beiDirSelbst}</p>
 
-            <h1>soziales Umfeld</h1>
+            <h2>in deinem sozialen Umfeld</h2>
             <p>{sozialUmfeld}</p>
 
-            <h1>politisch</h1>
+            <h2>auf politischer Ebene</h2>
             <p>{politisch}</p>
 
-            <h1>produkt</h1>
+            <h2>auf Ebene Produktherstellung</h2>
             <p>{produkt}</p>
         </div>
     );
