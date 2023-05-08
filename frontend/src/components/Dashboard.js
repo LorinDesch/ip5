@@ -3,7 +3,7 @@ import TreeImages from "./TreeImages";
 import CommitmentsBar from "./Charts/CommitmentsBar";
 import FeelingsBar from "./Charts/FeelingsBar";
 import TopNavbar from "./TopNavbar";
-import Navbar from "./Navbar";
+import SideNavbar from "./SideNavbar";
 import SchluesseAusChallenge from "./SchluesseAusChallenge";
 
 function Dashboard() {
@@ -28,7 +28,7 @@ function Dashboard() {
             <div style={{marginLeft: "100px"}}>
                 <TopNavbar isOn={isOn} setIsOn={setIsOn}/>
             </div>
-            <Navbar/>
+            <SideNavbar/>
 
             <div style={{
                 display: 'grid',
@@ -36,7 +36,7 @@ function Dashboard() {
                 gridTemplateRows: 'auto',
                 gridGap: '1rem',
                 alignItems: 'center',
-                marginLeft: "150px", // adjust the marginLeft value to make space for the Navbar
+                marginLeft: "150px", // adjust the marginLeft value to make space for the SideNavbar
                 marginTop: "50px"
             }}>
                 <div>
