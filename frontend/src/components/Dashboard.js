@@ -13,6 +13,24 @@ function Dashboard() {
 
 
     useEffect(() => {
+        /*
+                const fakeData = {
+                    user: "Fake User",
+                    inGroup: {
+                        "1": "Fake Group 1",
+                    },
+                    totalGroups: {
+                        "1": "Fake Group 1",
+                        "2": "Fake Group 2",
+                        "3": "Fake Group 3",
+                        "4": "Fake Group 4",
+                        "5": "Fake Group 5",
+                    },
+                    selfCommitments: {
+                    }
+              }
+         */
+
         const fakeData = "fakeData" //TODO: replace with real data
 
         // check if fakeData is already stored in sessionStorage
@@ -63,7 +81,7 @@ function Dashboard() {
                 </div>
 
                 <div>
-                    { /* empty div for grid layout */ }
+                    { /* empty div for grid layout */}
                 </div>
 
                 <div style={{justifySelf: 'end'}}>
