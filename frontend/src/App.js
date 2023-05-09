@@ -99,16 +99,46 @@ const App = () => {
                                                     setSelectedOption2={setSelectedOption2}
                                                     selectedOption3={selectedOption3}
                                                     setSelectedOption3={setSelectedOption3}/>}/>
-                <Route path="/difficulty" element={<DifficultyComparison/>}/> { /* Schwierigkeit */}
-                <Route path="/restriction" element={<RestrictionComparison/>}/> { /* Einschränkung */}
+                <Route path="/difficulty" element={<DifficultyComparison fakeData={fakeData} selectedOption1={selectedOption1}
+                                                                         setSelectedOption1={setSelectedOption1}
+                                                                         selectedOption2={selectedOption2}
+                                                                         setSelectedOption2={setSelectedOption2}
+                                                                         selectedOption3={selectedOption3}
+                                                                         setSelectedOption3={setSelectedOption3}/>}/> { /* Schwierigkeit */}
+                <Route path="/restriction" element={<RestrictionComparison fakeData={fakeData} selectedOption1={selectedOption1}
+                                                                           setSelectedOption1={setSelectedOption1}
+                                                                           selectedOption2={selectedOption2}
+                                                                           setSelectedOption2={setSelectedOption2}
+                                                                           selectedOption3={selectedOption3}
+                                                                           setSelectedOption3={setSelectedOption3}/>}/> { /* Einschränkung */}
                 <Route path="/environment"
-                       element={<EnvironmentComparison/>}/> { /*  Umfeld reagiert positiv / negativ */}
+                       element={<EnvironmentComparison fakeData={fakeData} selectedOption1={selectedOption1}
+                                                       setSelectedOption1={setSelectedOption1}
+                                                       selectedOption2={selectedOption2}
+                                                       setSelectedOption2={setSelectedOption2}
+                                                       selectedOption3={selectedOption3}
+                                                       setSelectedOption3={setSelectedOption3}/>}/> { /*  Umfeld reagiert positiv / negativ */}
                 <Route path="/currentcontribution"
-                       element={<CurrentContributionComparison/>}/> { /* aktueller Beitrag Nachhaltigkeit */}
+                       element={<CurrentContributionComparison fakeData={fakeData} selectedOption1={selectedOption1}
+                                                               setSelectedOption1={setSelectedOption1}
+                                                               selectedOption2={selectedOption2}
+                                                               setSelectedOption2={setSelectedOption2}
+                                                               selectedOption3={selectedOption3}
+                                                               setSelectedOption3={setSelectedOption3}/>}/> { /* aktueller Beitrag Nachhaltigkeit */}
                 <Route path="/allowsmeto"
-                       element={<AllowsMeToComparison/>}/> { /* Verantwortung übernehmen / Erwartungen nachkommen */}
+                       element={<AllowsMeToComparison fakeData={fakeData} selectedOption1={selectedOption1}
+                                                      setSelectedOption1={setSelectedOption1}
+                                                      selectedOption2={selectedOption2}
+                                                      setSelectedOption2={setSelectedOption2}
+                                                      selectedOption3={selectedOption3}
+                                                      setSelectedOption3={setSelectedOption3}/>}/> { /* Verantwortung übernehmen / Erwartungen nachkommen */}
                 <Route path="/sustainabledevelopment" element={
-                    <SustainableDevelopmentComparison/>}/> { /* trägt zu einer nachhaltigen Entwicklung bei */}
+                    <SustainableDevelopmentComparison fakeData={fakeData} selectedOption1={selectedOption1}
+                                                      setSelectedOption1={setSelectedOption1}
+                                                      selectedOption2={selectedOption2}
+                                                      setSelectedOption2={setSelectedOption2}
+                                                      selectedOption3={selectedOption3}
+                                                      setSelectedOption3={setSelectedOption3}/>}/> { /* trägt zu einer nachhaltigen Entwicklung bei */}
             </Routes>
         </Router>
     );

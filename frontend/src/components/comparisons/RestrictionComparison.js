@@ -4,14 +4,21 @@ import Difficulty from "../Charts/Difficulty";
 import SideNavbar from "../SideNavbar";
 import {Col, Container, Row} from "react-bootstrap";
 
-const DifficultyComparison = ({data}) => {
+const DifficultyComparison = ({data, width, height, fakeData, selectedOption1, selectedOption3, selectedOption2, setSelectedOption1, setSelectedOption2, setSelectedOption3}) => {
+
 
     data = [200, 30, 160, 50, 300, 400];
 
     return (
+
         <>
             <header style={{marginLeft: '7rem', marginTop: '0.5rem'}}>
-                <TopNavbar />
+                <TopNavbar fakeData={fakeData} selectedOption1={selectedOption1}
+                           setSelectedOption1={setSelectedOption1}
+                           selectedOption2={selectedOption2}
+                           setSelectedOption2={setSelectedOption2}
+                           selectedOption3={selectedOption3}
+                           setSelectedOption3={setSelectedOption3}/>
             </header>
             <div style={{
                 position: 'fixed',
