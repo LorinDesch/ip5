@@ -5,7 +5,8 @@ import Dropdown3 from "./Dropdown3";
 import React from "react";
 import Login from "./Login";
 
-const TopNavbar = ({  }) => {
+
+const TopNavbar = ({ isOn, setIsOn, fakeData, setChangeableFakeData, changeableFakeData }) => { // Receive isOn and setIsOn as props
     const [selectedOption1, setSelectedOption1] = useState('Ich');
     const [selectedOption2, setSelectedOption2] = useState('Challenge');
     const [selectedOption3, setSelectedOption3] = useState([]);
@@ -25,10 +26,11 @@ const TopNavbar = ({  }) => {
         backgroundSize: 'auto 30%', // Adjust the size of the arrow here
     };
 
-    const options3 = Array.from(Array(10), (_, index) => ({
-        value: `Klasse ${index + 1}`,
-        label: `Klasse ${index + 1}`,
+    const options3 = fakeData.groups.map((item) => ({
+        value: item.groupname,
+        label: item.groupname,
     }));
+
 
     const handleChange1 = (event) => {
         setSelectedOption1(event.target.value);
@@ -60,7 +62,7 @@ const TopNavbar = ({  }) => {
                 <div style={{gridColumn: '3', justifySelf: 'end', marginRight: '2rem'}}>
                 </div>
                 <div style={{gridColumn: '4', justifySelf: 'end', marginRight: '0.5rem'}}>
-                    <Dropdown3 options={options3} selectedOptions={selectedOption3} onChange={handleChange3}  styling = {dropDownStyling} />
+                    <Dropdown3 options={options3} selectedOptions={selectedOption3} onChange={handleChange3}  styling = {dropDownStyling} setChangeableFakeData={setChangeableFakeData} changeableFakeData={changeableFakeData} />
                 </div>
             </div>
         </div>

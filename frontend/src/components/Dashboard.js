@@ -7,22 +7,17 @@ import TreeImages from './TreeImages';
 import FeelingsBar from './Charts/FeelingsBar';
 import CommitmentsBar from './Charts/CommitmentsBar';
 
-function Dashboard() {
-    const [data] = useState([200, 30, 160, 50, 300, 400]);
 
-    useEffect(() => {
-        const fakeData = 'fakeData'; //TODO: replace with real data
-        // check if fakeData is already stored in sessionStorage
-        const storedData = sessionStorage.getItem('fakeData');
-        if (!storedData) {
-            sessionStorage.setItem('fakeData', JSON.stringify(fakeData));
-        }
-    }, []);
+
+function Dashboard({fakeData, setChangeableFakeData,changeableFakeData}) {
+    const [isOn, setIsOn] = useState(false);
+    const [data] = useState([200, 30, 160, 50, 300, 400]);
 
     return (
         <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
             <header style={{ marginLeft: '7rem', marginTop: '0.5rem' }}>
-                <TopNavbar />
+
+<TopNavbar isOn={isOn} setIsOn={setIsOn} fakeData={fakeData} setChangeableFakeData={setChangeableFakeData} changeableFakeData={changeableFakeData} />
             </header>
 
             {/*<div style={{ display: 'flex', flex: '1', overflow: 'hidden' }}>*/}
@@ -57,7 +52,6 @@ function Dashboard() {
                                     <FeelingsBar data={data} width={600} height={180} />
                                 </div>
                             </Col>
-
                             <Col md={4} style={{marginBottom: '6rem'}}>
                                 <div className="d-flex justify-content-center align-items-center text-center"
                                      style={{height: '1%', transform: 'scale(0.95)', marginRight: '11rem', marginTop: '-1rem'}}>

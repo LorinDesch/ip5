@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const Dropdown3 = ({ options, selectedOptions, onChange, styling }) => {
+const Dropdown3 = ({ options, selectedOptions, onChange, styling, setChangeableFakeData, changeableFakeData  }) => {
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
     const handleToggleDropdown = () => {
@@ -10,8 +10,12 @@ const Dropdown3 = ({ options, selectedOptions, onChange, styling }) => {
     const handleCheckboxChange = (event, optionValue) => {
         if (event.target.checked) {
             onChange([...selectedOptions, optionValue]);
+            // Append the new value to changeableFakeData
+            setChangeableFakeData((prevData) => [...prevData, optionValue]);
         } else {
             onChange(selectedOptions.filter((value) => value !== optionValue));
+            // Remove the value from changeableFakeData
+            setChangeableFakeData((prevData) => prevData.filter((value) => value !== optionValue));
         }
     };
 
