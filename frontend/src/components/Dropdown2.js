@@ -1,12 +1,11 @@
 import React from 'react';
 
-const Dropdown2 = ({ selectedOption, handleChange, styling }) => {
-    const options = ['Challenge', 'Reduktion Wasserverbrauch', 'Reduktion Stromverbrauch', 'Reduktion Fleischkonsum'];
+const Dropdown2 = ({ fakeData, onChange, styling, options, changeableFakeData, setChangeableFakeData,selectedOptions2 }) => {
 
     return (
-        <select value={selectedOption} onChange={handleChange} style={styling}>
+        <select value={selectedOptions2} onChange={onChange} style={styling}>
             {options.map((option) => (
-                <option key={option} value={option} style={styling}>
+                <option key={option} style={styling}>
                     {option}
                 </option>
             ))}

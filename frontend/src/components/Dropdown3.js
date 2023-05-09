@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 
-const Dropdown3 = ({ options, selectedOptions, onChange, styling }) => {
+const Dropdown3 = ({ options, selectedOptions, onChange, styling, fakeData  }) => {
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
-    const handleToggleDropdown = () => {
+    const handleDropdown3 = () => {
         setIsDropdownOpen(!isDropdownOpen);
     };
 
@@ -14,6 +14,8 @@ const Dropdown3 = ({ options, selectedOptions, onChange, styling }) => {
             onChange(selectedOptions.filter((value) => value !== optionValue));
         }
     };
+
+
 
     const dropdownStyle = {
         position: 'relative',
@@ -82,7 +84,7 @@ const Dropdown3 = ({ options, selectedOptions, onChange, styling }) => {
 
     return (
         <div style={dropdownStyle}>
-            <button style={buttonStyle} onClick={handleToggleDropdown}>
+            <button style={buttonStyle} onClick={handleDropdown3}>
                 {selectedOptions.length === 0 ? 'Klassen auswählen' : `${selectedOptions.length} ${selectedOptions.length === 1 ? 'Klasse' : 'Klassen'} ausgewählt`}
             </button>
             <ul style={ulStyle}>

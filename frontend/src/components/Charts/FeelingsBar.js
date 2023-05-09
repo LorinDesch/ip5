@@ -1,18 +1,22 @@
 import React, {useEffect, useRef} from 'react';
 import * as d3 from 'd3';
 
-function CommitmentsBar({data, width, height}) {
+function CommitmentsBar({fakeData, selectedOption1, setSelectedOption1, selectedOption2, setSelectedOption2, selectedOption3, setSelectedOption3 , width, height}) {
+
+    console.log("fakeData ", fakeData)
+    console.log("selectedOption1 ", selectedOption1)
+    console.log("selectedOption2 ", selectedOption2)
+    console.log("selectedOption3 ", selectedOption3)
 
 
-    data = [
-        0.5, 0.8, 0.2, 0.1,
-        0.8, 0.7, 0.8, 0.8,
-        0.5, 0.8, 0.2, 0.1,
-        0.8, 0.7, 0.8, 0.8,
-        0.5, 0.8, 0.2, 0.1,
-        0.8, 0.7, 0.8, 0.8,
-        0.5, 0.8, 0.2, 0.1,
-    ];
+    // Get the selected commitment ID based on the selectedOption2
+    const selectedCommitmentId = selectedOption2 === 'Challenge' ? 0 : fakeData.commitments.find(commitment => commitment.commitmentname === selectedOption2).commitmentid;
+
+    // Get the feelings array based on the selectedCommitmentId
+    const feelingsArray = fakeData.diary.filter(diary => diary.commitmentid === selectedCommitmentId).map(diary => diary.feelings);
+
+    // Merge all the feelings arrays into a single array
+    const data = feelingsArray.reduce((acc, feelings) => [...acc, ...feelings], []);
 
     const colors = ['green', 'grey', 'red', 'blue'];
     const yAxisLabels = ['schlecht', 'gelassen', 'grossartig'];
