@@ -4,14 +4,13 @@ import Difficulty from "../Charts/Difficulty";
 import SideNavbar from "../SideNavbar";
 
 const DifficultyComparison = ({data, width, height}) => {
-    const [isOn, setIsOn] = useState(false);
 
     data = [200, 30, 160, 50, 300, 400];
 
     return (
         <div>
             <div style={{marginLeft: "100px"}}>
-                <TopNavbar isOn={isOn} setIsOn={setIsOn}/>
+                <TopNavbar/>
             </div>
             <SideNavbar/>
 

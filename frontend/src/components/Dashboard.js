@@ -8,7 +8,6 @@ import FeelingsBar from './Charts/FeelingsBar';
 import CommitmentsBar from './Charts/CommitmentsBar';
 
 function Dashboard() {
-    const [isOn, setIsOn] = useState(false);
     const [data] = useState([200, 30, 160, 50, 300, 400]);
 
     useEffect(() => {
@@ -23,7 +22,7 @@ function Dashboard() {
     return (
         <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
             <header style={{ marginLeft: '7rem', marginTop: '0.5rem' }}>
-                <TopNavbar isOn={isOn} setIsOn={setIsOn} />
+                <TopNavbar />
             </header>
 
             {/*<div style={{ display: 'flex', flex: '1', overflow: 'hidden' }}>*/}
@@ -62,7 +61,7 @@ function Dashboard() {
                             <Col md={4} style={{marginBottom: '6rem'}}>
                                 <div className="d-flex justify-content-center align-items-center text-center"
                                      style={{height: '1%', transform: 'scale(0.95)', marginRight: '11rem', marginTop: '-1rem'}}>
-                                    <TreeImages leftIndex="28" rightIndex="28" isOn={isOn}/>
+                                    <TreeImages leftIndex="28" rightIndex="28"/>
                                 </div>
 
                             </Col>

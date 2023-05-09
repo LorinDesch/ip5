@@ -1,6 +1,6 @@
 import React from 'react';
 
-const TreeImages = ({ leftIndex, rightIndex, isOn }) => {
+const TreeImages = ({ leftIndex, rightIndex }) => {
     const leftImagePath = `${process.env.PUBLIC_URL}/images/tree_left/l${leftIndex}-min-min.png`;
     const rightImagePath = `${process.env.PUBLIC_URL}/images/tree_right/r${rightIndex}-min-min.png`;
 
@@ -14,13 +14,11 @@ const TreeImages = ({ leftIndex, rightIndex, isOn }) => {
         marginLeft: '-30rem',
         width: '60rem',
         height: 'auto',
-        filter: isOn ? 'blur(5px)' : 'none'
     };
     const imageStylesLeft = {
         marginRight: '-30rem',
         width: '60rem',
         height: 'auto',
-        filter: isOn ? 'blur(5px)' : 'none'
     };
 
     return (
