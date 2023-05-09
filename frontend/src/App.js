@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import Dashboard from "./components/Dashboard";
 import DifficultyComparison from "./components/comparisons/DifficultyComparison";
@@ -99,7 +99,7 @@ const App = () => {
             {
                 diaryid: 3,
                 userid: 3,
-                commitmentid: 2,
+                commitmentid: 1,
                 schluesse: {
                     selbst: "Ich ernähre mich jetzt gesünder",
                     sozial: "Meine Freunde haben grad mitgemacht",
@@ -117,9 +117,22 @@ const App = () => {
             },
         ]
     });
-    const [selectedOption1, setSelectedOption1] = useState('Peter Mueller');
-    const [selectedOption2, setSelectedOption2] = useState('Challenge');
-    const [selectedOption3, setSelectedOption3] = useState([]);
+    const [selectedOption1, setSelectedOption1] = useState(
+        localStorage.getItem('selectedOption1') || 'Peter Mueller'
+    );
+    const [selectedOption2, setSelectedOption2] = useState(
+        localStorage.getItem('selectedOption2') || 'Challenge'
+    );
+    const [selectedOption3, setSelectedOption3] = useState(
+        JSON.parse(localStorage.getItem('selectedOption3')) || []
+    );
+    console.log("App.js fakeData: ", fakeData);
+
+    useEffect(() => {
+        localStorage.setItem('selectedOption1', selectedOption1);
+        localStorage.setItem('selectedOption2', selectedOption2);
+        localStorage.setItem('selectedOption3', JSON.stringify(selectedOption3));
+    }, [selectedOption1, selectedOption2, selectedOption3]);
     console.log("App.js fakeData: ", fakeData);
 
     return (

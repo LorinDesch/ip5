@@ -6,8 +6,13 @@ function CommitmentsBar({fakeData, selectedOption1, setSelectedOption1, selected
     // Get the selected commitment ID based on the selectedOption2
     const selectedCommitmentId = selectedOption2 === 'Challenge' ? 0 : fakeData.commitments.find(commitment => commitment.commitmentname === selectedOption2).commitmentid;
 
+
+    console.log("selectedCommitmentId", selectedCommitmentId)
+
     // Get the feelings array based on the selectedCommitmentId
     const feelingsArray = fakeData.diary.filter(diary => diary.commitmentid === selectedCommitmentId).map(diary => diary.feelings);
+
+    console.log("fakeData.diary", fakeData.diary)
 
     // Merge all the feelings arrays into a single array
     //TODO: const data = feelingsArray.reduce((acc, feelings) => [...acc, ...feelings], []);
@@ -19,6 +24,7 @@ function CommitmentsBar({fakeData, selectedOption1, setSelectedOption1, selected
             return acc;
         }
     }, []);
+    console.log("data", data)
 
     const colors = ['green', 'grey', 'red', 'blue'];
     const yAxisLabels = ['schlecht', 'gelassen', 'grossartig'];
