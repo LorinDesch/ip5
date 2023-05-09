@@ -16,7 +16,15 @@ function CommitmentsBar({fakeData, selectedOption1, setSelectedOption1, selected
     const feelingsArray = fakeData.diary.filter(diary => diary.commitmentid === selectedCommitmentId).map(diary => diary.feelings);
 
     // Merge all the feelings arrays into a single array
-    const data = feelingsArray.reduce((acc, feelings) => [...acc, ...feelings], []);
+    //TODO: const data = feelingsArray.reduce((acc, feelings) => [...acc, ...feelings], []);
+    //TODO fix for now
+    const data = feelingsArray.reduce((acc, feelings, index) => {
+        if (index === 0) {
+            return [...acc, ...feelings];
+        } else {
+            return acc;
+        }
+    }, []);
 
     const colors = ['green', 'grey', 'red', 'blue'];
     const yAxisLabels = ['schlecht', 'gelassen', 'grossartig'];
@@ -84,6 +92,7 @@ function CommitmentsBar({fakeData, selectedOption1, setSelectedOption1, selected
             .attr('height', value => height - yScale(value))
             .attr('fill', (value, index) => colors[index % colors.length]);
 
+
         group.each(function (d, i) {
             if (i % 4 === 3) {
                 // Append a line and text to every 4th bar
@@ -106,6 +115,8 @@ function CommitmentsBar({fakeData, selectedOption1, setSelectedOption1, selected
                     .text(groups[groupIndex])
             }
         });
+
+
 
 
         const legendWidth = 80 * colors.length;

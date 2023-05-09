@@ -5,9 +5,7 @@ import Dropdown3 from "./Dropdown3";
 import React from "react";
 import Login from "./Login";
 
-
 const TopNavbar = ({fakeData, selectedOption3, selectedOption2, selectedOption1, setSelectedOption1, setSelectedOption2, setSelectedOption3 }) => {
-
     const dropDownStyling = {
         padding: '12px 38px 12px 12px',
         border: '2px solid black',
