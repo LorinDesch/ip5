@@ -1,10 +1,10 @@
-import React, { useEffect, useRef } from 'react';
+import React, {useEffect, useRef} from 'react';
 import * as d3 from 'd3';
 
-function CommitmentsBar({ data, width, height }) {
+function CommitmentsBar({data, width, height}) {
 
 
-    data = [28, 1, 28, 5, 24, 23, 15,5, 8, 20];
+    data = [28, 1, 28, 5, 24, 23, 15, 5, 8, 20];
     const colors = ["blue"];
     const groups = ['Klasse 1', 'Klasse 2', 'Klasse 3', 'Klasse 4', 'Klasse 5', 'Klasse 6', 'Klasse 7', 'Klasse 8', 'Klasse 9', 'Klasse 10'];
 
@@ -29,16 +29,21 @@ function CommitmentsBar({ data, width, height }) {
             .tickFormat((value, index) => groups[index])
             .tickSize(3);
 
+
         const yAxis = d3.axisLeft(yScale)
             .ticks(6)
             .tickValues([5, 10, 15, 20, 25, 28]);
 
         svg.append('g')
             .call(xAxis)
-            .attr('transform', `translate(0, ${height})`);
+            .attr('transform', `translate(0, ${height})`)
+            .selectAll('text')
+            // .style('fill', 'white');
 
         svg.append('g')
-            .call(yAxis);
+            .call(yAxis)
+            .selectAll('text')
+            .style('fill', 'black');
 
         svg.selectAll('.bar')
             .data(data)
@@ -69,16 +74,14 @@ function CommitmentsBar({ data, width, height }) {
                 g.append('text')
                     .attr('x', 20)
                     .attr('y', -height + 13)
-                    .text(`Eingelöste Commitments`);
+                    .text(`Eingelöste Commitments`)
+                    // .style('fill', 'white');
             });
 
     }, [data, groups, height, width]);
 
 
-
-
-
-    return <svg ref={svgRef} />;
+    return <svg ref={svgRef}/>;
 }
 
 export default CommitmentsBar;

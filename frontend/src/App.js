@@ -7,6 +7,8 @@ import EnvironmentComparison from "./components/comparisons/EnvironmentCompariso
 import CurrentContributionComparison from "./components/comparisons/CurrentContributionComparison";
 import AllowsMeToComparison from "./components/comparisons/AllowsMeToComparison";
 import SustainableDevelopmentComparison from "./components/comparisons/SustainableDevelopmentComparison";
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 const App = () => {
     return (
