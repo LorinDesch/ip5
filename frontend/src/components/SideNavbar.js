@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { FaHome, FaChartBar } from 'react-icons/fa';
-import { useLocation } from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const SideNavbar = () => {
     const [containerHeight, setContainerHeight] = useState(0);
-    const location = useLocation();
 
     useEffect(() => {
         const updateContainerHeight = () => {
@@ -15,123 +14,95 @@ const SideNavbar = () => {
         return () => window.removeEventListener('resize', updateContainerHeight);
     }, []);
 
-    const styles = {
-        navbar: {
-            display: 'flex',
-            flexDirection: 'column',
-            justifyContent: 'space-between',
-            alignItems: 'center',
-            backgroundColor: '#FFF',
-            color: 'black',
-            height: containerHeight,
-            width: '6rem',
-            position: 'fixed',
-            top: 0,
-            left: 0,
-            boxShadow: '0 0 0 2px #000'
-        },
-        iconWrapper: {
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-        },
-        icon: {
-            fontSize: '3rem',
-            margin: '1rem 0',
-            cursor: 'pointer',
-            border: '1px solid #000',
-            borderRadius: '10%',
-            padding: '0.5rem',
-            flexGrow: 1,
-            maxWidth: '50',
-            maxHeight: '50',
-        },
-        activeIcon: {
-            color: '#5E7839', // the color you want for the active icon
-            transform: 'scale(1.2)' // the transform you want for the active icon
-        },
-        text: {
-            fontSize: '0.8rem',
-            marginTop: '0.5rem',
-        }
-    };
-
     const handleIconHover = (e) => {
         e.target.style.color = '#5E7839';
         e.target.style.transform = 'scale(1.2)';
     };
 
-    const handleIconLeave = (e, isActive) => {
-        e.target.style.color = isActive ? styles.activeIcon.color : 'black';
-        e.target.style.transform = isActive ? styles.activeIcon.transform : 'scale(1)';
+    const handleIconLeave = (e) => {
+        e.target.style.color = 'black';
+        e.target.style.transform = 'scale(1)';
     };
 
     return (
-        <div style={styles.navbar}>
-            <div style={styles.iconWrapper}>
-                <div style={styles.text}>Home</div>
-                <FaHome
-                    style={{ ...styles.icon, ...(location.pathname === '/' && styles.activeIcon) }}
-                    onMouseEnter={handleIconHover}
-                    onMouseLeave={(e) => handleIconLeave(e, location.pathname === '/')}
-                    onClick={() => window.location.href = '/'}
+        <nav
+            className="navbar flex-column justify-content-between align-items-center bg-light text-dark fixed-top"
+            style={{ height: containerHeight, width: '6rem', boxShadow: '0 0 0 2px #000' }}
+        >
+            <div className="d-flex flex-column align-items-center">
+                <div className="mb-2">Home</div>
+                <FaHome size={'2vw'}
+                        className="nav-icon border"
+                        onMouseEnter={handleIconHover}
+                        onMouseLeave={handleIconLeave}
+                        onClick={() => (window.location.href = '/')}
                 />
             </div>
-            <div style={styles.iconWrapper}>
-                <div style={styles.text}>Difficulty</div>
-                <FaChartBar
-                    style={{ ...styles.icon, ...(location.pathname === '/difficulty' && styles.activeIcon) }}
-                    onMouseEnter={handleIconHover}
-                    onMouseLeave={(e) => handleIconLeave(e, location.pathname === '/difficulty')}
-                    onClick={() => window.location.href = '/difficulty'}
+            <div className="d-flex flex-column align-items-center">
+                <div className="mb-2">Difficulty</div>
+                <FaChartBar size={'2vw'}
+                            className="nav-icon border"
+                            onMouseEnter={handleIconHover}
+                            onMouseLeave={handleIconLeave}
+                            onClick={() => (window.location.href = '/difficulty')}
                 />
             </div>
-            <div style={styles.iconWrapper}>
-                <div style={styles.text}>Restriction</div>
-                <FaChartBar
-                    style={{ ...styles.icon, ...(location.pathname === '/restriction' && styles.activeIcon) }}
-                    onMouseEnter={handleIconHover}
-                    onMouseLeave={(e) => handleIconLeave(e, location.pathname === '/restriction'    )}
-                    onClick={() => window.location.href = '/restriction'}
+            <div className="d-flex flex-column align-items-center">
+                <div className="mb-2">Restriction</div>
+                <FaChartBar size={'2vw'}
+                            className="nav-icon border"
+                            onMouseEnter={handleIconHover}
+                            onMouseLeave={handleIconLeave}
+                            onClick={() => (window.location.href = '/restriction')}
                 />
             </div>
-            <div style={styles.iconWrapper}>
-                <div style={styles.text}>Environment</div>
-                <FaChartBar
-                    style={{ ...styles.icon, ...(location.pathname === '/environment' && styles.activeIcon) }}
-                    onMouseEnter={handleIconHover}
-                    onMouseLeave={(e) => handleIconLeave(e, location.pathname === '/environment')}
-                    onClick={() => window.location.href = '/environment'}
+            <div className="d-flex flex-column align-items-center">
+                <div className="mb-2">Environment</div>
+                <FaChartBar size={'2vw'}
+                            className="nav-icon border"
+                            onMouseEnter={handleIconHover}
+                            onMouseLeave={handleIconLeave}
+                            onClick={() => (window.location.href = '/environment')}
                 />
             </div>
-            <div style={{ marginLeft: '0.9rem' }}>
-                <div style={styles.text}>Current Contribution</div>
-                <FaChartBar
-                    style={{ ...styles.icon, ...(location.pathname === '/currentcontribution' && styles.activeIcon) }}
-                    onMouseEnter={handleIconHover}
-                    onMouseLeave={(e) => handleIconLeave(e, location.pathname === '/currentcontribution')}
-                    onClick={() => window.location.href = '/currentcontribution'}
+            <div className="d-flex flex-column align-items-center">
+                <div className="mb-2">Current Contribution</div>
+                <FaChartBar size={'2vw'}
+                            className="nav-icon border"
+                            onMouseEnter={handleIconHover}
+                            onMouseLeave={handleIconLeave}
+                            onClick={() => (window.location.href = '/currentcontribution')}
                 />
             </div>
-            <div style={styles.iconWrapper}>
-                <div style={styles.text}>Allows Me To</div>
-                <FaChartBar
-                    style={{ ...styles.icon, ...(location.pathname === '/allowsmeto' && styles.activeIcon) }}
-                    onMouseEnter={handleIconHover}
-                    onMouseLeave={(e) => handleIconLeave(e, location.pathname === '/allowsmeto')}
-                    onClick={() => window.location.href = '/allowsmeto'}
+            <div className="d-flex flex-column align-items-center">
+                <div className="mb-2">Allows Me To</div>
+                <FaChartBar size={'2vw'}
+                            className="nav-icon border"
+                            onMouseEnter={handleIconHover}
+                            onMouseLeave={handleIconLeave}
+                            onClick={() => (window.location.href = '/allowsmeto')}
                 />
             </div>
-            <div style={{ marginLeft: '0.9rem' }}>
-                <div style={styles.text}>Sustainable Development</div>
-                <FaChartBar
-                    style={{ ...styles.icon, ...(location.pathname === '/sustainabledevelopment' && styles.activeIcon) }}
-                    onMouseEnter={handleIconHover}
-                    onMouseLeave={(e) => handleIconLeave(e, location.pathname === '/sustainabledevelopment')}
-                    onClick={() => window.location.href = '/sustainabledevelopment'}
+            <div className="d-flex flex-column align-items-center">
+                <div className="mb-2">Sustainable Development</div>
+                <FaChartBar size={'2vw'}
+                            className="nav-icon border"
+                            onMouseEnter={handleIconHover}
+                            onMouseLeave={handleIconLeave}
+                            onClick={() => (window.location.href = '/sustainabledevelopment')}
                 />
             </div>
-        </div>
+            <div className="d-flex flex-column align-items-center">
+                <div className="mb-2">Sustainable Development</div>
+                <FaChartBar size={'2vw'}
+                            className="nav-icon border"
+                            onMouseEnter={handleIconHover}
+                            onMouseLeave={handleIconLeave}
+
+                />
+            </div>
+        </nav>
     );
 };
+
 export default SideNavbar;

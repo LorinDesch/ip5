@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import TopNavbar from './TopNavbar';
-import Navbar from './Navbar';
+import SideNavbar from "./SideNavbar";
 import SchluesseAusChallenge from './SchluesseAusChallenge';
 import TreeImages from './TreeImages';
 import FeelingsBar from './Charts/FeelingsBar';
@@ -25,7 +25,7 @@ function Dashboard() {
             <header style={{ marginLeft: '7rem', marginTop: '0.5rem' }}>
                 <TopNavbar isOn={isOn} setIsOn={setIsOn} />
             </header>  <div style={{ position: 'fixed', top: '55px', left: 0, bottom: 0, width: '5rem', backgroundColor: '#f8f9fa', zIndex: 1 }}>
-            <Navbar />
+            <SideNavbar />
         </div>
 
             <Container fluid style={{ maxWidth: '2000px', marginLeft: '7rem', minHeight: '100vh', padding: '0 1rem' }}>
