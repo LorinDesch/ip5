@@ -44,17 +44,25 @@ const App = () => {
                 commitmentid: 1,
                 commitmentname: "WC nur klein spülen 1",
             }],
+
+
     });
-    const [changeableFakeData, setChangeableFakeData] = React.useState([{
-        groups: [],
-    }]);
-    console.log("App.js: changeableFakeData: ", changeableFakeData);
+    const [selectedOption1, setSelectedOption1] = useState('Peter Mueller');
+    const [selectedOption2, setSelectedOption2] = useState('Challenge');
+    const [selectedOption3, setSelectedOption3] = useState([]);
+    console.log(selectedOption3)
+    console.log(selectedOption2)
+    console.log(selectedOption1)
 
     return (
         <Router>
             <Routes>
-                <Route path="/" element={<Dashboard fakeData={fakeData} setChangeableFakeData={setChangeableFakeData}
-                                                    changeableFakeData={changeableFakeData}/>}/>
+                <Route path="/" element={<Dashboard fakeData={fakeData} selectedOption1={selectedOption1}
+                                                    setSelectedOption1={setSelectedOption1}
+                                                    selectedOption2={selectedOption2}
+                                                    setSelectedOption2={setSelectedOption2}
+                                                    selectedOption3={selectedOption3}
+                                                    setSelectedOption3={setSelectedOption3}/>}/>
                 <Route path="/difficulty" element={<DifficultyComparison/>}/> { /* Schwierigkeit */}
                 <Route path="/restriction" element={<RestrictionComparison/>}/> { /* Einschränkung */}
                 <Route path="/environment"

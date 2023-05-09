@@ -1,18 +1,15 @@
 import React from 'react';
 
-const Dropdown1 = ({ selectedOption, handleChange, styling }) => {
-    const options = ['Ich', 'Meine Klasse'];
+const Dropdown1 = ({ fakeData, onChange, styling, options, changeableFakeData, setChangeableFakeData,selectedOptions1 }) => {
 
     return (
-        <div style={{ position: 'relative', display: 'inline-block' }}>
-            <select value={selectedOption} onChange={handleChange} style={styling}>
-                {options.map((option) => (
-                    <option key={option} value={option} style={styling}>
-                        {option}
-                    </option>
-                ))}
-            </select>
-        </div>
+        <select value={selectedOptions1} onChange={onChange} style={styling}>
+            {options.map((option) => (
+                <option key={option} style={styling}>
+                    {option}
+                </option>
+            ))}
+        </select>
     );
 };
 

@@ -6,11 +6,7 @@ import React from "react";
 import Login from "./Login";
 
 
-const TopNavbar = ({isOn, setIsOn, fakeData, setChangeableFakeData, changeableFakeData}) => { // Receive isOn and setIsOn as props
-
-    const [selectedOption1, setSelectedOption1] = useState('Ich');
-    const [selectedOption2, setSelectedOption2] = useState('Challenge');
-    const [selectedOption3, setSelectedOption3] = useState([]);
+const TopNavbar = ({isOn, setIsOn, fakeData, selectedOption3, selectedOption2, selectedOption1, setSelectedOption1, setSelectedOption2, setSelectedOption3 }) => { // Receive isOn and setIsOn as props
 
     const dropDownStyling = {
         padding: '12px 38px 12px 12px',
@@ -34,6 +30,11 @@ const TopNavbar = ({isOn, setIsOn, fakeData, setChangeableFakeData, changeableFa
 
     const options2 = fakeData.commitments.map((item) => item.commitmentname);
 
+    const options1 = [];
+        options1.push(fakeData.users[1].username);
+        options1.push(fakeData.groups[1].groupname);
+
+
 
     const handleChange1 = (event) => {
         setSelectedOption1(event.target.value);
@@ -41,12 +42,6 @@ const TopNavbar = ({isOn, setIsOn, fakeData, setChangeableFakeData, changeableFa
 
     const handleChange2 = (event) => {
         setSelectedOption2(event.target.value);
-        setChangeableFakeData((prevData) => {
-            return {
-                ...prevData,
-                commitments: event.target.value,
-            };
-        });
     };
 
     const handleChange3 = (selectedValues) => {
@@ -63,7 +58,11 @@ const TopNavbar = ({isOn, setIsOn, fakeData, setChangeableFakeData, changeableFa
                 paddingBottom: '1rem',
             }}>
                 <div style={{gridColumn: '1'}}>
-                    <Dropdown1 selectedOption={selectedOption1} handleChange={handleChange1} styling={dropDownStyling}/>
+                    <Dropdown1 options={options1}
+                               onChange={handleChange1}
+                               styling={dropDownStyling}
+                               selectedOptions={selectedOption1}
+                               fakeData={fakeData}/>/>
                 </div>
 
                 <div style={{gridColumn: '2', justifySelf: 'center', marginLeft: '2rem'}}>
@@ -71,9 +70,7 @@ const TopNavbar = ({isOn, setIsOn, fakeData, setChangeableFakeData, changeableFa
                                onChange={handleChange2}
                                styling={dropDownStyling}
                                selectedOptions2={selectedOption2}
-                               fakeData={fakeData}
-                               setChangeableFakeData={setChangeableFakeData}
-                               changeableFakeData={changeableFakeData}/>
+                               fakeData={fakeData}/>
                 </div>
                 <div style={{gridColumn: '3', justifySelf: 'end', marginRight: '2rem'}}>
                 </div>
@@ -82,9 +79,7 @@ const TopNavbar = ({isOn, setIsOn, fakeData, setChangeableFakeData, changeableFa
                                onChange={handleChange3}
                                styling={dropDownStyling}
                                selectedOptions={selectedOption3}
-                               fakeData={fakeData}
-                               setChangeableFakeData={setChangeableFakeData}
-                               changeableFakeData={changeableFakeData}/>
+                               fakeData={fakeData}/>
                 </div>
             </div>
         </div>
