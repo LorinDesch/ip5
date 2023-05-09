@@ -40,7 +40,9 @@ const App = () => {
             commitmentname: "WC nur klein spülen 1",
         }],
     });
-    const [changeableFakeData, setChangeableFakeData] = React.useState([]);
+    const [changeableFakeData, setChangeableFakeData] = React.useState([{
+        groups: [],
+    }]);
     console.log("App.js: changeableFakeData: ", changeableFakeData);
 
     return (

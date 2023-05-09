@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const Dropdown3 = ({ options, selectedOptions, onChange, styling, setChangeableFakeData, changeableFakeData  }) => {
+const Dropdown3 = ({ options, selectedOptions, onChange, styling, setChangeableFakeData, changeableFakeData, fakeData  }) => {
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
     const handleToggleDropdown = () => {
@@ -10,14 +10,27 @@ const Dropdown3 = ({ options, selectedOptions, onChange, styling, setChangeableF
     const handleCheckboxChange = (event, optionValue) => {
         if (event.target.checked) {
             onChange([...selectedOptions, optionValue]);
-            // Append the new value to changeableFakeData
-            setChangeableFakeData((prevData) => [...prevData, optionValue]);
+            // Append the new group to changeableFakeData
+            setChangeableFakeData((prevData) => {
+                const newGroups = fakeData.groups.filter((group) => selectedOptions.includes(group.groupname));
+                return [{groups: newGroups}];
+            });
         } else {
             onChange(selectedOptions.filter((value) => value !== optionValue));
-            // Remove the value from changeableFakeData
-            setChangeableFakeData((prevData) => prevData.filter((value) => value !== optionValue));
+            // Remove the group from changeableFakeData
+            setChangeableFakeData((prevData) => {
+                const newGroups = fakeData.groups.filter((group) => selectedOptions.includes(group.groupname));
+                return [{groups: newGroups}];
+            });
         }
     };
+
+    React.useEffect(() => {
+        const newGroups = fakeData.groups.filter((group) => selectedOptions.includes(group.groupname));
+        setChangeableFakeData([{groups: newGroups}]);
+    }, [selectedOptions]);
+
+
 
     const dropdownStyle = {
         position: 'relative',

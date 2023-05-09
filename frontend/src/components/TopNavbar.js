@@ -6,7 +6,8 @@ import React from "react";
 import Login from "./Login";
 
 
-const TopNavbar = ({ isOn, setIsOn, fakeData, setChangeableFakeData, changeableFakeData }) => { // Receive isOn and setIsOn as props
+const TopNavbar = ({isOn, setIsOn, fakeData, setChangeableFakeData, changeableFakeData}) => { // Receive isOn and setIsOn as props
+
     const [selectedOption1, setSelectedOption1] = useState('Ich');
     const [selectedOption2, setSelectedOption2] = useState('Challenge');
     const [selectedOption3, setSelectedOption3] = useState([]);
@@ -62,7 +63,9 @@ const TopNavbar = ({ isOn, setIsOn, fakeData, setChangeableFakeData, changeableF
                 <div style={{gridColumn: '3', justifySelf: 'end', marginRight: '2rem'}}>
                 </div>
                 <div style={{gridColumn: '4', justifySelf: 'end', marginRight: '0.5rem'}}>
-                    <Dropdown3 options={options3} selectedOptions={selectedOption3} onChange={handleChange3}  styling = {dropDownStyling} setChangeableFakeData={setChangeableFakeData} changeableFakeData={changeableFakeData} />
+                    <Dropdown3 options={options3} selectedOptions={selectedOption3} onChange={handleChange3}
+                               styling={dropDownStyling} fakeData={fakeData}
+                               setChangeableFakeData={setChangeableFakeData} changeableFakeData={changeableFakeData}/>
                 </div>
             </div>
         </div>
