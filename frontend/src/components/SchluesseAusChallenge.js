@@ -1,4 +1,5 @@
 import React from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const SchluesseAusChallenge = ({data}) => {
     const beiDirSelbst = "Ich habe gemerkt dass ich mich in der Challenge sehr gut auf mich selbst konzentrieren konnte";
@@ -6,23 +7,37 @@ const SchluesseAusChallenge = ({data}) => {
     const politisch = "Ich habe gemerkt dass ich mich in der Challenge sehr gut auf die Politik konzentrieren konnte";
     const produkt = "Ich habe gemerkt dass ich mich in der Challenge sehr gut auf das Produkt konzentrieren konnte";
 
-
     return (
-        <div style={{fontSize: '1vw'}}>
+        <div className="container">
+            <h1> Schlüsse aus der Challenge</h1>
 
-            <h1 style={{fontSize: '2vw'}}> Schlüsse aus der Challenge</h1>
+            <div className="row">
+                <div className="col-md-12">
+                    <h2>bei dir selbst</h2>
+                    <p>{beiDirSelbst}</p>
+                </div>
+            </div>
 
-            <h2 style={{fontSize: '1.5vw'}}>bei dir selbst</h2>
-            <p style={{fontSize: '1vw'}}>{beiDirSelbst}</p>
+            <div className="row">
+                <div className="col-md-12">
+                    <h2>in deinem sozialen Umfeld</h2>
+                    <p>{sozialUmfeld}</p>
+                </div>
+            </div>
 
-            <h2 style={{fontSize: '1.5vw'}}>in deinem sozialen Umfeld</h2>
-            <p style={{fontSize: '1vw'}}>{sozialUmfeld}</p>
+            <div className="row">
+                <div className="col-md-12">
+                    <h2>auf politischer Ebene</h2>
+                    <p>{politisch}</p>
+                </div>
+            </div>
 
-            <h2 style={{fontSize: '1.5vw'}}>auf politischer Ebene</h2>
-            <p style={{fontSize: '1vw'}}>{politisch}</p>
-
-            <h2 style={{fontSize: '1.5vw'}}>auf Ebene Produktherstellung</h2>
-            <p style={{fontSize: '1vw'}}>{produkt}</p>
+            <div className="row">
+                <div className="col-md-12">
+                    <h2>auf Ebene Produktherstellung</h2>
+                    <p>{produkt}</p>
+                </div>
+            </div>
         </div>
     );
 }
