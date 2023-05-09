@@ -131,13 +131,24 @@ function Dashboard({
                     <Col md={4}>
                         <div className="d-flex justify-content-center align-items-center text-center"
                              style={{height: '100%'}}>
-                            <FeelingsBar data={data} width={400} height={300}/>
+                            <FeelingsBar fakeData={fakeData} selectedOption1={selectedOption1}
+                                         setSelectedOption1={setSelectedOption1}
+                                         selectedOption2={selectedOption2}
+                                         setSelectedOption2={setSelectedOption2}
+                                         selectedOption3={selectedOption3}
+                                         setSelectedOption3={setSelectedOption3} width={400} height={300}/>
                         </div>
                     </Col>
                     <Col md={4}>
                         <div className="d-flex justify-content-center align-items-center text-center"
                              style={{height: '40%'}}>
-                            <TreeImages leftIndex="28" rightIndex="20" isOn={isOn}/>
+                            <TreeImages leftIndex="28" rightIndex="20" isOn={isOn}
+                                        fakeData={fakeData} selectedOption1={selectedOption1}
+                                        setSelectedOption1={setSelectedOption1}
+                                        selectedOption2={selectedOption2}
+                                        setSelectedOption2={setSelectedOption2}
+                                        selectedOption3={selectedOption3}
+                                        setSelectedOption3={setSelectedOption3}/>
                         </div>
                     </Col>
                     <Col md={4}>

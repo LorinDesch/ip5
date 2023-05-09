@@ -21,7 +21,7 @@ const App = () => {
             {
                 userid: 2,
                 username: "Peter Mueller",
-            },
+            }
         ],
         groups: [
             {
@@ -33,7 +33,7 @@ const App = () => {
                 groupid: 2,
                 groupname: "Gruppe 2",
                 users: [2] // userids
-            },
+            }
         ],
         commitments: [
             {
@@ -42,10 +42,46 @@ const App = () => {
             }
             , {
                 commitmentid: 1,
-                commitmentname: "WC nur klein spülen 1",
-            }],
-
-
+                commitmentname: "WC nur klein spülen",
+            }
+        ],
+        diary: [{
+            diaryid: 1,
+            userid: 1,
+            commitmentid: 1,
+            schluesse: {
+                selbst: "Ich habe gelernt, dass ich mit kleinen Dingen einen grossen Beitrag leisten kann.",
+                sozial: "Meine Eltern haben micht erst nicht so unterstützt",
+                politik: "Politiker ist es eigentlich egal",
+                produkt: "Diese sind auch nur auf Profit aus",
+            },
+            eingeloest: 20,
+            feelings: [0.5,0.4,1,0.3,0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.5,0.4,1,0.3,0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,1,0,0.1,0.8],
+            difficulty: [0.4,0.8],
+            restriction: [0.2,0.6],
+            environment: [0.1,0.5],
+            currentContribution: [0.3,0.7],
+            allowsMeTo: [0.5,0.9],
+            sustainableDevelopment: [0.6,1],
+        },{
+            diaryid: 2,
+            userid: 2,
+            commitmentid: 1,
+            schluesse: {
+                selbst: "Ich ernähre mich jetzt gesünder",
+                sozial: "Meine Freunde haben grad mitgemacht",
+                politik: "Politiker sind nicht so interessiert",
+                produkt: "Alles ist 3x verpackt",
+            },
+            eingeloest: 24,
+            feelings: [0.5,0.4,1,0.3,0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.5,0.4,1,0.3,0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,1,0,0.1,0.8],
+            difficulty: [0.4,0.8],
+            restriction: [0.2,0.6],
+            environment: [0.1,0.5],
+            currentContribution: [0.3,0.7],
+            allowsMeTo: [0.5,0.9],
+            sustainableDevelopment: [0.6,1],
+        }]
     });
     const [selectedOption1, setSelectedOption1] = useState('Peter Mueller');
     const [selectedOption2, setSelectedOption2] = useState('Challenge');
