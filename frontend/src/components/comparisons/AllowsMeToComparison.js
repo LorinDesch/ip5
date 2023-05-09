@@ -10,9 +10,9 @@ const DifficultyComparison = ({data, width, height}) => {
 
     return (
         <div>
-            <div style={{marginLeft: "100px"}}>
+            <header style={{marginLeft: "100px"}}>
                 <TopNavbar isOn={isOn} setIsOn={setIsOn}/>
-            </div>
+            </header>
             <SideNavbar/>
 
             <div style={{
