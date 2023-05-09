@@ -2,11 +2,6 @@ import React from 'react';
 
 const TreeImages = ({ leftIndex, rightIndex, isOn, fakeData, selectedOption2, selectedOption3, setSelectedOption1, selectedOption1, setSelectedOption2, setSelectedOption3 }) => {
 
-    console.log("TreeImages.js: selectedOption1: ", selectedOption1)
-    console.log("TreeImages.js: selectedOption2: ", selectedOption2)
-    console.log("TreeImages.js: selectedOption3: ", selectedOption3)
-    console.log("TreeImages.js: fakeData: ", fakeData)
-
     if(selectedOption2 === "Challenge"){
         leftIndex = 0;
         rightIndex= 0;

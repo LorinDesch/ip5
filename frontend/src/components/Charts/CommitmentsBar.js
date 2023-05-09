@@ -1,18 +1,50 @@
 import React, {useEffect, useRef} from 'react';
 import * as d3 from 'd3';
 
-function CommitmentsBar({data, width, height}) {
+function CommitmentsBar({
+                            data,
+                            width,
+                            height,
+                            fakeData,
+                            selectedOption1,
+                            selectedOption2,
+                            selectedOption3,
+                            setSelectedOption1,
+                            setSelectedOption2,
+                            setSelectedOption3
+                        }) {
 
-    data = [28, 1, 28, 5, 24, 23, 15, 5, 8, 20];
+    let eingeloeste = [];
+
+    if (selectedOption2 === "Challenge") {
+    } else {
+
+        const cId = fakeData.commitments.filter(commitment => commitment.commitmentname === selectedOption2)[0].commitmentid;
+        const selectedUsers = selectedOption3.flatMap(option =>
+            fakeData.groups.filter(group => group.groupname === option)
+                .map(group => group.users)
+                .reduce((acc, val) => acc.concat(val), [])
+        );
+        const diaries = fakeData.diary.filter(d => d.commitmentid === cId && selectedUsers.includes(d.userid));
+        //array of eingeloest
+        eingeloeste = diaries.map(d => d.eingeloest);
+        console.log("diaries", eingeloeste)
+    }
+
+    console.log("SelectedOption3", selectedOption3);
+    console.log("Eingeloeste", eingeloeste);
+
+    data = eingeloeste.length > 0 ? eingeloeste : [];
+    const groups = selectedOption3
+    console.log("Groups", groups)
     const colors = ["blue"];
-    const groups = ['Klasse 1', 'Klasse 2', 'Klasse 3', 'Klasse 4', 'Klasse 5', 'Klasse 6', 'Klasse 7', 'Klasse 8', 'Klasse 9', 'Klasse 10'];
 
     const svgRef = useRef();
 
     useEffect(() => {
         const svg = d3.select(svgRef.current)
-            .attr('width', width)
-            .attr('height', height)
+            .attr("width", width)
+            .attr("height", height)
             .style('overflow', 'visible');
 
         const xScale = d3.scaleBand()
@@ -31,6 +63,8 @@ function CommitmentsBar({data, width, height}) {
         const yAxis = d3.axisLeft(yScale)
             .ticks(6)
             .tickValues([5, 10, 15, 20, 25, 28]);
+
+        svg.selectAll('g').remove();
 
         svg.append('g')
             .call(xAxis)
@@ -117,7 +151,9 @@ function CommitmentsBar({data, width, height}) {
                     .attr('y', -height + 13)
                     .text(`Eingelöste Commitments`)
             });
-    }, [data, groups, height, width]);
+
+    }, [data, groups, height, width, selectedOption3]);
+
 
     return <svg ref={svgRef}/>;
 }

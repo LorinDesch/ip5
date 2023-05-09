@@ -142,7 +142,7 @@ function Dashboard({
                     <Col md={4}>
                         <div className="d-flex justify-content-center align-items-center text-center"
                              style={{height: '40%'}}>
-                            <TreeImages leftIndex="28" rightIndex="20" isOn={isOn}
+                            <TreeImages isOn={isOn}
                                         fakeData={fakeData} selectedOption1={selectedOption1}
                                         setSelectedOption1={setSelectedOption1}
                                         selectedOption2={selectedOption2}
@@ -154,7 +154,13 @@ function Dashboard({
                     <Col md={4}>
                         <div className="d-flex justify-content-center align-items-center text-center"
                              style={{height: '100%', marginRight: '5rem'}}>
-                            <CommitmentsBar data={data} width={400} height={300}/>
+                            <CommitmentsBar data={data} width={400} height={300}
+                                            fakeData={fakeData} selectedOption1={selectedOption1}
+                                            setSelectedOption1={setSelectedOption1}
+                                            selectedOption2={selectedOption2}
+                                            setSelectedOption2={setSelectedOption2}
+                                            selectedOption3={selectedOption3}
+                                            setSelectedOption3={setSelectedOption3}/>
                         </div>
                     </Col>
                 </Row>
