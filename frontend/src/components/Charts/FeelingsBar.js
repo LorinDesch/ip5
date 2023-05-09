@@ -3,12 +3,6 @@ import * as d3 from 'd3';
 
 function CommitmentsBar({fakeData, selectedOption1, setSelectedOption1, selectedOption2, setSelectedOption2, selectedOption3, setSelectedOption3 , width, height}) {
 
-    console.log("fakeData ", fakeData)
-    console.log("selectedOption1 ", selectedOption1)
-    console.log("selectedOption2 ", selectedOption2)
-    console.log("selectedOption3 ", selectedOption3)
-
-
     // Get the selected commitment ID based on the selectedOption2
     const selectedCommitmentId = selectedOption2 === 'Challenge' ? 0 : fakeData.commitments.find(commitment => commitment.commitmentname === selectedOption2).commitmentid;
 

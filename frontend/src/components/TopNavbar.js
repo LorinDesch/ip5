@@ -34,8 +34,6 @@ const TopNavbar = ({fakeData, selectedOption3, selectedOption2, selectedOption1,
         options1.push(fakeData.users[1].username);
         options1.push(fakeData.groups[1].groupname);
 
-
-
     const handleChange1 = (event) => {
         setSelectedOption1(event.target.value);
     };

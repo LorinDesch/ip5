@@ -31,8 +31,6 @@ function CommitmentsBar({
         console.log("diaries", eingeloeste)
     }
 
-    console.log("SelectedOption3", selectedOption3);
-    console.log("Eingeloeste", eingeloeste);
 
     data = eingeloeste.length > 0 ? eingeloeste : [];
     const groups = selectedOption3

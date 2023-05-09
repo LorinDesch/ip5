@@ -21,6 +21,10 @@ const App = () => {
             {
                 userid: 2,
                 username: "Peter Mueller",
+            },
+            {
+                userid: 3,
+                username: "Hans Meier",
             }
         ],
         groups: [
@@ -33,6 +37,11 @@ const App = () => {
                 groupid: 2,
                 groupname: "Gruppe 2",
                 users: [2] // userids
+            },
+            {
+                groupid: 3,
+                groupname: "Gruppe 3",
+                users: [3] // userids
             }
         ],
         commitments: [
@@ -43,6 +52,11 @@ const App = () => {
             , {
                 commitmentid: 1,
                 commitmentname: "WC nur klein spülen",
+            },
+            {
+                commitmentid: 2,
+                commitmentname: "Wasserhahn beim Zähneputzen abstellen",
+
             }
         ],
         diary: [{
@@ -81,14 +95,32 @@ const App = () => {
             currentContribution: [0.3,0.7],
             allowsMeTo: [0.5,0.9],
             sustainableDevelopment: [0.6,1],
-        }]
+        },
+            {
+                diaryid: 3,
+                userid: 3,
+                commitmentid: 2,
+                schluesse: {
+                    selbst: "Ich ernähre mich jetzt gesünder",
+                    sozial: "Meine Freunde haben grad mitgemacht",
+                    politik: "Politiker sind nicht so interessiert",
+                    produkt: "Alles ist 3x verpackt",
+                },
+                eingeloest: 28,
+                feelings: [0.5,0.4,1,0.3,0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.5,0.4,1,0.3,0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,1,0,0.1,0.8],
+                difficulty: [0.4,0.8],
+                restriction: [0.2,0.6],
+                environment: [0.1,0.5],
+                currentContribution: [0.3,0.7],
+                allowsMeTo: [0.5,0.9],
+                sustainableDevelopment: [0.6,1],
+            },
+        ]
     });
     const [selectedOption1, setSelectedOption1] = useState('Peter Mueller');
     const [selectedOption2, setSelectedOption2] = useState('Challenge');
     const [selectedOption3, setSelectedOption3] = useState([]);
-    console.log(selectedOption3)
-    console.log(selectedOption2)
-    console.log(selectedOption1)
+    console.log("App.js fakeData: ", fakeData);
 
     return (
         <Router>
