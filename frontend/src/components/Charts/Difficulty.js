@@ -41,72 +41,70 @@ function DifficultyBar({ data, width, height }) {
             .ticks(3)
             .tickFormat((d, i) => rightLabel[i]);
 
+        // Füge zuerst die Gruppe für die horizontalen Linien hinzu
+        const horizontalLines = svg.append('g')
+            .attr('class', 'horizontal-lines')
+            .selectAll('line')
+            .data(yScale.ticks(10))
+            .enter()
+            .append('line')
+            .attr('x1', margin.left)
+            .attr('y1', d => yScale(d))
+            .attr('x2', width - margin.right)
+            .attr('y2', d => yScale(d))
+            .attr('stroke', 'lightgrey')
+            .attr('stroke-width', 1)
+            .attr('stroke-dasharray', '4 4');
+
+        // Füge dann die Gruppe für die linken Bars hinzu
         const leftBars = svg.append('g')
             .attr('class', 'left-bars')
             .selectAll('rect')
             .data(dataLeft)
             .enter()
             .append('rect')
-            .attr('x', (d, i) => xScale(klassen[i]) - xScale.bandwidth()/2 + 13)
+            .attr('x', (d, i) => xScale(klassen[i]) - xScale.bandwidth() / 2 + 13)
             .attr('y', d => yScale(d))
-            .attr('width', xScale.bandwidth()/2)
+            .attr('width', xScale.bandwidth() / 2)
             .attr('height', d => height - yScale(d) - margin.bottom)
             .attr('fill', colors[0]);
 
+        // Füge zuletzt die Gruppe für die rechten Bars hinzu
         const rightBars = svg.append('g')
             .attr('class', 'right-bars')
             .selectAll('rect')
             .data(dataRight)
             .enter()
             .append('rect')
-            .attr('x', (d, i) => xScale(klassen[i]) + xScale.bandwidth()/2)
+            .attr('x', (d, i) => xScale(klassen[i]) + xScale.bandwidth() / 2)
             .attr('y', d => yScale(d))
-            .attr('width', xScale.bandwidth()/2)
+            .attr('width', xScale.bandwidth() / 2)
             .attr('height', d => height - yScale(d) - margin.bottom)
-            .attr('fill', '#D4E09B');
+            .attr('fill', colors[1]);
+
 
         svg.append('g')
             .attr('class', 'x-axis')
             .attr('transform', `translate(0, ${height - margin.bottom})`)
-            .call(xAxis);
+            .call(xAxis)
+            .style('font-size', '12');
 
 
         svg.append('g')
             .attr('class', 'y-axis')
             .attr('transform', `translate(${margin.left}, 0)`)
             .call(leftYAxis)
-            .style('color', colors[0]);
+            .style('color', colors[0])
+            .style('font-size', '16');
 
         svg.append('g')
             .attr('class', 'y-axis')
             .attr('transform', `translate(${width - margin.right}, 0)`)
             .call(rightYAxis)
-            .style('color', colors[1]);
+            .style('color', colors[1])
+            .style('font-size', '16');
 
-        /* //TODO: think of axis labels on the side
-        // Add left y-axis label
-        svg.append('text')
-            .attr('class', 'axis-label')
-            .attr('x', margin.left - 50)
-            .attr('y', height / 2)
-            .attr('text-anchor', 'middle')
-            .attr('alignment-baseline', 'central')
-            .attr('transform', 'rotate(-90, ' + (margin.left - 50) + ', ' + (height / 2) + ')')
-            .text(label[0])
-            .style('fill', colors[0]);
 
-        // Add right y-axis label
-        svg.append('text')
-            .attr('class', 'axis-label')
-            .attr('x', width - margin.right + 50)
-            .attr('y', height / 2)
-            .attr('text-anchor', 'middle')
-            .attr('alignment-baseline', 'central')
-            .attr('transform', 'rotate(-90, ' + (width - margin.right + 50) + ', ' + (height / 2) + ')')
-            .text(label[1])
-            .style('fill', colors[1]);
-
-         */
 
         const legendWidth = 80 * colors.length;
         const legend = svg.append('g')

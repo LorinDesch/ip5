@@ -20,6 +20,8 @@ function CommitmentsBar({data, width, height}) {
 
     const svgRef = useRef();
     useEffect(() => {
+
+
         const svg = d3.select(svgRef.current)
             .attr('width', width)
             .attr('height', height)
@@ -51,38 +53,55 @@ function CommitmentsBar({data, width, height}) {
             .style('font-size', '16px');
 
 
-        svg.selectAll('.bar')
+        const horizontalLines = d3.axisLeft(yScale)
+            .ticks(10)
+            .tickSize(-width)
+            .tickFormat('')
+            .tickSizeOuter(0);
+
+        svg.append('g')
+            .call(horizontalLines)
+            .attr('class', 'horizontal-lines')
+            .selectAll('.tick line')
+            .attr('stroke', 'lightgrey')
+            .attr('stroke-width', 1)
+            .attr('stroke-dasharray', '4 4');
+
+        const group = svg.selectAll('.group')
             .data(data)
-            .join('rect')
+            .join('g')
+            .attr('class', 'group');
+
+        group.append('rect')
             .attr('class', 'bar')
             .attr('x', (value, index) => xScale(index))
             .attr('y', yScale)
             .attr('width', xScale.bandwidth())
             .attr('height', value => height - yScale(value))
-            .attr('fill', (value, index) => colors[index % colors.length])
-            .each(function (d, i) {
-                if (i % 4 === 3) {
-                    // Append a line and text to every 4th bar
-                    const groupIndex = Math.floor(i / 4);
-                    d3.select(this.parentNode)
-                        .append('line')
-                        .attr('class', 'line')
-                        .attr('x1', xScale(i) + xScale.bandwidth() / 2 + 15)
-                        .attr('y1', yScale(1))
-                        .attr('x2', xScale(i) + xScale.bandwidth() / 2 + 15)
-                        .attr('y2', yScale(0))
-                        .attr('stroke', 'grey')
-                        .attr('stroke-width', 1);
-                    d3.select(this.parentNode)
-                        .append('text')
-                        .attr('class', 'group-text')
-                        .attr('x', xScale(i) + xScale.bandwidth() / 2 - 40)
-                        .attr('y', yScale(0) + 20)
-                        .attr('text-anchor', 'middle')
-                        // .attr('fill', 'white')
-                        .text(groups[groupIndex])
-                }
-            });
+            .attr('fill', (value, index) => colors[index % colors.length]);
+
+        group.each(function (d, i) {
+            if (i % 4 === 3) {
+                // Append a line and text to every 4th bar
+                const groupIndex = Math.floor(i / 4);
+                d3.select(this)
+                    .append('line')
+                    .attr('class', 'line')
+                    .attr('x1', xScale(i) + xScale.bandwidth() / 2 + 15)
+                    .attr('y1', yScale(1))
+                    .attr('x2', xScale(i) + xScale.bandwidth() / 2 + 15)
+                    .attr('y2', yScale(0))
+                    .attr('stroke', 'grey')
+                    .attr('stroke-width', 1);
+                d3.select(this)
+                    .append('text')
+                    .attr('class', 'group-text')
+                    .attr('x', xScale(i) + xScale.bandwidth() / 2 - 40)
+                    .attr('y', yScale(0) + 20)
+                    .attr('text-anchor', 'middle')
+                    .text(groups[groupIndex])
+            }
+        });
 
 
         const legendWidth = 80 * colors.length;

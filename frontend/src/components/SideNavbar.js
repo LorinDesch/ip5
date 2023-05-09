@@ -92,15 +92,6 @@ const SideNavbar = () => {
                             onClick={() => (window.location.href = '/sustainabledevelopment')}
                 />
             </div>
-            <div className="d-flex flex-column align-items-center">
-                <div className="mb-2">Sustainable Development</div>
-                <FaChartBar size={'2vw'}
-                            className="nav-icon border"
-                            onMouseEnter={handleIconHover}
-                            onMouseLeave={handleIconLeave}
-
-                />
-            </div>
         </nav>
     );
 };
