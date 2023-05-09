@@ -32,6 +32,8 @@ const TopNavbar = ({isOn, setIsOn, fakeData, setChangeableFakeData, changeableFa
         label: item.groupname,
     }));
 
+    const options2 = fakeData.commitments.map((item) => item.commitmentname);
+
 
     const handleChange1 = (event) => {
         setSelectedOption1(event.target.value);
@@ -39,6 +41,12 @@ const TopNavbar = ({isOn, setIsOn, fakeData, setChangeableFakeData, changeableFa
 
     const handleChange2 = (event) => {
         setSelectedOption2(event.target.value);
+        setChangeableFakeData((prevData) => {
+            return {
+                ...prevData,
+                commitments: event.target.value,
+            };
+        });
     };
 
     const handleChange3 = (selectedValues) => {
@@ -57,15 +65,26 @@ const TopNavbar = ({isOn, setIsOn, fakeData, setChangeableFakeData, changeableFa
                 <div style={{gridColumn: '1'}}>
                     <Dropdown1 selectedOption={selectedOption1} handleChange={handleChange1} styling={dropDownStyling}/>
                 </div>
+
                 <div style={{gridColumn: '2', justifySelf: 'center', marginLeft: '2rem'}}>
-                    <Dropdown2 selectedOption={selectedOption2} handleChange={handleChange2} styling = {dropDownStyling} />
+                    <Dropdown2 options={options2}
+                               onChange={handleChange2}
+                               styling={dropDownStyling}
+                               selectedOptions2={selectedOption2}
+                               fakeData={fakeData}
+                               setChangeableFakeData={setChangeableFakeData}
+                               changeableFakeData={changeableFakeData}/>
                 </div>
                 <div style={{gridColumn: '3', justifySelf: 'end', marginRight: '2rem'}}>
                 </div>
                 <div style={{gridColumn: '4', justifySelf: 'end', marginRight: '0.5rem'}}>
-                    <Dropdown3 options={options3} selectedOptions={selectedOption3} onChange={handleChange3}
-                               styling={dropDownStyling} fakeData={fakeData}
-                               setChangeableFakeData={setChangeableFakeData} changeableFakeData={changeableFakeData}/>
+                    <Dropdown3 options={options3}
+                               onChange={handleChange3}
+                               styling={dropDownStyling}
+                               selectedOptions={selectedOption3}
+                               fakeData={fakeData}
+                               setChangeableFakeData={setChangeableFakeData}
+                               changeableFakeData={changeableFakeData}/>
                 </div>
             </div>
         </div>

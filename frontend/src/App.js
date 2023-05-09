@@ -35,10 +35,15 @@ const App = () => {
                 users: [2] // userids
             },
         ],
-        commitments: [{
-            commitmentid: 1,
-            commitmentname: "WC nur klein spülen 1",
-        }],
+        commitments: [
+            {
+                commitmentid: -1,
+                commitmentname: "Challenge",
+            }
+            , {
+                commitmentid: 1,
+                commitmentname: "WC nur klein spülen 1",
+            }],
     });
     const [changeableFakeData, setChangeableFakeData] = React.useState([{
         groups: [],
@@ -48,7 +53,8 @@ const App = () => {
     return (
         <Router>
             <Routes>
-                <Route path="/" element={<Dashboard fakeData={fakeData} setChangeableFakeData={setChangeableFakeData} changeableFakeData={changeableFakeData}/>}/>
+                <Route path="/" element={<Dashboard fakeData={fakeData} setChangeableFakeData={setChangeableFakeData}
+                                                    changeableFakeData={changeableFakeData}/>}/>
                 <Route path="/difficulty" element={<DifficultyComparison/>}/> { /* Schwierigkeit */}
                 <Route path="/restriction" element={<RestrictionComparison/>}/> { /* Einschränkung */}
                 <Route path="/environment"

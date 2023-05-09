@@ -12,18 +12,25 @@ const Dropdown3 = ({ options, selectedOptions, onChange, styling, setChangeableF
             onChange([...selectedOptions, optionValue]);
             // Append the new group to changeableFakeData
             setChangeableFakeData((prevData) => {
-                const newGroups = fakeData.groups.filter((group) => selectedOptions.includes(group.groupname));
-                return [{groups: newGroups}];
+                if (fakeData.groups.find((group) => group.groupname === optionValue)) {
+                    const newGroups = prevData[0].groups.concat(optionValue);
+                    return [{ groups: newGroups, commitments: prevData[0].commitments }];
+                }
+                return prevData;
             });
         } else {
             onChange(selectedOptions.filter((value) => value !== optionValue));
             // Remove the group from changeableFakeData
             setChangeableFakeData((prevData) => {
-                const newGroups = fakeData.groups.filter((group) => selectedOptions.includes(group.groupname));
-                return [{groups: newGroups}];
+                if (fakeData.groups.find((group) => group.groupname === optionValue)) {
+                    const newGroups = prevData[0].groups.filter((group) => group !== optionValue);
+                    return [{ groups: newGroups, commitments: prevData[0].commitments }];
+                }
+                return prevData;
             });
         }
     };
+
 
     React.useEffect(() => {
         const newGroups = fakeData.groups.filter((group) => selectedOptions.includes(group.groupname));
