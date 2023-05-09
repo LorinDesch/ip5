@@ -38,7 +38,7 @@ function CommitmentsBar({data, width, height}) {
             .call(xAxis)
             .attr('transform', `translate(0, ${height})`)
             .selectAll('text')
-            .style('fill', 'white');
+            // .style('fill', 'white');
 
         svg.append('g')
             .call(yAxis)
@@ -75,7 +75,7 @@ function CommitmentsBar({data, width, height}) {
                     .attr('x', 20)
                     .attr('y', -height + 13)
                     .text(`Eingelöste Commitments`)
-                    .style('fill', 'white');
+                    // .style('fill', 'white');
             });
 
     }, [data, groups, height, width]);

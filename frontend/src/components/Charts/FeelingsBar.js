@@ -77,7 +77,7 @@ function CommitmentsBar({data, width, height}) {
                         .attr('x', xScale(i) + xScale.bandwidth() / 2 - 40)
                         .attr('y', yScale(0) + 20)
                         .attr('text-anchor', 'middle')
-                        .attr('fill', 'white')
+                        // .attr('fill', 'white')
                         .text(groups[groupIndex])
                 }
             });
