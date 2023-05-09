@@ -4,6 +4,7 @@ import Difficulty from "../Charts/Difficulty";
 import SideNavbar from "../SideNavbar";
 import {Col, Container, Row} from "react-bootstrap";
 
+
 const DifficultyComparison = ({
                                   data,
                                   width,

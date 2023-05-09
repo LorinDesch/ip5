@@ -1,6 +1,6 @@
 import React from 'react';
 
-const TreeImages = ({ leftIndex, rightIndex, isOn, fakeData, selectedOption2, selectedOption3, setSelectedOption1, selectedOption1, setSelectedOption2, setSelectedOption3 }) => {
+const TreeImages = ({ leftIndex, rightIndex, fakeData, selectedOption2, selectedOption3, setSelectedOption1, selectedOption1, setSelectedOption2, setSelectedOption3 }) => {
 
     if(selectedOption2 === "Challenge"){
         leftIndex = 0;

@@ -6,7 +6,7 @@ import React from "react";
 import Login from "./Login";
 
 
-const TopNavbar = ({isOn, setIsOn, fakeData, selectedOption3, selectedOption2, selectedOption1, setSelectedOption1, setSelectedOption2, setSelectedOption3 }) => { // Receive isOn and setIsOn as props
+const TopNavbar = ({fakeData, selectedOption3, selectedOption2, selectedOption1, setSelectedOption1, setSelectedOption2, setSelectedOption3 }) => {
 
     const dropDownStyling = {
         padding: '12px 38px 12px 12px',
