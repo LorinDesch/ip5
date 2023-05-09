@@ -27,7 +27,7 @@ function CommitmentsBar({data, width, height}) {
 
         const xAxis = d3.axisBottom(xScale)
             .tickFormat((value, index) => groups[index])
-            .tickSize(3);
+            .tickSize(0);
 
 
         const yAxis = d3.axisLeft(yScale)
@@ -38,12 +38,13 @@ function CommitmentsBar({data, width, height}) {
             .call(xAxis)
             .attr('transform', `translate(0, ${height})`)
             .selectAll('text')
-            // .style('fill', 'white');
+            .style('font-size', '16px');
 
         svg.append('g')
             .call(yAxis)
             .selectAll('text')
-            .style('fill', 'black');
+            .style('fill', 'black')
+            .style('font-size', '16px');
 
         svg.selectAll('.bar')
             .data(data)

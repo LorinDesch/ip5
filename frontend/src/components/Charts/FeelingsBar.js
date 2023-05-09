@@ -47,7 +47,9 @@ function CommitmentsBar({data, width, height}) {
             .call(xAxis)
             .attr('transform', `translate(0, ${height})`);
         svg.append('g')
-            .call(yAxis);
+            .call(yAxis)
+            .style('font-size', '16px');
+
 
         svg.selectAll('.bar')
             .data(data)

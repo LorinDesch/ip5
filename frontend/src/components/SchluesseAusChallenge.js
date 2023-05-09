@@ -8,7 +8,7 @@ const SchluesseAusChallenge = ({data}) => {
     const produkt = "Ich habe gemerkt dass ich mich in der Challenge sehr gut auf das Produkt konzentrieren konnte";
 
     return (
-        <div className="container" style={{textAlign: 'center', maxWidth: '600px'}}>
+        <div className="container" style={{textAlign: 'center', maxWidth: '400px', paddingTop: '1rem'}}>
             <h1 style={{fontSize: '1.5rem', marginBottom: '1rem'}}> Schlüsse aus der Challenge</h1>
 
             <div className="row">
