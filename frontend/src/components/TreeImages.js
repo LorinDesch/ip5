@@ -2,7 +2,6 @@ import React from 'react';
 
 const TreeImages = ({ leftIndex, rightIndex, fakeData, selectedOption2, selectedOption3, setSelectedOption1, selectedOption1, setSelectedOption2, setSelectedOption3 }) => {
 
-    console.log(fakeData)
     if (selectedOption2 === "Challenge") {
         leftIndex = 0;
         rightIndex = 0;
@@ -29,8 +28,6 @@ const TreeImages = ({ leftIndex, rightIndex, fakeData, selectedOption2, selected
 
 
         //TODO: Calculate right index better
-        // Calculate right index
-        console.log(selectedOption3)
         //get each userId from each group
         const selectedUsers = selectedOption3.flatMap(option =>
             fakeData.groups.filter(group => group.groupname === option)
@@ -39,11 +36,9 @@ const TreeImages = ({ leftIndex, rightIndex, fakeData, selectedOption2, selected
         );
         //each user can only be in the selectedUsers once
         const uniqueSelectedUsers = [...new Set(selectedUsers)];
-        console.log(uniqueSelectedUsers)
 
         //get all diaries from the selected commitment
         const diariesFromCiD = fakeData.diary.filter(diary => diary.commitmentid === cId);
-        console.log(diariesFromCiD)
         //get all diaries from the selected users
         const selectedDiaries = diariesFromCiD.filter(diary => uniqueSelectedUsers.includes(diary.userid));
         //get all eingeloest from the selected diaries
@@ -52,7 +47,6 @@ const TreeImages = ({ leftIndex, rightIndex, fakeData, selectedOption2, selected
         const sum = eingeloest.reduce((a, b) => a + b, 0);
         //get the average of all eingeloest
         rightIndex = sum / uniqueSelectedUsers.length || 0;
-        console.log(rightIndex)
 
         if (isNaN(leftIndex)) {
             leftIndex = 0;

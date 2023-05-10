@@ -20,6 +20,8 @@ function CommitmentsBar({
     } else {
 
         const cId = fakeData.commitments.filter(commitment => commitment.commitmentname === selectedOption2)[0].commitmentid;
+        console.log("Cid: "+ cId)
+
         const selectedUsers = selectedOption3.flatMap(option =>
             fakeData.groups.filter(group => group.groupname === option)
                 .map(group => group.users)
