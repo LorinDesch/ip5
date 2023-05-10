@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import TopNavbar from '../TopNavbar';
 import Comparison from "../Charts/Comparison";
 import SideNavbar from "../SideNavbar";
@@ -26,7 +26,7 @@ function getValueAttributeUserGroup(attribute, selectedOption1, selectedOption2,
 
 function getValueAttributeOnlyGroup(attribute, selectedOption3, fakeData, selectedOption2) {
     const cId = fakeData.commitments.find(commitment => commitment.commitmentname === selectedOption2)?.commitmentid;
-    let returnValue = 0;
+    const zeros = Array(selectedOption3.length).fill(0);
     if (cId > 0) {
         //for each selectedOption3 find the group.userIds and get the second difficulty value for each group
         const selectedGroupsDifficulties = selectedOption3.flatMap(groupName => fakeData.groups.find(group => group.groupname === groupName) || [])
@@ -40,11 +40,10 @@ function getValueAttributeOnlyGroup(attribute, selectedOption3, fakeData, select
                 }
                 return acc;
             }, 0));
-
-        console.log(selectedGroupsDifficulties);
-
+        return selectedGroupsDifficulties.length > 0 ? selectedGroupsDifficulties : zeros;
     }
-    return returnValue;
+    return zeros;
+
 }
 
 
@@ -86,7 +85,6 @@ const DifficultyComparison = ({
     const sustainableDevelopmentLabel = "Entwicklung"
     const sustainableDevelopmentlabelLeft = ["Wenig", "Mittel", "Viel"] //FLIPPED
     const sustainableDevelopmentValueLeftBar = getValueAttributeUserGroup("sustainableDevelopment", selectedOption1, selectedOption2, fakeData)
-
 
 
     data = [200, 30, 160, 50, 300, 400];
