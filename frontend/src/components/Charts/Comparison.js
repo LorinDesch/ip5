@@ -46,7 +46,7 @@ function Comparison({
             .padding(0.5);
 
         const yScale = d3.scaleLinear()
-            .domain([0, d3.max(dataLeft.concat(dataRight))])
+            .domain([0, 1])
             .range([height - margin.bottom, margin.top]);
 
         const xAxis = d3.axisBottom(xScale)
