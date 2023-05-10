@@ -4,23 +4,38 @@ import Comparison from "../Charts/Comparison";
 import SideNavbar from "../SideNavbar";
 import {Col, Container, Row} from "react-bootstrap";
 
-function getValueAttribute(attribute, selectedOption1, selectedOption2, fakeData) {
+function getValueAttributeUserGroup(attribute, selectedOption1, selectedOption2, fakeData) {
     const cId = fakeData.commitments.find(commitment => commitment.commitmentname === selectedOption2)?.commitmentid;
     let difficulty = 0;
     if (cId > 0) {
         const uId = fakeData.users.find(user => user.username === selectedOption1)?.userid;
         if (uId !== undefined) {
-            difficulty = fakeData.diary.find(diary => diary.userid === uId && diary.commitmentid === cId)[attribute][1];
+            difficulty = fakeData.diary.find(diary => diary.userid === uId && diary.commitmentid === cId)?.[attribute]?.[1] || 0;
         } else {
             let groupOfUsers = fakeData.groups.find(group => group.groupname === selectedOption1)?.users || [];
             let totalDifficulty = groupOfUsers.reduce((acc, userId) => {
                 const userDiary = fakeData.diary.find(diary => diary.userid === userId && diary.commitmentid === cId);
                 return userDiary ? acc + userDiary[attribute][1] : acc;
             }, 0);
-            difficulty = totalDifficulty / groupOfUsers.length;
+            difficulty = groupOfUsers.length ? totalDifficulty / groupOfUsers.length : 0;
         }
     }
     return difficulty;
+}
+
+
+function getValueAttributeOnlyGroup(attribute, selectedOption3,fakeData, selectedOption2){
+    const cId = fakeData.commitments.find(commitment => commitment.commitmentname === selectedOption2)?.commitmentid;
+    let returnValue = 0;
+    if (cId > 0) {
+        //for each selectedOption3 find the group.userIds
+        const selectedGroups = selectedOption3.flatMap(groupName => fakeData.groups.find(group => group.groupname === groupName) || []);
+        //for each selectedGroup get the group.users and for each user get the diary entry.difficulty[1]
+        console.log(selectedGroups)
+
+
+    }
+    return returnValue;
 }
 
 const DifficultyComparison = ({
@@ -38,28 +53,29 @@ const DifficultyComparison = ({
 
     const difficultyLabel = "Schwierigkeit"
     const difficultylabelLeft = ["Leicht", "Mittel", "Schwer"] //FLIPPED
-    const difficultyValue = getValueAttribute("difficulty", selectedOption1, selectedOption2, fakeData)
-
+    const difficultyValueLeftBar = getValueAttributeUserGroup("difficulty", selectedOption1, selectedOption2, fakeData)
+    console.log(difficultyValueLeftBar)
 
     const restrionctionLabel = "Einschränkung"
     const rrestrictionlabelLeft = ["Befreit", "Mittel", "Viel"] //FLIPPED
-    const restrictionValue = getValueAttribute("restriction", selectedOption1, selectedOption2, fakeData)
+    const restrictionValueLeftBar = getValueAttributeUserGroup("restriction", selectedOption1, selectedOption2, fakeData)
 
     const environeLabel = "Umfeldreaktion"
     const environmentlabelLeft = ["positiv", "neutral", "negativ"] //FLIPPED
-    const environmentValue = getValueAttribute("environment", selectedOption1, selectedOption2, fakeData)
+    const environmentValueLeftBar = getValueAttributeUserGroup("environment", selectedOption1, selectedOption2, fakeData)
 
     const currentContributionLabel = "Beitrag"
     const currentContributionlabelLeft = ["Gering", "Mittel", "Hoch"]
-    const currentContributionValue = getValueAttribute("currentContribution", selectedOption1, selectedOption2, fakeData)
+    const currentContributionValueLeftBar = getValueAttributeUserGroup("currentContribution", selectedOption1, selectedOption2, fakeData)
 
     const allowMeToLabel = "Übernehme"
     const allowMeTolabelLeft = ["Verantwortung", "Beides", "Erwartungen"]
-    const allowMeToValue = getValueAttribute("allowsMeTo", selectedOption1, selectedOption2, fakeData)
+    const allowMeToValueLeftBar = getValueAttributeUserGroup("allowsMeTo", selectedOption1, selectedOption2, fakeData)
 
     const sustainableDevelopmentLabel = "Entwicklung"
     const sustainableDevelopmentlabelLeft = ["Wenig", "Mittel", "Viel"] //FLIPPED
-    const sustainableDevelopmentValue = getValueAttribute("sustainableDevelopment", selectedOption1, selectedOption2, fakeData)
+    const sustainableDevelopmentValueLeftBar = getValueAttributeUserGroup("sustainableDevelopment", selectedOption1, selectedOption2, fakeData)
+
 
 
     data = [200, 30, 160, 50, 300, 400];
