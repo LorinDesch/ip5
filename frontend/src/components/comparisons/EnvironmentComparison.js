@@ -67,14 +67,16 @@ const DifficultyComparison = ({
                             <Comparison data={data} width={700} height={250}
                                         squaredLabelLeft={environeLabel}
                                         leftLabel={environmentlabelLeft}
-                                        squaredLabelRight={difficultyLabel}/>
+                                        squaredLabelRight={difficultyLabel}
+                                        rightLabel={difficultylabelLeft}/>
                         </div>
                     </Col>
                     <Col md={6}>
                         <div style={{marginLeft: '3rem'}}>
                             <Comparison data={data} width={700} height={250} squaredLabelLeft={environeLabel}
                                         leftLabel={environmentlabelLeft}
-                                        squaredLabelRight={currentContributionLabel}/>
+                                        squaredLabelRight={currentContributionLabel}
+                                        rightLabel={currentContributionlabelLeft}/>
                         </div>
                     </Col>
                 </Row>
@@ -84,7 +86,8 @@ const DifficultyComparison = ({
                             <Comparison data={data} width={700} height={250}
                                         squaredLabelLeft={environeLabel}
                                         leftLabel={environmentlabelLeft}
-                                        squaredLabelRight={restrionctionLabel}/>
+                                        squaredLabelRight={restrionctionLabel}
+                                        rightLabel={rrestrictionlabelLeft}/>
                         </div>
                     </Col>
                     <Col md={6}>
@@ -92,7 +95,8 @@ const DifficultyComparison = ({
                             <Comparison data={data} width={700} height={250}
                                         squaredLabelLeft={environeLabel}
                                         leftLabel={environmentlabelLeft}
-                                        squaredLabelRight={allowMeToLabel}/>
+                                        squaredLabelRight={allowMeToLabel}
+                                        rightLabel={allowMeTolabelLeft}/>
                         </div>
                     </Col>
                 </Row>
@@ -107,7 +111,8 @@ const DifficultyComparison = ({
                             <Comparison data={data} width={700} height={250}
                                         squaredLabelLeft={environeLabel}
                                         leftLabel={environmentlabelLeft}
-                                        squaredLabelRight={sustainableDevelopmentLabel}/>
+                                        squaredLabelRight={sustainableDevelopmentLabel}
+                                        rightLabel={sustainableDevelopmentlabelLeft}/>
                         </div>
                     </Col>
                 </Row>
