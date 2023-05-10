@@ -105,7 +105,6 @@ function DifficultyBar({ data, width, height }) {
             .style('font-size', '16');
 
 
-
         const legendWidth = 80 * colors.length;
         const legend = svg.append('g')
             .attr('transform', `translate(${(width - legendWidth) / 2}, ${height - 20})`);
