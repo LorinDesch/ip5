@@ -21,18 +21,27 @@ const App = () => {
             {
                 userid: 2,
                 username: "Peter Mueller",
+            },
+            {
+                userid: 3,
+                username: "Hans Meier",
             }
         ],
         groups: [
             {
                 groupid: 1,
                 groupname: "Gruppe 1",
-                users: [1] // userids
+                users: [1,2] // userids
             },
             {
                 groupid: 2,
                 groupname: "Gruppe 2",
                 users: [2] // userids
+            },
+            {
+                groupid: 3,
+                groupname: "Gruppe 3",
+                users: [3] // userids
             }
         ],
         commitments: [
@@ -74,7 +83,7 @@ const App = () => {
                 produkt: "Alles ist 3x verpackt",
             },
             eingeloest: 24,
-            feelings: [0.5,0.4,1,0.3,0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.5,0.4,1,0.3,0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,1,0,0.1,0.8],
+            feelings: [0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.5,0.4,1,0.3,0.1,0.2,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.5,0.4,1,0.3,0.1,0.2,0.3,0.4,0.5],
             difficulty: [0.4,0.8],
             restriction: [0.2,0.6],
             environment: [0.1,0.5],

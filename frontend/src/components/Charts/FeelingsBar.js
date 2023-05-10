@@ -35,9 +35,12 @@ function CommitmentsBar({fakeData, selectedOption1, setSelectedOption1, selected
 
     const svgRef = useRef();
     useEffect(() => {
+        // Clear the SVG before rendering the new chart
+        const svg = d3.select(svgRef.current);
+        svg.selectAll("*").remove();
 
-
-        const svg = d3.select(svgRef.current)
+        // Render the chart
+        const svgChart = svg
             .attr('width', width)
             .attr('height', height)
             .style('overflow', 'visible');
@@ -60,10 +63,10 @@ function CommitmentsBar({fakeData, selectedOption1, setSelectedOption1, selected
             .tickFormat(d => yAxisLabels[d * 2])
 
 
-        svg.append('g')
+        svgChart.append('g')
             .call(xAxis)
             .attr('transform', `translate(0, ${height})`);
-        svg.append('g')
+        svgChart.append('g')
             .call(yAxis)
             .style('font-size', '16px');
 
