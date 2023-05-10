@@ -4,6 +4,24 @@ import Comparison from "../Charts/Comparison";
 import SideNavbar from "../SideNavbar";
 import {Col, Container, Row} from "react-bootstrap";
 
+function getValueAttribute(attribute, selectedOption1, selectedOption2, fakeData) {
+    const cId = fakeData.commitments.find(commitment => commitment.commitmentname === selectedOption2)?.commitmentid;
+    let difficulty = 0;
+    if (cId > 0) {
+        const uId = fakeData.users.find(user => user.username === selectedOption1)?.userid;
+        if (uId !== undefined) {
+            difficulty = fakeData.diary.find(diary => diary.userid === uId && diary.commitmentid === cId)[attribute][1];
+        } else {
+            let groupOfUsers = fakeData.groups.find(group => group.groupname === selectedOption1)?.users || [];
+            let totalDifficulty = groupOfUsers.reduce((acc, userId) => {
+                const userDiary = fakeData.diary.find(diary => diary.userid === userId && diary.commitmentid === cId);
+                return userDiary ? acc + userDiary[attribute][1] : acc;
+            }, 0);
+            difficulty = totalDifficulty / groupOfUsers.length;
+        }
+    }
+    return difficulty;
+}
 
 const DifficultyComparison = ({
                                   data,
@@ -20,25 +38,28 @@ const DifficultyComparison = ({
 
     const difficultyLabel = "Schwierigkeit"
     const difficultylabelLeft = ["Leicht", "Mittel", "Schwer"] //FLIPPED
-
-    //COPIED
-
+    const difficultyValue = getValueAttribute("difficulty", selectedOption1, selectedOption2, fakeData)
 
 
     const restrionctionLabel = "Einschränkung"
     const rrestrictionlabelLeft = ["Befreit", "Mittel", "Viel"] //FLIPPED
+    const restrictionValue = getValueAttribute("restriction", selectedOption1, selectedOption2, fakeData)
 
     const environeLabel = "Umfeldreaktion"
     const environmentlabelLeft = ["positiv", "neutral", "negativ"] //FLIPPED
+    const environmentValue = getValueAttribute("environment", selectedOption1, selectedOption2, fakeData)
 
     const currentContributionLabel = "Beitrag"
     const currentContributionlabelLeft = ["Gering", "Mittel", "Hoch"]
+    const currentContributionValue = getValueAttribute("currentContribution", selectedOption1, selectedOption2, fakeData)
 
     const allowMeToLabel = "Übernehme"
     const allowMeTolabelLeft = ["Verantwortung", "Beides", "Erwartungen"]
+    const allowMeToValue = getValueAttribute("allowsMeTo", selectedOption1, selectedOption2, fakeData)
 
     const sustainableDevelopmentLabel = "Entwicklung"
     const sustainableDevelopmentlabelLeft = ["Wenig", "Mittel", "Viel"] //FLIPPED
+    const sustainableDevelopmentValue = getValueAttribute("sustainableDevelopment", selectedOption1, selectedOption2, fakeData)
 
 
     data = [200, 30, 160, 50, 300, 400];
