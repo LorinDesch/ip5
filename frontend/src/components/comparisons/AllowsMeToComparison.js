@@ -24,19 +24,20 @@ function getValueAttributeUserGroup(attribute, selectedOption1, selectedOption2,
 }
 
 
-function getValueAttributeOnlyGroup(attribute, selectedOption3,fakeData, selectedOption2){
+function getValueAttributeOnlyGroup(attribute, selectedOption3, fakeData, selectedOption2) {
     const cId = fakeData.commitments.find(commitment => commitment.commitmentname === selectedOption2)?.commitmentid;
     let returnValue = 0;
     if (cId > 0) {
-        //for each selectedOption3 find the group.userIds
-        const selectedGroups = selectedOption3.flatMap(groupName => fakeData.groups.find(group => group.groupname === groupName) || []);
-        //for each selectedGroup get the group.users and for each user get the diary entry.difficulty[1]
-        console.log(selectedGroups)
+        //for each selectedOption3 find the group.userIds and get the second difficulty value for each group
+        const selectedGroupsDifficulties = selectedOption3.flatMap(groupName => fakeData.groups.find(group => group.groupname === groupName) || [])
+            .map(group => group.users.flatMap(userId => fakeData.diary.find(diary => diary.userid === userId && diary.commitmentid === cId)?.difficulty[1])) ;
 
+        console.log(selectedGroupsDifficulties);
 
     }
     return returnValue;
 }
+
 
 const DifficultyComparison = ({
                                   data,
@@ -54,7 +55,8 @@ const DifficultyComparison = ({
     const difficultyLabel = "Schwierigkeit"
     const difficultylabelLeft = ["Leicht", "Mittel", "Schwer"] //FLIPPED
     const difficultyValueLeftBar = getValueAttributeUserGroup("difficulty", selectedOption1, selectedOption2, fakeData)
-    console.log(difficultyValueLeftBar)
+    const difficultyValueRightBar = getValueAttributeOnlyGroup("difficulty", selectedOption3, fakeData, selectedOption2)
+    console.log(difficultyValueRightBar)
 
     const restrionctionLabel = "Einschränkung"
     const rrestrictionlabelLeft = ["Befreit", "Mittel", "Viel"] //FLIPPED
