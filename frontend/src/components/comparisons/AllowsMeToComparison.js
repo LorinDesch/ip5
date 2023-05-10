@@ -30,7 +30,16 @@ function getValueAttributeOnlyGroup(attribute, selectedOption3, fakeData, select
     if (cId > 0) {
         //for each selectedOption3 find the group.userIds and get the second difficulty value for each group
         const selectedGroupsDifficulties = selectedOption3.flatMap(groupName => fakeData.groups.find(group => group.groupname === groupName) || [])
-            .map(group => group.users.flatMap(userId => fakeData.diary.find(diary => diary.userid === userId && diary.commitmentid === cId)?.difficulty[1])) ;
+            .map(group => group.users.flatMap(userId => {
+                const diary = fakeData.diary.find(diary => diary.userid === userId && diary.commitmentid === cId);
+                return diary ? diary.difficulty[1] : [0];
+            }).reduce((acc, val, idx, arr) => {
+                acc += val;
+                if (idx === arr.length - 1) {
+                    acc /= arr.length;
+                }
+                return acc;
+            }, 0));
 
         console.log(selectedGroupsDifficulties);
 
