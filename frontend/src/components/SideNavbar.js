@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { FaHome, FaChartBar } from 'react-icons/fa';
+import React, {useState, useEffect} from 'react';
+import {FaHome, FaChartBar} from 'react-icons/fa';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const SideNavbar = () => {
@@ -27,72 +27,80 @@ const SideNavbar = () => {
     return (
         <nav
             className="navbar flex-column justify-content-between align-items-center bg-light text-dark fixed-top"
-            style={{ height: containerHeight, width: '6rem', boxShadow: '0 0 0 2px #000' }}
+            style={{height: containerHeight, width: '6rem', boxShadow: '0 0 0 2px #000'}}
         >
             <div className="d-flex flex-column align-items-center">
                 <div className="mb-2">Home</div>
-                <FaHome size={'2vw'}
-                        className="nav-icon border"
-                        onMouseEnter={handleIconHover}
-                        onMouseLeave={handleIconLeave}
-                        onClick={() => (window.location.href = '/')}
+                <FaHome
+                    size={'3vw'}
+                    className="nav-icon rounded border border-secondary p-2"
+                    onMouseEnter={handleIconHover}
+                    onMouseLeave={handleIconLeave}
+                    onClick={() => (window.location.href = '/')}
                 />
             </div>
             <div className="d-flex flex-column align-items-center">
                 <div className="mb-2">Difficulty</div>
-                <FaChartBar size={'2vw'}
-                            className="nav-icon border"
-                            onMouseEnter={handleIconHover}
-                            onMouseLeave={handleIconLeave}
-                            onClick={() => (window.location.href = '/difficulty')}
+                <FaChartBar
+                    size={'3vw'}
+                    className="nav-icon rounded border border-secondary p-2"
+                    onMouseEnter={handleIconHover}
+                    onMouseLeave={handleIconLeave}
+                    onClick={() => (window.location.href = '/difficulty')}
                 />
             </div>
             <div className="d-flex flex-column align-items-center">
                 <div className="mb-2">Restriction</div>
-                <FaChartBar size={'2vw'}
-                            className="nav-icon border"
-                            onMouseEnter={handleIconHover}
-                            onMouseLeave={handleIconLeave}
-                            onClick={() => (window.location.href = '/restriction')}
+                <FaChartBar
+                    size={'3vw'}
+                    className="nav-icon rounded border border-secondary p-2"
+                    onMouseEnter={handleIconHover}
+                    onMouseLeave={handleIconLeave}
+                    onClick={() => (window.location.href = '/restriction')}
                 />
             </div>
             <div className="d-flex flex-column align-items-center">
                 <div className="mb-2">Environment</div>
-                <FaChartBar size={'2vw'}
-                            className="nav-icon border"
-                            onMouseEnter={handleIconHover}
-                            onMouseLeave={handleIconLeave}
-                            onClick={() => (window.location.href = '/environment')}
+                <FaChartBar
+                    size={'3vw'}
+                    className="nav-icon rounded border border-secondary p-2"
+                    onMouseEnter={handleIconHover}
+                    onMouseLeave={handleIconLeave}
+                    onClick={() => (window.location.href = '/environment')}
                 />
             </div>
-            <div className="d-flex flex-column align-items-center">
-                <div className="mb-2">Current Contribution</div>
-                <FaChartBar size={'2vw'}
-                            className="nav-icon border"
-                            onMouseEnter={handleIconHover}
-                            onMouseLeave={handleIconLeave}
-                            onClick={() => (window.location.href = '/currentcontribution')}
+            <div className="d-flex flex-column align-items-center justify-content-center text-center">
+                <div className="mb-2">Current<br/>Contribution</div>
+                <FaChartBar
+                    size={'3vw'}
+                    className="nav-icon rounded border border-secondary p-2"
+                    onMouseEnter={handleIconHover}
+                    onMouseLeave={handleIconLeave}
+                    onClick={() => (window.location.href = '/currentcontribution')}
                 />
             </div>
             <div className="d-flex flex-column align-items-center">
                 <div className="mb-2">Allows Me To</div>
-                <FaChartBar size={'2vw'}
-                            className="nav-icon border"
-                            onMouseEnter={handleIconHover}
-                            onMouseLeave={handleIconLeave}
-                            onClick={() => (window.location.href = '/allowsmeto')}
+                <FaChartBar
+                    size={'3vw'}
+                    className="nav-icon rounded border border-secondary p-2"
+                    onMouseEnter={handleIconHover}
+                    onMouseLeave={handleIconLeave}
+                    onClick={() => (window.location.href = '/allowsmeto')}
                 />
             </div>
-            <div className="d-flex flex-column align-items-center">
-                <div className="mb-2">Sustainable Development</div>
-                <FaChartBar size={'2vw'}
-                            className="nav-icon border"
-                            onMouseEnter={handleIconHover}
-                            onMouseLeave={handleIconLeave}
-                            onClick={() => (window.location.href = '/sustainabledevelopment')}
+            <div className="d-flex flex-column align-items-center justify-content-center text-center">
+                <div className="mb-2">Sustainable<br/>Development</div>
+                <FaChartBar
+                    size={'3vw'}
+                    className="nav-icon rounded border border-secondary p-2"
+                    onMouseEnter={handleIconHover}
+                    onMouseLeave={handleIconLeave}
+                    onClick={() => (window.location.href = '/sustainabledevelopment')}
                 />
             </div>
         </nav>
+
     );
 };
 
