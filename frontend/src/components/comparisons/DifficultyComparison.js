@@ -83,7 +83,7 @@ const DifficultyComparison = ({
                         <div style={{marginLeft: '5rem'}}>
                             <Comparison data={data} width={700} height={250}
                                         squaredLabelLeft={difficultyLabel}
-                                        leftLabel={sustainableDevelopmentlabelLeft}
+                                        leftLabel={difficultylabelLeft}
                                         squaredLabelRight={restrionctionLabel}/>
                         </div>
                     </Col>

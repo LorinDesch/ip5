@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import * as d3 from 'd3';
 
 function Comparison({ data, width, height, squaredLabelLeft, squaredLabelRight, leftLabel }) {
-    const rightLabel = ["leicht", "mittel", "stark"];
+    const rightLabel = ["x", "x", "x"];
     const klassen = ["Klasse 1", "Klasse 2", "Klasse 3", "Klasse 4", "Klasse 5", "Klasse 6", "Klasse 7", "Klasse 8", "Klasse 9", "Klasse 10"];
     const label = [squaredLabelLeft, squaredLabelRight]
 
