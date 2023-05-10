@@ -25,7 +25,7 @@ const App = () => {
             {
                 userid: 3,
                 username: "Hans Meier",
-            },{
+            }, {
                 userid: 4,
                 username: "Hans Meier2",
             }
@@ -34,7 +34,7 @@ const App = () => {
             {
                 groupid: 1,
                 groupname: "Gruppe 1",
-                users: [1,12] // userids
+                users: [1, 12] // userids
             },
             {
                 groupid: 2,
@@ -72,14 +72,14 @@ const App = () => {
                 produkt: "Diese sind auch nur auf Profit aus",
             },
             eingeloest: 20,
-            feelings: [0.5,0.4,1,0.3,0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.5,0.4,1,0.3,0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,1,0,0.1,0.8],
-            difficulty: [0.4,0.8],
-            restriction: [0.2,0.6],
-            environment: [0.1,0.5],
-            currentContribution: [0.3,0.7],
-            allowsMeTo: [0.5,0.9],
-            sustainableDevelopment: [0.6,1],
-        },{
+            feelings: [0.5, 0.4, 1, 0.3, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.5, 0.4, 1, 0.3, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 1, 0, 0.1, 0.8],
+            difficulty: [0.4, 0.8],
+            restriction: [0.2, 0.6],
+            environment: [0.1, 0.5],
+            currentContribution: [0.3, 0.7],
+            allowsMeTo: [0.5, 0.9],
+            sustainableDevelopment: [0.6, 1],
+        }, {
             diaryid: 2,
             userid: 12,
             commitmentid: 1,
@@ -90,14 +90,14 @@ const App = () => {
                 produkt: "Alles ist 3x verpackt",
             },
             eingeloest: 28,
-            feelings: [0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.5,0.4,1,0.3,0.1,0.2,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.5,0.4,1,0.3,0.1,0.2,0.3,0.4,0.5],
-            difficulty: [0.4,0.7],
-            restriction: [0.2,0.6],
-            environment: [0.1,0.5],
-            currentContribution: [0.3,0.7],
-            allowsMeTo: [0.5,0.9],
-            sustainableDevelopment: [0.6,1],
-        },{
+            feelings: [0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.5, 0.4, 1, 0.3, 0.1, 0.2, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.5, 0.4, 1, 0.3, 0.1, 0.2, 0.3, 0.4, 0.5],
+            difficulty: [0.4, 0.7],
+            restriction: [0.2, 0.6],
+            environment: [0.1, 0.5],
+            currentContribution: [0.3, 0.7],
+            allowsMeTo: [0.5, 0.9],
+            sustainableDevelopment: [0.6, 1],
+        }, {
             diaryid: 3,
             userid: 3,
             commitmentid: 2,
@@ -108,14 +108,34 @@ const App = () => {
                 produkt: "Alles ist 3x verpackt",
             },
             eingeloest: 24,
-            feelings: [0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.5,0.4,1,0.3,0.1,0.2,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.5,0.4,1,0.3,0.1,0.2,0.3,0.4,0.5],
-            difficulty: [0.4,0.8],
-            restriction: [0.2,0.6],
-            environment: [0.1,0.5],
-            currentContribution: [0.3,0.7],
-            allowsMeTo: [0.5,0.9],
-            sustainableDevelopment: [0.6,1],
-        }]
+            feelings: [0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.5, 0.4, 1, 0.3, 0.1, 0.2, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.5, 0.4, 1, 0.3, 0.1, 0.2, 0.3, 0.4, 0.5],
+            difficulty: [0.4, 0.8],
+            restriction: [0.2, 0.6],
+            environment: [0.1, 0.5],
+            currentContribution: [0.3, 0.7],
+            allowsMeTo: [0.5, 0.9],
+            sustainableDevelopment: [0.6, 1],
+        }, {
+            diaryid: 4,
+            userid: 1,
+            commitmentid: 2,
+            schluesse: {
+                selbst: "Ich ernähre mich jetzt gesünder",
+                sozial: "Meine Freunde haben grad mitgemacht",
+                politik: "Politiker sind nicht so interessiert",
+                produkt: "Alles ist 3x verpackt",
+            },
+            eingeloest: 2,
+            feelings: [0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.5, 0.4, 1, 0.3, 0.1, 0.2, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.5, 0.4, 1, 0.3, 0.1, 0.2, 0.3, 0.4, 0.5],
+            difficulty: [0.4, 0.8],
+            restriction: [0.2, 0.6],
+            environment: [0.1, 0.5],
+            currentContribution: [0.3, 0.7],
+            allowsMeTo: [0.5, 0.9],
+            sustainableDevelopment: [0.6, 1],
+        }
+
+        ]
     });
     const [selectedOption1, setSelectedOption1] = useState('Peter Mueller');
     const [selectedOption2, setSelectedOption2] = useState('Challenge');
@@ -130,18 +150,20 @@ const App = () => {
                                                     setSelectedOption2={setSelectedOption2}
                                                     selectedOption3={selectedOption3}
                                                     setSelectedOption3={setSelectedOption3}/>}/>
-                <Route path="/difficulty" element={<DifficultyComparison fakeData={fakeData} selectedOption1={selectedOption1}
-                                                                         setSelectedOption1={setSelectedOption1}
-                                                                         selectedOption2={selectedOption2}
-                                                                         setSelectedOption2={setSelectedOption2}
-                                                                         selectedOption3={selectedOption3}
-                                                                         setSelectedOption3={setSelectedOption3}/>}/> { /* Schwierigkeit */}
-                <Route path="/restriction" element={<RestrictionComparison fakeData={fakeData} selectedOption1={selectedOption1}
-                                                                           setSelectedOption1={setSelectedOption1}
-                                                                           selectedOption2={selectedOption2}
-                                                                           setSelectedOption2={setSelectedOption2}
-                                                                           selectedOption3={selectedOption3}
-                                                                           setSelectedOption3={setSelectedOption3}/>}/> { /* Einschränkung */}
+                <Route path="/difficulty"
+                       element={<DifficultyComparison fakeData={fakeData} selectedOption1={selectedOption1}
+                                                      setSelectedOption1={setSelectedOption1}
+                                                      selectedOption2={selectedOption2}
+                                                      setSelectedOption2={setSelectedOption2}
+                                                      selectedOption3={selectedOption3}
+                                                      setSelectedOption3={setSelectedOption3}/>}/> { /* Schwierigkeit */}
+                <Route path="/restriction"
+                       element={<RestrictionComparison fakeData={fakeData} selectedOption1={selectedOption1}
+                                                       setSelectedOption1={setSelectedOption1}
+                                                       selectedOption2={selectedOption2}
+                                                       setSelectedOption2={setSelectedOption2}
+                                                       selectedOption3={selectedOption3}
+                                                       setSelectedOption3={setSelectedOption3}/>}/> { /* Einschränkung */}
                 <Route path="/environment"
                        element={<EnvironmentComparison fakeData={fakeData} selectedOption1={selectedOption1}
                                                        setSelectedOption1={setSelectedOption1}

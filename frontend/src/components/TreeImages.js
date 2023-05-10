@@ -13,14 +13,14 @@ const TreeImages = ({ leftIndex, rightIndex, fakeData, selectedOption2, selected
             const uId = fakeData.users.find(user => user.username === "Max Mustermann")?.userid;
             const diariesFromCiD = fakeData.diary.filter(diary => diary.commitmentid === cId);
             const selectedDiaries = diariesFromCiD.filter(diary => diary.userid === uId);
-            leftIndex = selectedDiaries[0]?.eingeloest || 0;
+            leftIndex = Math.round(selectedDiaries[0]?.eingeloest || 0);
         } else if (selectedOption1 === "Gruppe 1") {
             groupOfUsers = fakeData.groups.find(group => group.groupname === "Gruppe 1")?.users || [];
-            leftIndex = groupOfUsers.reduce((acc, user) => {
+            leftIndex = Math.round(groupOfUsers.reduce((acc, user) => {
                 const diariesFromCiD = fakeData.diary.filter(diary => diary.commitmentid === cId);
                 const selectedDiaries = diariesFromCiD.filter(diary => diary.userid === user);
                 return acc + (selectedDiaries[0]?.eingeloest || 0);
-            }, 0) / groupOfUsers.length || 0;
+            }, 0) / groupOfUsers.length || 0);
 
         } else {
             leftIndex = 0;
@@ -46,7 +46,7 @@ const TreeImages = ({ leftIndex, rightIndex, fakeData, selectedOption2, selected
         //get the sum of all eingeloest
         const sum = eingeloest.reduce((a, b) => a + b, 0);
         //get the average of all eingeloest
-        rightIndex = sum / uniqueSelectedUsers.length || 0;
+        rightIndex = Math.round(sum / uniqueSelectedUsers.length || 0);
 
         if (isNaN(leftIndex)) {
             leftIndex = 0;
@@ -55,6 +55,7 @@ const TreeImages = ({ leftIndex, rightIndex, fakeData, selectedOption2, selected
             rightIndex = 0;
         }
     }
+
 
 
     const leftImagePath = `${process.env.PUBLIC_URL}/images/tree_left/l${leftIndex}-min-min.png`;
