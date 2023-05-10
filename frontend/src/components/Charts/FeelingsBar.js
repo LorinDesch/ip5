@@ -1,7 +1,17 @@
 import React, {useEffect, useRef} from 'react';
 import * as d3 from 'd3';
 
-function CommitmentsBar({fakeData, selectedOption1, setSelectedOption1, selectedOption2, setSelectedOption2, selectedOption3, setSelectedOption3 , width, height}) {
+function CommitmentsBar({
+                            fakeData,
+                            selectedOption1,
+                            setSelectedOption1,
+                            selectedOption2,
+                            setSelectedOption2,
+                            selectedOption3,
+                            setSelectedOption3,
+                            width,
+                            height
+                        }) {
 
     console.log("fakeData ", fakeData)
     console.log("selectedOption1 ", selectedOption1)
@@ -26,7 +36,7 @@ function CommitmentsBar({fakeData, selectedOption1, setSelectedOption1, selected
         }
     }, []);
 
-    const colors = ['green', 'grey', 'red', 'blue'];
+    const colors = ['#135210', '#73796E', '#FF897D', '#85B3B7'];
     const yAxisLabels = ['schlecht', 'gelassen', 'grossartig'];
     const groups = ["Tag 1", "Tag 2", "Tag 3", "Tag 4", "Tag 5", "Tag 6", "Tag 7"]
 
@@ -42,7 +52,8 @@ function CommitmentsBar({fakeData, selectedOption1, setSelectedOption1, selected
         const xScale = d3.scaleBand()
             .domain(d3.range(0, 28))
             .range([0, width])
-            .padding(0.5);
+            .padding(1);
+
 
         const xAxis = d3.axisBottom(xScale)
             .tickValues([])
@@ -117,8 +128,6 @@ function CommitmentsBar({fakeData, selectedOption1, setSelectedOption1, selected
         });
 
 
-
-
         const legendWidth = 80 * colors.length;
         const legend = svg.append('g')
             .attr('transform', `translate(${(width - legendWidth) / 2}, ${height - 20})`);
@@ -127,19 +136,20 @@ function CommitmentsBar({fakeData, selectedOption1, setSelectedOption1, selected
             .data(colors)
             .join('g')
             .attr('class', 'legend-item')
-            .attr('transform', (value, index) => `translate(${index * 80}, 0)`)
+            .attr('transform', (value, index) => `translate(${index * 100}, 0)`)
             .call(g => {
                 g.append('rect')
-                    .attr('x', 0)
+                    .attr('x', -20)
                     .attr('y', -height)
                     .attr('width', 15)
                     .attr('height', 15)
                     .attr('fill', value => value);
                 g.append('text')
-                    .attr('x', 20)
+                    .attr('x', 0)
                     .attr('y', -height + 13)
                     .text((value, index) => `Woche ${index + 1}`);
             });
+
     }, [data, height, width, colors]);
 
     return <svg ref={svgRef}>

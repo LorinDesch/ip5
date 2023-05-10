@@ -37,7 +37,7 @@ function CommitmentsBar({
     data = eingeloeste.length > 0 ? eingeloeste : [];
     const groups = selectedOption3
     console.log("Groups", groups)
-    const colors = ["blue"];
+    const colors = ["#85B3B7"];
 
     const svgRef = useRef();
 
@@ -103,7 +103,7 @@ function CommitmentsBar({
             .attr('y', yScale)
             .attr('width', xScale.bandwidth())
             .attr('height', value => height - yScale(value))
-            .attr('fill', 'blue');
+            .attr('fill', '#85B3B7');
 
         group.each(function (d, i) {
             if (i % 4 === 3) {
