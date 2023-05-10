@@ -84,6 +84,11 @@ const DifficultyComparison = ({
                                         leftLabel={currentContributionlabelLeft}
                                         squaredLabelRight={difficultyLabel}
                                         rightLabel={difficultylabelLeft}
+                                        difficultyValueRightBar={difficultyValueRightBar}
+                                        difficultyValueLeftBar={currentContributionValueLeftBar}
+                                        selectedOption3={selectedOption3}
+                            />
+
 
                             />
                         </div>
@@ -101,7 +106,12 @@ const DifficultyComparison = ({
                                         squaredLabelLeft={currentContributionLabel}
                                         leftLabel={currentContributionlabelLeft}
                                         squaredLabelRight={restrionctionLabel}
-                                        rightLabel={rrestrictionlabelLeft}/>
+                                        rightLabel={rrestrictionlabelLeft}
+                                        difficultyValueRightBar={restrictionValueRightBar}
+                                        difficultyValueLeftBar={currentContributionValueLeftBar}
+                                        selectedOption3={selectedOption3}
+
+                            />
                         </div>
                     </Col>
                     <Col md={6}>
@@ -110,7 +120,12 @@ const DifficultyComparison = ({
                                         squaredLabelLeft={currentContributionLabel}
                                         leftLabel={currentContributionlabelLeft}
                                         squaredLabelRight={allowMeToLabel}
-                                        rightLabel={allowMeTolabelLeft}/>
+                                        rightLabel={allowMeTolabelLeft}
+                                        difficultyValueRightBar={allowMeToValueRightBar}
+                                        difficultyValueLeftBar={currentContributionValueLeftBar}
+                                        selectedOption3={selectedOption3}
+
+                            />
                         </div>
                     </Col>
                 </Row>
@@ -121,7 +136,11 @@ const DifficultyComparison = ({
                                         squaredLabelLeft={currentContributionLabel}
                                         leftLabel={currentContributionlabelLeft}
                                         squaredLabelRight={environeLabel}
-                                        rightLabel={environmentlabelLeft}/>
+                                        rightLabel={environmentlabelLeft}
+                                        difficultyValueRightBar={environmentValueRightBar}
+                                        difficultyValueLeftBar={currentContributionValueLeftBar}
+                                        selectedOption3={selectedOption3}
+                            />
                         </div>
                     </Col>
                     <Col md={6}>
@@ -130,7 +149,11 @@ const DifficultyComparison = ({
                                         squaredLabelLeft={currentContributionLabel}
                                         leftLabel={currentContributionlabelLeft}
                                         squaredLabelRight={sustainableDevelopmentLabel}
-                                        rightLabel={sustainableDevelopmentlabelLeft}/>
+                                        rightLabel={sustainableDevelopmentlabelLeft}
+                                        difficultyValueRightBar={sustainableDevelopmentValueRightBar}
+                                        difficultyValueLeftBar={currentContributionValueLeftBar}
+                                        selectedOption3={selectedOption3}
+                            />
                         </div>
                     </Col>
                 </Row>

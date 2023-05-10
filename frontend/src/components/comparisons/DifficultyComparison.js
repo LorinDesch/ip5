@@ -3,6 +3,7 @@ import {Container, Row, Col} from 'react-bootstrap';
 import TopNavbar from '../TopNavbar';
 import Comparison from "../Charts/Comparison";
 import SideNavbar from "../SideNavbar";
+import {getValueAttributeOnlyGroup, getValueAttributeUserGroup} from "./AllowsMeToComparison";
 
 
 const DifficultyComparison = ({
@@ -22,21 +23,36 @@ const DifficultyComparison = ({
 
     const difficultyLabel = "Schwierigkeit"
     const difficultylabelLeft = ["Leicht", "Mittel", "Schwer"] //FLIPPED
+    const difficultyValueRightBar = getValueAttributeOnlyGroup("difficulty", selectedOption3, fakeData, selectedOption2)
+    const difficultyValueLeftBar = Array(difficultyValueRightBar.length).fill(getValueAttributeUserGroup("difficulty", selectedOption1, selectedOption2, fakeData));
+
 
     const restrionctionLabel = "Einschränkung"
     const rrestrictionlabelLeft = ["Befreit", "Mittel", "Viel"] //FLIPPED
+    const restrictionValueRightBar = getValueAttributeOnlyGroup("restriction", selectedOption3, fakeData, selectedOption2)
+    const restrictionValueLeftBar = Array(restrictionValueRightBar.length).fill(getValueAttributeUserGroup("restriction", selectedOption1, selectedOption2, fakeData));
 
     const environeLabel = "Umfeldreaktion"
     const environmentlabelLeft = ["positiv", "neutral", "negativ"] //FLIPPED
+    const environmentValueRightBar = getValueAttributeOnlyGroup("environment", selectedOption3, fakeData, selectedOption2)
+    const environmentValueLeftBar = Array(environmentValueRightBar.length).fill(getValueAttributeUserGroup("environment", selectedOption1, selectedOption2, fakeData));
 
     const currentContributionLabel = "Beitrag"
     const currentContributionlabelLeft = ["Gering", "Mittel", "Hoch"]
+    const currentContributionValueRightBar = getValueAttributeOnlyGroup("currentContribution", selectedOption3, fakeData, selectedOption2)
+    const currentContributionValueLeftBar = Array(currentContributionValueRightBar.length).fill(getValueAttributeUserGroup("currentContribution", selectedOption1, selectedOption2, fakeData));
 
     const allowMeToLabel = "Übernehme"
     const allowMeTolabelLeft = ["Verantwortung", "Beides", "Erwartungen"]
+    const allowMeToValueRightBar = getValueAttributeOnlyGroup("allowsMeTo", selectedOption3, fakeData, selectedOption2)
+    const allowMeToValueLeftBar = Array(allowMeToValueRightBar.length).fill(getValueAttributeUserGroup("allowsMeTo", selectedOption1, selectedOption2, fakeData));
 
     const sustainableDevelopmentLabel = "Entwicklung"
     const sustainableDevelopmentlabelLeft = ["Wenig", "Mittel", "Viel"] //FLIPPED
+    const sustainableDevelopmentValueRightBar = getValueAttributeOnlyGroup("sustainableDevelopment", selectedOption3, fakeData, selectedOption2)
+    const sustainableDevelopmentValueLeftBar = Array(sustainableDevelopmentValueRightBar.length).fill(getValueAttributeUserGroup("sustainableDevelopment", selectedOption1, selectedOption2, fakeData));
+
+
 
 
     return (
@@ -74,7 +90,11 @@ const DifficultyComparison = ({
                                         squaredLabelLeft={difficultyLabel}
                                         leftLabel={difficultylabelLeft}
                                         squaredLabelRight={currentContributionLabel}
-                                        rightLabel={currentContributionlabelLeft}/>
+                                        rightLabel={currentContributionlabelLeft}
+                                        difficultyValueRightBar={difficultyValueRightBar}
+                                        difficultyValueLeftBar={currentContributionValueLeftBar}
+                                        selectedOption3={selectedOption3}
+                            />
                         </div>
                     </Col>
                 </Row>
@@ -85,7 +105,11 @@ const DifficultyComparison = ({
                                         squaredLabelLeft={difficultyLabel}
                                         leftLabel={difficultylabelLeft}
                                         squaredLabelRight={restrionctionLabel}
-                                        rightLabel={rrestrictionlabelLeft}/>
+                                        rightLabel={rrestrictionlabelLeft}
+                                        difficultyValueRightBar={restrictionValueRightBar}
+                                        difficultyValueLeftBar={difficultyValueLeftBar}
+                                        selectedOption3={selectedOption3}
+                            />
                         </div>
                     </Col>
                     <Col md={6}>
@@ -94,7 +118,12 @@ const DifficultyComparison = ({
                                         squaredLabelLeft={difficultyLabel}
                                         leftLabel={difficultylabelLeft}
                                         squaredLabelRight={allowMeToLabel}
-                                        rightLabel={allowMeTolabelLeft}/>
+                                        rightLabel={allowMeTolabelLeft}
+                                        difficultyValueRightBar={allowMeToValueRightBar}
+                                        difficultyValueLeftBar={difficultyValueLeftBar}
+                                        selectedOption3={selectedOption3}
+
+                            />
                         </div>
                     </Col>
                 </Row>
@@ -105,7 +134,11 @@ const DifficultyComparison = ({
                                         squaredLabelLeft={difficultyLabel}
                                         leftLabel={difficultylabelLeft}
                                         squaredLabelRight={environeLabel}
-                                        rightLabel={environmentlabelLeft}/>
+                                        rightLabel={environmentlabelLeft}
+                                        difficultyValueRightBar={environmentValueRightBar}
+                                        difficultyValueLeftBar={difficultyValueLeftBar}
+                                        selectedOption3={selectedOption3}
+                            />
                         </div>
                     </Col>
                     <Col md={6}>
@@ -114,7 +147,11 @@ const DifficultyComparison = ({
                                         squaredLabelLeft={difficultyLabel}
                                         leftLabel={difficultylabelLeft}
                                         squaredLabelRight={sustainableDevelopmentLabel}
-                                        rightLabel={sustainableDevelopmentlabelLeft}/>
+                                        rightLabel={sustainableDevelopmentlabelLeft}
+                                        difficultyValueRightBar={sustainableDevelopmentValueRightBar}
+                                        difficultyValueLeftBar={difficultyValueLeftBar}
+                                        selectedOption3={selectedOption3}
+                            />
                         </div>
                     </Col>
                 </Row>

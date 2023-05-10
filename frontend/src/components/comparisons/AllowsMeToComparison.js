@@ -47,7 +47,7 @@ export function getValueAttributeOnlyGroup(attribute, selectedOption3, fakeData,
 }
 
 
-const DifficultyComparison = ({
+const AllowMeToComparison = ({
                                   data,
                                   width,
                                   height,
@@ -199,4 +199,4 @@ const DifficultyComparison = ({
     );
 };
 
-export default DifficultyComparison;
+export default AllowMeToComparison;
