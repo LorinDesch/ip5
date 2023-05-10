@@ -1,29 +1,18 @@
 import React, {useEffect, useRef} from 'react';
 import * as d3 from 'd3';
 
-function CommitmentsBar({
-                            fakeData,
-                            selectedOption1,
-                            setSelectedOption1,
-                            selectedOption2,
-                            setSelectedOption2,
-                            selectedOption3,
-                            setSelectedOption3,
-                            width,
-                            height
-                        }) {
-
-    console.log("fakeData ", fakeData)
-    console.log("selectedOption1 ", selectedOption1)
-    console.log("selectedOption2 ", selectedOption2)
-    console.log("selectedOption3 ", selectedOption3)
-
+function CommitmentsBar({fakeData, selectedOption1, setSelectedOption1, selectedOption2, setSelectedOption2, selectedOption3, setSelectedOption3 , width, height}) {
 
     // Get the selected commitment ID based on the selectedOption2
     const selectedCommitmentId = selectedOption2 === 'Challenge' ? 0 : fakeData.commitments.find(commitment => commitment.commitmentname === selectedOption2).commitmentid;
 
+
+    console.log("selectedCommitmentId", selectedCommitmentId)
+
     // Get the feelings array based on the selectedCommitmentId
     const feelingsArray = fakeData.diary.filter(diary => diary.commitmentid === selectedCommitmentId).map(diary => diary.feelings);
+
+    console.log("fakeData.diary", fakeData.diary)
 
     // Merge all the feelings arrays into a single array
     //TODO: const data = feelingsArray.reduce((acc, feelings) => [...acc, ...feelings], []);
@@ -35,6 +24,7 @@ function CommitmentsBar({
             return acc;
         }
     }, []);
+    console.log("data", data)
 
     const colors = ['#135210', '#73796E', '#FF897D', '#85B3B7'];
     const yAxisLabels = ['schlecht', 'gelassen', 'grossartig'];
@@ -52,8 +42,7 @@ function CommitmentsBar({
         const xScale = d3.scaleBand()
             .domain(d3.range(0, 28))
             .range([0, width])
-            .padding(1);
-
+            .padding(0.5);
 
         const xAxis = d3.axisBottom(xScale)
             .tickValues([])
@@ -120,13 +109,12 @@ function CommitmentsBar({
                 d3.select(this)
                     .append('text')
                     .attr('class', 'group-text')
-                    .attr('x', xScale(i) + xScale.bandwidth() / 2 - 40)
+                    .attr('x', xScale(i) + xScale.bandwidth() / 2 - 30)
                     .attr('y', yScale(0) + 20)
                     .attr('text-anchor', 'middle')
                     .text(groups[groupIndex])
             }
         });
-
 
         const legendWidth = 80 * colors.length;
         const legend = svg.append('g')
@@ -139,17 +127,16 @@ function CommitmentsBar({
             .attr('transform', (value, index) => `translate(${index * 100}, 0)`)
             .call(g => {
                 g.append('rect')
-                    .attr('x', -20)
+                    .attr('x', 0)
                     .attr('y', -height)
                     .attr('width', 15)
                     .attr('height', 15)
                     .attr('fill', value => value);
                 g.append('text')
-                    .attr('x', 0)
+                    .attr('x', 20)
                     .attr('y', -height + 13)
                     .text((value, index) => `Woche ${index + 1}`);
             });
-
     }, [data, height, width, colors]);
 
     return <svg ref={svgRef}>
