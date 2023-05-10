@@ -28,15 +28,11 @@ function CommitmentsBar({
         const diaries = fakeData.diary.filter(d => d.commitmentid === cId && selectedUsers.includes(d.userid));
         //array of eingeloest
         eingeloeste = diaries.map(d => d.eingeloest);
-        console.log("diaries", eingeloeste)
     }
 
-    console.log("SelectedOption3", selectedOption3);
-    console.log("Eingeloeste", eingeloeste);
 
     data = eingeloeste.length > 0 ? eingeloeste : [];
     const groups = selectedOption3
-    console.log("Groups", groups)
     const colors = ["#85B3B7"];
 
     const svgRef = useRef();

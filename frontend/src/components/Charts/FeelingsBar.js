@@ -3,12 +3,6 @@ import * as d3 from 'd3';
 
 function CommitmentsBar({fakeData, selectedOption1, setSelectedOption1, selectedOption2, setSelectedOption2, selectedOption3, setSelectedOption3 , width, height}) {
 
-    console.log("fakeData ", fakeData)
-    console.log("selectedOption1 ", selectedOption1)
-    console.log("selectedOption2 ", selectedOption2)
-    console.log("selectedOption3 ", selectedOption3)
-
-
     // Get the selected commitment ID based on the selectedOption2
     const selectedCommitmentId = selectedOption2 === 'Challenge' ? 0 : fakeData.commitments.find(commitment => commitment.commitmentname === selectedOption2).commitmentid;
 
@@ -20,14 +14,12 @@ function CommitmentsBar({fakeData, selectedOption1, setSelectedOption1, selected
 
     if(selectedOption1 === "Max Mustermann") {
         data = data.slice(0, 28);
-        console.log("data ", data)
     } else if(selectedOption1 === "Gruppe 1") {
         data = data.slice(28, 56);
-        console.log("data ", data)
     } else {
         data = [];
     }
-    console.log("data ", data)
+
 
     const colors = ['green', 'grey', 'red', 'blue'];
     const yAxisLabels = ['schlecht', 'gelassen', 'grossartig'];
