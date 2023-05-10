@@ -65,7 +65,7 @@ const TopNavbar = ({fakeData, selectedOption3, selectedOption2, selectedOption1,
                                fakeData={fakeData}/>
                 </div>
 
-                <div style={{gridColumn: '2', justifySelf: 'center', marginLeft: '2rem'}}>
+                <div style={{gridColumn: '2', justifySelf: 'center', marginLeft: '6rem'}}>
                     <Dropdown2 options={options2}
                                onChange={handleChange2}
                                styling={dropDownStyling}
