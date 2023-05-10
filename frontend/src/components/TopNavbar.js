@@ -20,8 +20,7 @@ const TopNavbar = ({fakeData, selectedOption3, selectedOption2, selectedOption1,
         backgroundRepeat: 'no-repeat',
         backgroundSize: 'auto 30%', // Adjust the size of the arrow here
     };
-
-    console.log("FakeData: " + fakeData)
+    console.log(fakeData)
 
     const options3 = fakeData.groups.map((item) => ({
         value: item.groupname,

@@ -22,14 +22,20 @@ function CommitmentsBar({
         const cId = fakeData.commitments.filter(commitment => commitment.commitmentname === selectedOption2)[0].commitmentid;
         console.log("Cid: "+ cId)
 
-        const selectedUsers = selectedOption3.flatMap(option =>
-            fakeData.groups.filter(group => group.groupname === option)
-                .map(group => group.users)
-                .reduce((acc, val) => acc.concat(val), [])
-        );
-        const diaries = fakeData.diary.filter(d => d.commitmentid === cId && selectedUsers.includes(d.userid));
-        //array of eingeloest
-        eingeloeste = diaries.map(d => d.eingeloest);
+        const x = selectedOption3.map(option => {
+            const groupOfUsers = fakeData.groups.filter(group => group.groupname === option)[0].users;
+            const diariesFromCiD = fakeData.diary.filter(diary => diary.commitmentid === cId);
+            const selectedDiaries = diariesFromCiD.filter(diary => groupOfUsers.includes(diary.userid));
+            const eingeloest = selectedDiaries.map(diary => diary.eingeloest);
+            const sum = eingeloest.reduce((a, b) => a + b, 0);
+            const avg = sum / groupOfUsers.length || 0;
+            eingeloeste.push(avg);
+            return avg;
+        });
+        console.log("X: "+ x)
+
+
+
     }
 
 
