@@ -88,6 +88,7 @@ const DifficultyComparison = ({
                                         difficultyValueLeftBar={environmentValueLeftBar}
                                         difficultyValueRightBar={difficultyValueRightBar}
                                         selectedOption3={selectedOption3}
+                                        selectedOption2={selectedOption2}
                             />
                         </div>
                     </Col>
@@ -100,6 +101,7 @@ const DifficultyComparison = ({
                                         difficultyValueLeftBar={environmentValueLeftBar}
                                         difficultyValueRightBar={currentContributionValueRightBar}
                                         selectedOption3={selectedOption3}
+                                        selectedOption2={selectedOption2}
                             />
                         </div>
                     </Col>
@@ -115,6 +117,7 @@ const DifficultyComparison = ({
                                         difficultyValueLeftBar={environmentValueLeftBar}
                                         difficultyValueRightBar={restrictionValueRightBar}
                                         selectedOption3={selectedOption3}
+                                        selectedOption2={selectedOption2}
                             />
                         </div>
                     </Col>
@@ -128,6 +131,7 @@ const DifficultyComparison = ({
                                         difficultyValueLeftBar={environmentValueLeftBar}
                                         difficultyValueRightBar={allowMeToValueRightBar}
                                         selectedOption3={selectedOption3}
+                                        selectedOption2={selectedOption2}
                             />
                         </div>
                     </Col>
@@ -148,6 +152,7 @@ const DifficultyComparison = ({
                                         difficultyValueLeftBar={environmentValueLeftBar}
                                         difficultyValueRightBar={sustainableDevelopmentValueRightBar}
                                         selectedOption3={selectedOption3}
+                                        selectedOption2={selectedOption2}
                             />
                         </div>
                     </Col>

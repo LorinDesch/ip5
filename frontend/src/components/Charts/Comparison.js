@@ -1,9 +1,24 @@
-import React, { useEffect, useRef } from 'react';
+import React, {useEffect, useRef} from 'react';
 import * as d3 from 'd3';
 
-function Comparison({ data, width, height, squaredLabelLeft, squaredLabelRight, leftLabel, rightLabel, difficultyValueLeftBar, difficultyValueRightBar, selectedOption3 }) {
+function Comparison({
+                        data,
+                        width,
+                        height,
+                        squaredLabelLeft,
+                        squaredLabelRight,
+                        leftLabel,
+                        rightLabel,
+                        difficultyValueLeftBar,
+                        difficultyValueRightBar,
+                        selectedOption3,
+                        selectedOption2
+                    }) {
+
     const klassen = selectedOption3;
     const label = [squaredLabelLeft, squaredLabelRight];
+
+    console.log(selectedOption3, difficultyValueLeftBar, difficultyValueRightBar, leftLabel, rightLabel, squaredLabelLeft, squaredLabelRight);
 
     const colors = ["#85B3B7", "#D4E09B"];
     const dataRight = difficultyValueRightBar;
@@ -23,7 +38,7 @@ function Comparison({ data, width, height, squaredLabelLeft, squaredLabelRight, 
             .attr('height', height)
             .style('overflow', 'visible');
 
-        const margin = { top: 10, right: 10, bottom: 20, left: 40 };
+        const margin = {top: 10, right: 10, bottom: 20, left: 40};
 
         const xScale = d3.scaleBand()
             .domain(klassen)
@@ -133,7 +148,7 @@ function Comparison({ data, width, height, squaredLabelLeft, squaredLabelRight, 
 
     }, [data, height, width]);
 
-    return <svg ref={svgRef} />;
+    return <svg ref={svgRef}/>;
 }
 
 export default Comparison;

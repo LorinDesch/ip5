@@ -63,7 +63,9 @@ const SustainabilityComparison = ({
                            selectedOption2={selectedOption2}
                            setSelectedOption2={setSelectedOption2}
                            selectedOption3={selectedOption3}
-                           setSelectedOption3={setSelectedOption3}/>
+                           setSelectedOption3={setSelectedOption3}
+                           selectedOption2={selectedOption2}
+                />
             </header>
             <div style={{
                 position: 'fixed',
@@ -89,6 +91,7 @@ const SustainabilityComparison = ({
                                         difficultyValueRightBar={difficultyValueRightBar}
                                         difficultyValueLeftBar={sustainableDevelopmentValueLeftBar}
                                         selectedOption3={selectedOption3}
+                                        selectedOption2={selectedOption2}
                             />
 
                             />
@@ -104,6 +107,7 @@ const SustainabilityComparison = ({
                                         difficultyValueLeftBar={sustainableDevelopmentValueLeftBar}
                                         difficultyValueRightBar={currentContributionValueRightBar}
                                         selectedOption3={selectedOption3}
+                                        selectedOption2={selectedOption2}
                             />
                         </div>
                     </Col>
@@ -119,7 +123,7 @@ const SustainabilityComparison = ({
                                         difficultyValueLeftBar={sustainableDevelopmentValueLeftBar}
                                         difficultyValueRightBar={restrictionValueRightBar}
                                         selectedOption3={selectedOption3}
-
+                                        selectedOption2={selectedOption2}
                             />
                         </div>
                     </Col>
@@ -133,7 +137,7 @@ const SustainabilityComparison = ({
                                         difficultyValueLeftBar={sustainableDevelopmentValueLeftBar}
                                         difficultyValueRightBar={allowMeToValueRightBar}
                                         selectedOption3={selectedOption3}
-
+                                        selectedOption2={selectedOption2}
                             />
                         </div>
                     </Col>
@@ -149,7 +153,7 @@ const SustainabilityComparison = ({
                                         difficultyValueLeftBar={sustainableDevelopmentValueLeftBar}
                                         difficultyValueRightBar={environmentValueRightBar}
                                         selectedOption3={selectedOption3}
-
+                                        selectedOption2={selectedOption2}
                             />
                         </div>
                     </Col>

@@ -87,6 +87,7 @@ const DifficultyComparison = ({
                                         difficultyValueRightBar={difficultyValueRightBar}
                                         difficultyValueLeftBar={currentContributionValueLeftBar}
                                         selectedOption3={selectedOption3}
+                                        selectedOption2={selectedOption2}
                             />
 
 
@@ -110,6 +111,7 @@ const DifficultyComparison = ({
                                         difficultyValueRightBar={restrictionValueRightBar}
                                         difficultyValueLeftBar={currentContributionValueLeftBar}
                                         selectedOption3={selectedOption3}
+                                        selectedOption2={selectedOption2}
 
                             />
                         </div>
@@ -124,6 +126,7 @@ const DifficultyComparison = ({
                                         difficultyValueRightBar={allowMeToValueRightBar}
                                         difficultyValueLeftBar={currentContributionValueLeftBar}
                                         selectedOption3={selectedOption3}
+                                        selectedOption2={selectedOption2}
 
                             />
                         </div>
@@ -140,6 +143,7 @@ const DifficultyComparison = ({
                                         difficultyValueRightBar={environmentValueRightBar}
                                         difficultyValueLeftBar={currentContributionValueLeftBar}
                                         selectedOption3={selectedOption3}
+                                        selectedOption2={selectedOption2}
                             />
                         </div>
                     </Col>
@@ -153,6 +157,7 @@ const DifficultyComparison = ({
                                         difficultyValueRightBar={sustainableDevelopmentValueRightBar}
                                         difficultyValueLeftBar={currentContributionValueLeftBar}
                                         selectedOption3={selectedOption3}
+                                        selectedOption2={selectedOption2}
                             />
                         </div>
                     </Col>
