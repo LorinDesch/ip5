@@ -1,11 +1,11 @@
 import React, { useEffect, useRef } from 'react';
 import * as d3 from 'd3';
 
-function DifficultyBar({ data, width, height }) {
+function DifficultyBar({ data, width, height, squaredLabelLeft, squaredLabelRight }) {
     const leftLabel = ["leicht", "mittel", "schwer"];
     const rightLabel = ["leicht", "mittel", "stark"];
     const klassen = ["Klasse 1", "Klasse 2", "Klasse 3", "Klasse 4", "Klasse 5", "Klasse 6", "Klasse 7", "Klasse 8", "Klasse 9", "Klasse 10"];
-    const label = ["Schwierigkeit", "Einschränkung"]
+    const label = [squaredLabelLeft, squaredLabelRight]
 
     const colors = ["#85B3B7", "#D4E09B"];
     const dataRight = [0.5, 0.1, 0.8, 0.7, 1, 0.3,0.5,0.2,0.1,0.3];

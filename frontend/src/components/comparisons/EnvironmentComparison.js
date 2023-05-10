@@ -46,31 +46,31 @@ const DifficultyComparison = ({
                 <Row className="text-center mb-4 align-items-center" style={{marginTop: '3rem', marginBottom: '5rem'}}>
                     <Col md={6}>
                         <div style={{marginLeft: '5rem'}}>
+                            <Difficulty data={data} width={700} height={250}/>
+                        </div>
+                    </Col>
+                    <Col md={6}>
+                        <div style={{marginLeft: '3rem'}}>
+                            <Difficulty data={data} width={700} height={250}/>
+                        </div>
+                    </Col>
+                </Row>
+                <Row className="text-center mb-4 align-items-center" style={{marginTop: '3rem', marginBottom: '5rem'}}>
+                    <Col md={6}>
+                        <div style={{marginLeft: '5rem'}}>
+                            <Difficulty data={data} width={700} height={250}/>
+                        </div>
+                    </Col>
+                    <Col md={6}>
+                        <div style={{marginLeft: '3rem'}}>
+                            <Difficulty data={data} width={700} height={250}/>
+                        </div>
+                    </Col>
+                </Row>
+                <Row className="text-center mb-4 align-items-center" style={{marginTop: '3rem', marginBottom: '5rem'}}>
+                    <Col md={6}>
+                        <div style={{marginLeft: '5rem'}}>
                             <h1 className="text-center mb-4">Environment Comparison</h1>
-                        </div>
-                    </Col>
-                    <Col md={6}>
-                        <div style={{marginLeft: '3rem'}}>
-                            <Difficulty data={data} width={700} height={250}/>
-                        </div>
-                    </Col>
-                </Row>
-                <Row className="text-center mb-4 align-items-center" style={{marginTop: '3rem', marginBottom: '5rem'}}>
-                    <Col md={6}>
-                        <div style={{marginLeft: '5rem'}}>
-                            <Difficulty data={data} width={700} height={250}/>
-                        </div>
-                    </Col>
-                    <Col md={6}>
-                        <div style={{marginLeft: '3rem'}}>
-                            <Difficulty data={data} width={700} height={250}/>
-                        </div>
-                    </Col>
-                </Row>
-                <Row className="text-center mb-4 align-items-center" style={{marginTop: '3rem', marginBottom: '5rem'}}>
-                    <Col md={6}>
-                        <div style={{marginLeft: '5rem'}}>
-                            <Difficulty data={data} width={700} height={250}/>
                         </div>
                     </Col>
                     <Col md={6}>

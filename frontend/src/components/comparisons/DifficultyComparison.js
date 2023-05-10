@@ -9,6 +9,13 @@ const DifficultyComparison = ({data, width, height, fakeData, selectedOption1, s
 
     data = [200, 30, 160, 50, 300, 400];
 
+    const difficultyLabel = "Difficulty"
+    const restrionctionLabel = "Restriction"
+    const environeLabel = "Environment"
+    const currentContributionLabel = "Current Contribution"
+    const allowMeToLabel = "Allow me to"
+    const SustainableDevelopmentLabel = "SustainableDevelopment"
+
     return (
         <>
             <header style={{marginLeft: '7rem', marginTop: '0.5rem'}}>
