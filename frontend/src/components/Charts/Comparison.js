@@ -2,9 +2,8 @@ import React, { useEffect, useRef } from 'react';
 import * as d3 from 'd3';
 
 function Comparison({ data, width, height, squaredLabelLeft, squaredLabelRight, leftLabel, rightLabel, difficultyValueLeftBar, difficultyValueRightBar, selectedOption3 }) {
-    console.log("Comparison.js: ", difficultyValueLeftBar, difficultyValueRightBar, selectedOption3)
     const klassen = selectedOption3;
-    const label = [squaredLabelLeft, squaredLabelRight]
+    const label = [squaredLabelLeft, squaredLabelRight];
 
     const colors = ["#85B3B7", "#D4E09B"];
     const dataRight = difficultyValueRightBar;
