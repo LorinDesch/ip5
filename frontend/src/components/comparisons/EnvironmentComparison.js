@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import TopNavbar from '../TopNavbar';
-import Difficulty from "../Charts/Difficulty";
+import Comparison from "../Charts/Comparison";
 import SideNavbar from "../SideNavbar";
 import {Col, Container, Row} from "react-bootstrap";
 
@@ -17,6 +17,24 @@ const DifficultyComparison = ({
                                   setSelectedOption2,
                                   setSelectedOption3
                               }) => {
+
+    const difficultyLabel = "Schwierigkeit"
+    const difficultylabelLeft = ["Leicht", "Mittel", "Schwer"] //FLIPPED
+
+    const restrionctionLabel = "Einschränkung"
+    const rrestrictionlabelLeft = ["Befreit", "Mittel", "Viel"] //FLIPPED
+
+    const environeLabel = "Umfeldreaktion"
+    const environmentlabelLeft = ["positiv", "neutral", "negativ"] //FLIPPED
+
+    const currentContributionLabel = "Beitrag"
+    const currentContributionlabelLeft = ["Gering", "Mittel", "Hoch"]
+
+    const allowMeToLabel = "Übernehme"
+    const allowMeTolabelLeft = ["Verantwortung", "Beides", "Erwartungen"]
+
+    const sustainableDevelopmentLabel = "Entwicklung"
+    const sustainableDevelopmentlabelLeft = ["Wenig", "Mittel", "Viel"] //FLIPPED
 
     data = [200, 30, 160, 50, 300, 400];
 
@@ -46,24 +64,35 @@ const DifficultyComparison = ({
                 <Row className="text-center mb-4 align-items-center" style={{marginTop: '3rem', marginBottom: '5rem'}}>
                     <Col md={6}>
                         <div style={{marginLeft: '5rem'}}>
-                            <Difficulty data={data} width={700} height={250}/>
+                            <Comparison data={data} width={700} height={250}
+                                        squaredLabelLeft={environeLabel}
+                                        leftLabel={environmentlabelLeft}
+                                        squaredLabelRight={difficultyLabel}/>
                         </div>
                     </Col>
                     <Col md={6}>
                         <div style={{marginLeft: '3rem'}}>
-                            <Difficulty data={data} width={700} height={250}/>
+                            <Comparison data={data} width={700} height={250} squaredLabelLeft={environeLabel}
+                                        leftLabel={environmentlabelLeft}
+                                        squaredLabelRight={currentContributionLabel}/>
                         </div>
                     </Col>
                 </Row>
                 <Row className="text-center mb-4 align-items-center" style={{marginTop: '3rem', marginBottom: '5rem'}}>
                     <Col md={6}>
                         <div style={{marginLeft: '5rem'}}>
-                            <Difficulty data={data} width={700} height={250}/>
+                            <Comparison data={data} width={700} height={250}
+                                        squaredLabelLeft={environeLabel}
+                                        leftLabel={sustainableDevelopmentlabelLeft}
+                                        squaredLabelRight={restrionctionLabel}/>
                         </div>
                     </Col>
                     <Col md={6}>
                         <div style={{marginLeft: '3rem'}}>
-                            <Difficulty data={data} width={700} height={250}/>
+                            <Comparison data={data} width={700} height={250}
+                                        squaredLabelLeft={environeLabel}
+                                        leftLabel={environmentlabelLeft}
+                                        squaredLabelRight={allowMeToLabel}/>
                         </div>
                     </Col>
                 </Row>
@@ -75,7 +104,10 @@ const DifficultyComparison = ({
                     </Col>
                     <Col md={6}>
                         <div style={{marginLeft: '3rem'}}>
-                            <Difficulty data={data} width={700} height={250}/>
+                            <Comparison data={data} width={700} height={250}
+                                        squaredLabelLeft={environeLabel}
+                                        leftLabel={environmentlabelLeft}
+                                        squaredLabelRight={sustainableDevelopmentLabel}/>
                         </div>
                     </Col>
                 </Row>

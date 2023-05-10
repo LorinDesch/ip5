@@ -1,8 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import * as d3 from 'd3';
 
-function DifficultyBar({ data, width, height, squaredLabelLeft, squaredLabelRight }) {
-    const leftLabel = ["leicht", "mittel", "schwer"];
+function Comparison({ data, width, height, squaredLabelLeft, squaredLabelRight, leftLabel }) {
     const rightLabel = ["leicht", "mittel", "stark"];
     const klassen = ["Klasse 1", "Klasse 2", "Klasse 3", "Klasse 4", "Klasse 5", "Klasse 6", "Klasse 7", "Klasse 8", "Klasse 9", "Klasse 10"];
     const label = [squaredLabelLeft, squaredLabelRight]
@@ -132,4 +131,4 @@ function DifficultyBar({ data, width, height, squaredLabelLeft, squaredLabelRigh
     return <svg ref={svgRef} />;
 }
 
-export default DifficultyBar;
+export default Comparison;

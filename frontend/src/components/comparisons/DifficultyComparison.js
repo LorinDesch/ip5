@@ -1,20 +1,43 @@
 import React, {useState} from 'react';
 import {Container, Row, Col} from 'react-bootstrap';
 import TopNavbar from '../TopNavbar';
-import Difficulty from "../Charts/Difficulty";
+import Comparison from "../Charts/Comparison";
 import SideNavbar from "../SideNavbar";
 
 
-const DifficultyComparison = ({data, width, height, fakeData, selectedOption1, selectedOption3, selectedOption2, setSelectedOption1, setSelectedOption2, setSelectedOption3}) => {
+const DifficultyComparison = ({
+                                  data,
+                                  width,
+                                  height,
+                                  fakeData,
+                                  selectedOption1,
+                                  selectedOption3,
+                                  selectedOption2,
+                                  setSelectedOption1,
+                                  setSelectedOption2,
+                                  setSelectedOption3
+                              }) => {
 
     data = [200, 30, 160, 50, 300, 400];
 
-    const difficultyLabel = "Difficulty"
-    const restrionctionLabel = "Restriction"
-    const environeLabel = "Environment"
-    const currentContributionLabel = "Current Contribution"
-    const allowMeToLabel = "Allow me to"
-    const SustainableDevelopmentLabel = "SustainableDevelopment"
+    const difficultyLabel = "Schwierigkeit"
+    const difficultylabelLeft = ["Leicht", "Mittel", "Schwer"] //FLIPPED
+
+    const restrionctionLabel = "Einschränkung"
+    const rrestrictionlabelLeft = ["Befreit", "Mittel", "Viel"] //FLIPPED
+
+    const environeLabel = "Umfeldreaktion"
+    const environmentlabelLeft = ["positiv", "neutral", "negativ"] //FLIPPED
+
+    const currentContributionLabel = "Beitrag"
+    const currentContributionlabelLeft = ["Gering", "Mittel", "Hoch"]
+
+    const allowMeToLabel = "Übernehme"
+    const allowMeTolabelLeft = ["Verantwortung", "Beides", "Erwartungen"]
+
+    const sustainableDevelopmentLabel = "Entwicklung"
+    const sustainableDevelopmentlabelLeft = ["Wenig", "Mittel", "Viel"] //FLIPPED
+
 
     return (
         <>
@@ -47,31 +70,47 @@ const DifficultyComparison = ({data, width, height, fakeData, selectedOption1, s
                     </Col>
                     <Col md={6}>
                         <div style={{marginLeft: '3rem'}}>
-                            <Difficulty data={data} width={700} height={250}/>
+                            <Comparison data={data} width={700} height={250}
+                                        squaredLabelLeft={difficultyLabel}
+                                        leftLabel={difficultylabelLeft}
+                                        squaredLabelRight={currentContributionLabel}
+                            />
                         </div>
                     </Col>
                 </Row>
                 <Row className="text-center mb-4 align-items-center" style={{marginTop: '3rem', marginBottom: '5rem'}}>
                     <Col md={6}>
                         <div style={{marginLeft: '5rem'}}>
-                            <Difficulty data={data} width={700} height={250}/>
+                            <Comparison data={data} width={700} height={250}
+                                        squaredLabelLeft={difficultyLabel}
+                                        leftLabel={sustainableDevelopmentlabelLeft}
+                                        squaredLabelRight={restrionctionLabel}/>
                         </div>
                     </Col>
                     <Col md={6}>
                         <div style={{marginLeft: '3rem'}}>
-                            <Difficulty data={data} width={700} height={250}/>
+                            <Comparison data={data} width={700} height={250}
+                                        squaredLabelLeft={difficultyLabel}
+                                        leftLabel={difficultylabelLeft}
+                                        squaredLabelRight={allowMeToLabel}/>
                         </div>
                     </Col>
                 </Row>
                 <Row className="text-center mb-4 align-items-center" style={{marginTop: '3rem', marginBottom: '5rem'}}>
                     <Col md={6}>
                         <div style={{marginLeft: '5rem'}}>
-                            <Difficulty data={data} width={700} height={250}/>
+                            <Comparison data={data} width={700} height={250}
+                                        squaredLabelLeft={difficultyLabel}
+                                        leftLabel={difficultylabelLeft}
+                                        squaredLabelRight={environeLabel}/>
                         </div>
                     </Col>
                     <Col md={6}>
                         <div style={{marginLeft: '3rem'}}>
-                            <Difficulty data={data} width={700} height={250}/>
+                            <Comparison data={data} width={700} height={250}
+                                        squaredLabelLeft={difficultyLabel}
+                                        leftLabel={difficultylabelLeft}
+                                        squaredLabelRight={sustainableDevelopmentLabel}/>
                         </div>
                     </Col>
                 </Row>
