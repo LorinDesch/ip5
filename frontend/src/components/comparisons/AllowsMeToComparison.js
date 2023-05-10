@@ -6,21 +6,21 @@ import {Col, Container, Row} from "react-bootstrap";
 
 export function getValueAttributeUserGroup(attribute, selectedOption1, selectedOption2, fakeData) {
     const cId = fakeData.commitments.find(commitment => commitment.commitmentname === selectedOption2)?.commitmentid;
-    let difficulty = 0;
+    let returnValue = 0;
     if (cId > 0) {
         const uId = fakeData.users.find(user => user.username === selectedOption1)?.userid;
         if (uId !== undefined) {
-            difficulty = fakeData.diary.find(diary => diary.userid === uId && diary.commitmentid === cId)?.[attribute]?.[1] || 0;
+            returnValue = fakeData.diary.find(diary => diary.userid === uId && diary.commitmentid === cId)?.[attribute]?.[1] || 0;
         } else {
             let groupOfUsers = fakeData.groups.find(group => group.groupname === selectedOption1)?.users || [];
             let totalDifficulty = groupOfUsers.reduce((acc, userId) => {
                 const userDiary = fakeData.diary.find(diary => diary.userid === userId && diary.commitmentid === cId);
                 return userDiary ? acc + userDiary[attribute][1] : acc;
             }, 0);
-            difficulty = groupOfUsers.length ? totalDifficulty / groupOfUsers.length : 0;
+            returnValue = groupOfUsers.length ? totalDifficulty / groupOfUsers.length : 0;
         }
     }
-    return difficulty;
+    return returnValue;
 }
 
 
@@ -32,7 +32,7 @@ export function getValueAttributeOnlyGroup(attribute, selectedOption3, fakeData,
         const selectedGroupsDifficulties = selectedOption3.flatMap(groupName => fakeData.groups.find(group => group.groupname === groupName) || [])
             .map(group => group.users.flatMap(userId => {
                 const diary = fakeData.diary.find(diary => diary.userid === userId && diary.commitmentid === cId);
-                return diary ? diary.difficulty[1] : [0];
+                return diary ? diary[attribute][1] : [0];
             }).reduce((acc, val, idx, arr) => {
                 acc += val;
                 if (idx === arr.length - 1) {
@@ -43,7 +43,6 @@ export function getValueAttributeOnlyGroup(attribute, selectedOption3, fakeData,
         return selectedGroupsDifficulties.length > 0 ? selectedGroupsDifficulties : zeros;
     }
     return zeros;
-
 }
 
 
