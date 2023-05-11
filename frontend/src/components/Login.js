@@ -5,19 +5,20 @@ function Login({ fakeData }) {
     const [username, setUsername] = useState('');
     const navigate = useNavigate();
 
-    const handleSubmit = async (event) => {
+    const handleSubmit = (event) => {
         event.preventDefault();
         console.log('Submitting login form');
         console.log('Username: ' + username);
 
         // Check if user with entered username exists
-        const userExists = fakeData.users.some((user) => user.username === username);
+        const userExists = fakeData.users.find((user) => user.username === username);
 
         if (userExists) {
             console.log('User exists. Redirecting to /');
+            navigate('/');
+            window.location.reload();
             localStorage.setItem('loggedInUser', username); // Set username in localStorage
 
-            navigate('/');
         } else {
             // Clear username
             setUsername('');

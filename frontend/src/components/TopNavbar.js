@@ -25,9 +25,12 @@ const TopNavbar = ({fakeData, selectedOption3, selectedOption2, selectedOption1,
 
     const handleLogout = () => {
         // Perform any necessary logout logic here
+        //remove token from local storage
+        localStorage.removeItem("loggedInUser");
 
         // Redirect to "/login"
         navigate("/login");
+        window.location.reload();
     };
 
 
