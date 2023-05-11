@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 function Login({ fakeData }) {
@@ -17,10 +17,9 @@ function Login({ fakeData }) {
             console.log('User exists. Redirecting to /');
             localStorage.setItem('loggedInUser', username); // Set username in localStorage
 
-
             navigate('/');
         } else {
-            //clear username
+            // Clear username
             setUsername('');
             console.log('User does not exist.');
             // Handle invalid username case (display error message, etc.)
@@ -28,23 +27,27 @@ function Login({ fakeData }) {
     };
 
     return (
-        <div style={{ padding: '1rem' }}>
-            <form onSubmit={handleSubmit}>
-                <div>
-                    <label htmlFor="username">Username:</label>
-                    <input
-                        type="text"
-                        id="username"
-                        value={username}
-                        onChange={(event) => setUsername(event.target.value)}
-                    />
-                </div>
-                <div style={{ marginTop: '1rem' }}>
-                    <button type="submit" style={{ marginRight: '0.5rem' }}>
-                        Login
-                    </button>
-                </div>
-            </form>
+        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
+            <div style={{ padding: '1rem', border: '1px solid black', borderRadius: '8px', width: '300px' }}>
+                <form onSubmit={handleSubmit}>
+                    <div style={{ marginBottom: '1rem', display: 'flex', alignItems: 'center' }}>
+                        <label htmlFor="username" style={{ marginRight: '0.5rem' }}>
+                            Username:
+                        </label>
+                        <input
+                            type="text"
+                            id="username"
+                            value={username}
+                            onChange={(event) => setUsername(event.target.value)}
+                        />
+                    </div>
+                    <div style={{ display: 'flex', justifyContent: 'center' }}>
+                        <button type="submit" className="btn btn-primary">
+                            Login
+                        </button>
+                    </div>
+                </form>
+            </div>
         </div>
     );
 }
