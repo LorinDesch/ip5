@@ -1,26 +1,29 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
-import { handleLogin } from '../api';
-
-function Login({ onClose }) {
+function Login({ fakeData }) {
     const [username, setUsername] = useState('');
-    const [password, setPassword] = useState('');
+    const navigate = useNavigate();
 
     const handleSubmit = async (event) => {
         event.preventDefault();
-        try {
-            const newData = "realData" /*await handleLogin(username, password);*/ //TODO: replace with real data
-            sessionStorage.setItem("realData", JSON.stringify(newData));
-            console.log(newData);
-            onClose(); // Schließe das Login-Fenster, wenn der Login erfolgreich ist
-        } catch (error) {
-            console.error(error);
+        console.log('Submitting login form');
+        console.log('Username: ' + username);
+
+        // Check if user with entered username exists
+        const userExists = fakeData.users.some((user) => user.username === username);
+
+        if (userExists) {
+            console.log('User exists. Redirecting to /');
+            localStorage.setItem('loggedInUser', username); // Set username in localStorage
+
+
+            navigate('/');
+        } else {
+            console.log('User does not exist.');
+            // Handle invalid username case (display error message, etc.)
         }
     };
-
-    const handleCancel = () => {
-        onClose(); // Schließe das Login-Fenster, wenn der Benutzer auf "Abbrechen" klickt
-    }
 
     return (
         <div style={{ padding: '1rem' }}>
@@ -34,18 +37,10 @@ function Login({ onClose }) {
                         onChange={(event) => setUsername(event.target.value)}
                     />
                 </div>
-                <div>
-                    <label htmlFor="password">Password:</label>
-                    <input
-                        type="password"
-                        id="password"
-                        value={password}
-                        onChange={(event) => setPassword(event.target.value)}
-                    />
-                </div>
                 <div style={{ marginTop: '1rem' }}>
-                    <button type="submit" style={{ marginRight: '0.5rem' }}>Use Real Data</button>
-                    <button type="button" onClick={handleCancel} style={{ backgroundColor: 'grey', color: 'white' }}>Cancel</button> {/* Neuer Button zum Schließen des Login-Fensters */}
+                    <button type="submit" style={{ marginRight: '0.5rem' }}>
+                        Login
+                    </button>
                 </div>
             </form>
         </div>
