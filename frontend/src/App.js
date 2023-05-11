@@ -156,7 +156,7 @@ const App = () => {
 
         ]
     });
-    const [selectedOption1, setSelectedOption1] = useState('Peter Mueller');
+    const [selectedOption1, setSelectedOption1] = useState('Max Mustermann');
     const [selectedOption2, setSelectedOption2] = useState('Challenge');
     const [selectedOption3, setSelectedOption3] = useState([]);
 
