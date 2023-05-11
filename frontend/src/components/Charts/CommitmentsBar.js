@@ -19,12 +19,9 @@ function CommitmentsBar({
 
     const cId = fakeData.commitments.filter(commitment => commitment.commitmentname === selectedOption2)[0].commitmentid;
 
-    if (cId < 0) {
-    } else {
-
+    if (cId >= 0) {
         const cId = fakeData.commitments.filter(commitment => commitment.commitmentname === selectedOption2)[0].commitmentid;
-
-        const x = selectedOption3.map(option => {
+        selectedOption3.map(option => {
             const groupOfUsers = fakeData.groups.filter(group => group.groupname === option)[0].users;
             const diariesFromCiD = fakeData.diary.filter(diary => diary.commitmentid === cId);
             const selectedDiaries = diariesFromCiD.filter(diary => groupOfUsers.includes(diary.userid));
@@ -35,7 +32,6 @@ function CommitmentsBar({
             return avg;
         });
     }
-
 
     data = eingeloeste.length > 0 ? eingeloeste : [];
     const groups = selectedOption3
