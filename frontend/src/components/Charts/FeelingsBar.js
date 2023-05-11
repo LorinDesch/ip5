@@ -1,20 +1,18 @@
 import React, {useEffect, useRef} from 'react';
 import * as d3 from 'd3';
 
+
 function FeelingsBar({fakeData, selectedOption1, setSelectedOption1, selectedOption2, setSelectedOption2, selectedOption3, setSelectedOption3 , width, height}) {
 
     // Get the selected commitment ID based on the selectedOption2
-    const selectedCommitmentId = selectedOption2 === 'Challenge' ? 0 : fakeData.commitments.find(commitment => commitment.commitmentname === selectedOption2).commitmentid;
-
+    const cId = fakeData.commitments.filter(commitment => commitment.commitmentname === selectedOption2)[0].commitmentid;
     // Get the feelings array based on the selectedCommitmentId
-    const feelingsArray = fakeData.diary.filter(diary => diary.commitmentid === selectedCommitmentId).map(diary => diary.feelings);
+    const feelingsArray = fakeData.diary.filter(diary => diary.commitmentid === cId).map(diary => diary.feelings);
 
     // Merge all the feelings arrays into a single array
     let data = feelingsArray.reduce((acc, feelings) => [...acc, ...feelings], []);
 
 
-
-    const cId = fakeData.commitments.filter(commitment => commitment.commitmentname === selectedOption2)[0].commitmentid;
     if(cId > 0) {
         const uId = fakeData.users.find(user => user.username === selectedOption1)?.userid;
         if (uId !== undefined) {
