@@ -1,5 +1,6 @@
 import React, {useEffect, useRef} from 'react';
 import * as d3 from 'd3';
+import {getSchluesseChallengeUserGroup} from "../Dashboard";
 
 
 function FeelingsBar({fakeData, selectedOption1, setSelectedOption1, selectedOption2, setSelectedOption2, selectedOption3, setSelectedOption3 , width, height}) {
@@ -13,16 +14,20 @@ function FeelingsBar({fakeData, selectedOption1, setSelectedOption1, selectedOpt
     let data = feelingsArray.reduce((acc, feelings) => [...acc, ...feelings], []);
 
 
-    if(cId > 0) {
-        const uId = fakeData.users.find(user => user.username === selectedOption1)?.userid;
+    if (cId > 0) {
+        const uId = fakeData.users.find((user) => user.username === selectedOption1)?.userid;
         if (uId !== undefined) {
-            console.log(uId)
-            data = data.slice(0, 28);
+            const schluesseChallengeUserGroup = getSchluesseChallengeUserGroup(selectedOption1, selectedOption2, fakeData);
+            if (schluesseChallengeUserGroup[0] === "-") {
+                data = [];
+            } else {
+                data = data.slice(0, 28);
+            }
         } else {
             data = [];
         }
-        console.log(data)
     }
+
 
     const colors = ['#135210', '#73796E', '#FF897D', '#85B3B7'];
     const yAxisLabels = ['schlecht', 'gelassen', 'grossartig'];
