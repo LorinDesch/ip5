@@ -1,9 +1,16 @@
-import React, { useState } from 'react';
+import React, {useEffect, useState} from 'react';
 import { useNavigate } from 'react-router-dom';
 
 function Login({ fakeData }) {
     const [username, setUsername] = useState('');
     const navigate = useNavigate();
+
+    useEffect(() => {
+        const loggedInUser = localStorage.getItem('loggedInUser');
+        if (loggedInUser) {
+            navigate('/');
+        }
+    }, [navigate]);
 
     const handleSubmit = async (event) => {
         event.preventDefault();
@@ -20,6 +27,8 @@ function Login({ fakeData }) {
 
             navigate('/');
         } else {
+            //clear username
+            setUsername('');
             console.log('User does not exist.');
             // Handle invalid username case (display error message, etc.)
         }
