@@ -28,7 +28,7 @@ const Dropdown3 = ({ options, selectedOptions, onChange, styling, fakeData  }) =
         ...styling,
         height: '100%',
         width: '100%',
-        padding: '12px 38px 12px 12px',
+        padding: '7px 30px 12px 12px',
         backgroundImage: 'url("data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'10\' height=\'6\' viewBox=\'0 0 10 6\'%3E%3Cpath fill=\'%23000000\' fill-rule=\'evenodd\' d=\'M5 6L0 .666666667 1.11111111 0l3.88888889 3.666666667L8.88888889 0 10 .666666667\'/%3E%3C/svg%3E")',
         backgroundPosition: 'right 10px center',
         backgroundRepeat: 'no-repeat',
