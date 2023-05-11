@@ -16,7 +16,10 @@ function CommitmentsBar({
 
     let eingeloeste = [];
 
-    if (selectedOption2 === "Challenge") {
+
+    const cId = fakeData.commitments.filter(commitment => commitment.commitmentname === selectedOption2)[0].commitmentid;
+
+    if (cId < 0) {
     } else {
 
         const cId = fakeData.commitments.filter(commitment => commitment.commitmentname === selectedOption2)[0].commitmentid;
