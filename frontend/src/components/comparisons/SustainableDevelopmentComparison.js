@@ -98,7 +98,7 @@ const SustainabilityComparison = ({
                         </div>
                     </Col>
                     <Col md={6}>
-                        <div style={{marginLeft: '3rem'}}>
+                        <div style={{marginLeft: '-1.5rem'}}>
                             <Comparison data={data} width={700} height={250}
                                         squaredLabelLeft={sustainableDevelopmentLabel}
                                         leftLabel={sustainableDevelopmentlabelLeft}
@@ -128,7 +128,7 @@ const SustainabilityComparison = ({
                         </div>
                     </Col>
                     <Col md={6}>
-                        <div style={{marginLeft: '3rem'}}>
+                        <div style={{marginLeft: '-1.5rem'}}>
                             <Comparison data={data} width={700} height={250}
                                         squaredLabelLeft={sustainableDevelopmentLabel}
                                         leftLabel={sustainableDevelopmentlabelLeft}

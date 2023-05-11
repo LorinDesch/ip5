@@ -94,7 +94,7 @@ const RestrictionComparison = ({
                         </div>
                     </Col>
                     <Col md={6}>
-                        <div style={{marginLeft: '3rem'}}>
+                        <div style={{marginLeft: '-1.5rem'}}>
                             <Comparison data={data} width={700} height={250}
                                         squaredLabelLeft={restrionctionLabel}
                                         leftLabel={rrestrictionlabelLeft}
@@ -115,7 +115,7 @@ const RestrictionComparison = ({
                         </div>
                     </Col>
                     <Col md={6}>
-                        <div style={{marginLeft: '3rem'}}>
+                        <div style={{marginLeft: '-1.5rem'}}>
                             <Comparison data={data} width={700} height={250}
                                         squaredLabelLeft={restrionctionLabel}
                                         leftLabel={rrestrictionlabelLeft}
@@ -145,7 +145,7 @@ const RestrictionComparison = ({
                         </div>
                     </Col>
                     <Col md={6}>
-                        <div style={{marginLeft: '3rem'}}>
+                        <div style={{marginLeft: '-1.5rem'}}>
                             <Comparison data={data} width={700} height={250}
                                         squaredLabelLeft={restrionctionLabel}
                                         leftLabel={rrestrictionlabelLeft}

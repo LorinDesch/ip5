@@ -133,7 +133,7 @@ function Comparison({
             .data(colors)
             .join('g')
             .attr('class', 'legend-item')
-            .attr('transform', (value, index) => `translate(${index * 120}, 0)`)
+            .attr('transform', (value, index) => `translate(${index * 140}, 0)`)
             .call(g => {
                 g.append('rect')
                     .attr('x', 0)

@@ -113,26 +113,30 @@ function Dashboard({
                 <Container fluid style={{maxWidth: '2000px', marginLeft: '7rem'}}>
                     <Row>
                         <Col md={4}>
-                            <div className="d-flex justify-content-center align-items-center text-center"
-                                 style={{marginRight: '12rem'}}>
-                                <SchluesseAusChallenge schluesse={schluesseChallengeUserGroup}/>
+                            <div className="d-flex justify-content-center align-items-center text-center" style={{ marginRight: '12rem' }}>
+                                <div style={{ height: '300px' }}>
+                                    <SchluesseAusChallenge schluesse={schluesseChallengeUserGroup} />
+                                </div>
                             </div>
                         </Col>
+
                         <Col md={4}>
                             <div className="d-flex justify-content-center align-items-center text-center">
 
                             </div>
                         </Col>
                         <Col md={4}>
-                            <div className="d-flex justify-content-center align-items-center text-center"
-                                 style={{marginRight: '4rem'}}>
-                                <SchluesseAusChallenge schluesse={schluesseChallengeGroups}/>
+                            <div className="d-flex justify-content-center align-items-center text-center" style={{ marginRight: '12rem' }}>
+                                <div style={{ height: '300px' }}>
+                                    <SchluesseAusChallenge schluesse={schluesseChallengeUserGroup} />
+                                </div>
                             </div>
                         </Col>
+
                     </Row>
 
                     <Row>
-                        <Col md={4} style={{marginTop: '21.5rem'}}>
+                        <Col md={4} style={{marginTop: '24.4rem'}}>
                             <div className="d-flex justify-content-center align-items-center text-center"
                                  style={{marginLeft: '12rem'}}>
                                 <FeelingsBar fakeData={fakeData} selectedOption1={selectedOption1}
@@ -149,7 +153,7 @@ function Dashboard({
                                      height: '1%',
                                      transform: 'scale(0.95)',
                                      marginRight: '11rem',
-                                     marginTop: '6.5rem'
+                                     marginTop: '9.3rem'
                                  }}>
                                 <TreeImages
                                     fakeData={fakeData} selectedOption1={selectedOption1}
@@ -160,7 +164,7 @@ function Dashboard({
                                     setSelectedOption3={setSelectedOption3}/>
                             </div>
                         </Col>
-                        <Col md={4} style={{marginTop: '20.5rem'}}>
+                        <Col md={4} style={{marginTop: '23.3rem'}}>
                             <div className="d-flex justify-content-center align-items-center text-center"
                                  style={{marginRight: '30rem'}}>
                                 <CommitmentsBar data={data} width={700} height={200}

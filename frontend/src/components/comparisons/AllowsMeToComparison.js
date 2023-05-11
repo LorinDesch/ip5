@@ -118,7 +118,7 @@ const AllowMeToComparison = ({
             <Container fluid className="mt-4">
                 <Row className="text-center mb-4 align-items-center" style={{marginTop: '3rem', marginBottom: '5rem'}}>
                     <Col md={6}>
-                        <div style={{marginLeft: '5rem'}}>
+                        <div style={{marginLeft: '10rem'}}>
                             <Comparison data={data} width={700} height={250}
                                         squaredLabelLeft={allowMeToLabel}
                                         leftLabel={allowMeTolabelLeft}
@@ -133,7 +133,7 @@ const AllowMeToComparison = ({
                         </div>
                     </Col>
                     <Col md={6}>
-                        <div style={{marginLeft: '3rem'}}>
+                        <div style={{marginLeft: '5rem'}}>
                             <Comparison data={data} width={700} height={250}
                                         squaredLabelLeft={allowMeToLabel}
                                         leftLabel={allowMeTolabelLeft}
@@ -149,7 +149,7 @@ const AllowMeToComparison = ({
                 </Row>
                 <Row className="text-center mb-4 align-items-center" style={{marginTop: '3rem', marginBottom: '5rem'}}>
                     <Col md={6}>
-                        <div style={{marginLeft: '5rem'}}>
+                        <div style={{marginLeft: '10rem'}}>
                             <Comparison data={data} width={700} height={250}
                                         squaredLabelLeft={allowMeToLabel}
                                         leftLabel={allowMeTolabelLeft}
@@ -170,7 +170,7 @@ const AllowMeToComparison = ({
                 </Row>
                 <Row className="text-center mb-4 align-items-center" style={{marginTop: '3rem', marginBottom: '5rem'}}>
                     <Col md={6}>
-                        <div style={{marginLeft: '5rem'}}>
+                        <div style={{marginLeft: '10rem'}}>
                             <Comparison data={data} width={700} height={250}
                                         squaredLabelLeft={allowMeToLabel}
                                         leftLabel={allowMeTolabelLeft}
@@ -184,7 +184,7 @@ const AllowMeToComparison = ({
                         </div>
                     </Col>
                     <Col md={6}>
-                        <div style={{marginLeft: '3rem'}}>
+                        <div style={{marginLeft: '5rem'}}>
                             <Comparison data={data} width={700} height={250}
                                         squaredLabelLeft={allowMeToLabel}
                                         leftLabel={allowMeTolabelLeft}

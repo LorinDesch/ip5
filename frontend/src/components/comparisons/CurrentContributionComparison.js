@@ -7,17 +7,17 @@ import {getValueAttributeOnlyGroup, getValueAttributeUserGroup} from "./AllowsMe
 
 
 const CurrentContributionComparison = ({
-                                  data,
-                                  width,
-                                  height,
-                                  fakeData,
-                                  selectedOption1,
-                                  selectedOption3,
-                                  selectedOption2,
-                                  setSelectedOption1,
-                                  setSelectedOption2,
-                                  setSelectedOption3
-                              }) => {
+                                           data,
+                                           width,
+                                           height,
+                                           fakeData,
+                                           selectedOption1,
+                                           selectedOption3,
+                                           selectedOption2,
+                                           setSelectedOption1,
+                                           setSelectedOption2,
+                                           setSelectedOption3
+                                       }) => {
     data = [200, 30, 160, 50, 300, 400];
 
     const difficultyLabel = "Schwierigkeit"
@@ -50,7 +50,6 @@ const CurrentContributionComparison = ({
     const sustainableDevelopmentlabelLeft = ["Wenig", "Mittel", "Viel"] //FLIPPED
     const sustainableDevelopmentValueRightBar = getValueAttributeOnlyGroup("sustainableDevelopment", selectedOption3, fakeData, selectedOption2)
     const sustainableDevelopmentValueLeftBar = Array(sustainableDevelopmentValueRightBar.length).fill(getValueAttributeUserGroup("sustainableDevelopment", selectedOption1, selectedOption2, fakeData));
-
 
 
     return (
@@ -89,9 +88,6 @@ const CurrentContributionComparison = ({
                                         selectedOption3={selectedOption3}
                                         selectedOption2={selectedOption2}
                             />
-
-
-                            />
                         </div>
                     </Col>
                     <Col md={6}>
@@ -117,7 +113,7 @@ const CurrentContributionComparison = ({
                         </div>
                     </Col>
                     <Col md={6}>
-                        <div style={{marginLeft: '3rem'}}>
+                        <div style={{marginLeft: '-1.5rem'}}>
                             <Comparison data={data} width={700} height={250}
                                         squaredLabelLeft={currentContributionLabel}
                                         leftLabel={currentContributionlabelLeft}
@@ -148,7 +144,7 @@ const CurrentContributionComparison = ({
                         </div>
                     </Col>
                     <Col md={6}>
-                        <div style={{marginLeft: '3rem'}}>
+                        <div style={{marginLeft: '-1.5rem'}}>
                             <Comparison data={data} width={700} height={250}
                                         squaredLabelLeft={currentContributionLabel}
                                         leftLabel={currentContributionlabelLeft}
