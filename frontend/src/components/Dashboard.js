@@ -132,7 +132,7 @@ function Dashboard({
                     </Row>
 
                     <Row>
-                        <Col md={4} style={{marginTop: '14.4rem'}}>
+                        <Col md={4} style={{marginTop: '21.5rem'}}>
                             <div className="d-flex justify-content-center align-items-center text-center"
                                  style={{marginLeft: '12rem'}}>
                                 <FeelingsBar fakeData={fakeData} selectedOption1={selectedOption1}
@@ -149,7 +149,7 @@ function Dashboard({
                                      height: '1%',
                                      transform: 'scale(0.95)',
                                      marginRight: '11rem',
-                                     marginTop: '-1rem'
+                                     marginTop: '6.5rem'
                                  }}>
                                 <TreeImages
                                     fakeData={fakeData} selectedOption1={selectedOption1}
@@ -160,7 +160,7 @@ function Dashboard({
                                     setSelectedOption3={setSelectedOption3}/>
                             </div>
                         </Col>
-                        <Col md={4} style={{marginTop: '13.5rem'}}>
+                        <Col md={4} style={{marginTop: '20.5rem'}}>
                             <div className="d-flex justify-content-center align-items-center text-center"
                                  style={{marginRight: '30rem'}}>
                                 <CommitmentsBar data={data} width={700} height={200}

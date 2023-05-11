@@ -130,17 +130,17 @@ function FeelingsBar({fakeData, selectedOption1, setSelectedOption1, selectedOpt
             .data(colors)
             .join('g')
             .attr('class', 'legend-item')
-            .attr('transform', (value, index) => `translate(${index * 80}, 0)`)
+            .attr('transform', (value, index) => `translate(${index * 100}, 0)`)
             .call(g => {
                 g.append('rect')
-                    .attr('x', 0)
-                    .attr('y', -height)
+                    .attr('x', -10)
+                    .attr('y', -height -5)
                     .attr('width', 15)
                     .attr('height', 15)
                     .attr('fill', value => value);
                 g.append('text')
-                    .attr('x', 20)
-                    .attr('y', -height + 13)
+                    .attr('x', 10)
+                    .attr('y', -height + 10)
                     .text((value, index) => `Woche ${index + 1}`);
             });
     }, [data, height, width, colors]);
