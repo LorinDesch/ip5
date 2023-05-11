@@ -6,35 +6,33 @@ function CommitmentsBar({fakeData, selectedOption1, setSelectedOption1, selected
     // Get the selected commitment ID based on the selectedOption2
     const selectedCommitmentId = selectedOption2 === 'Challenge' ? 0 : fakeData.commitments.find(commitment => commitment.commitmentname === selectedOption2).commitmentid;
 
-
-    console.log("selectedCommitmentId", selectedCommitmentId)
-
     // Get the feelings array based on the selectedCommitmentId
     const feelingsArray = fakeData.diary.filter(diary => diary.commitmentid === selectedCommitmentId).map(diary => diary.feelings);
 
-    console.log("fakeData.diary", fakeData.diary)
-
     // Merge all the feelings arrays into a single array
-    //TODO: const data = feelingsArray.reduce((acc, feelings) => [...acc, ...feelings], []);
-    //TODO fix for now
-    const data = feelingsArray.reduce((acc, feelings, index) => {
-        if (index === 0) {
-            return [...acc, ...feelings];
-        } else {
-            return acc;
-        }
-    }, []);
-    console.log("data", data)
+    let data = feelingsArray.reduce((acc, feelings) => [...acc, ...feelings], []);
 
-    const colors = ['#135210', '#73796E', '#FF897D', '#85B3B7'];
+    if(selectedOption1 === "Max Mustermann") {
+        data = data.slice(0, 28);
+    } else if(selectedOption1 === "Gruppe 1") {
+        data = data.slice(28, 56);
+    } else {
+        data = [];
+    }
+
+
+    const colors = ['green', 'grey', 'red', 'blue'];
     const yAxisLabels = ['schlecht', 'gelassen', 'grossartig'];
     const groups = ["Tag 1", "Tag 2", "Tag 3", "Tag 4", "Tag 5", "Tag 6", "Tag 7"]
 
     const svgRef = useRef();
     useEffect(() => {
+        // Clear the SVG before rendering the new chart
+        const svg = d3.select(svgRef.current);
+        svg.selectAll("*").remove();
 
-
-        const svg = d3.select(svgRef.current)
+        // Render the chart
+        const svgChart = svg
             .attr('width', width)
             .attr('height', height)
             .style('overflow', 'visible');
@@ -57,10 +55,10 @@ function CommitmentsBar({fakeData, selectedOption1, setSelectedOption1, selected
             .tickFormat(d => yAxisLabels[d * 2])
 
 
-        svg.append('g')
+        svgChart.append('g')
             .call(xAxis)
             .attr('transform', `translate(0, ${height})`);
-        svg.append('g')
+        svgChart.append('g')
             .call(yAxis)
             .style('font-size', '16px');
 
@@ -92,7 +90,6 @@ function CommitmentsBar({fakeData, selectedOption1, setSelectedOption1, selected
             .attr('height', value => height - yScale(value))
             .attr('fill', (value, index) => colors[index % colors.length]);
 
-
         group.each(function (d, i) {
             if (i % 4 === 3) {
                 // Append a line and text to every 4th bar
@@ -109,12 +106,13 @@ function CommitmentsBar({fakeData, selectedOption1, setSelectedOption1, selected
                 d3.select(this)
                     .append('text')
                     .attr('class', 'group-text')
-                    .attr('x', xScale(i) + xScale.bandwidth() / 2 - 30)
+                    .attr('x', xScale(i) + xScale.bandwidth() / 2 - 40)
                     .attr('y', yScale(0) + 20)
                     .attr('text-anchor', 'middle')
                     .text(groups[groupIndex])
             }
         });
+
 
         const legendWidth = 80 * colors.length;
         const legend = svg.append('g')
@@ -124,7 +122,7 @@ function CommitmentsBar({fakeData, selectedOption1, setSelectedOption1, selected
             .data(colors)
             .join('g')
             .attr('class', 'legend-item')
-            .attr('transform', (value, index) => `translate(${index * 100}, 0)`)
+            .attr('transform', (value, index) => `translate(${index * 80}, 0)`)
             .call(g => {
                 g.append('rect')
                     .attr('x', 0)

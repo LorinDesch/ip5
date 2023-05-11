@@ -20,8 +20,7 @@ const TopNavbar = ({fakeData, selectedOption3, selectedOption2, selectedOption1,
         backgroundRepeat: 'no-repeat',
         backgroundSize: 'auto 30%', // Adjust the size of the arrow here
     };
-
-    console.log("FakeData: " + fakeData)
+    console.log(fakeData)
 
     const options3 = fakeData.groups.map((item) => ({
         value: item.groupname,
@@ -31,8 +30,8 @@ const TopNavbar = ({fakeData, selectedOption3, selectedOption2, selectedOption1,
     const options2 = fakeData.commitments.map((item) => item.commitmentname);
 
     const options1 = [];
-        options1.push(fakeData.users[1].username);
-        options1.push(fakeData.groups[1].groupname);
+        options1.push(fakeData.users[0].username);
+        options1.push(fakeData.groups[0].groupname);
 
 
 

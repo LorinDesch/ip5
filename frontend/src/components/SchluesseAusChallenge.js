@@ -1,11 +1,11 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-const SchluesseAusChallenge = ({data}) => {
-    const beiDirSelbst = "Ich habe gemerkt dass ich mich in der Challenge sehr gut auf mich selbst konzentrieren konnte";
-    const sozialUmfeld = "Ich habe gemerkt dass ich mich in der Challenge sehr gut auf mein soziales Umfeld konzentrieren konnte";
-    const politisch = "Ich habe gemerkt dass ich mich in der Challenge sehr gut auf die Politik konzentrieren konnte";
-    const produkt = "Ich habe gemerkt dass ich mich in der Challenge sehr gut auf das Produkt konzentrieren konnte";
+const SchluesseAusChallenge = ({schluesse}) => {
+    const beiDirSelbst = schluesse[2];
+    const sozialUmfeld = schluesse[3];
+    const politisch = schluesse[0];
+    const produkt = schluesse[1];
 
     return (
         <div className="container" style={{textAlign: 'center', maxWidth: '400px', paddingTop: '1rem'}}>
