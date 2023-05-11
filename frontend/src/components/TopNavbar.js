@@ -80,8 +80,8 @@ const TopNavbar = ({fakeData, selectedOption3, selectedOption2, selectedOption1,
                                selectedOptions2={selectedOption2}
                                fakeData={fakeData}/>
                 </div>
-                <div style={{gridColumn: '3', justifySelf: 'end', marginRight: '2rem'}}>
-                    <button onClick={handleLogout}>Logout</button>
+                <div style={{gridColumn: '3', justifySelf: 'end', marginRight: '5rem'}}>
+                    <button onClick={handleLogout} className="btn btn-outline-dark btn-sm">logout</button>
                 </div>
                 <div style={{gridColumn: '4', justifySelf: 'end', marginRight: '0.5rem'}}>
                     <Dropdown3 options={options3}
@@ -93,5 +93,7 @@ const TopNavbar = ({fakeData, selectedOption3, selectedOption2, selectedOption1,
             </div>
         </div>
     );
+
+
 }
 export default TopNavbar;
