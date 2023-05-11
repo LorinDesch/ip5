@@ -127,7 +127,7 @@ const App = () => {
             },
             eingeloest: 2,
             feelings: [0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.5, 0.4, 1, 0.3, 0.1, 0.2, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.5, 0.4, 1, 0.3, 0.1, 0.2, 0.3, 0.4, 0.5],
-            difficulty: [0.4, 0.8],
+            difficulty: [0.4, 0.1],
             restriction: [0.2, 0.6],
             environment: [0.1, 0.5],
             currentContribution: [0.3, 0.7],
