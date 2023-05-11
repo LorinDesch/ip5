@@ -1,5 +1,5 @@
 import React from 'react';
-import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
+import {BrowserRouter as Router, Routes, Route, Navigate} from 'react-router-dom';
 import Dashboard from "./components/Dashboard";
 import DifficultyComparison from "./components/comparisons/DifficultyComparison";
 import RestrictionComparison from "./components/comparisons/RestrictionComparison";
@@ -9,6 +9,7 @@ import AllowsMeToComparison from "./components/comparisons/AllowsMeToComparison"
 import SustainableDevelopmentComparison from "./components/comparisons/SustainableDevelopmentComparison";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {useState} from "react";
+import Login from "./components/Login";
 
 
 const App = () => {
@@ -139,8 +140,8 @@ const App = () => {
                 userid: 4,
                 commitmentid: 2,
                 schluesse: {
-                    selbst:"plartzhalter",
-                    sozial:"plartzhalter",
+                    selbst: "plartzhalter",
+                    sozial: "plartzhalter",
                     politik: "plartzhalter",
                     produkt: "plartzhalter",
                 },
@@ -159,61 +160,142 @@ const App = () => {
     const [selectedOption1, setSelectedOption1] = useState('Max Mustermann');
     const [selectedOption2, setSelectedOption2] = useState('Challenge');
     const [selectedOption3, setSelectedOption3] = useState([]);
+    const loggedInUser = localStorage.getItem('loggedInUser');
 
     return (
         <Router>
             <Routes>
-                <Route path="/" element={<Dashboard fakeData={fakeData} selectedOption1={selectedOption1}
-                                                    setSelectedOption1={setSelectedOption1}
-                                                    selectedOption2={selectedOption2}
-                                                    setSelectedOption2={setSelectedOption2}
-                                                    selectedOption3={selectedOption3}
-                                                    setSelectedOption3={setSelectedOption3}/>}/>
-                <Route path="/difficulty"
-                       element={<DifficultyComparison fakeData={fakeData} selectedOption1={selectedOption1}
-                                                      setSelectedOption1={setSelectedOption1}
-                                                      selectedOption2={selectedOption2}
-                                                      setSelectedOption2={setSelectedOption2}
-                                                      selectedOption3={selectedOption3}
-                                                      setSelectedOption3={setSelectedOption3}/>}/> { /* Schwierigkeit */}
-                <Route path="/restriction"
-                       element={<RestrictionComparison fakeData={fakeData} selectedOption1={selectedOption1}
-                                                       setSelectedOption1={setSelectedOption1}
-                                                       selectedOption2={selectedOption2}
-                                                       setSelectedOption2={setSelectedOption2}
-                                                       selectedOption3={selectedOption3}
-                                                       setSelectedOption3={setSelectedOption3}/>}/> { /* Einschränkung */}
-                <Route path="/environment"
-                       element={<EnvironmentComparison fakeData={fakeData} selectedOption1={selectedOption1}
-                                                       setSelectedOption1={setSelectedOption1}
-                                                       selectedOption2={selectedOption2}
-                                                       setSelectedOption2={setSelectedOption2}
-                                                       selectedOption3={selectedOption3}
-                                                       setSelectedOption3={setSelectedOption3}/>}/> { /*  Umfeld reagiert positiv / negativ */}
-                <Route path="/currentcontribution"
-                       element={<CurrentContributionComparison fakeData={fakeData} selectedOption1={selectedOption1}
-                                                               setSelectedOption1={setSelectedOption1}
-                                                               selectedOption2={selectedOption2}
-                                                               setSelectedOption2={setSelectedOption2}
-                                                               selectedOption3={selectedOption3}
-                                                               setSelectedOption3={setSelectedOption3}/>}/> { /* aktueller Beitrag Nachhaltigkeit */}
-                <Route path="/allowsmeto"
-                       element={<AllowsMeToComparison fakeData={fakeData} selectedOption1={selectedOption1}
-                                                      setSelectedOption1={setSelectedOption1}
-                                                      selectedOption2={selectedOption2}
-                                                      setSelectedOption2={setSelectedOption2}
-                                                      selectedOption3={selectedOption3}
-                                                      setSelectedOption3={setSelectedOption3}/>}/> { /* Verantwortung übernehmen / Erwartungen nachkommen */}
-                <Route path="/sustainabledevelopment" element={
-                    <SustainableDevelopmentComparison fakeData={fakeData} selectedOption1={selectedOption1}
-                                                      setSelectedOption1={setSelectedOption1}
-                                                      selectedOption2={selectedOption2}
-                                                      setSelectedOption2={setSelectedOption2}
-                                                      selectedOption3={selectedOption3}
-                                                      setSelectedOption3={setSelectedOption3}/>}/> { /* trägt zu einer nachhaltigen Entwicklung bei */}
+                {!loggedInUser && <Route path="/*" element={<Navigate to="/login"/>}/>}
+                <Route path="/login" element={<Login fakeData={fakeData}/>}/>
+                <Route
+                    path="/"
+                    element={
+                        loggedInUser ? (
+                            <Dashboard
+                                fakeData={fakeData}
+                                selectedOption1={selectedOption1}
+                                setSelectedOption1={setSelectedOption1}
+                                selectedOption2={selectedOption2}
+                                setSelectedOption2={setSelectedOption2}
+                                selectedOption3={selectedOption3}
+                                setSelectedOption3={setSelectedOption3}
+                            />
+                        ) : (
+                            <Navigate to="/login"/>
+                        )
+                    }
+                />
+                <Route
+                    path="/difficulty"
+                    element={
+                        loggedInUser ? (
+                            <DifficultyComparison
+                                fakeData={fakeData}
+                                selectedOption1={selectedOption1}
+                                setSelectedOption1={setSelectedOption1}
+                                selectedOption2={selectedOption2}
+                                setSelectedOption2={setSelectedOption2}
+                                selectedOption3={selectedOption3}
+                                setSelectedOption3={setSelectedOption3}
+                            />
+                        ) : (
+                            <Navigate to="/login"/>
+                        )
+                    }
+                />
+                <Route
+                    path="/restriction"
+                    element={
+                        loggedInUser ? (
+                            <RestrictionComparison
+                                fakeData={fakeData}
+                                selectedOption1={selectedOption1}
+                                setSelectedOption1={setSelectedOption1}
+                                selectedOption2={selectedOption2}
+                                setSelectedOption2={setSelectedOption2}
+                                selectedOption3={selectedOption3}
+                                setSelectedOption3={setSelectedOption3}
+                            />
+                        ) : (
+                            <Navigate to="/login"/>
+                        )
+                    }
+                />
+                <Route
+                    path="/environment"
+                    element={
+                        loggedInUser ? (
+                            <EnvironmentComparison
+                                fakeData={fakeData}
+                                selectedOption1={selectedOption1}
+                                setSelectedOption1={setSelectedOption1}
+                                selectedOption2={selectedOption2}
+                                setSelectedOption2={setSelectedOption2}
+                                selectedOption3={selectedOption3}
+                                setSelectedOption3={setSelectedOption3}
+                            />
+                        ) : (
+                            <Navigate to="/login"/>
+                        )
+                    }
+                />
+                <Route
+                    path="/currentcontribution"
+                    element={
+                        loggedInUser ? (
+                            <CurrentContributionComparison
+                                fakeData={fakeData}
+                                selectedOption1={selectedOption1}
+                                setSelectedOption1={setSelectedOption1}
+                                selectedOption2={selectedOption2}
+                                setSelectedOption2={setSelectedOption2}
+                                selectedOption3={selectedOption3}
+                                setSelectedOption3={setSelectedOption3}
+                            />
+                        ) : (
+                            <Navigate to="/login"/>
+                        )
+                    }
+                />
+                <Route
+                    path="/allowsmeto"
+                    element={
+                        loggedInUser ? (
+                            <AllowsMeToComparison
+                                fakeData={fakeData}
+                                selectedOption1={selectedOption1}
+                                setSelectedOption1={setSelectedOption1}
+                                selectedOption2={selectedOption2}
+                                setSelectedOption2={setSelectedOption2}
+                                selectedOption3={selectedOption3}
+                                setSelectedOption3={setSelectedOption3}
+                            />
+                        ) : (
+                            <Navigate to="/login"/>
+                        )
+                    }
+                />
+                <Route
+                    path="/sustainabledevelopment"
+                    element={
+                        loggedInUser ? (
+                            <SustainableDevelopmentComparison
+                                fakeData={fakeData}
+                                selectedOption1={selectedOption1}
+                                setSelectedOption1={setSelectedOption1}
+                                selectedOption2={selectedOption2}
+                                setSelectedOption2={setSelectedOption2}
+                                selectedOption3={selectedOption3}
+                                setSelectedOption3={setSelectedOption3}
+                            />
+                        ) : (
+                            <Navigate to="/login"/>
+                        )
+                    }
+                />
             </Routes>
         </Router>
     );
-}
+};
 
 export default App;

@@ -4,6 +4,7 @@ import Dropdown2 from "./Dropdown2";
 import Dropdown3 from "./Dropdown3";
 import React from "react";
 import Login from "./Login";
+import {useNavigate} from "react-router-dom";
 
 const TopNavbar = ({fakeData, selectedOption3, selectedOption2, selectedOption1, setSelectedOption1, setSelectedOption2, setSelectedOption3 }) => {
     const dropDownStyling = {
@@ -20,7 +21,15 @@ const TopNavbar = ({fakeData, selectedOption3, selectedOption2, selectedOption1,
         backgroundRepeat: 'no-repeat',
         backgroundSize: 'auto 30%', // Adjust the size of the arrow here
     };
-    console.log(fakeData)
+    const navigate = useNavigate();
+
+    const handleLogout = () => {
+        // Perform any necessary logout logic here
+
+        // Redirect to "/login"
+        navigate("/login");
+    };
+
 
     const options3 = fakeData.groups.map((item) => ({
         value: item.groupname,
@@ -72,6 +81,7 @@ const TopNavbar = ({fakeData, selectedOption3, selectedOption2, selectedOption1,
                                fakeData={fakeData}/>
                 </div>
                 <div style={{gridColumn: '3', justifySelf: 'end', marginRight: '2rem'}}>
+                    <button onClick={handleLogout}>Logout</button>
                 </div>
                 <div style={{gridColumn: '4', justifySelf: 'end', marginRight: '0.5rem'}}>
                     <Dropdown3 options={options3}
