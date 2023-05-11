@@ -8,23 +8,25 @@ const TreeImages = ({ leftIndex, rightIndex, fakeData, selectedOption2, selected
     } else {
         // Calculate left index
         const cId = fakeData.commitments.find(commitment => commitment.commitmentname === selectedOption2)?.commitmentid;
-        let groupOfUsers;
-        if (selectedOption1 === "Max Mustermann") {
-            const uId = fakeData.users.find(user => user.username === "Max Mustermann")?.userid;
-            const diariesFromCiD = fakeData.diary.filter(diary => diary.commitmentid === cId);
-            const selectedDiaries = diariesFromCiD.filter(diary => diary.userid === uId);
-            leftIndex = Math.round(selectedDiaries[0]?.eingeloest || 0);
-        } else if (selectedOption1 === "Gruppe 1") {
-            groupOfUsers = fakeData.groups.find(group => group.groupname === "Gruppe 1")?.users || [];
-            leftIndex = Math.round(groupOfUsers.reduce((acc, user) => {
+        if(cId >= 0) {
+            const uId = fakeData.users.find(user => user.username === selectedOption1)?.userid;
+            const gId = fakeData.groups.find(group => group.groupname === selectedOption1)?.groupid;
+            if(uId !== undefined) {
                 const diariesFromCiD = fakeData.diary.filter(diary => diary.commitmentid === cId);
-                const selectedDiaries = diariesFromCiD.filter(diary => diary.userid === user);
-                return acc + (selectedDiaries[0]?.eingeloest || 0);
-            }, 0) / groupOfUsers.length || 0);
-
-        } else {
-            leftIndex = 0;
+                const selectedDiaries = diariesFromCiD.filter(diary => diary.userid === uId);
+                leftIndex = Math.round(selectedDiaries[0]?.eingeloest || 0);
+            } else if( gId !== undefined) {
+                const groupOfUsers = fakeData.groups.find(group => group.groupname === "Gruppe 1")?.users || [];
+                leftIndex = Math.round(groupOfUsers.reduce((acc, user) => {
+                    const diariesFromCiD = fakeData.diary.filter(diary => diary.commitmentid === cId);
+                    const selectedDiaries = diariesFromCiD.filter(diary => diary.userid === user);
+                    return acc + (selectedDiaries[0]?.eingeloest || 0);
+                }, 0) / groupOfUsers.length || 0);
+            } else {
+                leftIndex = 0;
+            }
         }
+
 
 
         //TODO: Calculate right index better
