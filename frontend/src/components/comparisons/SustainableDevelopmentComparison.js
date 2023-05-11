@@ -6,17 +6,17 @@ import {Col, Container, Row} from "react-bootstrap";
 import {getValueAttributeOnlyGroup, getValueAttributeUserGroup} from "./AllowsMeToComparison";
 
 const SustainabilityComparison = ({
-                                  data,
-                                  width,
-                                  height,
-                                  fakeData,
-                                  selectedOption1,
-                                  selectedOption3,
-                                  selectedOption2,
-                                  setSelectedOption1,
-                                  setSelectedOption2,
-                                  setSelectedOption3
-                              }) => {
+                                      data,
+                                      width,
+                                      height,
+                                      fakeData,
+                                      selectedOption1,
+                                      selectedOption3,
+                                      selectedOption2,
+                                      setSelectedOption1,
+                                      setSelectedOption2,
+                                      setSelectedOption3
+                                  }) => {
 
     data = [200, 30, 160, 50, 300, 400];
 
@@ -52,7 +52,6 @@ const SustainabilityComparison = ({
     console.log(sustainableDevelopmentValueRightBar)
     const sustainableDevelopmentValueLeftBar = Array(sustainableDevelopmentValueRightBar.length).fill(getValueAttributeUserGroup("sustainableDevelopment", selectedOption1, selectedOption2, fakeData));
     console.log(sustainableDevelopmentValueLeftBar)
-
 
 
     return (
@@ -92,8 +91,6 @@ const SustainabilityComparison = ({
                                         difficultyValueLeftBar={sustainableDevelopmentValueLeftBar}
                                         selectedOption3={selectedOption3}
                                         selectedOption2={selectedOption2}
-                            />
-
                             />
                         </div>
                     </Col>
