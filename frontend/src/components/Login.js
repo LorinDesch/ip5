@@ -5,13 +5,6 @@ function Login({ fakeData }) {
     const [username, setUsername] = useState('');
     const navigate = useNavigate();
 
-    useEffect(() => {
-        const loggedInUser = localStorage.getItem('loggedInUser');
-        if (loggedInUser) {
-            navigate('/');
-        }
-    }, [navigate]);
-
     const handleSubmit = async (event) => {
         event.preventDefault();
         console.log('Submitting login form');
