@@ -1,7 +1,7 @@
 import React, {useEffect, useRef} from 'react';
 import * as d3 from 'd3';
 
-function CommitmentsBar({fakeData, selectedOption1, setSelectedOption1, selectedOption2, setSelectedOption2, selectedOption3, setSelectedOption3 , width, height}) {
+function FeelingsBar({fakeData, selectedOption1, setSelectedOption1, selectedOption2, setSelectedOption2, selectedOption3, setSelectedOption3 , width, height}) {
 
     // Get the selected commitment ID based on the selectedOption2
     const selectedCommitmentId = selectedOption2 === 'Challenge' ? 0 : fakeData.commitments.find(commitment => commitment.commitmentname === selectedOption2).commitmentid;
@@ -12,14 +12,19 @@ function CommitmentsBar({fakeData, selectedOption1, setSelectedOption1, selected
     // Merge all the feelings arrays into a single array
     let data = feelingsArray.reduce((acc, feelings) => [...acc, ...feelings], []);
 
-    if(selectedOption1 === "Max Mustermann") {
-        data = data.slice(0, 28);
-    } else if(selectedOption1 === "Gruppe 1") {
-        data = data.slice(28, 56);
-    } else {
-        data = [];
-    }
 
+
+    const cId = fakeData.commitments.filter(commitment => commitment.commitmentname === selectedOption2)[0].commitmentid;
+    if(cId > 0) {
+        const uId = fakeData.users.find(user => user.username === selectedOption1)?.userid;
+        if (uId !== undefined) {
+            console.log(uId)
+            data = data.slice(0, 28);
+        } else {
+            data = [];
+        }
+        console.log(data)
+    }
 
     const colors = ['#135210', '#73796E', '#FF897D', '#85B3B7'];
     const yAxisLabels = ['schlecht', 'gelassen', 'grossartig'];
@@ -146,4 +151,4 @@ function CommitmentsBar({fakeData, selectedOption1, setSelectedOption1, selected
         ;
 }
 
-export default CommitmentsBar;
+export default FeelingsBar;
