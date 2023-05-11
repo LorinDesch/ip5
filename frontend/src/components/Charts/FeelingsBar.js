@@ -21,7 +21,7 @@ function CommitmentsBar({fakeData, selectedOption1, setSelectedOption1, selected
     }
 
 
-    const colors = ['green', 'grey', 'red', 'blue'];
+    const colors = ['#135210', '#73796E', '#FF897D', '#85B3B7'];
     const yAxisLabels = ['schlecht', 'gelassen', 'grossartig'];
     const groups = ["Tag 1", "Tag 2", "Tag 3", "Tag 4", "Tag 5", "Tag 6", "Tag 7"]
 
