@@ -133,7 +133,26 @@ const App = () => {
             currentContribution: [0.3, 0.7],
             allowsMeTo: [0.5, 0.9],
             sustainableDevelopment: [0.6, 1],
-        }
+        },
+            {
+                diaryid: 5,
+                userid: 4,
+                commitmentid: 2,
+                schluesse: {
+                    selbst:"plartzhalter",
+                    sozial:"plartzhalter",
+                    politik: "plartzhalter",
+                    produkt: "plartzhalter",
+                },
+                eingeloest: 6,
+                feelings: [0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.5, 0.4, 1, 0.3, 0.1, 0.2, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.5, 0.4, 1, 0.3, 0.1, 0.2, 0.3, 0.4, 0.5],
+                difficulty: [0.4, 0.8],
+                restriction: [0.2, 0.6],
+                environment: [0.1, 0.5],
+                currentContribution: [0.3, 0.7],
+                allowsMeTo: [0.5, 0.9],
+                sustainableDevelopment: [0.6, 1],
+            }
 
         ]
     });
