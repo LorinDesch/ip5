@@ -16,7 +16,7 @@ const TreeImages = ({ leftIndex, rightIndex, fakeData, selectedOption2, selected
                 const selectedDiaries = diariesFromCiD.filter(diary => diary.userid === uId);
                 leftIndex = Math.round(selectedDiaries[0]?.eingeloest || 0);
             } else if( gId !== undefined) {
-                const groupOfUsers = fakeData.groups.find(group => group.groupname === "Gruppe 1")?.users || [];
+                const groupOfUsers = fakeData.groups.find(group => group.groupname === selectedOption1)?.users || [];
                 leftIndex = Math.round(groupOfUsers.reduce((acc, user) => {
                     const diariesFromCiD = fakeData.diary.filter(diary => diary.commitmentid === cId);
                     const selectedDiaries = diariesFromCiD.filter(diary => diary.userid === user);
