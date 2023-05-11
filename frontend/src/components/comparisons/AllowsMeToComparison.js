@@ -23,7 +23,6 @@ export function getValueAttributeUserGroup(attribute, selectedOption1, selectedO
     return returnValue;
 }
 
-
 export function getValueAttributeOnlyGroup(attribute, selectedOption3, fakeData, selectedOption2) {
     const cId = fakeData.commitments.find(commitment => commitment.commitmentname === selectedOption2)?.commitmentid;
     const zeros = [];

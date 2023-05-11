@@ -117,7 +117,7 @@ const App = () => {
             sustainableDevelopment: [0.6, 1],
         }, {
             diaryid: 4,
-            userid: 1,
+            userid: 12,
             commitmentid: 2,
             schluesse: {
                 selbst: "Ich ernähre mich jetzt gesünder",

@@ -7,6 +7,49 @@ import TreeImages from './TreeImages';
 import FeelingsBar from './Charts/FeelingsBar';
 import CommitmentsBar from './Charts/CommitmentsBar';
 
+
+export function getSchluesseChallengeUserGroup(selectedOption1, selectedOption2, fakeData) {
+    const selectedCommitment = fakeData.commitments.find(commitment => commitment.commitmentname === selectedOption2);
+    const commitmentId = selectedCommitment?.commitmentid;
+    const categorizedArray = [];
+
+    if (commitmentId > 0) {
+        const selectedUser = fakeData.users.find(user => user.username === selectedOption1);
+        const userId = selectedUser?.userid;
+        let returnValue = [];
+
+        if (userId !== undefined) {
+            returnValue = fakeData.diary.filter(diary => diary.userid === userId && diary.commitmentid === commitmentId);
+            returnValue = returnValue.map(diary => diary.schluesse || "-");
+            console.log( "returnValue User", returnValue);
+        } else {
+            const selectedGroup = fakeData.groups.find(group => group.groupname === selectedOption1);
+            const groupUsers = selectedGroup?.users || [];
+            returnValue = groupUsers.flatMap(user => fakeData.diary.filter(diary => diary.userid === user && diary.commitmentid === commitmentId));
+            returnValue = returnValue.map(diary => diary.schluesse || "-");
+        }
+
+        // Randomly select one value for each category
+        const randomIndex = Math.floor(Math.random() * returnValue.length);
+
+        categorizedArray.push(returnValue[randomIndex]?.politik || "-");
+        categorizedArray.push(returnValue[randomIndex]?.produkt || "-");
+        categorizedArray.push(returnValue[randomIndex]?.selbst || "-");
+        categorizedArray.push(returnValue[randomIndex]?.sozial || "-");
+
+        return categorizedArray;
+    } else {
+        return ["-", "-", "-", "-"];
+    }
+}
+
+
+
+
+
+
+
+
 function Dashboard({
                        fakeData,
                        selectedOption1,
@@ -18,6 +61,9 @@ function Dashboard({
                    }) {
 
     const [data] = useState([200, 30, 160, 50, 300, 400]);
+
+    const schluesse = getSchluesseChallengeUserGroup(selectedOption1, selectedOption2, fakeData);
+
 
     return (
 
@@ -40,7 +86,7 @@ function Dashboard({
                         <Row>
                             <Col md={4}>
                                 <div className="d-flex justify-content-center align-items-center text-center" style={{marginRight: '12rem'}}>
-                                    <SchluesseAusChallenge data={data} />
+                                    <SchluesseAusChallenge schluesse={schluesse} />
                                 </div>
                             </Col>
                             <Col md={4}>
@@ -50,7 +96,7 @@ function Dashboard({
                             </Col>
                             <Col md={4}>
                                 <div className="d-flex justify-content-center align-items-center text-center" style={{marginRight: '4rem'}}>
-                                    <SchluesseAusChallenge data={data} />
+                                    <SchluesseAusChallenge schluesse={schluesse} />
                                 </div>
                             </Col>
                         </Row>

@@ -20,7 +20,6 @@ function CommitmentsBar({
     } else {
 
         const cId = fakeData.commitments.filter(commitment => commitment.commitmentname === selectedOption2)[0].commitmentid;
-        console.log("Cid: "+ cId)
 
         const x = selectedOption3.map(option => {
             const groupOfUsers = fakeData.groups.filter(group => group.groupname === option)[0].users;
@@ -32,10 +31,6 @@ function CommitmentsBar({
             eingeloeste.push(avg);
             return avg;
         });
-        console.log("X: "+ x)
-
-
-
     }
 
 
