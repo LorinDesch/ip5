@@ -5,7 +5,7 @@ import SideNavbar from "../SideNavbar";
 import {Col, Container, Row} from "react-bootstrap";
 import {getValueAttributeOnlyGroup, getValueAttributeUserGroup} from "./AllowsMeToComparison";
 
-const DifficultyComparison = ({
+const RestrictionComparison = ({
                                   data,
                                   width,
                                   height,
@@ -164,4 +164,4 @@ const DifficultyComparison = ({
     );
 };
 
-export default DifficultyComparison;
+export default RestrictionComparison;

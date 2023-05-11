@@ -6,7 +6,7 @@ import {Col, Container, Row} from "react-bootstrap";
 import {getValueAttributeOnlyGroup, getValueAttributeUserGroup} from "./AllowsMeToComparison";
 
 
-const DifficultyComparison = ({
+const EnvironmentalComparison = ({
                                   data,
                                   width,
                                   height,
@@ -162,4 +162,4 @@ const DifficultyComparison = ({
     );
 };
 
-export default DifficultyComparison;
+export default EnvironmentalComparison;
