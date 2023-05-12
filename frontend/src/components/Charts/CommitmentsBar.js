@@ -1,6 +1,26 @@
 import React, {useEffect, useRef} from 'react';
 import * as d3 from 'd3';
 
+function getFeelingsArray(fakeData, selectedOption1, selectedOption2, selectedOption3) {
+    let eingeloeste = [];
+
+    const cId = fakeData.commitments.filter(commitment => commitment.commitmentname === selectedOption2)[0].commitmentid;
+
+    if (cId >= 0) {
+        selectedOption3.map(option => {
+            const groupOfUsers = fakeData.groups.filter(group => group.groupname === option)[0].users;
+            const diariesFromCiD = fakeData.diary.filter(diary => diary.commitmentid === cId);
+            const selectedDiaries = diariesFromCiD.filter(diary => groupOfUsers.includes(diary.userid));
+            const eingeloest = selectedDiaries.map(diary => diary.eingeloest);
+            const sum = eingeloest.reduce((a, b) => a + b, 0);
+            const avg = sum / groupOfUsers.length || 0;
+            eingeloeste.push(avg);
+            return avg;
+        });
+    }
+    return eingeloeste;
+}
+
 function CommitmentsBar({
                             width,
                             height,
@@ -13,24 +33,8 @@ function CommitmentsBar({
                             setSelectedOption3
                         }) {
 
-    let eingeloeste = [];
+    let eingeloeste = getFeelingsArray(fakeData, selectedOption1, selectedOption2, selectedOption3);
 
-
-    const cId = fakeData.commitments.filter(commitment => commitment.commitmentname === selectedOption2)[0].commitmentid;
-
-    if (cId >= 0) {
-        const cId = fakeData.commitments.filter(commitment => commitment.commitmentname === selectedOption2)[0].commitmentid;
-        selectedOption3.map(option => {
-            const groupOfUsers = fakeData.groups.filter(group => group.groupname === option)[0].users;
-            const diariesFromCiD = fakeData.diary.filter(diary => diary.commitmentid === cId);
-            const selectedDiaries = diariesFromCiD.filter(diary => groupOfUsers.includes(diary.userid));
-            const eingeloest = selectedDiaries.map(diary => diary.eingeloest);
-            const sum = eingeloest.reduce((a, b) => a + b, 0);
-            const avg = sum / groupOfUsers.length || 0;
-            eingeloeste.push(avg);
-            return avg;
-        });
-    }
 
     const data = eingeloeste.length > 0 ? eingeloeste : [];
     const groups = selectedOption3
