@@ -6,7 +6,6 @@ import {Col, Container, Row} from "react-bootstrap";
 import {getValueAttributeOnlyGroup, getValueAttributeUserGroup} from "./AllowsMeToComparison";
 
 const SustainabilityComparison = ({
-                                      data,
                                       width,
                                       height,
                                       fakeData,
@@ -17,8 +16,6 @@ const SustainabilityComparison = ({
                                       setSelectedOption2,
                                       setSelectedOption3
                                   }) => {
-
-    data = [200, 30, 160, 50, 300, 400];
 
     const difficultyLabel = "Schwierigkeit"
     const difficultylabelLeft = ["Leicht", "Mittel", "Schwer"] //FLIPPED
@@ -82,7 +79,7 @@ const SustainabilityComparison = ({
                 <Row className="text-center mb-4 align-items-center" style={{marginTop: '3rem', marginBottom: '5rem'}}>
                     <Col md={6}>
                         <div style={{marginLeft: '5rem'}}>
-                            <Comparison data={data} width={700} height={250}
+                            <Comparison width={700} height={250}
                                         squaredLabelLeft={sustainableDevelopmentLabel}
                                         leftLabel={sustainableDevelopmentlabelLeft}
                                         squaredLabelRight={difficultyLabel}
@@ -96,7 +93,7 @@ const SustainabilityComparison = ({
                     </Col>
                     <Col md={6}>
                         <div style={{marginLeft: '-1.5rem'}}>
-                            <Comparison data={data} width={700} height={250}
+                            <Comparison width={700} height={250}
                                         squaredLabelLeft={sustainableDevelopmentLabel}
                                         leftLabel={sustainableDevelopmentlabelLeft}
                                         squaredLabelRight={currentContributionLabel}
@@ -112,7 +109,7 @@ const SustainabilityComparison = ({
                 <Row className="text-center mb-4 align-items-center" style={{marginTop: '3rem', marginBottom: '5rem'}}>
                     <Col md={6}>
                         <div style={{marginLeft: '5rem'}}>
-                            <Comparison data={data} width={700} height={250}
+                            <Comparison width={700} height={250}
                                         squaredLabelLeft={sustainableDevelopmentLabel}
                                         leftLabel={sustainableDevelopmentlabelLeft}
                                         squaredLabelRight={restrionctionLabel}
@@ -126,7 +123,7 @@ const SustainabilityComparison = ({
                     </Col>
                     <Col md={6}>
                         <div style={{marginLeft: '-1.5rem'}}>
-                            <Comparison data={data} width={700} height={250}
+                            <Comparison width={700} height={250}
                                         squaredLabelLeft={sustainableDevelopmentLabel}
                                         leftLabel={sustainableDevelopmentlabelLeft}
                                         squaredLabelRight={allowMeToLabel}
@@ -142,7 +139,7 @@ const SustainabilityComparison = ({
                 <Row className="text-center mb-4 align-items-center" style={{marginTop: '3rem', marginBottom: '5rem'}}>
                     <Col md={6}>
                         <div style={{marginLeft: '5rem'}}>
-                            <Comparison data={data} width={700} height={250}
+                            <Comparison width={700} height={250}
                                         squaredLabelLeft={sustainableDevelopmentLabel}
                                         leftLabel={sustainableDevelopmentlabelLeft}
                                         squaredLabelRight={environeLabel}

@@ -6,7 +6,6 @@ import {Col, Container, Row} from "react-bootstrap";
 import {getValueAttributeOnlyGroup, getValueAttributeUserGroup} from "./AllowsMeToComparison";
 
 const RestrictionComparison = ({
-                                  data,
                                   width,
                                   height,
                                   fakeData,
@@ -17,7 +16,6 @@ const RestrictionComparison = ({
                                   setSelectedOption2,
                                   setSelectedOption3
                               }) => {
-    data = [200, 30, 160, 50, 300, 400];
 
     const difficultyLabel = "Schwierigkeit"
     const difficultylabelLeft = ["Leicht", "Mittel", "Schwer"] //FLIPPED
@@ -80,7 +78,7 @@ const RestrictionComparison = ({
                 <Row className="text-center mb-4 align-items-center" style={{marginTop: '3rem', marginBottom: '5rem'}}>
                     <Col md={6}>
                         <div style={{marginLeft: '5rem'}}>
-                            <Comparison data={data} width={700} height={250}
+                            <Comparison width={700} height={250}
                                         squaredLabelLeft={restrionctionLabel}
                                         leftLabel={rrestrictionlabelLeft}
                                         squaredLabelRight={difficultyLabel}
@@ -95,7 +93,7 @@ const RestrictionComparison = ({
                     </Col>
                     <Col md={6}>
                         <div style={{marginLeft: '-1.5rem'}}>
-                            <Comparison data={data} width={700} height={250}
+                            <Comparison width={700} height={250}
                                         squaredLabelLeft={restrionctionLabel}
                                         leftLabel={rrestrictionlabelLeft}
                                         squaredLabelRight={currentContributionLabel}
@@ -116,7 +114,7 @@ const RestrictionComparison = ({
                     </Col>
                     <Col md={6}>
                         <div style={{marginLeft: '-1.5rem'}}>
-                            <Comparison data={data} width={700} height={250}
+                            <Comparison width={700} height={250}
                                         squaredLabelLeft={restrionctionLabel}
                                         leftLabel={rrestrictionlabelLeft}
                                         squaredLabelRight={allowMeToLabel}
@@ -132,7 +130,7 @@ const RestrictionComparison = ({
                 <Row className="text-center mb-4 align-items-center" style={{marginTop: '3rem', marginBottom: '5rem'}}>
                     <Col md={6}>
                         <div style={{marginLeft: '5rem'}}>
-                            <Comparison data={data} width={700} height={250}
+                            <Comparison width={700} height={250}
                                         squaredLabelLeft={restrionctionLabel}
                                         leftLabel={rrestrictionlabelLeft}
                                         squaredLabelRight={environeLabel}
@@ -146,7 +144,7 @@ const RestrictionComparison = ({
                     </Col>
                     <Col md={6}>
                         <div style={{marginLeft: '-1.5rem'}}>
-                            <Comparison data={data} width={700} height={250}
+                            <Comparison width={700} height={250}
                                         squaredLabelLeft={restrionctionLabel}
                                         leftLabel={rrestrictionlabelLeft}
                                         squaredLabelRight={sustainableDevelopmentLabel}
