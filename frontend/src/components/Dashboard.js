@@ -79,7 +79,6 @@ function Dashboard({
                        setSelectedOption2
                    }) {
 
-    const [data] = useState([200, 30, 160, 50, 300, 400]);
 
     const schluesseChallengeUserGroup = getSchluesseChallengeUserGroup(selectedOption1, selectedOption2, fakeData);
     const schluesseChallengeGroups = getSchluesseChallengeGroups(selectedOption2, selectedOption3, fakeData);
@@ -167,7 +166,7 @@ function Dashboard({
                         <Col md={4} style={{marginTop: '23.3rem'}}>
                             <div className="d-flex justify-content-center align-items-center text-center"
                                  style={{marginRight: '30rem'}}>
-                                <CommitmentsBar data={data} width={700} height={200}
+                                <CommitmentsBar  width={700} height={200}
                                                 fakeData={fakeData} selectedOption1={selectedOption1}
                                                 setSelectedOption1={setSelectedOption1}
                                                 selectedOption2={selectedOption2}

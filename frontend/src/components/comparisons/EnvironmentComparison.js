@@ -7,7 +7,6 @@ import {getValueAttributeOnlyGroup, getValueAttributeUserGroup} from "./AllowsMe
 
 
 const EnvironmentalComparison = ({
-                                  data,
                                   width,
                                   height,
                                   fakeData,
@@ -50,10 +49,6 @@ const EnvironmentalComparison = ({
     const sustainableDevelopmentValueRightBar = getValueAttributeOnlyGroup("sustainableDevelopment", selectedOption3, fakeData, selectedOption2)
     const sustainableDevelopmentValueLeftBar = Array(sustainableDevelopmentValueRightBar.length).fill(getValueAttributeUserGroup("sustainableDevelopment", selectedOption1, selectedOption2, fakeData));
 
-
-
-    data = [200, 30, 160, 50, 300, 400];
-
     return (
         <>
             <header style={{marginLeft: '7rem', marginTop: '0.5rem'}}>
@@ -80,7 +75,7 @@ const EnvironmentalComparison = ({
                 <Row className="text-center mb-4 align-items-center" style={{marginTop: '3rem', marginBottom: '5rem'}}>
                     <Col md={6}>
                         <div style={{marginLeft: '5rem'}}>
-                            <Comparison data={data} width={700} height={250}
+                            <Comparison width={700} height={250}
                                         squaredLabelLeft={environeLabel}
                                         leftLabel={environmentlabelLeft}
                                         squaredLabelRight={difficultyLabel}
@@ -94,7 +89,7 @@ const EnvironmentalComparison = ({
                     </Col>
                     <Col md={6}>
                         <div style={{marginLeft: '-1.5rem'}}>
-                            <Comparison data={data} width={700} height={250} squaredLabelLeft={environeLabel}
+                            <Comparison width={700} height={250} squaredLabelLeft={environeLabel}
                                         leftLabel={environmentlabelLeft}
                                         squaredLabelRight={currentContributionLabel}
                                         rightLabel={currentContributionlabelLeft}
@@ -109,7 +104,7 @@ const EnvironmentalComparison = ({
                 <Row className="text-center mb-4 align-items-center" style={{marginTop: '3rem', marginBottom: '5rem'}}>
                     <Col md={6}>
                         <div style={{marginLeft: '5rem'}}>
-                            <Comparison data={data} width={700} height={250}
+                            <Comparison width={700} height={250}
                                         squaredLabelLeft={environeLabel}
                                         leftLabel={environmentlabelLeft}
                                         squaredLabelRight={restrionctionLabel}
@@ -123,7 +118,7 @@ const EnvironmentalComparison = ({
                     </Col>
                     <Col md={6}>
                         <div style={{marginLeft: '-1.5rem'}}>
-                            <Comparison data={data} width={700} height={250}
+                            <Comparison width={700} height={250}
                                         squaredLabelLeft={environeLabel}
                                         leftLabel={environmentlabelLeft}
                                         squaredLabelRight={allowMeToLabel}
@@ -144,7 +139,7 @@ const EnvironmentalComparison = ({
                     </Col>
                     <Col md={6}>
                         <div style={{marginLeft: '-1.5rem'}}>
-                            <Comparison data={data} width={700} height={250}
+                            <Comparison width={700} height={250}
                                         squaredLabelLeft={environeLabel}
                                         leftLabel={environmentlabelLeft}
                                         squaredLabelRight={sustainableDevelopmentLabel}

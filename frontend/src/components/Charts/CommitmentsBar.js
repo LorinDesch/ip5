@@ -2,7 +2,6 @@ import React, {useEffect, useRef} from 'react';
 import * as d3 from 'd3';
 
 function CommitmentsBar({
-                            data,
                             width,
                             height,
                             fakeData,
@@ -33,7 +32,7 @@ function CommitmentsBar({
         });
     }
 
-    data = eingeloeste.length > 0 ? eingeloeste : [];
+    const data = eingeloeste.length > 0 ? eingeloeste : [];
     const groups = selectedOption3
     const colors = ["#85B3B7"];
 

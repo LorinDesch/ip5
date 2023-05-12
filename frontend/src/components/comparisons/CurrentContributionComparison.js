@@ -7,7 +7,6 @@ import {getValueAttributeOnlyGroup, getValueAttributeUserGroup} from "./AllowsMe
 
 
 const CurrentContributionComparison = ({
-                                           data,
                                            width,
                                            height,
                                            fakeData,
@@ -18,7 +17,6 @@ const CurrentContributionComparison = ({
                                            setSelectedOption2,
                                            setSelectedOption3
                                        }) => {
-    data = [200, 30, 160, 50, 300, 400];
 
     const difficultyLabel = "Schwierigkeit"
     const difficultylabelLeft = ["Leicht", "Mittel", "Schwer"] //FLIPPED

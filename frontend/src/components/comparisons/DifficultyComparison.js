@@ -7,7 +7,6 @@ import {getValueAttributeOnlyGroup, getValueAttributeUserGroup} from "./AllowsMe
 
 
 const DifficultyComparison = ({
-                                  data,
                                   width,
                                   height,
                                   fakeData,
@@ -18,8 +17,6 @@ const DifficultyComparison = ({
                                   setSelectedOption2,
                                   setSelectedOption3
                               }) => {
-
-    data = [200, 30, 160, 50, 300, 400];
 
     const difficultyLabel = "Schwierigkeit"
     const difficultylabelLeft = ["Leicht", "Mittel", "Schwer"] //FLIPPED
@@ -86,7 +83,7 @@ const DifficultyComparison = ({
                     </Col>
                     <Col md={6}>
                         <div style={{marginLeft: '-1.5rem'}}>
-                            <Comparison data={data} width={700} height={250}
+                            <Comparison width={700} height={250}
                                         squaredLabelLeft={difficultyLabel}
                                         leftLabel={difficultylabelLeft}
                                         squaredLabelRight={currentContributionLabel}
@@ -102,7 +99,7 @@ const DifficultyComparison = ({
                 <Row className="text-center mb-4 align-items-center" style={{marginTop: '3rem', marginBottom: '5rem'}}>
                     <Col md={6}>
                         <div style={{marginLeft: '5rem'}}>
-                            <Comparison data={data} width={700} height={250}
+                            <Comparison width={700} height={250}
                                         squaredLabelLeft={difficultyLabel}
                                         leftLabel={difficultylabelLeft}
                                         squaredLabelRight={restrionctionLabel}
@@ -116,7 +113,7 @@ const DifficultyComparison = ({
                     </Col>
                     <Col md={6}>
                         <div style={{marginLeft: '-1.5rem'}}>
-                            <Comparison data={data} width={700} height={250}
+                            <Comparison width={700} height={250}
                                         squaredLabelLeft={difficultyLabel}
                                         leftLabel={difficultylabelLeft}
                                         squaredLabelRight={allowMeToLabel}
@@ -132,7 +129,7 @@ const DifficultyComparison = ({
                 <Row className="text-center mb-4 align-items-center" style={{marginTop: '3rem', marginBottom: '5rem'}}>
                     <Col md={6}>
                         <div style={{marginLeft: '5rem'}}>
-                            <Comparison data={data} width={700} height={250}
+                            <Comparison width={700} height={250}
                                         squaredLabelLeft={difficultyLabel}
                                         leftLabel={difficultylabelLeft}
                                         squaredLabelRight={environeLabel}
@@ -146,7 +143,7 @@ const DifficultyComparison = ({
                     </Col>
                     <Col md={6}>
                         <div style={{marginLeft: '-1.5rem'}}>
-                            <Comparison data={data} width={700} height={250}
+                            <Comparison width={700} height={250}
                                         squaredLabelLeft={difficultyLabel}
                                         leftLabel={difficultylabelLeft}
                                         squaredLabelRight={sustainableDevelopmentLabel}

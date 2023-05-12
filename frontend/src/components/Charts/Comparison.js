@@ -2,7 +2,6 @@ import React, {useEffect, useRef} from 'react';
 import * as d3 from 'd3';
 
 function Comparison({
-                        data,
                         width,
                         height,
                         squaredLabelLeft,
@@ -14,6 +13,9 @@ function Comparison({
                         selectedOption3,
                         selectedOption2
                     }) {
+
+    //this needs to be here, otherwise the chart will not be rendered (idk why)
+    const data = [];
 
     const klassen = selectedOption3;
     const label = [squaredLabelLeft, squaredLabelRight];

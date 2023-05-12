@@ -47,7 +47,6 @@ export function getValueAttributeOnlyGroup(attribute, selectedOption3, fakeData,
 
 
 const AllowMeToComparison = ({
-                                  data,
                                   width,
                                   height,
                                   fakeData,
