@@ -45,7 +45,15 @@ export function getValueAttributeOnlyGroup(attribute, selectedOption3, fakeData,
 }
 
 
-
+/**
+ * Retrieves the value of a specific attribute for a selected user and group.
+ *
+ * @param {string} attribute - The attribute to retrieve the value for.
+ * @param {string} selectedOption1 - The selected user.
+ * @param {string} selectedOption2 - The selected commitment.
+ * @param {Object} fakeData - The fake data object.
+ * @returns {number[]} The value of the attribute for the selected user and group.
+ */
 const AllowMeToComparison = ({
                                   width,
                                   height,

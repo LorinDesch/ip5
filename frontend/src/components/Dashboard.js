@@ -7,7 +7,14 @@ import TreeImages from './TreeImages';
 import FeelingsBar from './Charts/FeelingsBar';
 import CommitmentsBar from './Charts/CommitmentsBar';
 
-
+/**
+ * Retrieves the Schluesse Challenge for a specific user or group.
+ *
+ * @param {string} selectedOption1 - The selected user or group.
+ * @param {string} selectedOption2 - The selected commitment.
+ * @param {Object} fakeData - The fake data object.
+ * @returns {string[]} The Schluesse Challenge for the user or group.
+ */
 export function getSchluesseChallengeUserGroup(selectedOption1, selectedOption2, fakeData) {
     const selectedCommitment = fakeData.commitments.find(commitment => commitment.commitmentname === selectedOption2);
     const commitmentId = selectedCommitment?.commitmentid;
@@ -42,6 +49,14 @@ export function getSchluesseChallengeUserGroup(selectedOption1, selectedOption2,
     }
 }
 
+/**
+ * Retrieves the Schluesse Challenge for a specific group.
+ *
+ * @param {string} selectedOption2 - The selected commitment.
+ * @param {string[]} selectedOption3 - The selected groups.
+ * @param {Object} fakeData - The fake data object.
+ * @returns {string[]} The Schluesse Challenge for the group.
+ */
 export function getSchluesseChallengeGroups(selectedOption2, selectedOption3, fakeData) {
     const selectedCommitment = fakeData.commitments.find(commitment => commitment.commitmentname === selectedOption2);
     const commitmentId = selectedCommitment?.commitmentid;
@@ -69,6 +84,20 @@ export function getSchluesseChallengeGroups(selectedOption2, selectedOption3, fa
 
 }
 
+
+/**
+ * Dashboard component that displays various sections and charts.
+ *
+ * @param {Object} props - The component props.
+ * @param {Object} props.fakeData - The fake data object.
+ * @param {string} props.selectedOption1 - The selected option 1 (user or group).
+ * @param {string} props.selectedOption2 - The selected option 2 (commitment).
+ * @param {string[]} props.selectedOption3 - The selected options 3 (groups).
+ * @param {Function} props.setSelectedOption3 - The function to set the selected options 3.
+ * @param {Function} props.setSelectedOption1 - The function to set the selected option 1.
+ * @param {Function} props.setSelectedOption2 - The function to set the selected option 2.
+ * @returns {JSX.Element} The rendered Dashboard component.
+ */
 function Dashboard({
                        fakeData,
                        selectedOption1,

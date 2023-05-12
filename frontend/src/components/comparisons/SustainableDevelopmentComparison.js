@@ -5,6 +5,12 @@ import SideNavbar from "../SideNavbar";
 import {Col, Container, Row} from "react-bootstrap";
 import {getValueAttributeOnlyGroup, getValueAttributeUserGroup} from "./AllowsMeToComparison";
 
+/**
+ * Component for rendering the SustainabilityComparison chart.
+ *
+ * @param {Object} props - The component props.
+ * @returns {JSX.Element} The SustainabilityComparison component.
+ */
 const SustainabilityComparison = ({
                                       width,
                                       height,

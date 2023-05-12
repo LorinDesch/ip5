@@ -6,6 +6,20 @@ import React from "react";
 import Login from "./Login";
 import {useNavigate} from "react-router-dom";
 
+
+/**
+ * Component for the top navigation bar.
+ *
+ * @param {Object} props - The component props.
+ * @param {Object} props.fakeData - The fake data used in the component.
+ * @param {string} props.selectedOption3 - The selected value for dropdown 3.
+ * @param {string} props.selectedOption2 - The selected value for dropdown 2.
+ * @param {string} props.selectedOption1 - The selected value for dropdown 1.
+ * @param {function} props.setSelectedOption1 - The function to set the selected value for dropdown 1.
+ * @param {function} props.setSelectedOption2 - The function to set the selected value for dropdown 2.
+ * @param {function} props.setSelectedOption3 - The function to set the selected value for dropdown 3.
+ * @returns {JSX.Element} The rendered TopNavbar component.
+ */
 const TopNavbar = ({fakeData, selectedOption3, selectedOption2, selectedOption1, setSelectedOption1, setSelectedOption2, setSelectedOption3 }) => {
     const dropDownStyling = {
         padding: '12px 38px 12px 12px',

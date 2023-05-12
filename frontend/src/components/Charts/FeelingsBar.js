@@ -3,6 +3,12 @@ import * as d3 from 'd3';
 import {getSchluesseChallengeUserGroup} from "../Dashboard";
 
 
+/**
+ * Component for rendering the Feelings Bar chart.
+ *
+ * @param {Object} props - The component props.
+ * @returns {JSX.Element} The FeelingsBar component.
+ */
 function FeelingsBar({fakeData, selectedOption1, setSelectedOption1, selectedOption2, setSelectedOption2, selectedOption3, setSelectedOption3 , width, height}) {
 
     // Get the selected commitment ID based on the selectedOption2

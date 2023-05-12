@@ -12,6 +12,11 @@ import {useState} from "react";
 import Login from "./components/Login";
 
 
+/**
+ * The main App component.
+ *
+ * @returns {JSX.Element} The rendered App component.
+ */
 const App = () => {
     const [fakeData, setFakeData] = useState({
         users: [

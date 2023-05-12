@@ -6,6 +6,12 @@ import SideNavbar from "../SideNavbar";
 import {getValueAttributeOnlyGroup, getValueAttributeUserGroup} from "./AllowsMeToComparison";
 
 
+/**
+ * Component for rendering the DifficultyComparison chart.
+ *
+ * @param {Object} props - The component props.
+ * @returns {JSX.Element} The DifficultyComparison component.
+ */
 const DifficultyComparison = ({
                                   width,
                                   height,

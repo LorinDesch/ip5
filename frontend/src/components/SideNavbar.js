@@ -2,6 +2,11 @@ import React, {useState, useEffect} from 'react';
 import {FaHome, FaChartBar} from 'react-icons/fa';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+/**
+ * Component for the side navigation bar.
+ *
+ * @returns {JSX.Element} The rendered SideNavbar component.
+ */
 const SideNavbar = () => {
     const [containerHeight, setContainerHeight] = useState(0);
 

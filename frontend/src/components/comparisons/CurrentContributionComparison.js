@@ -6,6 +6,12 @@ import {Col, Container, Row} from "react-bootstrap";
 import {getValueAttributeOnlyGroup, getValueAttributeUserGroup} from "./AllowsMeToComparison";
 
 
+/**
+ * Component for rendering the CurrentContributionComparison chart.
+ *
+ * @param {Object} props - The component props.
+ * @returns {JSX.Element} The CurrentContributionComparison component.
+ */
 const CurrentContributionComparison = ({
                                            width,
                                            height,

@@ -1,5 +1,14 @@
 import React from 'react';
 
+/**
+ * Retrieves the left index value for the TreeImages component.
+ *
+ * @param {Object} fakeData - The fake data.
+ * @param {string} selectedOption1 - The selected value for dropdown 1.
+ * @param {string} selectedOption2 - The selected value for dropdown 2.
+ * @param {string[]} selectedOption3 - The selected values for dropdown 3.
+ * @returns {number} The left index value.
+ */
 function getLeftIndex(fakeData, selectedOption1, selectedOption2, selectedOption3) {
     let leftIndex = 0;
     const cId = fakeData.commitments.find(commitment => commitment.commitmentname === selectedOption2)?.commitmentid;
@@ -24,6 +33,15 @@ function getLeftIndex(fakeData, selectedOption1, selectedOption2, selectedOption
     return leftIndex;
 }
 
+/**
+ * Retrieves the right index value for the TreeImages component.
+ *
+ * @param {Object} fakeData - The fake data.
+ * @param {string} selectedOption1 - The selected value for dropdown 1.
+ * @param {string} selectedOption2 - The selected value for dropdown 2.
+ * @param {string[]} selectedOption3 - The selected values for dropdown 3.
+ * @returns {number} The right index value.
+ */
 function getRightIndex(fakeData, selectedOption1, selectedOption2, selectedOption3) {
     let rightIndex = 0;
     const cId = fakeData.commitments.find(commitment => commitment.commitmentname === selectedOption2)?.commitmentid;
@@ -50,7 +68,21 @@ function getRightIndex(fakeData, selectedOption1, selectedOption2, selectedOptio
     return rightIndex;
 }
 
-
+/**
+ * Component for displaying tree images based on selected options.
+ *
+ * @param {Object} props - The component props.
+ * @param {number} props.leftIndex - The left index value.
+ * @param {number} props.rightIndex - The right index value.
+ * @param {Object} props.fakeData - The fake data used in the component.
+ * @param {string} props.selectedOption2 - The selected value for dropdown 2.
+ * @param {string[]} props.selectedOption3 - The selected values for dropdown 3.
+ * @param {function} props.setSelectedOption1 - The function to set the selected value for dropdown 1.
+ * @param {string} props.selectedOption1 - The selected value for dropdown 1.
+ * @param {function} props.setSelectedOption2 - The function to set the selected value for dropdown 2.
+ * @param {function} props.setSelectedOption3 - The function to set the selected values for dropdown 3.
+ * @returns {JSX.Element} The rendered TreeImages component.
+ */
 const TreeImages = ({
                         leftIndex,
                         rightIndex,

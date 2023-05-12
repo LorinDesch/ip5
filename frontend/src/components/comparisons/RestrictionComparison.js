@@ -5,6 +5,12 @@ import SideNavbar from "../SideNavbar";
 import {Col, Container, Row} from "react-bootstrap";
 import {getValueAttributeOnlyGroup, getValueAttributeUserGroup} from "./AllowsMeToComparison";
 
+/**
+ * Component for rendering the RestrictionComparison chart.
+ *
+ * @param {Object} props - The component props.
+ * @returns {JSX.Element} The RestrictionComparison component.
+ */
 const RestrictionComparison = ({
                                   width,
                                   height,
