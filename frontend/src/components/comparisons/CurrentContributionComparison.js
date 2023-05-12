@@ -76,7 +76,7 @@ const CurrentContributionComparison = ({
                 <Row className="text-center mb-4 align-items-center" style={{marginTop: '3rem', marginBottom: '5rem'}}>
                     <Col md={6}>
                         <div style={{marginLeft: '5rem'}}>
-                            <Comparison data={data} width={700} height={250}
+                            <Comparison width={700} height={250}
                                         squaredLabelLeft={currentContributionLabel}
                                         leftLabel={currentContributionlabelLeft}
                                         squaredLabelRight={difficultyLabel}
@@ -97,7 +97,7 @@ const CurrentContributionComparison = ({
                 <Row className="text-center mb-4 align-items-center" style={{marginTop: '3rem', marginBottom: '5rem'}}>
                     <Col md={6}>
                         <div style={{marginLeft: '5rem'}}>
-                            <Comparison data={data} width={700} height={250}
+                            <Comparison width={700} height={250}
                                         squaredLabelLeft={currentContributionLabel}
                                         leftLabel={currentContributionlabelLeft}
                                         squaredLabelRight={restrionctionLabel}
@@ -112,7 +112,7 @@ const CurrentContributionComparison = ({
                     </Col>
                     <Col md={6}>
                         <div style={{marginLeft: '-1.5rem'}}>
-                            <Comparison data={data} width={700} height={250}
+                            <Comparison width={700} height={250}
                                         squaredLabelLeft={currentContributionLabel}
                                         leftLabel={currentContributionlabelLeft}
                                         squaredLabelRight={allowMeToLabel}
@@ -129,7 +129,7 @@ const CurrentContributionComparison = ({
                 <Row className="text-center mb-4 align-items-center" style={{marginTop: '3rem', marginBottom: '5rem'}}>
                     <Col md={6}>
                         <div style={{marginLeft: '5rem'}}>
-                            <Comparison data={data} width={700} height={250}
+                            <Comparison width={700} height={250}
                                         squaredLabelLeft={currentContributionLabel}
                                         leftLabel={currentContributionlabelLeft}
                                         squaredLabelRight={environeLabel}
@@ -143,7 +143,7 @@ const CurrentContributionComparison = ({
                     </Col>
                     <Col md={6}>
                         <div style={{marginLeft: '-1.5rem'}}>
-                            <Comparison data={data} width={700} height={250}
+                            <Comparison width={700} height={250}
                                         squaredLabelLeft={currentContributionLabel}
                                         leftLabel={currentContributionlabelLeft}
                                         squaredLabelRight={sustainableDevelopmentLabel}
