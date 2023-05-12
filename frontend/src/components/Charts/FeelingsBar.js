@@ -1,6 +1,6 @@
 import React, {useEffect, useRef} from 'react';
 import * as d3 from 'd3';
-import {getSchluesseChallengeUserGroup} from "../Dashboard";
+import {getSchluesseSelectedDropdown1} from "../Dashboard";
 
 
 /**
@@ -28,7 +28,7 @@ function FeelingsBar({fakeData, selectedOption1, setSelectedOption1, selectedOpt
             // Merge all the feelings arrays into a single array
             data = feelingsArray.reduce((acc, feelings) => [...acc, ...feelings], []);
 
-            const schluesseChallengeUserGroup = getSchluesseChallengeUserGroup(selectedOption1, selectedOption2, fakeData);
+            const schluesseChallengeUserGroup = getSchluesseSelectedDropdown1(selectedOption1, selectedOption2, fakeData);
             if (schluesseChallengeUserGroup[0] === "-") {
                 data = [];
             } else {

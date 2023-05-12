@@ -15,7 +15,7 @@ import CommitmentsBar from './Charts/CommitmentsBar';
  * @param {Object} fakeData - The fake data object.
  * @returns {string[]} The Schluesse Challenge for the user or group.
  */
-export function getSchluesseChallengeUserGroup(selectedOption1, selectedOption2, fakeData) {
+export function getSchluesseSelectedDropdown1(selectedOption1, selectedOption2, fakeData) {
     const selectedCommitment = fakeData.commitments.find(commitment => commitment.commitmentname === selectedOption2);
     const commitmentId = selectedCommitment?.commitmentid;
     const categorizedArray = [];
@@ -57,7 +57,7 @@ export function getSchluesseChallengeUserGroup(selectedOption1, selectedOption2,
  * @param {Object} fakeData - The fake data object.
  * @returns {string[]} The Schluesse Challenge for the group.
  */
-export function getSchluesseChallengeGroups(selectedOption2, selectedOption3, fakeData) {
+export function getSchluesseSelectedDropdown3(selectedOption2, selectedOption3, fakeData) {
     const selectedCommitment = fakeData.commitments.find(commitment => commitment.commitmentname === selectedOption2);
     const commitmentId = selectedCommitment?.commitmentid;
     let returnValue = [];
@@ -109,8 +109,8 @@ function Dashboard({
                    }) {
 
 
-    const schluesseChallengeUserGroup = getSchluesseChallengeUserGroup(selectedOption1, selectedOption2, fakeData);
-    const schluesseChallengeGroups = getSchluesseChallengeGroups(selectedOption2, selectedOption3, fakeData);
+    const schluesseSelectedDropdown1 = getSchluesseSelectedDropdown1(selectedOption1, selectedOption2, fakeData);
+    const schluesseSelectedDropdown3 = getSchluesseSelectedDropdown3(selectedOption2, selectedOption3, fakeData);
 
 
     return (
@@ -143,7 +143,7 @@ function Dashboard({
                         <Col md={4}>
                             <div className="d-flex justify-content-center align-items-center text-center" style={{ marginRight: '12rem' }}>
                                 <div style={{ height: '300px' }}>
-                                    <SchluesseAusChallenge schluesse={schluesseChallengeUserGroup} />
+                                    <SchluesseAusChallenge schluesse={schluesseSelectedDropdown1} />
                                 </div>
                             </div>
                         </Col>
@@ -156,7 +156,7 @@ function Dashboard({
                         <Col md={4}>
                             <div className="d-flex justify-content-center align-items-center text-center" style={{ marginRight: '12rem' }}>
                                 <div style={{ height: '300px' }}>
-                                    <SchluesseAusChallenge schluesse={schluesseChallengeGroups} />
+                                    <SchluesseAusChallenge schluesse={schluesseSelectedDropdown3} />
                                 </div>
                             </div>
                         </Col>
