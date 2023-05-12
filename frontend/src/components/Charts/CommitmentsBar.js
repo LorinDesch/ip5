@@ -1,6 +1,15 @@
 import React, {useEffect, useRef} from 'react';
 import * as d3 from 'd3';
 
+/**
+ * Helper function to retrieve the array of feelings (eingeloeste) based on selected options.
+ *
+ * @param {Object} fakeData - The fake data object.
+ * @param {string} selectedOption1 - The selected option 1.
+ * @param {string} selectedOption2 - The selected option 2.
+ * @param {string[]} selectedOption3 - The selected option 3.
+ * @returns {number[]} The array of feelings (eingeloeste).
+ */
 function getFeelingsArray(fakeData, selectedOption1, selectedOption2, selectedOption3) {
     let eingeloeste = [];
 
@@ -21,6 +30,12 @@ function getFeelingsArray(fakeData, selectedOption1, selectedOption2, selectedOp
     return eingeloeste;
 }
 
+/**
+ * Component for rendering the Commitments Bar chart.
+ *
+ * @param {Object} props - The component props.
+ * @returns {JSX.Element} The CommitmentsBar component.
+ */
 function CommitmentsBar({
                             width,
                             height,
