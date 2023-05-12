@@ -82,7 +82,7 @@ const DifficultyComparison = ({
                 <Row className="text-center mb-4 align-items-center" style={{marginTop: '3rem', marginBottom: '5rem'}}>
                     <Col md={6}>
                         <div style={{marginLeft: '5rem'}}>
-                            <h1  className="text-center mb-4">Vergleiche wie schwer <br/>das Commitment war</h1>
+                            <h1  className="text-center mb-1">Vergleiche wie schwer <br/>das Commitment war</h1>
                             <p style={{ margin: '0.2rem' }}>Schwierigkeit: Wie schwer war das Commitment?</p>
                             <p style={{ margin: '0.2rem' }}>Einschränkung: Wie stark hat dich das Commitment eingeschränkt?</p>
                             <p style={{ margin: '0.2rem' }}>Umfeldreaktion: Wie hat dein Umfeld auf das Commitment reagiert?</p>
