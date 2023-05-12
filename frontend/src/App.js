@@ -364,7 +364,7 @@ const App = () => {
                 }
             )
         ;
-        const [selectedOption1, setSelectedOption1] = useState('Max Mustermann');
+        const [selectedOption1, setSelectedOption1] = useState(localStorage.getItem("loggedInUser"));
         const [selectedOption2, setSelectedOption2] = useState('Challenge');
         const [selectedOption3, setSelectedOption3] = useState([]);
         const loggedInUser = localStorage.getItem('loggedInUser');

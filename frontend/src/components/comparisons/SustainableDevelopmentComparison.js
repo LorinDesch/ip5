@@ -91,6 +91,7 @@ const SustainabilityComparison = ({
                                         difficultyValueLeftBar={sustainableDevelopmentValueLeftBar}
                                         selectedOption3={selectedOption3}
                                         selectedOption2={selectedOption2}
+                                        selectedOption1={selectedOption1}
                             />
                         </div>
                     </Col>
@@ -105,6 +106,7 @@ const SustainabilityComparison = ({
                                         difficultyValueRightBar={currentContributionValueRightBar}
                                         selectedOption3={selectedOption3}
                                         selectedOption2={selectedOption2}
+                                        selectedOption1={selectedOption1}
                             />
                         </div>
                     </Col>
@@ -121,6 +123,7 @@ const SustainabilityComparison = ({
                                         difficultyValueRightBar={restrictionValueRightBar}
                                         selectedOption3={selectedOption3}
                                         selectedOption2={selectedOption2}
+                                        selectedOption1={selectedOption1}
                             />
                         </div>
                     </Col>
@@ -135,6 +138,7 @@ const SustainabilityComparison = ({
                                         difficultyValueRightBar={allowMeToValueRightBar}
                                         selectedOption3={selectedOption3}
                                         selectedOption2={selectedOption2}
+                                        selectedOption1={selectedOption1}
                             />
                         </div>
                     </Col>
@@ -151,12 +155,14 @@ const SustainabilityComparison = ({
                                         difficultyValueRightBar={environmentValueRightBar}
                                         selectedOption3={selectedOption3}
                                         selectedOption2={selectedOption2}
+                                        selectedOption1={selectedOption1}
                             />
                         </div>
                     </Col>
                     <Col md={6}>
                         <div style={{marginLeft: '3rem'}}>
                             <h1 className="text-center mb-4">Vergleiche ob das Commitment<br/> zu einer nachhaltigen Entwicklung beiträgt</h1>
+                            <p> Zwischen  {selectedOption1} und ausgewähltenGruppe </p>
                         </div>
                     </Col>
                 </Row>

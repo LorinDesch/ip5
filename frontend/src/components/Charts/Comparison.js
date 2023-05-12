@@ -17,7 +17,8 @@ function Comparison({
                         difficultyValueLeftBar,
                         difficultyValueRightBar,
                         selectedOption3,
-                        selectedOption2
+                        selectedOption2,
+                        selectedOption1
                     }) {
 
     //this needs to be here, otherwise the chart will not be rendered (idk why)
@@ -55,8 +56,8 @@ function Comparison({
             .domain([0, 1])
             .range([height - margin.bottom, margin.top]);
 
-        const xAxis = d3.axisBottom(xScale)
-            .tickValues(klassen);
+        const rightTickValue = d3.axisBottom(xScale)
+            .tickValues(klassen)
 
         const leftYAxis = d3.axisLeft(yScale)
             .ticks(3)
@@ -111,8 +112,8 @@ function Comparison({
         svg.append('g')
             .attr('class', 'x-axis')
             .attr('transform', `translate(0, ${height - margin.bottom})`)
-            .call(xAxis)
-            .style('font-size', '12');
+            .call(rightTickValue)
+            .style('font-size', '12')
 
 
         svg.append('g')

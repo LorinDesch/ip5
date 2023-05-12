@@ -63,8 +63,9 @@ const AllowMeToComparison = ({
                                   selectedOption2,
                                   setSelectedOption1,
                                   setSelectedOption2,
-                                  setSelectedOption3
+                                  setSelectedOption3,
                               }) => {
+
 
     const difficultyLabel = "Schwierigkeit"
     const difficultylabelLeft = ["Leicht", "Mittel", "Schwer"] //FLIPPED
@@ -134,6 +135,7 @@ const AllowMeToComparison = ({
                                         difficultyValueRightBar={difficultyValueRightBar}
                                         selectedOption3={selectedOption3}
                                         selectedOption2={selectedOption2}
+                                        selectedOption1={selectedOption1}
                             />
 
                         </div>
@@ -149,6 +151,7 @@ const AllowMeToComparison = ({
                                         difficultyValueRightBar={currentContributionValueRightBar}
                                         selectedOption3={selectedOption3}
                                         selectedOption2={selectedOption2}
+                                        selectedOption1={selectedOption1}
                             />
                         </div>
                     </Col>
@@ -165,12 +168,14 @@ const AllowMeToComparison = ({
                                         difficultyValueRightBar={restrictionValueRightBar}
                                         selectedOption3={selectedOption3}
                                         selectedOption2={selectedOption2}
+                                        selectedOption1={selectedOption1}
                             />
                         </div>
                     </Col>
                     <Col md={6}>
                         <div style={{marginLeft: '3rem'}}>
                             <h1 className="text-center mb-4">Vergleiche darüber ob der Nutzer<br/>Verantwortung übernehmen kann<br/> oder Erwartungen nachkommt</h1>
+                            <p> Zwischen  {selectedOption1} und ausgewähltenGruppe </p>
                         </div>
                     </Col>
                 </Row>
@@ -186,6 +191,7 @@ const AllowMeToComparison = ({
                                         difficultyValueRightBar={environmentValueRightBar}
                                         selectedOption3={selectedOption3}
                                         selectedOption2={selectedOption2}
+                                        selectedOption1={selectedOption1}
                             />
                         </div>
                     </Col>
@@ -200,6 +206,7 @@ const AllowMeToComparison = ({
                                         difficultyValueRightBar={sustainableDevelopmentValueRightBar}
                                         selectedOption3={selectedOption3}
                                         selectedOption2={selectedOption2}
+                                        selectedOption1={selectedOption1}
                             />
                         </div>
                     </Col>

@@ -21,7 +21,7 @@ const CurrentContributionComparison = ({
                                            selectedOption2,
                                            setSelectedOption1,
                                            setSelectedOption2,
-                                           setSelectedOption3
+                                           setSelectedOption3,
                                        }) => {
 
     const difficultyLabel = "Schwierigkeit"
@@ -91,12 +91,14 @@ const CurrentContributionComparison = ({
                                         difficultyValueLeftBar={currentContributionValueLeftBar}
                                         selectedOption3={selectedOption3}
                                         selectedOption2={selectedOption2}
+                                        selectedOption1={selectedOption1}
                             />
                         </div>
                     </Col>
                     <Col md={6}>
                         <div style={{marginLeft: '3rem'}}>
                             <h1 className="text-center mb-4">Vergleiche darüber <br/> wie der aktuelle Beitrag ist</h1>
+                            <p> Zwischen  {selectedOption1} und ausgewähltenGruppe </p>
                         </div>
                     </Col>
                 </Row>
@@ -112,6 +114,7 @@ const CurrentContributionComparison = ({
                                         difficultyValueLeftBar={currentContributionValueLeftBar}
                                         selectedOption3={selectedOption3}
                                         selectedOption2={selectedOption2}
+                                        selectedOption1={selectedOption1}
 
                             />
                         </div>
@@ -127,7 +130,7 @@ const CurrentContributionComparison = ({
                                         difficultyValueLeftBar={currentContributionValueLeftBar}
                                         selectedOption3={selectedOption3}
                                         selectedOption2={selectedOption2}
-
+                                        selectedOption1={selectedOption1}
                             />
                         </div>
                     </Col>
@@ -144,6 +147,7 @@ const CurrentContributionComparison = ({
                                         difficultyValueLeftBar={currentContributionValueLeftBar}
                                         selectedOption3={selectedOption3}
                                         selectedOption2={selectedOption2}
+                                        selectedOption1={selectedOption1}
                             />
                         </div>
                     </Col>
@@ -158,6 +162,7 @@ const CurrentContributionComparison = ({
                                         difficultyValueLeftBar={currentContributionValueLeftBar}
                                         selectedOption3={selectedOption3}
                                         selectedOption2={selectedOption2}
+                                        selectedOption1={selectedOption1}
                             />
                         </div>
                     </Col>

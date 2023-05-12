@@ -90,6 +90,7 @@ const EnvironmentalComparison = ({
                                         difficultyValueRightBar={difficultyValueRightBar}
                                         selectedOption3={selectedOption3}
                                         selectedOption2={selectedOption2}
+                                        selectedOption1={selectedOption1}
                             />
                         </div>
                     </Col>
@@ -103,6 +104,7 @@ const EnvironmentalComparison = ({
                                         difficultyValueRightBar={currentContributionValueRightBar}
                                         selectedOption3={selectedOption3}
                                         selectedOption2={selectedOption2}
+                                        selectedOption1={selectedOption1}
                             />
                         </div>
                     </Col>
@@ -119,6 +121,7 @@ const EnvironmentalComparison = ({
                                         difficultyValueRightBar={restrictionValueRightBar}
                                         selectedOption3={selectedOption3}
                                         selectedOption2={selectedOption2}
+                                        selectedOption1={selectedOption1}
                             />
                         </div>
                     </Col>
@@ -133,6 +136,7 @@ const EnvironmentalComparison = ({
                                         difficultyValueRightBar={allowMeToValueRightBar}
                                         selectedOption3={selectedOption3}
                                         selectedOption2={selectedOption2}
+                                        selectedOption1={selectedOption1}
                             />
                         </div>
                     </Col>
@@ -141,6 +145,7 @@ const EnvironmentalComparison = ({
                     <Col md={6}>
                         <div style={{marginLeft: '5rem'}}>
                             <h1 className="text-center mb-4">Vergleiche darüber <br/>wie das Umfeld auf das Commitment <br/> reagiert das</h1>
+                            <p> Zwischen  {selectedOption1} und ausgewähltenGruppe </p>
                         </div>
                     </Col>
                     <Col md={6}>
@@ -154,6 +159,7 @@ const EnvironmentalComparison = ({
                                         difficultyValueRightBar={sustainableDevelopmentValueRightBar}
                                         selectedOption3={selectedOption3}
                                         selectedOption2={selectedOption2}
+                                        selectedOption1={selectedOption1}
                             />
                         </div>
                     </Col>

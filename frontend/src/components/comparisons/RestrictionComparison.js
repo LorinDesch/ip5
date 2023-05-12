@@ -93,6 +93,7 @@ const RestrictionComparison = ({
                                         difficultyValueRightBar={difficultyValueRightBar}
                                         selectedOption3={selectedOption3}
                                         selectedOption2={selectedOption2}
+                                        selectedOption1={selectedOption1}
                             />
 
                         </div>
@@ -108,6 +109,7 @@ const RestrictionComparison = ({
                                         difficultyValueRightBar={currentContributionValueRightBar}
                                         selectedOption3={selectedOption3}
                                         selectedOption2={selectedOption2}
+                                        selectedOption1={selectedOption1}
                             />
                         </div>
                     </Col>
@@ -116,6 +118,7 @@ const RestrictionComparison = ({
                     <Col md={6}>
                         <div style={{marginLeft: '5rem'}}>
                             <h1 className="text-center mb-4">Vergleiche wie sehr <br/>das Commitment eingeschränkt hat</h1>
+                            <p> Zwischen  {selectedOption1} und ausgewähltenGruppe </p>
                         </div>
                     </Col>
                     <Col md={6}>
@@ -129,6 +132,7 @@ const RestrictionComparison = ({
                                         difficultyValueRightBar={allowMeToValueRightBar}
                                         selectedOption3={selectedOption3}
                                         selectedOption2={selectedOption2}
+                                        selectedOption1={selectedOption1}
                             />
                         </div>
                     </Col>
@@ -145,6 +149,7 @@ const RestrictionComparison = ({
                                         difficultyValueRightBar={environmentValueRightBar}
                                         selectedOption3={selectedOption3}
                                         selectedOption2={selectedOption2}
+                                        selectedOption1={selectedOption1}
                             />
                         </div>
                     </Col>
@@ -159,6 +164,7 @@ const RestrictionComparison = ({
                                         difficultyValueRightBar={sustainableDevelopmentValueRightBar}
                                         selectedOption3={selectedOption3}
                                         selectedOption2={selectedOption2}
+                                        selectedOption1={selectedOption1}
                             />
                         </div>
                     </Col>
