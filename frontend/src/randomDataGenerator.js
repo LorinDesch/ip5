@@ -108,7 +108,7 @@ function getRandomNumber(min, max) {
 // Function to generate a unique diary record
 function generateUniqueDiaryRecord(previousDiary) {
     const newUser = users[getRandomNumber(0, users.length - 1)];
-    const newCommitment = commitments[getRandomNumber(0, commitments.length - 1)];
+    const newCommitment = commitments[getRandomNumber(1, 3)];
 
     // Generate a unique diaryid by incrementing the previous diary's diaryid
     const newDiaryId = previousDiary ? previousDiary.diaryid + 1 : 1;
@@ -120,24 +120,24 @@ function generateUniqueDiaryRecord(previousDiary) {
         politik: "Generated random data",
         produkt: "Generated random data",
     };
-    const newEingeloest = getRandomNumber(0, 30);
-    const newFeelings = Array.from({ length: 28 }, () =>
-        Math.random().toFixed(2)
+    const newEingeloest = getRandomNumber(0, 28);
+    const newFeelings = Array.from({length: 28}, () =>
+        Number(Math.random().toFixed(1))
     );
-    const newDifficulty = [Math.random().toFixed(2), Math.random().toFixed(2)];
-    const newRestriction = [Math.random().toFixed(2), Math.random().toFixed(2)];
-    const newEnvironment = [Math.random().toFixed(2), Math.random().toFixed(2)];
+    const newDifficulty = [Number(Math.random().toFixed(1)), Number(Math.random().toFixed(2))];
+    const newRestriction = [Number(Math.random().toFixed(1)), Number(Math.random().toFixed(2))];
+    const newEnvironment = [Number(Math.random().toFixed(2)), Number(Math.random().toFixed(2))];
     const newCurrentContribution = [
-        Math.random().toFixed(2),
-        Math.random().toFixed(2),
+        Number(Math.random().toFixed(1)),
+        Number(Math.random().toFixed(1)),
     ];
     const newAllowsMeTo = [
-        Math.random().toFixed(2),
-        Math.random().toFixed(2),
+        Number(Math.random().toFixed(1)),
+        Number(Math.random().toFixed(1)),
     ];
     const newSustainableDevelopment = [
-        Math.random().toFixed(2),
-        Math.random().toFixed(2),
+        Number(Math.random().toFixed(1)),
+        Number(Math.random().toFixed(1)),
     ];
 
     // Create the new diary record
@@ -159,11 +159,11 @@ function generateUniqueDiaryRecord(previousDiary) {
     return newDiaryRecord;
 }
 
-// Generate the desired number of diary records
+// Generate the desired number of diary records starting from index 10
 const numDiaryRecords = 30; // Change this to the desired number
-let previousDiary = null;
+let previousDiary = diaryRecords.length >= 10 ? diaryRecords[9] : null; // Get the previous diary record from index 9
 
-for (let i = 0; i < numDiaryRecords; i++) {
+for (let i = 10; i < numDiaryRecords + 10; i++) {
     const newDiaryRecord = generateUniqueDiaryRecord(previousDiary);
     diaryRecords.push(newDiaryRecord);
     previousDiary = newDiaryRecord;
