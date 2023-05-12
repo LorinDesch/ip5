@@ -118,11 +118,18 @@ const RestrictionComparison = ({
                     <Col md={6}>
                         <div style={{marginLeft: '5rem'}}>
                             <h1 className="text-center mb-1">Vergleiche wie sehr <br/>das Commitment eingeschränkt hat</h1>
-                            <p style={{ margin: '0.2rem' }}>Schwierigkeit: Wie schwer war das Commitment?</p>
-                            <p style={{ margin: '0.2rem' }}>Einschränkung: Wie stark hat dich das Commitment eingeschränkt?</p>
-                            <p style={{ margin: '0.2rem' }}>Umfeldreaktion: Wie hat dein Umfeld auf das Commitment reagiert?</p>
-                            <p style={{ margin: '0.2rem' }}>Beitrag: Wie viel hast du zum Commitment beigetragen?</p>
-                            <p style={{ margin: '0.2rem' }}>Entwicklung: Wie sehr hat sich das Commitment auf dich ausgewirkt?</p>
+                            <h1 className="text-center mb-1">Vergleiche darüber ob der Nutzer<br/>Verantwortung
+                                übernehmen kann<br/> oder Erwartungen nachkommt</h1>
+                            <p style={{margin: '0.2rem'}}>Schwierigkeit: Wie schwer war das Commitment?</p>
+                            <p style={{margin: '0.2rem'}}>Einschränkung: Wie stark hat dich das Commitment
+                                eingeschränkt?</p>
+                            <p style={{margin: '0.2rem'}}>Umfeldreaktion: Wie hat dein Umfeld auf das Commitment
+                                reagiert?</p>
+                            <p style={{margin: '0.2rem'}}>Beitrag: Wie viel hast du zum Commitment beigetragen?</p>
+                            <p style={{margin: '0.2rem'}}>Übernehme: Ermöglicht dir das Commitment Verantwortung zu
+                                übernehmen oder Erwartungen nachzukommen? </p>
+                            <p style={{margin: '0.2rem'}}>Entwicklung: Wie sehr hat sich das Commitment auf dich
+                                ausgewirkt?</p>
 
                         </div>
                     </Col>

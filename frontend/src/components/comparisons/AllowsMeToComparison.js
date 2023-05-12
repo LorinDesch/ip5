@@ -55,16 +55,16 @@ export function getValueAttributeOnlyGroup(attribute, selectedOption3, fakeData,
  * @returns {number[]} The value of the attribute for the selected user and group.
  */
 const AllowMeToComparison = ({
-                                  width,
-                                  height,
-                                  fakeData,
-                                  selectedOption1,
-                                  selectedOption3,
-                                  selectedOption2,
-                                  setSelectedOption1,
-                                  setSelectedOption2,
-                                  setSelectedOption3,
-                              }) => {
+                                 width,
+                                 height,
+                                 fakeData,
+                                 selectedOption1,
+                                 selectedOption3,
+                                 selectedOption2,
+                                 setSelectedOption1,
+                                 setSelectedOption2,
+                                 setSelectedOption3,
+                             }) => {
 
 
     const difficultyLabel = "Schwierigkeit"
@@ -97,7 +97,6 @@ const AllowMeToComparison = ({
     const sustainableDevelopmentlabelLeft = ["Wenig", "Mittel", "Viel"] //FLIPPED
     const sustainableDevelopmentValueRightBar = getValueAttributeOnlyGroup("sustainableDevelopment", selectedOption3, fakeData, selectedOption2)
     const sustainableDevelopmentValueLeftBar = Array(sustainableDevelopmentValueRightBar.length).fill(getValueAttributeUserGroup("sustainableDevelopment", selectedOption1, selectedOption2, fakeData));
-
 
 
     return (
@@ -174,12 +173,18 @@ const AllowMeToComparison = ({
                     </Col>
                     <Col md={6}>
                         <div style={{marginLeft: '3rem'}}>
-                            <h1 className="text-center mb-1">Vergleiche darüber ob der Nutzer<br/>Verantwortung übernehmen kann<br/> oder Erwartungen nachkommt</h1>
-                                <p style={{ margin: '0.2rem' }}>Schwierigkeit: Wie schwer war das Commitment?</p>
-                                <p style={{ margin: '0.2rem' }}>Einschränkung: Wie stark hat dich das Commitment eingeschränkt?</p>
-                                <p style={{ margin: '0.2rem' }}>Umfeldreaktion: Wie hat dein Umfeld auf das Commitment reagiert?</p>
-                                <p style={{ margin: '0.2rem' }}>Beitrag: Wie viel hast du zum Commitment beigetragen?</p>
-                                <p style={{ margin: '0.2rem' }}>Entwicklung: Wie sehr hat sich das Commitment auf dich ausgewirkt?</p>
+                            <h1 className="text-center mb-1">Vergleiche darüber ob der Nutzer<br/>Verantwortung
+                                übernehmen kann<br/> oder Erwartungen nachkommt</h1>
+                            <p style={{margin: '0.2rem'}}>Schwierigkeit: Wie schwer war das Commitment?</p>
+                            <p style={{margin: '0.2rem'}}>Einschränkung: Wie stark hat dich das Commitment
+                                eingeschränkt?</p>
+                            <p style={{margin: '0.2rem'}}>Umfeldreaktion: Wie hat dein Umfeld auf das Commitment
+                                reagiert?</p>
+                            <p style={{margin: '0.2rem'}}>Beitrag: Wie viel hast du zum Commitment beigetragen?</p>
+                            <p style={{margin: '0.2rem'}}>Übernehme: Ermöglicht dir das Commitment Verantwortung zu
+                                übernehmen oder Erwartungen nachzukommen? </p>
+                            <p style={{margin: '0.2rem'}}>Entwicklung: Wie sehr hat sich das Commitment auf dich
+                                ausgewirkt?</p>
                         </div>
                     </Col>
                 </Row>
