@@ -27,9 +27,9 @@ const SideNavbar = () => {
     return (
         <nav
             className="navbar flex-column justify-content-between align-items-center bg-light text-dark fixed-top"
-            style={{height: containerHeight, width: '6rem', boxShadow: '0 0 0 2px #000'}}
+            style={{ height: containerHeight, width: '6rem', boxShadow: '0 0 0 2px #000' }}
         >
-            <div className="d-flex flex-column align-items-center">
+            <div className="d-flex flex-column align-items-center justify-content-center text-center"style={{ marginRight: '1rem' }}>
                 <div className="mb-2">Home</div>
                 <FaHome
                     size={'3vw'}
@@ -39,8 +39,8 @@ const SideNavbar = () => {
                     onClick={() => (window.location.href = '/')}
                 />
             </div>
-            <div className="d-flex flex-column align-items-center">
-                <div className="mb-2">Difficulty</div>
+            <div className="d-flex flex-column align-items-center justify-content-center text-center"style={{ marginRight: '1rem' }}>
+                <div className="mb-2">Schwierigkeit</div>
                 <FaChartBar
                     size={'3vw'}
                     className="nav-icon rounded border border-secondary p-2"
@@ -49,8 +49,8 @@ const SideNavbar = () => {
                     onClick={() => (window.location.href = '/difficulty')}
                 />
             </div>
-            <div className="d-flex flex-column align-items-center">
-                <div className="mb-2">Restriction</div>
+            <div className="d-flex flex-column align-items-center justify-content-center text-center"style={{ marginRight: '1rem' }}>
+                <div className="mb-2">Ein-<br/>schränkung</div>
                 <FaChartBar
                     size={'3vw'}
                     className="nav-icon rounded border border-secondary p-2"
@@ -59,8 +59,8 @@ const SideNavbar = () => {
                     onClick={() => (window.location.href = '/restriction')}
                 />
             </div>
-            <div className="d-flex flex-column align-items-center">
-                <div className="mb-2">Environment</div>
+            <div className="d-flex flex-column align-items-center justify-content-center text-center"style={{ marginRight: '1rem' }}>
+                <div className="mb-2">Umfeld</div>
                 <FaChartBar
                     size={'3vw'}
                     className="nav-icon rounded border border-secondary p-2"
@@ -69,8 +69,8 @@ const SideNavbar = () => {
                     onClick={() => (window.location.href = '/environment')}
                 />
             </div>
-            <div className="d-flex flex-column align-items-center justify-content-center text-center">
-                <div className="mb-2">Current<br/>Contribution</div>
+            <div className="d-flex flex-column align-items-center justify-content-center text-center"style={{ marginRight: '1rem' }}>
+                <div className="mb-2">aktueller<br />Beitrag</div>
                 <FaChartBar
                     size={'3vw'}
                     className="nav-icon rounded border border-secondary p-2"
@@ -79,8 +79,8 @@ const SideNavbar = () => {
                     onClick={() => (window.location.href = '/currentcontribution')}
                 />
             </div>
-            <div className="d-flex flex-column align-items-center">
-                <div className="mb-2">Allows Me To</div>
+            <div className="d-flex flex-column align-items-center justify-content-center text-center" style={{ marginRight: '1rem' }}>
+                <div className="mb-2">Ermöglicht mir</div>
                 <FaChartBar
                     size={'3vw'}
                     className="nav-icon rounded border border-secondary p-2"
@@ -89,8 +89,9 @@ const SideNavbar = () => {
                     onClick={() => (window.location.href = '/allowsmeto')}
                 />
             </div>
-            <div className="d-flex flex-column align-items-center justify-content-center text-center">
-                <div className="mb-2">Sustainable<br/>Development</div>
+
+            <div className="d-flex flex-column align-items-center justify-content-center text-center"style={{ marginRight: '1rem' }}>
+                <div className="mb-2">nachhaltigen<br />Entwicklung</div>
                 <FaChartBar
                     size={'3vw'}
                     className="nav-icon rounded border border-secondary p-2"
@@ -100,7 +101,6 @@ const SideNavbar = () => {
                 />
             </div>
         </nav>
-
     );
 };
 

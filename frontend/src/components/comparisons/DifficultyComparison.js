@@ -50,8 +50,6 @@ const DifficultyComparison = ({
     const sustainableDevelopmentValueLeftBar = Array(sustainableDevelopmentValueRightBar.length).fill(getValueAttributeUserGroup("sustainableDevelopment", selectedOption1, selectedOption2, fakeData));
 
 
-
-
     return (
         <>
             <header style={{marginLeft: '7rem', marginTop: '0.5rem'}}>
@@ -78,7 +76,7 @@ const DifficultyComparison = ({
                 <Row className="text-center mb-4 align-items-center" style={{marginTop: '3rem', marginBottom: '5rem'}}>
                     <Col md={6}>
                         <div style={{marginLeft: '5rem'}}>
-                            <h1 className="text-center mb-4">Difficulty Comparison</h1>
+                            <h1 className="text-center mb-4">Vergleiche wie schwer <br/>das Commitment war</h1>
                         </div>
                     </Col>
                     <Col md={6}>

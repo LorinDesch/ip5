@@ -134,7 +134,7 @@ const EnvironmentalComparison = ({
                 <Row className="text-center mb-4 align-items-center" style={{marginTop: '3rem', marginBottom: '5rem'}}>
                     <Col md={6}>
                         <div style={{marginLeft: '5rem'}}>
-                            <h1 className="text-center mb-4">Environment Comparison</h1>
+                            <h1 className="text-center mb-4">Vergleiche darüber <br/>wie das Umfeld auf das Commitment <br/> reagiert das</h1>
                         </div>
                     </Col>
                     <Col md={6}>

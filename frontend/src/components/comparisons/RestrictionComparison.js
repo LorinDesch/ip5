@@ -109,7 +109,7 @@ const RestrictionComparison = ({
                 <Row className="text-center mb-4 align-items-center" style={{marginTop: '3rem', marginBottom: '5rem'}}>
                     <Col md={6}>
                         <div style={{marginLeft: '5rem'}}>
-                            <h1 className="text-center mb-4">Restriction Comparison</h1>
+                            <h1 className="text-center mb-4">Vergleiche wie sehr <br/>das Commitment eingeschränkt hat</h1>
                         </div>
                     </Col>
                     <Col md={6}>
