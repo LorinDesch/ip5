@@ -153,7 +153,7 @@ const SustainabilityComparison = ({
                     </Col>
                     <Col md={6}>
                         <div style={{marginLeft: '3rem'}}>
-                            <h1 className="text-center mb-4">Sustainable Comparison</h1>
+                            <h1 className="text-center mb-4">Vergleiche ob das Commitment<br/> zu einer nachhaltigen Entwicklung beiträgt</h1>
                         </div>
                     </Col>
                 </Row>

@@ -90,7 +90,7 @@ const CurrentContributionComparison = ({
                     </Col>
                     <Col md={6}>
                         <div style={{marginLeft: '3rem'}}>
-                            <h1 className="text-center mb-4">Current Contribution Comparison</h1>
+                            <h1 className="text-center mb-4">Vergleiche darüber <br/> wie der aktuelle Beitrag ist</h1>
                         </div>
                     </Col>
                 </Row>

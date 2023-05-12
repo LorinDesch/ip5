@@ -163,7 +163,7 @@ const AllowMeToComparison = ({
                     </Col>
                     <Col md={6}>
                         <div style={{marginLeft: '3rem'}}>
-                            <h1 className="text-center mb-4">Allows Me To Comparison</h1>
+                            <h1 className="text-center mb-4">Vergleiche darüber ob der Nutzer<br/>Verantwortung übernehmen kann<br/> oder Erwartungen nachkommt</h1>
                         </div>
                     </Col>
                 </Row>
