@@ -18,6 +18,7 @@ function Login({ fakeData }) {
             console.log('User exists. Redirecting to /');
             localStorage.setItem('loggedInUser', username); // Set username in localStorage
             navigate('/');
+            window.location.reload();
         } else {
             // Clear username
             setUsername('');
