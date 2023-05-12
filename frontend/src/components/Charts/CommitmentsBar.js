@@ -132,17 +132,17 @@ function CommitmentsBar({
                     .attr('y1', yScale(28))
                     .attr('x2', xScale(i) + xScale.bandwidth() / 2 + 15)
                     .attr('y2', yScale(28) - 30)
-                    .attr('stroke', 'grey')
+                    // .attr('stroke', 'grey')
                     .attr('stroke-width', 1);
 
-                d3.select(this)
-                    .append('text')
-                    .attr('class', 'group-label')
-                    .attr('x', xScale(i) + xScale.bandwidth() / 2 + 15)
-                    .attr('y', yScale(28) - 35)
-                    .text(`Klasse ${groupIndex + 1}`)
-                    .style('font-size', '12px')
-                    .style('text-anchor', 'middle');
+                // d3.select(this)
+                //     .append('text')
+                //     .attr('class', 'group-label')
+                //     .attr('x', xScale(i) + xScale.bandwidth() / 2 + 15)
+                //     .attr('y', yScale(28) - 35)
+                //     // .text(`Klasse ${groupIndex + 1}`)
+                //     .style('font-size', '12px')
+                //     .style('text-anchor', 'middle');
             }
         });
 
