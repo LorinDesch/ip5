@@ -7,16 +7,21 @@ function FeelingsBar({fakeData, selectedOption1, setSelectedOption1, selectedOpt
 
     // Get the selected commitment ID based on the selectedOption2
     const cId = fakeData.commitments.filter(commitment => commitment.commitmentname === selectedOption2)[0].commitmentid;
-    // Get the feelings array based on the selectedCommitmentId
-    const feelingsArray = fakeData.diary.filter(diary => diary.commitmentid === cId).map(diary => diary.feelings);
 
-    // Merge all the feelings arrays into a single array
-    let data = feelingsArray.reduce((acc, feelings) => [...acc, ...feelings], []);
-
+    let data = [];
 
     if (cId > 0) {
         const uId = fakeData.users.find((user) => user.username === selectedOption1)?.userid;
         if (uId !== undefined) {
+
+            // Get the feelings array based on the selectedCommitmentId and the selectedUserId
+            const diariesFromCiD = fakeData.diary.filter((diary) => diary.commitmentid === cId);
+            const selectedDiaries = diariesFromCiD.filter((diary) => diary.userid === uId);
+            const feelingsArray = selectedDiaries.map((diary) => diary.feelings);
+
+            // Merge all the feelings arrays into a single array
+            data = feelingsArray.reduce((acc, feelings) => [...acc, ...feelings], []);
+
             const schluesseChallengeUserGroup = getSchluesseChallengeUserGroup(selectedOption1, selectedOption2, fakeData);
             if (schluesseChallengeUserGroup[0] === "-") {
                 data = [];
@@ -24,7 +29,18 @@ function FeelingsBar({fakeData, selectedOption1, setSelectedOption1, selectedOpt
                 data = data.slice(0, 28);
             }
         } else {
-            data = [];
+            const groupOfUsers = fakeData.groups.find(group => group.groupname === selectedOption1)?.users || [];
+            const diariesFromCiD = fakeData.diary.filter(diary => diary.commitmentid === cId);
+            const selectedDiaries = diariesFromCiD.filter(diary => groupOfUsers.includes(diary.userid));
+            const feelingsArray = selectedDiaries.map(diary => diary.feelings);
+            data = feelingsArray.reduce((acc, feelings) => {
+                if (acc.length === 0) {
+                    return feelings;
+                } else {
+                    return acc.map((value, index) => (value + feelings[index]) / 2);
+                }
+            }, []);
+
         }
     }
 
