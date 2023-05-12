@@ -1,29 +1,27 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 function Login({ fakeData }) {
     const [username, setUsername] = useState('');
+    const [errorMessage, setErrorMessage] = useState('');
     const navigate = useNavigate();
 
-    const handleSubmit = (event) => {
+    const handleSubmit = async (event) => {
         event.preventDefault();
         console.log('Submitting login form');
         console.log('Username: ' + username);
 
         // Check if user with entered username exists
-        const userExists = fakeData.users.find((user) => user.username === username);
+        const userExists = fakeData.users.some((user) => user.username === username);
 
         if (userExists) {
             console.log('User exists. Redirecting to /');
-            navigate('/');
-            window.location.reload();
             localStorage.setItem('loggedInUser', username); // Set username in localStorage
-
+            navigate('/');
         } else {
             // Clear username
             setUsername('');
-            console.log('User does not exist.');
-            // Handle invalid username case (display error message, etc.)
+            setErrorMessage('Invalid username. Please try again.');
         }
     };
 
@@ -42,6 +40,7 @@ function Login({ fakeData }) {
                             onChange={(event) => setUsername(event.target.value)}
                         />
                     </div>
+                    {errorMessage && <p style={{ color: 'red' }}>{errorMessage}</p>}
                     <div style={{ display: 'flex', justifyContent: 'center' }}>
                         <button type="submit" className="btn btn-primary">
                             Login
