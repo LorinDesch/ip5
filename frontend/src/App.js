@@ -20,33 +20,115 @@ const App = () => {
                 username: "Max Mustermann",
             },
             {
-                userid: 12,
+                userid: 2,
                 username: "Peter Mueller",
             },
             {
                 userid: 3,
                 username: "Hans Meier",
-            }, {
+            },
+            {
                 userid: 4,
                 username: "Hans Meier2",
-            }
+            },
+            {
+                userid: 5,
+                username: "Emily Smith",
+            },
+            {
+                userid: 6,
+                username: "Oliver Taylor",
+            },
+            {
+                userid: 7,
+                username: "Sophia Johnson",
+            },
+            {
+                userid: 8,
+                username: "Aiden Davis",
+            },
+            {
+                userid: 9,
+                username: "Isabella Clark",
+            },
+            {
+                userid: 10,
+                username: "Liam Adams",
+            },
+            {
+                userid: 11,
+                username: "Charlotte Walker",
+            },
+            {
+                userid: 13,
+                username: "Eleanor Anderson",
+            },
+            {
+                userid: 14,
+                username: "Sebastian Martinez",
+            },
+            {
+                userid: 15,
+                username: "Amelia Thompson",
+            },
+            {
+                userid: 16,
+                username: "Nathan Rodriguez",
+            },
+            {
+                userid: 17,
+                username: "Victoria Wilson",
+            },
+            {
+                userid: 18,
+                username: "Julian Garcia",
+            },
+            {
+                userid: 19,
+                username: "Penelope Hernandez",
+            },
+            {
+                userid: 20,
+                username: "Lucas Phillips",
+            },
         ],
         groups: [
             {
                 groupid: 1,
                 groupname: "Gruppe 1",
-                users: [1, 12] // userids
+                users: [1, 2, 3] // userids
             },
             {
                 groupid: 2,
                 groupname: "Gruppe 2",
-                users: [4] // userids
+                users: [4, 5, 6] // userids
             },
             {
                 groupid: 3,
                 groupname: "Gruppe 3",
-                users: [3] // userids
+                users: [7, 8, 9, 10] // userids
+            },
+            {
+                groupid: 4,
+                groupname: "Gruppe 4",
+                users: [11, 12] // userids
+            },
+            {
+                groupid: 5,
+                groupname: "Gruppe 5",
+                users: [13, 14, 15] // userids
+            },
+            {
+                groupid: 6,
+                groupname: "Gruppe 6",
+                users: [16, 17] // userids
+            },
+            {
+                groupid: 7,
+                groupname: "Gruppe 7",
+                users: [18, 19, 20] // userids
             }
+
         ],
         commitments: [
             {
