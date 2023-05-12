@@ -162,7 +162,12 @@ const SustainabilityComparison = ({
                     <Col md={6}>
                         <div style={{marginLeft: '3rem'}}>
                             <h1 className="text-center mb-4">Vergleiche ob das Commitment<br/> zu einer nachhaltigen Entwicklung beiträgt</h1>
-                            <p> Zwischen  {selectedOption1} und ausgewähltenGruppe </p>
+                            <p style={{ margin: '0.2rem' }}>Schwierigkeit: Wie schwer war das Commitment?</p>
+                            <p style={{ margin: '0.2rem' }}>Einschränkung: Wie stark hat dich das Commitment eingeschränkt?</p>
+                            <p style={{ margin: '0.2rem' }}>Umfeldreaktion: Wie hat dein Umfeld auf das Commitment reagiert?</p>
+                            <p style={{ margin: '0.2rem' }}>Beitrag: Wie viel hast du zum Commitment beigetragen?</p>
+                            <p style={{ margin: '0.2rem' }}>Entwicklung: Wie sehr hat sich das Commitment auf dich ausgewirkt?</p>
+
                         </div>
                     </Col>
                 </Row>
