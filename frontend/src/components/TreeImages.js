@@ -28,8 +28,6 @@ const TreeImages = ({ leftIndex, rightIndex, fakeData, selectedOption2, selected
         }
 
 
-
-        //TODO: Calculate right index better
         //get each userId from each group
         const selectedUsers = selectedOption3.flatMap(option =>
             fakeData.groups.filter(group => group.groupname === option)
@@ -45,6 +43,7 @@ const TreeImages = ({ leftIndex, rightIndex, fakeData, selectedOption2, selected
         const selectedDiaries = diariesFromCiD.filter(diary => uniqueSelectedUsers.includes(diary.userid));
         //get all eingeloest from the selected diaries
         const eingeloest = selectedDiaries.map(diary => diary.eingeloest);
+        console.log(eingeloest)
         //get the sum of all eingeloest
         const sum = eingeloest.reduce((a, b) => a + b, 0);
         //get the average of all eingeloest
