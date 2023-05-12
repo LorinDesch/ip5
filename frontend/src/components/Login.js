@@ -8,14 +8,11 @@ function Login({ fakeData }) {
 
     const handleSubmit = async (event) => {
         event.preventDefault();
-        console.log('Submitting login form');
-        console.log('Username: ' + username);
 
         // Check if user with entered username exists
         const userExists = fakeData.users.some((user) => user.username === username);
 
         if (userExists) {
-            console.log('User exists. Redirecting to /');
             localStorage.setItem('loggedInUser', username); // Set username in localStorage
             navigate('/');
             window.location.reload();

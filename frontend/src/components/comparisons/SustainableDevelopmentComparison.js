@@ -46,9 +46,7 @@ const SustainabilityComparison = ({
     const sustainableDevelopmentLabel = "Entwicklung"
     const sustainableDevelopmentlabelLeft = ["Wenig", "Mittel", "Viel"] //FLIPPED
     const sustainableDevelopmentValueRightBar = getValueAttributeOnlyGroup("sustainableDevelopment", selectedOption3, fakeData, selectedOption2)
-    console.log(sustainableDevelopmentValueRightBar)
     const sustainableDevelopmentValueLeftBar = Array(sustainableDevelopmentValueRightBar.length).fill(getValueAttributeUserGroup("sustainableDevelopment", selectedOption1, selectedOption2, fakeData));
-    console.log(sustainableDevelopmentValueLeftBar)
 
 
     return (
@@ -60,7 +58,6 @@ const SustainabilityComparison = ({
                            setSelectedOption2={setSelectedOption2}
                            selectedOption3={selectedOption3}
                            setSelectedOption3={setSelectedOption3}
-                           selectedOption2={selectedOption2}
                 />
             </header>
             <div style={{

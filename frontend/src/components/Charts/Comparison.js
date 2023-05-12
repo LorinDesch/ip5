@@ -20,9 +20,6 @@ function Comparison({
     const klassen = selectedOption3;
     const label = [squaredLabelLeft, squaredLabelRight];
 
-    console.log( difficultyValueRightBar);
-    console.log( difficultyValueLeftBar);
-
     const colors = ["#85B3B7", "#D4E09B"];
     const dataRight = difficultyValueRightBar;
     const dataLeft = difficultyValueLeftBar;
