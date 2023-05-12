@@ -156,7 +156,7 @@ function Dashboard({
                         <Col md={4}>
                             <div className="d-flex justify-content-center align-items-center text-center" style={{ marginRight: '12rem' }}>
                                 <div style={{ height: '300px' }}>
-                                    <SchluesseAusChallenge schluesse={schluesseChallengeUserGroup} />
+                                    <SchluesseAusChallenge schluesse={schluesseChallengeGroups} />
                                 </div>
                             </div>
                         </Col>
