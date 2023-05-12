@@ -191,7 +191,7 @@ const App = () => {
                     }
                 />
                 <Route
-                    path="/difficulty"
+                    path="/schwierigkeit"
                     element={
                         loggedInUser ? (
                             <DifficultyComparison
@@ -209,7 +209,7 @@ const App = () => {
                     }
                 />
                 <Route
-                    path="/restriction"
+                    path="/einschraenkung"
                     element={
                         loggedInUser ? (
                             <RestrictionComparison
@@ -227,7 +227,7 @@ const App = () => {
                     }
                 />
                 <Route
-                    path="/environment"
+                    path="/umfeld"
                     element={
                         loggedInUser ? (
                             <EnvironmentComparison
@@ -245,7 +245,7 @@ const App = () => {
                     }
                 />
                 <Route
-                    path="/currentcontribution"
+                    path="/aktuellerbeitrag"
                     element={
                         loggedInUser ? (
                             <CurrentContributionComparison
@@ -263,7 +263,7 @@ const App = () => {
                     }
                 />
                 <Route
-                    path="/allowsmeto"
+                    path="/erlaubtmir"
                     element={
                         loggedInUser ? (
                             <AllowsMeToComparison
@@ -281,7 +281,7 @@ const App = () => {
                     }
                 />
                 <Route
-                    path="/sustainabledevelopment"
+                    path="/nachhaltigeentwicklung"
                     element={
                         loggedInUser ? (
                             <SustainableDevelopmentComparison

@@ -46,7 +46,7 @@ const SideNavbar = () => {
                     className="nav-icon rounded border border-secondary p-2"
                     onMouseEnter={handleIconHover}
                     onMouseLeave={handleIconLeave}
-                    onClick={() => (window.location.href = '/difficulty')}
+                    onClick={() => (window.location.href = '/schwierigkeit')}
                 />
             </div>
             <div className="d-flex flex-column align-items-center justify-content-center text-center"style={{ marginRight: '1rem' }}>
@@ -56,7 +56,7 @@ const SideNavbar = () => {
                     className="nav-icon rounded border border-secondary p-2"
                     onMouseEnter={handleIconHover}
                     onMouseLeave={handleIconLeave}
-                    onClick={() => (window.location.href = '/restriction')}
+                    onClick={() => (window.location.href = '/einschraenkung')}
                 />
             </div>
             <div className="d-flex flex-column align-items-center justify-content-center text-center"style={{ marginRight: '1rem' }}>
@@ -66,7 +66,7 @@ const SideNavbar = () => {
                     className="nav-icon rounded border border-secondary p-2"
                     onMouseEnter={handleIconHover}
                     onMouseLeave={handleIconLeave}
-                    onClick={() => (window.location.href = '/environment')}
+                    onClick={() => (window.location.href = '/umfeld')}
                 />
             </div>
             <div className="d-flex flex-column align-items-center justify-content-center text-center"style={{ marginRight: '1rem' }}>
@@ -76,7 +76,7 @@ const SideNavbar = () => {
                     className="nav-icon rounded border border-secondary p-2"
                     onMouseEnter={handleIconHover}
                     onMouseLeave={handleIconLeave}
-                    onClick={() => (window.location.href = '/currentcontribution')}
+                    onClick={() => (window.location.href = '/aktuellerbeitrag')}
                 />
             </div>
             <div className="d-flex flex-column align-items-center justify-content-center text-center" style={{ marginRight: '1rem' }}>
@@ -86,7 +86,7 @@ const SideNavbar = () => {
                     className="nav-icon rounded border border-secondary p-2"
                     onMouseEnter={handleIconHover}
                     onMouseLeave={handleIconLeave}
-                    onClick={() => (window.location.href = '/allowsmeto')}
+                    onClick={() => (window.location.href = '/erlaubtmir')}
                 />
             </div>
 
@@ -97,7 +97,7 @@ const SideNavbar = () => {
                     className="nav-icon rounded border border-secondary p-2"
                     onMouseEnter={handleIconHover}
                     onMouseLeave={handleIconLeave}
-                    onClick={() => (window.location.href = '/sustainabledevelopment')}
+                    onClick={() => (window.location.href = '/nachhaltigeentwicklung')}
                 />
             </div>
         </nav>
