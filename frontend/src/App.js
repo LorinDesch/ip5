@@ -152,62 +152,7 @@ const App = () => {
                             commitmentid: 3,
                             commitmentname: "Ich dusche maximal fünf Minuten pro Tag.",
                         },
-                        // {
-                        //     commitmentid: 4,
-                        //     commitmentname: "Ich nutze, wenn möglich, die kleine Toilettenspülung."
-                        // },
-                        // {
-                        //     commitmentid: 5,
-                        //     commitmentname: "Ich lasse den Geschirrspüler nur voll laufen.",
-                        // },
-                        // {
-                        //     commitmentid: 6,
-                        //     commitmentname: "Ich spüle Geschirr nicht unter fliessendem Wasser.",
-                        // },
-                        // {
-                        //     commitmentid: 7,
-                        //     commitmentname: "Ich stecke Ladegeräte nur so lange wie nötig ein."
-                        // },
-                        // {
-                        //     commitmentid: 8,
-                        //     commitmentname: "Ich schalte meine Geräte ganz aus (kein Standby)."
-                        // },
-                        // {
-                        //     commitmentid: 9,
-                        //     commitmentname: "Ich kaufe nur regionales & saisonales Obst/Gemüse."
-                        // },
-                        // {
-                        //     commitmentid: 10,
-                        //     commitmentname: "Ich kaufe, wo möglich, regionale Lebensmittel.",
-                        // },
-                        // {
-                        //     commitmentid: 11,
-                        //     commitmentname: "Ich kaufe nur regionale Lebensmittel.",
-                        // },
-                        // {
-                        //     commitmentid: 12,
-                        //     commitmentname: "Ichk trinke meinen Kafee/Tee in der Tasse vor Ort.",
-                        // },
-                        // {
-                        //     commitmentid: 13,
-                        //     commitmentname: "Ich kaufe, wo möglich, regionale Lebensmittel.",
-                        // },
-                        // {
-                        //     commitmentid: 14,
-                        //     commitmentname: "Ich kaufe nur regionale Lebensmittel.",
-                        // },
-                        // {
-                        //     commitmentid: 15,
-                        //     commitmentname: "Ich trinke meinen Kaffee/Tee in der Tasse vor Ort.",
-                        // },
-                        // {
-                        //     commitmentid: 16,
-                        //     commitmentname: "Ich nutze unterwegs ein auffüllbares Trinkgefäss",
-                        // },
-                        // {
-                        //     commitmentid: 17,
-                        //     commitmentname: "Ich verwende nur wiederverwendbare Taschen für meinen Einkauf.",
-                        // }
+
                     ],
                     diary: [
                         {
@@ -332,7 +277,7 @@ const App = () => {
                                 produkt: "Alles ist 3x verpackt",
                             },
                             eingeloest: 15,
-                            feelings: [0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.5, 0.4, 1, 0.3, 0.1, 0.2, 0.2, 0.3],
+                            feelings: [0.2, 0.3, 0.4, 0.2, 0.6, 0.9, 0.8, 0.5, 0.4, 1, 0.6, 0.1, 0.2, 0.2, 0.5, 0.4, 0.5, 0.6, 0.7, 0.8, 0.5, 0.4, 1, 0.3, 0.1, 0.2, 0.3, 0.4, 0.5],
                             difficulty: [0.4, 0.8],
                             restriction: [0.2, 0.6],
                             environment: [0.1, 0.5],
@@ -352,7 +297,7 @@ const App = () => {
                             },
                             eingeloest: 10,
 
-                            feelings: [0.2, 0.3, 0.1, 0.5, 0.7, 0.5, 0.9, 0.1, 0.3, 0.6],
+                            feelings: [0.2, 0.3, 0.4, 0.2, 0.6, 0.9, 0.8, 0.5, 0.4, 1, 0.6, 0.1, 0.2, 0.2, 0.5, 0.4, 0.5, 0.6, 0.7, 0.8, 0.5, 0.4, 1, 0.3, 0.1, 0.2, 0.3, 0.4, 0.5],
                             difficulty: [0.4, 0.8],
                             restriction: [0.2, 0.6],
                             environment: [0.1, 0.5],
