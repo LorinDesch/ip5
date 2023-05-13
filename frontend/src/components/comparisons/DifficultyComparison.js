@@ -83,8 +83,6 @@ const DifficultyComparison = ({
                     <Col md={6}>
                         <div style={{marginLeft: '5rem'}}>
                             <h1  className="text-center mb-1">Vergleiche wie schwer <br/>das Commitment war</h1>
-                            <h1 className="text-center mb-1">Vergleiche darüber ob der Nutzer<br/>Verantwortung
-                                übernehmen kann<br/> oder Erwartungen nachkommt</h1>
                             <p style={{margin: '0.2rem'}}>Schwierigkeit: Wie schwer war das Commitment?</p>
                             <p style={{margin: '0.2rem'}}>Einschränkung: Wie stark hat dich das Commitment
                                 eingeschränkt?</p>
