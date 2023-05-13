@@ -134,7 +134,7 @@ const TreeImages = ({
 
     return (
         <div>
-            <h3 style={{marginTop:"4rem"}}>Hast du das Commitment öfter <br/> erreicht als die ausgewählten Gruppen?</h3>
+            <h3 style={{marginTop:"4rem"}}>Hast Du das Commitment öfter <br/> erreicht als die ausgewählten Gruppen?</h3>
             <div style={containerStyles}>
 
                 <img src={leftImagePath} alt={`left tree ${leftIndex}`} style={imageStylesLeft}/>
