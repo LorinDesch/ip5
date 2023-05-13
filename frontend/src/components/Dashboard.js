@@ -164,7 +164,7 @@ function Dashboard({
                     </Row>
 
                     <Row>
-                        <Col md={4} style={{marginTop: '24.4rem'}}>
+                        <Col md={4} style={{marginTop: '29.9rem'}}>
                             <div className="d-flex justify-content-center align-items-center text-center"
                                  style={{marginLeft: '12rem'}}>
                                 <FeelingsBar fakeData={fakeData} selectedOption1={selectedOption1}
@@ -192,7 +192,7 @@ function Dashboard({
                                     setSelectedOption3={setSelectedOption3}/>
                             </div>
                         </Col>
-                        <Col md={4} style={{marginTop: '23.3rem'}}>
+                        <Col md={4} style={{marginTop: '28.4rem'}}>
                             <div className="d-flex justify-content-center align-items-center text-center"
                                  style={{marginRight: '30rem'}}>
                                 <CommitmentsBar  width={700} height={200}

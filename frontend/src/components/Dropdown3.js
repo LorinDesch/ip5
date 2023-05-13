@@ -96,7 +96,7 @@ const Dropdown3 = ({ options, selectedOptions, onChange, styling, fakeData  }) =
     return (
         <div style={dropdownStyle}>
             <button style={buttonStyle} onClick={handleDropdown3}>
-                {selectedOptions.length === 0 ? 'Klassen auswählen' : `${selectedOptions.length} ${selectedOptions.length === 1 ? 'Klasse' : 'Klassen'} ausgewählt`}
+                {selectedOptions.length === 0 ? 'Gruppen auswählen' : `${selectedOptions.length} ${selectedOptions.length === 1 ? 'Gruppe' : 'Gruppen'} ausgewählt`}
             </button>
             <ul style={ulStyle}>
                 {options.map((option) => (
