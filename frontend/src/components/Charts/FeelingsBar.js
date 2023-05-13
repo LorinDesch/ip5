@@ -9,7 +9,17 @@ import {getSchluesseSelectedDropdown1} from "../Dashboard";
  * @param {Object} props - The component props.
  * @returns {JSX.Element} The FeelingsBar component.
  */
-function FeelingsBar({fakeData, selectedOption1, setSelectedOption1, selectedOption2, setSelectedOption2, selectedOption3, setSelectedOption3 , width, height}) {
+function FeelingsBar({
+                         fakeData,
+                         selectedOption1,
+                         setSelectedOption1,
+                         selectedOption2,
+                         setSelectedOption2,
+                         selectedOption3,
+                         setSelectedOption3,
+                         width,
+                         height
+                     }) {
 
     // Get the selected commitment ID based on the selectedOption2
     const cId = fakeData.commitments.filter(commitment => commitment.commitmentname === selectedOption2)[0].commitmentid;
@@ -148,6 +158,14 @@ function FeelingsBar({fakeData, selectedOption1, setSelectedOption1, selectedOpt
         const legend = svg.append('g')
             .attr('transform', `translate(${(width - legendWidth) / 2}, ${height - 20})`);
 
+        legend.append('text')
+            .attr('x', legendWidth / 2)
+            .attr('y', -height - 30)
+            .attr('text-anchor', 'middle')
+            .style('font-weight', 'bold')
+            .text('Wie hast du dich über den Verlauf des Commitments gefühlt?');
+
+
         legend.selectAll('.legend-item')
             .data(colors)
             .join('g')
@@ -156,7 +174,7 @@ function FeelingsBar({fakeData, selectedOption1, setSelectedOption1, selectedOpt
             .call(g => {
                 g.append('rect')
                     .attr('x', -10)
-                    .attr('y', -height -5)
+                    .attr('y', -height - 5)
                     .attr('width', 15)
                     .attr('height', 15)
                     .attr('fill', value => value);
@@ -167,13 +185,11 @@ function FeelingsBar({fakeData, selectedOption1, setSelectedOption1, selectedOpt
             });
     }, [data, height, width, colors]);
 
-    return <svg ref={svgRef}>
+    return (<svg ref={svgRef}>
         <text x={width / 2} y={-40} textAnchor="middle" fontWeight="bold">
             Wie hast du dich über den Verlauf des Selfcommitments gefühlt?
         </text>
-    </svg>
-
-        ;
+    </svg>);
 }
 
 export default FeelingsBar;
