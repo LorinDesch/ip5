@@ -124,7 +124,7 @@ function Comparison({
                 g.append('text')
                     .attr('x', 20)
                     .attr('y', -height)
-                    .text((value, index) => label[index])
+                    .text((value, index) => label[index ])
             });
 
 
