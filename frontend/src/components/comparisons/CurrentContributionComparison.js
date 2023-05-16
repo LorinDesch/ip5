@@ -27,33 +27,31 @@ const CurrentContributionComparison = ({
     const difficultyLabel = "Schwierigkeit"
     const difficultylabelLeft = ["Leicht", "Mittel", "Schwer"] //FLIPPED
     const difficultyValueRightBar = getValueAttributeOnlyGroup("difficulty", selectedOption3, fakeData, selectedOption2)
-    const difficultyValueLeftBar = Array(difficultyValueRightBar.length).fill(getValueAttributeUserGroup("difficulty", selectedOption1, selectedOption2, fakeData));
-
+    const difficultyValueLeftBar = getValueAttributeOnlyGroup("difficulty", selectedOption3, fakeData, selectedOption2)
 
     const restrionctionLabel = "Einschränkung"
     const rrestrictionlabelLeft = ["Befreit", "Mittel", "Viel"] //FLIPPED
     const restrictionValueRightBar = getValueAttributeOnlyGroup("restriction", selectedOption3, fakeData, selectedOption2)
-    const restrictionValueLeftBar = Array(restrictionValueRightBar.length).fill(getValueAttributeUserGroup("restriction", selectedOption1, selectedOption2, fakeData));
+    const restrictionValueLeftBar = getValueAttributeOnlyGroup("restriction", selectedOption3, fakeData, selectedOption2)
 
     const environeLabel = "Umfeldreaktion"
     const environmentlabelLeft = ["positiv", "neutral", "negativ"] //FLIPPED
     const environmentValueRightBar = getValueAttributeOnlyGroup("environment", selectedOption3, fakeData, selectedOption2)
-    const environmentValueLeftBar = Array(environmentValueRightBar.length).fill(getValueAttributeUserGroup("environment", selectedOption1, selectedOption2, fakeData));
+    const environmentValueLeftBar = getValueAttributeOnlyGroup("environment", selectedOption3, fakeData, selectedOption2)
 
     const currentContributionLabel = "Beitrag"
     const currentContributionlabelLeft = ["Gering", "Mittel", "Hoch"]
     const currentContributionValueRightBar = getValueAttributeOnlyGroup("currentContribution", selectedOption3, fakeData, selectedOption2)
-    const currentContributionValueLeftBar = Array(currentContributionValueRightBar.length).fill(getValueAttributeUserGroup("currentContribution", selectedOption1, selectedOption2, fakeData));
-
+    const currentContributionValueLeftBar = getValueAttributeOnlyGroup("currentContribution", selectedOption3, fakeData, selectedOption2)
     const allowMeToLabel = "Übernehme"
     const allowMeTolabelLeft = ["Verantwortung", "Beides", "Erwartungen"]
     const allowMeToValueRightBar = getValueAttributeOnlyGroup("allowsMeTo", selectedOption3, fakeData, selectedOption2)
-    const allowMeToValueLeftBar = Array(allowMeToValueRightBar.length).fill(getValueAttributeUserGroup("allowsMeTo", selectedOption1, selectedOption2, fakeData));
+    const allowMeToValueLeftBar = getValueAttributeOnlyGroup("allowsMeTo", selectedOption3, fakeData, selectedOption2)
 
     const sustainableDevelopmentLabel = "Entwicklung"
     const sustainableDevelopmentlabelLeft = ["Wenig", "Mittel", "Viel"] //FLIPPED
     const sustainableDevelopmentValueRightBar = getValueAttributeOnlyGroup("sustainableDevelopment", selectedOption3, fakeData, selectedOption2)
-    const sustainableDevelopmentValueLeftBar = Array(sustainableDevelopmentValueRightBar.length).fill(getValueAttributeUserGroup("sustainableDevelopment", selectedOption1, selectedOption2, fakeData));
+    const sustainableDevelopmentValueLeftBar = getValueAttributeOnlyGroup("sustainableDevelopment", selectedOption3, fakeData, selectedOption2)
 
 
     return (

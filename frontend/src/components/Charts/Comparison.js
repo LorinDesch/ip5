@@ -67,20 +67,6 @@ function Comparison({
             .ticks(3)
             .tickFormat((d, i) => rightLabel[i]);
 
-        // Füge zuerst die Gruppe für die horizontalen Linien hinzu
-        const horizontalLines = svg.append('g')
-            .attr('class', 'horizontal-lines')
-            .selectAll('line')
-            .data(yScale.ticks(10))
-            .enter()
-            .append('line')
-            .attr('x1', margin.left)
-            .attr('y1', d => yScale(d))
-            .attr('x2', width - margin.right)
-            .attr('y2', d => yScale(d))
-            .attr('stroke', 'lightgrey')
-            .attr('stroke-width', 1)
-            .attr('stroke-dasharray', '4 4');
 
 
         // Füge zuletzt die Gruppe für die rechten Bars hinzu
@@ -90,7 +76,7 @@ function Comparison({
             .data(dataRight)
             .enter()
             .append('rect')
-            .attr('x', (d, i) => xScale(klassen[i]) + xScale.bandwidth() / 4)
+            .attr('x', (d, i) => xScale(klassen[i]) + xScale.bandwidth() / 2 + xScale.bandwidth() / 20)
             .attr('y', d => yScale(d))
             .attr('width', xScale.bandwidth() / 2)
             .attr('height', d => height - yScale(d) - margin.bottom)
@@ -142,25 +128,6 @@ function Comparison({
             });
 
 
-        // Calculate the font size for the text based on the number of left bars
-        const textFontSize = 16 - Math.min(dataLeft.length, 6); // Adjust the multiplier as needed
-
-// Add the text displaying selectedOption1 on top of each left bar
-        const textOffset = 10;
-
-        const textGroup = svg.append('g')
-            .attr('class', 'text-group')
-            .selectAll('text')
-            .data(dataLeft)
-            .enter()
-            .append('text')
-            .attr('x', (d, i) => xScale(klassen[i]) - xScale.bandwidth() / 4)
-            .attr('y', d => yScale(d) - textOffset)
-            .attr('text-anchor', 'middle')
-            .attr('fill', 'black')
-            .style('font-size', `${textFontSize}px`) // Set the font size dynamically
-            .text(selectedOption1);
-
 // Füge dann die Gruppe für die linken Bars hinzu
         const leftBars = svg.append('g')
             .attr('class', 'left-bars')
@@ -168,29 +135,13 @@ function Comparison({
             .data(dataLeft)
             .enter()
             .append('rect')
-            .attr('x', (d, i) => xScale(klassen[i]) - xScale.bandwidth() / 2)
+            .attr('x', (d, i) => xScale(klassen[i]) - xScale.bandwidth() / 20)
             .attr('y', d => yScale(d))
             .attr('width', xScale.bandwidth() / 2)
             .attr('height', d => height - yScale(d) - margin.bottom)
             .attr('fill', colors[0]);
 
-// Add the little line behind each left bar
-        const lineLength = 10;
-        const lineOffset = xScale.bandwidth() * (-0.25);
 
-        const lineGroup = svg.insert('g', '.left-bars') // Use insert() to position the line group behind the bars
-            .attr('class', 'line-group')
-            .selectAll('line')
-            .data(dataLeft)
-            .enter()
-            .append('line')
-            .attr('x1', (d, i) => xScale(klassen[i]) + lineOffset)
-            .attr('y1', d => yScale(d) + lineLength / 2)
-            .attr('x2', (d, i) => xScale(klassen[i]) + lineOffset)
-            .attr('y2', d => yScale(d) - lineLength / 2)
-            .attr('stroke', 'black')
-            .attr('stroke-width', 1)
-            .attr('fill', colors[0]);
 
     }, [data, height, width]);
 
