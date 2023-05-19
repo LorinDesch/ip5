@@ -49,8 +49,6 @@ export function getValueAttributeOnlyGroup(attribute, selectedOption3, fakeData,
  * @returns {number[]} The value of the attribute for the selected user and group.
  */
 const AllowMeToComparison = ({
-                                 width,
-                                 height,
                                  fakeData,
                                  selectedOption1,
                                  selectedOption3,
