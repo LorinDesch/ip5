@@ -4,25 +4,6 @@ import Comparison from "../Charts/Comparison";
 import SideNavbar from "../SideNavbar";
 import {Col, Container, Row} from "react-bootstrap";
 
-export function getValueAttributeUserGroup(attribute, selectedOption1, selectedOption2, fakeData) {
-    const cId = fakeData.commitments.find(commitment => commitment.commitmentname === selectedOption2)?.commitmentid;
-    let returnValue = [];
-    if (cId > 0) {
-        const uId = fakeData.users.find(user => user.username === selectedOption1)?.userid;
-        if (uId !== undefined) {
-            returnValue = [fakeData.diary.find(diary => diary.userid === uId && diary.commitmentid === cId)?.[attribute]?.[1] || 0];
-        } else {
-            let groupOfUsers = fakeData.groups.find(group => group.groupname === selectedOption1)?.users || [];
-            let totalDifficulty = groupOfUsers.reduce((acc, userId) => {
-                const userDiary = fakeData.diary.find(diary => diary.userid === userId && diary.commitmentid === cId);
-                return userDiary ? acc + userDiary[attribute][1] : acc;
-            }, 0);
-            returnValue = groupOfUsers.length ? [totalDifficulty / groupOfUsers.length] : [];
-        }
-    }
-    return returnValue;
-}
-
 export function getValueAttributeOnlyGroup(attribute, selectedOption3, fakeData, selectedOption2) {
     const cId = fakeData.commitments.find(commitment => commitment.commitmentname === selectedOption2)?.commitmentid;
     const zeros = [];

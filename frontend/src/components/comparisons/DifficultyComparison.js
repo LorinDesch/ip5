@@ -3,7 +3,7 @@ import {Container, Row, Col} from 'react-bootstrap';
 import TopNavbar from '../TopNavbar';
 import Comparison from "../Charts/Comparison";
 import SideNavbar from "../SideNavbar";
-import {getValueAttributeOnlyGroup, getValueAttributeUserGroup} from "./AllowsMeToComparison";
+import {getValueAttributeOnlyGroup} from "./AllowsMeToComparison";
 
 
 /**

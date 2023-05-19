@@ -3,7 +3,7 @@ import TopNavbar from '../TopNavbar';
 import Comparison from "../Charts/Comparison";
 import SideNavbar from "../SideNavbar";
 import {Col, Container, Row} from "react-bootstrap";
-import {getValueAttributeOnlyGroup, getValueAttributeUserGroup} from "./AllowsMeToComparison";
+import {getValueAttributeOnlyGroup} from "./AllowsMeToComparison";
 
 /**
  * Component for rendering the SustainabilityComparison chart.
