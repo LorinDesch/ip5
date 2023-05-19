@@ -4,6 +4,19 @@ import Comparison from "../Charts/Comparison";
 import SideNavbar from "../SideNavbar";
 import {Col, Container, Row} from "react-bootstrap";
 
+/**
+ * Retrieves the second difficulty value for each group in the selectedOption3 array,
+ * based on the provided attribute, selectedOption2, and fakeData.
+ * If a valid commitment ID is found for selectedOption2, the function searches for the group.userIds
+ * in fakeData and returns an array of second difficulty values for each group.
+ * If no valid commitment ID is found, an array of zeros is returned.
+ *
+ * @param {string} attribute - The attribute to retrieve from the diary data.
+ * @param {string[]} selectedOption3 - An array of group names.
+ * @param {Object} fakeData - The fake data object containing commitments, groups, and diary data.
+ * @param {string} selectedOption2 - The selected option 2 value.
+ * @returns {number[]} - An array of second difficulty values for each group, or an array of zeros.
+ */
 export function getValueAttributeOnlyGroup(attribute, selectedOption3, fakeData, selectedOption2) {
     const cId = fakeData.commitments.find(commitment => commitment.commitmentname === selectedOption2)?.commitmentid;
     const zeros = [];
