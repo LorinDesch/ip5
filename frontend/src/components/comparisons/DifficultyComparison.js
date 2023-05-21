@@ -29,6 +29,7 @@ const DifficultyComparison = ({
     const difficultyValueRightBar = getValueAttributeOnlyGroup("difficulty", selectedOption3, fakeData, selectedOption2)
     const difficultyValueLeftBar = getValueAttributeOnlyGroup("difficulty", selectedOption3, fakeData, selectedOption2)
 
+
     const restrionctionLabel = "Einschränkung"
     const rrestrictionlabelLeft = ["Befreit", "Mittel", "Viel"] //FLIPPED
     const restrictionValueRightBar = getValueAttributeOnlyGroup("restriction", selectedOption3, fakeData, selectedOption2)
@@ -43,6 +44,8 @@ const DifficultyComparison = ({
     const currentContributionlabelLeft = ["Gering", "Mittel", "Hoch"]
     const currentContributionValueRightBar = getValueAttributeOnlyGroup("currentContribution", selectedOption3, fakeData, selectedOption2)
     const currentContributionValueLeftBar = getValueAttributeOnlyGroup("currentContribution", selectedOption3, fakeData, selectedOption2)
+
+
     const allowMeToLabel = "Übernehme"
     const allowMeTolabelLeft = ["Verantwortung", "Beides", "Erwartungen"]
     const allowMeToValueRightBar = getValueAttributeOnlyGroup("allowsMeTo", selectedOption3, fakeData, selectedOption2)
@@ -100,8 +103,8 @@ const DifficultyComparison = ({
                                         leftLabel={difficultylabelLeft}
                                         squaredLabelRight={currentContributionLabel}
                                         rightLabel={currentContributionlabelLeft}
-                                        difficultyValueRightBar={difficultyValueRightBar}
-                                        difficultyValueLeftBar={currentContributionValueLeftBar}
+                                        difficultyValueRightBar={currentContributionValueRightBar}
+                                        difficultyValueLeftBar={difficultyValueLeftBar}
                                         selectedOption3={selectedOption3}
                                         selectedOption2={selectedOption2}
                                         selectedOption1={selectedOption1}
