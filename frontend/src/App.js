@@ -12,7 +12,6 @@ import {useState} from "react";
 import Login from "./components/Login";
 import {fakeData} from "./data/data";
 
-
 /**
  * The main App component.
  *
