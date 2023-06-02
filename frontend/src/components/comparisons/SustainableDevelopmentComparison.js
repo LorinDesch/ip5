@@ -45,6 +45,7 @@ const SustainabilityComparison = ({
                                       sustainableDevelopmentlabelLeft,
                                       sustainableDevelopmentValueRightBar,
                                       sustainableDevelopmentValueLeftBar,
+
                                   }) => {
 
     return (
