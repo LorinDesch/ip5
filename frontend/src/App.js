@@ -54,114 +54,67 @@ const App = () => {
         const sustainableDevelopmentValueRightBar = getValueAttributeOnlyGroup("sustainableDevelopment", selectedOption3, fakeData, selectedOption2)
         const sustainableDevelopmentValueLeftBar = getValueAttributeOnlyGroup("sustainableDevelopment", selectedOption3, fakeData, selectedOption2)
 
-    const props = {
-        fakeData: fakeData,
-        selectedOption1: selectedOption1,
-        setSelectedOption1: setSelectedOption1,
-        selectedOption2: selectedOption2,
-        setSelectedOption2: setSelectedOption2,
-        selectedOption3: selectedOption3,
-        setSelectedOption3: setSelectedOption3,
-        difficultyLabel: difficultyLabel,
-        difficultylabelLeft: difficultylabelLeft,
-        difficultyValueRightBar: difficultyValueRightBar,
-        difficultyValueLeftBar: difficultyValueLeftBar,
-        restrionctionLabel: restrionctionLabel,
-        rrestrictionlabelLeft: rrestrictionlabelLeft,
-        restrictionValueRightBar: restrictionValueRightBar,
-        restrictionValueLeftBar: restrictionValueLeftBar,
-        environeLabel: environeLabel,
-        environmentlabelLeft: environmentlabelLeft,
-        environmentValueRightBar: environmentValueRightBar,
-        environmentValueLeftBar: environmentValueLeftBar,
-        currentContributionLabel: currentContributionLabel,
-        currentContributionlabelLeft: currentContributionlabelLeft,
-        currentContributionValueRightBar: currentContributionValueRightBar,
-        currentContributionValueLeftBar: currentContributionValueLeftBar,
-        allowMeToLabel: allowMeToLabel,
-        allowMeTolabelLeft: allowMeTolabelLeft,
-        allowMeToValueRightBar: allowMeToValueRightBar,
-        allowMeToValueLeftBar: allowMeToValueLeftBar,
-        sustainableDevelopmentLabel: sustainableDevelopmentLabel,
-        sustainableDevelopmentlabelLeft: sustainableDevelopmentlabelLeft,
-        sustainableDevelopmentValueRightBar: sustainableDevelopmentValueRightBar,
-        sustainableDevelopmentValueLeftBar: sustainableDevelopmentValueLeftBar
-    }
+        const props = {
+            fakeData: fakeData,
+            selectedOption1: selectedOption1,
+            setSelectedOption1: setSelectedOption1,
+            selectedOption2: selectedOption2,
+            setSelectedOption2: setSelectedOption2,
+            selectedOption3: selectedOption3,
+            setSelectedOption3: setSelectedOption3,
+            difficultyLabel: difficultyLabel,
+            difficultylabelLeft: difficultylabelLeft,
+            difficultyValueRightBar: difficultyValueRightBar,
+            difficultyValueLeftBar: difficultyValueLeftBar,
+            restrionctionLabel: restrionctionLabel,
+            rrestrictionlabelLeft: rrestrictionlabelLeft,
+            restrictionValueRightBar: restrictionValueRightBar,
+            restrictionValueLeftBar: restrictionValueLeftBar,
+            environeLabel: environeLabel,
+            environmentlabelLeft: environmentlabelLeft,
+            environmentValueRightBar: environmentValueRightBar,
+            environmentValueLeftBar: environmentValueLeftBar,
+            currentContributionLabel: currentContributionLabel,
+            currentContributionlabelLeft: currentContributionlabelLeft,
+            currentContributionValueRightBar: currentContributionValueRightBar,
+            currentContributionValueLeftBar: currentContributionValueLeftBar,
+            allowMeToLabel: allowMeToLabel,
+            allowMeTolabelLeft: allowMeTolabelLeft,
+            allowMeToValueRightBar: allowMeToValueRightBar,
+            allowMeToValueLeftBar: allowMeToValueLeftBar,
+            sustainableDevelopmentLabel: sustainableDevelopmentLabel,
+            sustainableDevelopmentlabelLeft: sustainableDevelopmentlabelLeft,
+            sustainableDevelopmentValueRightBar: sustainableDevelopmentValueRightBar,
+            sustainableDevelopmentValueLeftBar: sustainableDevelopmentValueLeftBar
+        }
 
         return (
             <Router>
                 <Routes>
                     {!loggedInUser && <Route path="/*" element={<Navigate to="/login"/>}/>}
                     <Route path="/login" element={<Login fakeData={fakeData}/>}/>
-                    <Route
-                        path="/"
-                        element={
-                            loggedInUser ? (
-                                <Dashboard {...props}/>
-                            ) : (
-                                <Navigate to="/login"/>
-                            )
-                        }
+                    <Route path="/"
+                           element={loggedInUser ? (<Dashboard {...props}/>) : (<Navigate to="/login"/>)}
                     />
-                    <Route
-                        path="/schwierigkeit"
-                        element={
-                            loggedInUser ? (
-                                <DifficultyComparison {...props} />
-                            ) : (
-                                <Navigate to="/login"/>
-                            )
-                        }
+                    <Route path="/schwierigkeit"
+                           element={loggedInUser ? (<DifficultyComparison {...props} />) : (<Navigate to="/login"/>)}
                     />
-                    <Route
-                        path="/einschraenkung"
-                        element={
-                            loggedInUser ? (
-                                <RestrictionComparison {...props} />
-                            ) : (
-                                <Navigate to="/login"/>
-                            )
-                        }
+                    <Route path="/einschraenkung"
+                           element={loggedInUser ? (<RestrictionComparison {...props} />) : (<Navigate to="/login"/>)}
                     />
-                    <Route
-                        path="/umfeld"
-                        element={
-                            loggedInUser ? (
-                                <EnvironmentComparison {...props} />
-                            ) : (
-                                <Navigate to="/login"/>
-                            )
-                        }
+                    <Route path="/umfeld"
+                           element={loggedInUser ? (<EnvironmentComparison {...props} />) : (<Navigate to="/login"/>)}
                     />
-                    <Route
-                        path="/aktuellerbeitrag"
-                        element={
-                            loggedInUser ? (
-                                <CurrentContributionComparison {...props} />
-                            ) : (
-                                <Navigate to="/login"/>
-                            )
-                        }
+                    <Route path="/aktuellerbeitrag"
+                           element={loggedInUser ? (<CurrentContributionComparison {...props} />) : (
+                               <Navigate to="/login"/>)}
                     />
-                    <Route
-                        path="/erlaubtmir"
-                        element={
-                            loggedInUser ? (
-                                <AllowsMeToComparison {...props} />
-                            ) : (
-                                <Navigate to="/login"/>
-                            )
-                        }
+                    <Route path="/erlaubtmir"
+                           element={loggedInUser ? (<AllowsMeToComparison {...props} />) : (<Navigate to="/login"/>)}
                     />
-                    <Route
-                        path="/nachhaltigeentwicklung"
-                        element={
-                            loggedInUser ? (
-                                <SustainableDevelopmentComparison {...props} />
-                            ) : (
-                                <Navigate to="/login"/>
-                            )
-                        }
+                    <Route path="/nachhaltigeentwicklung"
+                           element={loggedInUser ? (<SustainableDevelopmentComparison {...props} />) : (
+                               <Navigate to="/login"/>)}
                     />
                 </Routes>
             </Router>
