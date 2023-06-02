@@ -20,38 +20,33 @@ const SustainabilityComparison = ({
                                       selectedOption2,
                                       setSelectedOption1,
                                       setSelectedOption2,
-                                      setSelectedOption3
+                                      setSelectedOption3,
+                                      difficultyLabel,
+                                      difficultylabelLeft,
+                                      difficultyValueRightBar,
+                                      difficultyValueLeftBar,
+                                      restrionctionLabel,
+                                      rrestrictionlabelLeft,
+                                      restrictionValueRightBar,
+                                      restrictionValueLeftBar,
+                                      environeLabel,
+                                      environmentlabelLeft,
+                                      environmentValueRightBar,
+                                      environmentValueLeftBar,
+                                      currentContributionLabel,
+                                      currentContributionlabelLeft,
+                                      currentContributionValueRightBar,
+                                      currentContributionValueLeftBar,
+                                      allowMeToLabel,
+                                      allowMeTolabelLeft,
+                                      allowMeToValueRightBar,
+                                      allowMeToValueLeftBar,
+                                      sustainableDevelopmentLabel,
+                                      sustainableDevelopmentlabelLeft,
+                                      sustainableDevelopmentValueRightBar,
+                                      sustainableDevelopmentValueLeftBar,
+
                                   }) => {
-
-    const difficultyLabel = "Schwierigkeit"
-    const difficultylabelLeft = ["Leicht", "Mittel", "Schwer"] //FLIPPED
-    const difficultyValueRightBar = getValueAttributeOnlyGroup("difficulty", selectedOption3, fakeData, selectedOption2)
-    const difficultyValueLeftBar = getValueAttributeOnlyGroup("difficulty", selectedOption3, fakeData, selectedOption2)
-
-    const restrionctionLabel = "Einschränkung"
-    const rrestrictionlabelLeft = ["Befreit", "Mittel", "Viel"] //FLIPPED
-    const restrictionValueRightBar = getValueAttributeOnlyGroup("restriction", selectedOption3, fakeData, selectedOption2)
-    const restrictionValueLeftBar = getValueAttributeOnlyGroup("restriction", selectedOption3, fakeData, selectedOption2)
-
-    const environeLabel = "Umfeldreaktion"
-    const environmentlabelLeft = ["positiv", "neutral", "negativ"] //FLIPPED
-    const environmentValueRightBar = getValueAttributeOnlyGroup("environment", selectedOption3, fakeData, selectedOption2)
-    const environmentValueLeftBar = getValueAttributeOnlyGroup("environment", selectedOption3, fakeData, selectedOption2)
-
-    const currentContributionLabel = "Beitrag"
-    const currentContributionlabelLeft = ["Gering", "Mittel", "Hoch"]
-    const currentContributionValueRightBar = getValueAttributeOnlyGroup("currentContribution", selectedOption3, fakeData, selectedOption2)
-    const currentContributionValueLeftBar = getValueAttributeOnlyGroup("currentContribution", selectedOption3, fakeData, selectedOption2)
-    const allowMeToLabel = "Übernehme"
-    const allowMeTolabelLeft = ["Verantwortung", "Beides", "Erwartungen"]
-    const allowMeToValueRightBar = getValueAttributeOnlyGroup("allowsMeTo", selectedOption3, fakeData, selectedOption2)
-    const allowMeToValueLeftBar = getValueAttributeOnlyGroup("allowsMeTo", selectedOption3, fakeData, selectedOption2)
-
-    const sustainableDevelopmentLabel = "Entwicklung"
-    const sustainableDevelopmentlabelLeft = ["Wenig", "Mittel", "Viel"] //FLIPPED
-    const sustainableDevelopmentValueRightBar = getValueAttributeOnlyGroup("sustainableDevelopment", selectedOption3, fakeData, selectedOption2)
-    const sustainableDevelopmentValueLeftBar = getValueAttributeOnlyGroup("sustainableDevelopment", selectedOption3, fakeData, selectedOption2)
-
 
     return (
         <>
@@ -159,7 +154,8 @@ const SustainabilityComparison = ({
                     </Col>
                     <Col md={6}>
                         <div style={{marginLeft: '3rem'}}>
-                            <h1 className="text-center mb-1">Vergleiche ob das Commitment<br/> zu einer nachhaltigen Entwicklung beiträgt</h1>
+                            <h1 className="text-center mb-1">Vergleiche ob das Commitment<br/> zu einer nachhaltigen
+                                Entwicklung beiträgt</h1>
                             <p style={{margin: '0.2rem'}}>Schwierigkeit: Wie schwer war das Commitment?</p>
                             <p style={{margin: '0.2rem'}}>Einschränkung: Wie stark hat dich das Commitment
                                 eingeschränkt?</p>
