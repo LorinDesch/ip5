@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 
 /**
  * Dropdown component with checkboxes for selecting multiple options.
  */
-const Dropdown3 = ({ options, selectedOptions, onChange, styling, fakeData  }) => {
+const Dropdown3 = ({ options, selectedOptions, onChange, styling, fakeData }) => {
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+    const dropdownRef = useRef(null);
 
     const handleDropdown3 = () => {
         setIsDropdownOpen(!isDropdownOpen);
@@ -18,13 +19,23 @@ const Dropdown3 = ({ options, selectedOptions, onChange, styling, fakeData  }) =
         }
     };
 
+    const handleOutsideClick = (event) => {
+        if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+            setIsDropdownOpen(false);
+        }
+    };
 
+    useEffect(() => {
+        window.addEventListener('click', handleOutsideClick);
+        return () => {
+            window.removeEventListener('click', handleOutsideClick);
+        };
+    }, []);
 
     const dropdownStyle = {
         position: 'relative',
         width: '16.5rem',
         height: '3rem',
-
     };
 
     const buttonStyle = {
@@ -86,9 +97,13 @@ const Dropdown3 = ({ options, selectedOptions, onChange, styling, fakeData  }) =
     };
 
     return (
-        <div style={dropdownStyle}>
+        <div ref={dropdownRef} style={dropdownStyle}>
             <button style={buttonStyle} onClick={handleDropdown3}>
-                {selectedOptions.length === 0 ? 'Gruppen auswählen' : `${selectedOptions.length} ${selectedOptions.length === 1 ? 'Gruppe' : 'Gruppen'} ausgewählt`}
+                {selectedOptions.length === 0
+                    ? 'Gruppen auswählen'
+                    : `${selectedOptions.length} ${
+                        selectedOptions.length === 1 ? 'Gruppe' : 'Gruppen'
+                    } ausgewählt`}
             </button>
             <ul style={ulStyle}>
                 {options.map((option) => (
