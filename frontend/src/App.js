@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {BrowserRouter as Router, Routes, Route, Navigate} from 'react-router-dom';
 import Dashboard from "./components/Dashboard";
 import DifficultyComparison from "./components/comparisons/DifficultyComparison";
@@ -13,15 +13,16 @@ import {fakeData} from "./data/fakeData";
 import {getValueAttributeOnlyGroup} from "./components/helperFunctions/HelperFunctions";
 import AllowsMeToComparison from "./components/comparisons/AllowsMeToComparison";
 
+
 /**
  * The main App component.
  */
 const App = () => {
-
-        const [selectedOption1, setSelectedOption1] = useState(localStorage.getItem("loggedInUser"));
-        const [selectedOption2, setSelectedOption2] = useState('Challenge');
-        const [selectedOption3, setSelectedOption3] = useState([]);
+        const [selectedOption1, setSelectedOption1] = useState(localStorage.getItem("selectedOption1") || "");
+        const [selectedOption2, setSelectedOption2] = useState(localStorage.getItem("selectedOption2") || "Challenge");
+        const [selectedOption3, setSelectedOption3] = useState(JSON.parse(localStorage.getItem("selectedOption3")) || []);
         const loggedInUser = localStorage.getItem('loggedInUser');
+
 
         const props = {
             fakeData: fakeData,
@@ -56,6 +57,15 @@ const App = () => {
             sustainableDevelopmentlabelLeft: ["Wenig", "Mittel", "Viel"], //FLIPPED
             sustainableDevelopmentValue: getValueAttributeOnlyGroup("sustainableDevelopment", selectedOption3, fakeData, selectedOption2),
         }
+
+        useEffect(() => {
+            // Store the values in localStorage whenever they change
+            //make it so the item is only set if it exists in fakeData
+            localStorage.setItem("selectedOption1", selectedOption1);
+            localStorage.setItem("selectedOption2", selectedOption2);
+            localStorage.setItem("selectedOption3", JSON.stringify(selectedOption3));
+
+        }, [selectedOption1, selectedOption2, selectedOption3]);
 
         return (
             <Router>

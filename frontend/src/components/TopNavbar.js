@@ -8,7 +8,15 @@ import {useNavigate} from "react-router-dom";
 /**
  * Component for the top navigation bar.
  */
-const TopNavbar = ({fakeData, selectedOption3, selectedOption2, selectedOption1, setSelectedOption1, setSelectedOption2, setSelectedOption3 }) => {
+const TopNavbar = ({
+                       fakeData,
+                       selectedOption3,
+                       selectedOption2,
+                       selectedOption1,
+                       setSelectedOption1,
+                       setSelectedOption2,
+                       setSelectedOption3
+                   }) => {
     const dropDownStyling = {
         padding: '12px 38px 12px 12px',
         border: '2px solid black',
@@ -30,6 +38,7 @@ const TopNavbar = ({fakeData, selectedOption3, selectedOption2, selectedOption1,
         //remove token from local storage
         localStorage.removeItem("loggedInUser");
 
+
         // Redirect to "/login"
         navigate("/login");
         window.location.reload();
@@ -44,9 +53,8 @@ const TopNavbar = ({fakeData, selectedOption3, selectedOption2, selectedOption1,
     const options2 = fakeData.commitments.map((item) => item.commitmentname);
 
     const options1 = [];
-        options1.push(fakeData.users[0].username);
-        options1.push(fakeData.groups[0].groupname);
-
+    options1.push(fakeData.users[0].username);
+    options1.push(fakeData.groups[0].groupname);
 
 
     const handleChange1 = (event) => {
