@@ -21,30 +21,34 @@ const SustainabilityComparison = ({
                                       setSelectedOption1,
                                       setSelectedOption2,
                                       setSelectedOption3,
+
                                       difficultyLabel,
                                       difficultylabelLeft,
-                                      difficultyValueRightBar,
-                                      difficultyValueLeftBar,
+                                      difficultyValue,
+
                                       restrionctionLabel,
                                       rrestrictionlabelLeft,
-                                      restrictionValueRightBar,
-                                      restrictionValueLeftBar,
+                                      restrictionValue,
+
+
                                       environeLabel,
                                       environmentlabelLeft,
-                                      environmentValueRightBar,
-                                      environmentValueLeftBar,
+                                      environmentValue,
+
+
                                       currentContributionLabel,
                                       currentContributionlabelLeft,
-                                      currentContributionValueRightBar,
-                                      currentContributionValueLeftBar,
+                                      currentContributionValue,
+
+
                                       allowMeToLabel,
                                       allowMeTolabelLeft,
-                                      allowMeToValueRightBar,
-                                      allowMeToValueLeftBar,
+                                      allowMeToValue,
+
                                       sustainableDevelopmentLabel,
                                       sustainableDevelopmentlabelLeft,
-                                      sustainableDevelopmentValueRightBar,
-                                      sustainableDevelopmentValueLeftBar,
+                                      sustainableDevelopmentValue,
+
 
                                   }) => {
 
@@ -80,8 +84,8 @@ const SustainabilityComparison = ({
                                         leftLabel={sustainableDevelopmentlabelLeft}
                                         squaredLabelRight={difficultyLabel}
                                         rightLabel={difficultylabelLeft}
-                                        difficultyValueRightBar={difficultyValueRightBar}
-                                        difficultyValueLeftBar={sustainableDevelopmentValueLeftBar}
+                                        difficultyValueRightBar={difficultyValue}
+                                        difficultyValueLeftBar={sustainableDevelopmentValue}
                                         selectedOption3={selectedOption3}
                                         selectedOption2={selectedOption2}
                                         selectedOption1={selectedOption1}
@@ -95,8 +99,8 @@ const SustainabilityComparison = ({
                                         leftLabel={sustainableDevelopmentlabelLeft}
                                         squaredLabelRight={currentContributionLabel}
                                         rightLabel={currentContributionlabelLeft}
-                                        difficultyValueLeftBar={sustainableDevelopmentValueLeftBar}
-                                        difficultyValueRightBar={currentContributionValueRightBar}
+                                        difficultyValueLeftBar={sustainableDevelopmentValue}
+                                        difficultyValueRightBar={currentContributionValue}
                                         selectedOption3={selectedOption3}
                                         selectedOption2={selectedOption2}
                                         selectedOption1={selectedOption1}
@@ -112,8 +116,8 @@ const SustainabilityComparison = ({
                                         leftLabel={sustainableDevelopmentlabelLeft}
                                         squaredLabelRight={restrionctionLabel}
                                         rightLabel={rrestrictionlabelLeft}
-                                        difficultyValueLeftBar={sustainableDevelopmentValueLeftBar}
-                                        difficultyValueRightBar={restrictionValueRightBar}
+                                        difficultyValueLeftBar={sustainableDevelopmentValue}
+                                        difficultyValueRightBar={restrictionValue}
                                         selectedOption3={selectedOption3}
                                         selectedOption2={selectedOption2}
                                         selectedOption1={selectedOption1}
@@ -127,8 +131,8 @@ const SustainabilityComparison = ({
                                         leftLabel={sustainableDevelopmentlabelLeft}
                                         squaredLabelRight={allowMeToLabel}
                                         rightLabel={allowMeTolabelLeft}
-                                        difficultyValueLeftBar={sustainableDevelopmentValueLeftBar}
-                                        difficultyValueRightBar={allowMeToValueRightBar}
+                                        difficultyValueLeftBar={sustainableDevelopmentValue}
+                                        difficultyValueRightBar={allowMeToValue}
                                         selectedOption3={selectedOption3}
                                         selectedOption2={selectedOption2}
                                         selectedOption1={selectedOption1}
@@ -144,8 +148,8 @@ const SustainabilityComparison = ({
                                         leftLabel={sustainableDevelopmentlabelLeft}
                                         squaredLabelRight={environeLabel}
                                         rightLabel={environmentlabelLeft}
-                                        difficultyValueLeftBar={sustainableDevelopmentValueLeftBar}
-                                        difficultyValueRightBar={environmentValueRightBar}
+                                        difficultyValueLeftBar={sustainableDevelopmentValue}
+                                        difficultyValueRightBar={environmentValue}
                                         selectedOption3={selectedOption3}
                                         selectedOption2={selectedOption2}
                                         selectedOption1={selectedOption1}

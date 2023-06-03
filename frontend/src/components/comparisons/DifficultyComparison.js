@@ -22,31 +22,33 @@ const DifficultyComparison = ({
                                   setSelectedOption1,
                                   setSelectedOption2,
                                   setSelectedOption3,
+
                                   difficultyLabel,
                                   difficultylabelLeft,
-                                  difficultyValueRightBar,
-                                  difficultyValueLeftBar,
+                                  difficultyValue,
+
                                   restrionctionLabel,
                                   rrestrictionlabelLeft,
-                                  restrictionValueRightBar,
-                                  restrictionValueLeftBar,
+                                  restrictionValue,
+
+
                                   environeLabel,
                                   environmentlabelLeft,
-                                  environmentValueRightBar,
-                                  environmentValueLeftBar,
+                                  environmentValue,
+
+
                                   currentContributionLabel,
                                   currentContributionlabelLeft,
-                                  currentContributionValueRightBar,
-                                  currentContributionValueLeftBar,
+                                  currentContributionValue,
+
+
                                   allowMeToLabel,
                                   allowMeTolabelLeft,
-                                  allowMeToValueRightBar,
-                                  allowMeToValueLeftBar,
+                                  allowMeToValue,
+
                                   sustainableDevelopmentLabel,
                                   sustainableDevelopmentlabelLeft,
-                                  sustainableDevelopmentValueRightBar,
-                                  sustainableDevelopmentValueLeftBar,
-
+                                  sustainableDevelopmentValue,
 
                               }) => {
 
@@ -96,8 +98,8 @@ const DifficultyComparison = ({
                                         leftLabel={difficultylabelLeft}
                                         squaredLabelRight={currentContributionLabel}
                                         rightLabel={currentContributionlabelLeft}
-                                        difficultyValueRightBar={currentContributionValueRightBar}
-                                        difficultyValueLeftBar={difficultyValueLeftBar}
+                                        difficultyValueRightBar={currentContributionValue}
+                                        difficultyValueLeftBar={difficultyValue}
                                         selectedOption3={selectedOption3}
                                         selectedOption2={selectedOption2}
                                         selectedOption1={selectedOption1}
@@ -113,8 +115,8 @@ const DifficultyComparison = ({
                                         leftLabel={difficultylabelLeft}
                                         squaredLabelRight={restrionctionLabel}
                                         rightLabel={rrestrictionlabelLeft}
-                                        difficultyValueRightBar={restrictionValueRightBar}
-                                        difficultyValueLeftBar={difficultyValueLeftBar}
+                                        difficultyValueRightBar={restrictionValue}
+                                        difficultyValueLeftBar={difficultyValue}
                                         selectedOption3={selectedOption3}
                                         selectedOption2={selectedOption2}
                                         selectedOption1={selectedOption1}
@@ -128,8 +130,8 @@ const DifficultyComparison = ({
                                         leftLabel={difficultylabelLeft}
                                         squaredLabelRight={allowMeToLabel}
                                         rightLabel={allowMeTolabelLeft}
-                                        difficultyValueRightBar={allowMeToValueRightBar}
-                                        difficultyValueLeftBar={difficultyValueLeftBar}
+                                        difficultyValueRightBar={allowMeToValue}
+                                        difficultyValueLeftBar={difficultyValue}
                                         selectedOption3={selectedOption3}
                                         selectedOption2={selectedOption2}
                                         selectedOption1={selectedOption1}
@@ -145,8 +147,8 @@ const DifficultyComparison = ({
                                         leftLabel={difficultylabelLeft}
                                         squaredLabelRight={environeLabel}
                                         rightLabel={environmentlabelLeft}
-                                        difficultyValueRightBar={environmentValueRightBar}
-                                        difficultyValueLeftBar={difficultyValueLeftBar}
+                                        difficultyValueRightBar={environmentValue}
+                                        difficultyValueLeftBar={difficultyValue}
                                         selectedOption3={selectedOption3}
                                         selectedOption2={selectedOption2}
                                         selectedOption1={selectedOption1}
@@ -160,8 +162,8 @@ const DifficultyComparison = ({
                                         leftLabel={difficultylabelLeft}
                                         squaredLabelRight={sustainableDevelopmentLabel}
                                         rightLabel={sustainableDevelopmentlabelLeft}
-                                        difficultyValueRightBar={sustainableDevelopmentValueRightBar}
-                                        difficultyValueLeftBar={difficultyValueLeftBar}
+                                        difficultyValueRightBar={sustainableDevelopmentValue}
+                                        difficultyValueLeftBar={difficultyValue}
                                         selectedOption3={selectedOption3}
                                         selectedOption2={selectedOption2}
                                         selectedOption1={selectedOption1}

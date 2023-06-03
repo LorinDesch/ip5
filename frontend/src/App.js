@@ -33,33 +33,27 @@ const App = () => {
 
             difficultyLabel: "Schwierigkeit",
             difficultylabelLeft: ["Leicht", "Mittel", "Schwer"], //FLIPPED
-            difficultyValueRightBar: getValueAttributeOnlyGroup("difficulty", selectedOption3, fakeData, selectedOption2),
-            difficultyValueLeftBar: getValueAttributeOnlyGroup("difficulty", selectedOption3, fakeData, selectedOption2),
+            difficultyValue: getValueAttributeOnlyGroup("difficulty", selectedOption3, fakeData, selectedOption2),
 
             restrionctionLabel: "Einschränkung",
             rrestrictionlabelLeft: ["Befreit", "Mittel", "Viel"], //FLIPPED
-            restrictionValueRightBar: getValueAttributeOnlyGroup("restriction", selectedOption3, fakeData, selectedOption2),
-            restrictionValueLeftBar: getValueAttributeOnlyGroup("restriction", selectedOption3, fakeData, selectedOption2),
+            restrictionValue: getValueAttributeOnlyGroup("restriction", selectedOption3, fakeData, selectedOption2),
 
             environeLabel: "Umfeldreaktion",
             environmentlabelLeft: ["positiv", "neutral", "negativ"], //FLIPPED
-            environmentValueRightBar: getValueAttributeOnlyGroup("environment", selectedOption3, fakeData, selectedOption2),
-            environmentValueLeftBar: getValueAttributeOnlyGroup("environment", selectedOption3, fakeData, selectedOption2),
+            environmentValue: getValueAttributeOnlyGroup("environment", selectedOption3, fakeData, selectedOption2),
 
             currentContributionLabel: "Beitrag",
             currentContributionlabelLeft: ["Gering", "Mittel", "Hoch"],
-            currentContributionValueRightBar: getValueAttributeOnlyGroup("currentContribution", selectedOption3, fakeData, selectedOption2),
-            currentContributionValueLeftBar: getValueAttributeOnlyGroup("currentContribution", selectedOption3, fakeData, selectedOption2),
+            currentContributionValue: getValueAttributeOnlyGroup("currentContribution", selectedOption3, fakeData, selectedOption2),
 
             allowMeToLabel: "Übernehme",
             allowMeTolabelLeft: ["Verantwortung", "Beides", "Erwartungen"],
-            allowMeToValueRightBar: getValueAttributeOnlyGroup("allowsMeTo", selectedOption3, fakeData, selectedOption2),
-            allowMeToValueLeftBar: getValueAttributeOnlyGroup("allowsMeTo", selectedOption3, fakeData, selectedOption2),
+            allowMeToValue: getValueAttributeOnlyGroup("allowsMeTo", selectedOption3, fakeData, selectedOption2),
 
             sustainableDevelopmentLabel: "Entwicklung",
             sustainableDevelopmentlabelLeft: ["Wenig", "Mittel", "Viel"], //FLIPPED
-            sustainableDevelopmentValueRightBar: getValueAttributeOnlyGroup("sustainableDevelopment", selectedOption3, fakeData, selectedOption2),
-            sustainableDevelopmentValueLeftBar: getValueAttributeOnlyGroup("sustainableDevelopment", selectedOption3, fakeData, selectedOption2)
+            sustainableDevelopmentValue: getValueAttributeOnlyGroup("sustainableDevelopment", selectedOption3, fakeData, selectedOption2),
         }
 
         return (
