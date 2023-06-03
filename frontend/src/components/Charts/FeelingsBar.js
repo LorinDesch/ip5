@@ -1,6 +1,6 @@
 import React, {useEffect, useRef} from 'react';
 import * as d3 from 'd3';
-import {getSchluesseSelectedDropdown1} from "../Dashboard";
+import {getSchluesseSelectedDropdown1} from "../helperFunctions/HelperFunctions";
 
 
 /**

@@ -4,7 +4,6 @@ import Dropdown3 from "./Dropdown3";
 import React from "react";
 import {useNavigate} from "react-router-dom";
 
-
 /**
  * Component for the top navigation bar.
  */

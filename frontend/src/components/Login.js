@@ -3,10 +3,6 @@ import { useNavigate } from 'react-router-dom';
 
 /**
  * Login component for user authentication.
- *
- * @param {Object} props - The component props.
- * @param {Object} props.fakeData - The fake data object.
- * @returns {JSX.Element} The rendered Login component.
  */
 function Login({ fakeData }) {
     const [username, setUsername] = useState('');

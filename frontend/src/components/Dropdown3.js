@@ -2,14 +2,6 @@ import React, { useState } from 'react';
 
 /**
  * Dropdown component with checkboxes for selecting multiple options.
- *
- * @param {Object} props - The component props.
- * @param {Object[]} props.options - The available options for the dropdown.
- * @param {string[]} props.selectedOptions - The selected options.
- * @param {Function} props.onChange - The function to handle the onChange event.
- * @param {Object} props.styling - The styles for the dropdown.
- * @param {Object} props.fakeData - The fake data object.
- * @returns {JSX.Element} The rendered Dropdown component.
  */
 const Dropdown3 = ({ options, selectedOptions, onChange, styling, fakeData  }) => {
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);

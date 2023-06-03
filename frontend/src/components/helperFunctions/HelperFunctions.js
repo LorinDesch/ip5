@@ -25,3 +25,68 @@ export function getValueAttributeOnlyGroup(attribute, selectedOption3, fakeData,
     }
     return zeros;
 }
+
+/**
+ * Retrieves the Schluesse Challenge for a specific user or group.
+ */
+export function getSchluesseSelectedDropdown1(selectedOption1, selectedOption2, fakeData) {
+    const selectedCommitment = fakeData.commitments.find(commitment => commitment.commitmentname === selectedOption2);
+    const commitmentId = selectedCommitment?.commitmentid;
+    const categorizedArray = [];
+
+    if (commitmentId > 0) {
+        const selectedUser = fakeData.users.find(user => user.username === selectedOption1);
+        const userId = selectedUser?.userid;
+        let returnValue = [];
+
+        if (userId !== undefined) {
+            returnValue = fakeData.diary.filter(diary => diary.userid === userId && diary.commitmentid === commitmentId);
+            returnValue = returnValue.map(diary => diary.schluesse || "-");
+        } else {
+            const selectedGroup = fakeData.groups.find(group => group.groupname === selectedOption1);
+            const groupUsers = selectedGroup?.users || [];
+            returnValue = groupUsers.flatMap(user => fakeData.diary.filter(diary => diary.userid === user && diary.commitmentid === commitmentId));
+            returnValue = returnValue.map(diary => diary.schluesse || "-");
+        }
+
+        // Randomly select one value for each category
+        const randomIndex = Math.floor(Math.random() * returnValue.length);
+
+        categorizedArray.push(returnValue[randomIndex]?.politik || "-");
+        categorizedArray.push(returnValue[randomIndex]?.produkt || "-");
+        categorizedArray.push(returnValue[randomIndex]?.selbst || "-");
+        categorizedArray.push(returnValue[randomIndex]?.sozial || "-");
+
+        return categorizedArray;
+    } else {
+        return ["-", "-", "-", "-"];
+    }
+}
+
+/**
+ * Retrieves the Schluesse Challenge for a specific group.
+ */
+export function getSchluesseSelectedDropdown3(selectedOption2, selectedOption3, fakeData) {
+    const selectedCommitment = fakeData.commitments.find(commitment => commitment.commitmentname === selectedOption2);
+    const commitmentId = selectedCommitment?.commitmentid;
+    let returnValue = [];
+    const categorizedArray = [];
+
+    if (commitmentId > 0) {
+        const selectedGroup = selectedOption3.flatMap(group => fakeData.groups.filter(group2 => group2.groupname === group));
+        const groupUsers = selectedGroup.flatMap(group => group.users);
+        returnValue = groupUsers.flatMap(user => fakeData.diary.filter(diary => diary.userid === user && diary.commitmentid === commitmentId));
+        returnValue = returnValue.map(diary => diary.schluesse || "-");
+        // Randomly select one value for each category but not only from the same user
+        const randomIndex = Math.floor(Math.random() * returnValue.length);
+
+        categorizedArray.push(returnValue[randomIndex]?.politik || "-");
+        categorizedArray.push(returnValue[randomIndex]?.produkt || "-");
+        categorizedArray.push(returnValue[randomIndex]?.selbst || "-");
+        categorizedArray.push(returnValue[randomIndex]?.sozial || "-");
+
+        return categorizedArray;
+    } else {
+        return ["-", "-", "-", "-"];
+    }
+}

@@ -1,4 +1,6 @@
-
+/**
+ * This file contains the fake data for the frontend.
+ */
 export const fakeData  = {
     users: [
         {

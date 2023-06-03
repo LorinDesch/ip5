@@ -1,3 +1,7 @@
+/**
+ * This file generates random data for the frontend.
+*/
+
 const users = [
     {
         userid: 1,

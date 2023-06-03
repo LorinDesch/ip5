@@ -4,8 +4,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 /**
  * Component for the side navigation bar.
- *
- * @returns {JSX.Element} The rendered SideNavbar component.
  */
 const SideNavbar = () => {
     const [containerHeight, setContainerHeight] = useState(0);

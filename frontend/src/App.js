@@ -13,7 +13,6 @@ import {fakeData} from "./data/fakeData";
 import {getValueAttributeOnlyGroup} from "./components/helperFunctions/HelperFunctions";
 import AllowsMeToComparison from "./components/comparisons/AllowsMeToComparison";
 
-
 /**
  * The main App component.
  */
