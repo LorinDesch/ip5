@@ -12,57 +12,18 @@ import {getValueAttributeOnlyGroup} from "./AllowsMeToComparison";
  * @param {Object} props - The component props.
  * @returns {JSX.Element} The CurrentContributionComparison component.
  */
-const CurrentContributionComparison = ({
-                                           width,
-                                           height,
-                                           fakeData,
-                                           selectedOption1,
-                                           selectedOption3,
-                                           selectedOption2,
-                                           setSelectedOption1,
-                                           setSelectedOption2,
-                                           setSelectedOption3,
-
-                                           difficultyLabel,
-                                           difficultylabelLeft,
-                                           difficultyValue,
-
-                                           restrionctionLabel,
-                                           rrestrictionlabelLeft,
-                                           restrictionValue,
-
-
-                                           environeLabel,
-                                           environmentlabelLeft,
-                                           environmentValue,
-
-
-                                           currentContributionLabel,
-                                           currentContributionlabelLeft,
-                                           currentContributionValue,
-
-
-                                           allowMeToLabel,
-                                           allowMeTolabelLeft,
-                                           allowMeToValue,
-
-                                           sustainableDevelopmentLabel,
-                                           sustainableDevelopmentlabelLeft,
-                                           sustainableDevelopmentValue,
-
-
-                                       }) => {
+const CurrentContributionComparison = (props) => {
 
 
     return (
         <>
             <header style={{marginLeft: '7rem', marginTop: '0.5rem'}}>
-                <TopNavbar fakeData={fakeData} selectedOption1={selectedOption1}
-                           setSelectedOption1={setSelectedOption1}
-                           selectedOption2={selectedOption2}
-                           setSelectedOption2={setSelectedOption2}
-                           selectedOption3={selectedOption3}
-                           setSelectedOption3={setSelectedOption3}/>
+                <TopNavbar fakeData={props.fakeData} selectedOption1={props.selectedOption1}
+                           setSelectedOption1={props.setSelectedOption1}
+                           selectedOption2={props.selectedOption2}
+                           setSelectedOption2={props.setSelectedOption2}
+                           selectedOption3={props.selectedOption3}
+                           setSelectedOption3={props.setSelectedOption3}/>
             </header>
             <div style={{
                 position: 'fixed',
@@ -81,15 +42,15 @@ const CurrentContributionComparison = ({
                     <Col md={6}>
                         <div style={{marginLeft: '5rem'}}>
                             <Comparison width={700} height={250}
-                                        squaredLabelLeft={currentContributionLabel}
-                                        leftLabel={currentContributionlabelLeft}
-                                        squaredLabelRight={difficultyLabel}
-                                        rightLabel={difficultylabelLeft}
-                                        difficultyValueRightBar={difficultyValue}
-                                        difficultyValueLeftBar={currentContributionValue}
-                                        selectedOption3={selectedOption3}
-                                        selectedOption2={selectedOption2}
-                                        selectedOption1={selectedOption1}
+                                        squaredLabelLeft={props.currentContributionLabel}
+                                        leftLabel={props.currentContributionlabelLeft}
+                                        squaredLabelRight={props.difficultyLabel}
+                                        rightLabel={props.difficultylabelLeft}
+                                        difficultyValueRightBar={props.difficultyValue}
+                                        difficultyValueLeftBar={props.currentContributionValue}
+                                        selectedOption3={props.selectedOption3}
+                                        selectedOption2={props.selectedOption2}
+                                        selectedOption1={props.selectedOption1}
                             />
                         </div>
                     </Col>
@@ -113,15 +74,15 @@ const CurrentContributionComparison = ({
                     <Col md={6}>
                         <div style={{marginLeft: '5rem'}}>
                             <Comparison width={700} height={250}
-                                        squaredLabelLeft={currentContributionLabel}
-                                        leftLabel={currentContributionlabelLeft}
-                                        squaredLabelRight={restrionctionLabel}
-                                        rightLabel={rrestrictionlabelLeft}
-                                        difficultyValueRightBar={restrictionValue}
-                                        difficultyValueLeftBar={currentContributionValue}
-                                        selectedOption3={selectedOption3}
-                                        selectedOption2={selectedOption2}
-                                        selectedOption1={selectedOption1}
+                                        squaredLabelLeft={props.currentContributionLabel}
+                                        leftLabel={props.currentContributionlabelLeft}
+                                        squaredLabelRight={props.restrionctionLabel}
+                                        rightLabel={props.rrestrictionlabelLeft}
+                                        difficultyValueRightBar={props.restrictionValue}
+                                        difficultyValueLeftBar={props.currentContributionValue}
+                                        selectedOption3={props.selectedOption3}
+                                        selectedOption2={props.selectedOption2}
+                                        selectedOption1={props.selectedOption1}
 
                             />
                         </div>
@@ -129,15 +90,15 @@ const CurrentContributionComparison = ({
                     <Col md={6}>
                         <div style={{marginLeft: '-1.5rem'}}>
                             <Comparison width={700} height={250}
-                                        squaredLabelLeft={currentContributionLabel}
-                                        leftLabel={currentContributionlabelLeft}
-                                        squaredLabelRight={allowMeToLabel}
-                                        rightLabel={allowMeTolabelLeft}
-                                        difficultyValueRightBar={allowMeToValue}
-                                        difficultyValueLeftBar={currentContributionValue}
-                                        selectedOption3={selectedOption3}
-                                        selectedOption2={selectedOption2}
-                                        selectedOption1={selectedOption1}
+                                        squaredLabelLeft={props.currentContributionLabel}
+                                        leftLabel={props.currentContributionlabelLeft}
+                                        squaredLabelRight={props.allowMeToLabel}
+                                        rightLabel={props.allowMeTolabelLeft}
+                                        difficultyValueRightBar={props.allowMeToValue}
+                                        difficultyValueLeftBar={props.currentContributionValue}
+                                        selectedOption3={props.selectedOption3}
+                                        selectedOption2={props.selectedOption2}
+                                        selectedOption1={props.selectedOption1}
                             />
                         </div>
                     </Col>
@@ -146,30 +107,30 @@ const CurrentContributionComparison = ({
                     <Col md={6}>
                         <div style={{marginLeft: '5rem'}}>
                             <Comparison width={700} height={250}
-                                        squaredLabelLeft={currentContributionLabel}
-                                        leftLabel={currentContributionlabelLeft}
-                                        squaredLabelRight={environeLabel}
-                                        rightLabel={environmentlabelLeft}
-                                        difficultyValueRightBar={environmentValue}
-                                        difficultyValueLeftBar={currentContributionValue}
-                                        selectedOption3={selectedOption3}
-                                        selectedOption2={selectedOption2}
-                                        selectedOption1={selectedOption1}
+                                        squaredLabelLeft={props.currentContributionLabel}
+                                        leftLabel={props.currentContributionlabelLeft}
+                                        squaredLabelRight={props.environeLabel}
+                                        rightLabel={props.environmentlabelLeft}
+                                        difficultyValueRightBar={props.environmentValue}
+                                        difficultyValueLeftBar={props.currentContributionValue}
+                                        selectedOption3={props.selectedOption3}
+                                        selectedOption2={props.selectedOption2}
+                                        selectedOption1={props.selectedOption1}
                             />
                         </div>
                     </Col>
                     <Col md={6}>
                         <div style={{marginLeft: '-1.5rem'}}>
                             <Comparison width={700} height={250}
-                                        squaredLabelLeft={currentContributionLabel}
-                                        leftLabel={currentContributionlabelLeft}
-                                        squaredLabelRight={sustainableDevelopmentLabel}
-                                        rightLabel={sustainableDevelopmentlabelLeft}
-                                        difficultyValueRightBar={sustainableDevelopmentValue}
-                                        difficultyValueLeftBar={currentContributionValue}
-                                        selectedOption3={selectedOption3}
-                                        selectedOption2={selectedOption2}
-                                        selectedOption1={selectedOption1}
+                                        squaredLabelLeft={props.currentContributionLabel}
+                                        leftLabel={props.currentContributionlabelLeft}
+                                        squaredLabelRight={props.sustainableDevelopmentLabel}
+                                        rightLabel={props.sustainableDevelopmentlabelLeft}
+                                        difficultyValueRightBar={props.sustainableDevelopmentValue}
+                                        difficultyValueLeftBar={props.currentContributionValue}
+                                        selectedOption3={props.selectedOption3}
+                                        selectedOption2={props.selectedOption2}
+                                        selectedOption1={props.selectedOption1}
                             />
                         </div>
                     </Col>
