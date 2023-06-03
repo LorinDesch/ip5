@@ -82,14 +82,14 @@ const App = () => {
                     <Route path="/umfeld"
                            element={loggedInUser ? (<EnvironmentComparison {...props} />) : (<Navigate to="/login"/>)}
                     />
-                    <Route path="/aktuellerbeitrag"
+                    <Route path="/beitrag"
                            element={loggedInUser ? (<CurrentContributionComparison {...props} />) : (
                                <Navigate to="/login"/>)}
                     />
-                    <Route path="/erlaubtmir"
+                    <Route path="/ermoeglicht"
                            element={loggedInUser ? (<AllowsMeToComparison {...props} />) : (<Navigate to="/login"/>)}
                     />
-                    <Route path="/nachhaltigeentwicklung"
+                    <Route path="/entwicklung"
                            element={loggedInUser ? (<SustainableDevelopmentComparison {...props} />) : (
                                <Navigate to="/login"/>)}
                     />

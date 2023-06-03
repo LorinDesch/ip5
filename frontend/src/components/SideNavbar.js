@@ -73,34 +73,34 @@ const SideNavbar = () => {
                 />
             </div>
             <div className="d-flex flex-column align-items-center justify-content-center text-center"style={{ marginRight: '1rem' }}>
-                <div className="mb-2">aktueller<br />Beitrag</div>
+                <div className="mb-2">Beitrag</div>
                 <FaChartBar
                     size={'3vw'}
                     className="nav-icon rounded border border-secondary p-2"
                     onMouseEnter={handleIconHover}
                     onMouseLeave={handleIconLeave}
-                    onClick={() => (window.location.href = '/aktuellerbeitrag')}
+                    onClick={() => (window.location.href = '/beitrag')}
                 />
             </div>
             <div className="d-flex flex-column align-items-center justify-content-center text-center" style={{ marginRight: '1rem' }}>
-                <div className="mb-2">Ermöglicht mir</div>
+                <div className="mb-2">Ermoeglicht</div>
                 <FaChartBar
                     size={'3vw'}
                     className="nav-icon rounded border border-secondary p-2"
                     onMouseEnter={handleIconHover}
                     onMouseLeave={handleIconLeave}
-                    onClick={() => (window.location.href = '/erlaubtmir')}
+                    onClick={() => (window.location.href = '/ermoeglicht')}
                 />
             </div>
 
             <div className="d-flex flex-column align-items-center justify-content-center text-center"style={{ marginRight: '1rem' }}>
-                <div className="mb-2">nachhaltigen<br />Entwicklung</div>
+                <div className="mb-2">Entwicklung</div>
                 <FaChartBar
                     size={'3vw'}
                     className="nav-icon rounded border border-secondary p-2"
                     onMouseEnter={handleIconHover}
                     onMouseLeave={handleIconLeave}
-                    onClick={() => (window.location.href = '/nachhaltigeentwicklung')}
+                    onClick={() => (window.location.href = '/entwicklung')}
                 />
             </div>
         </nav>
