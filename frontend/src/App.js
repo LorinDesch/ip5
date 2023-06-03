@@ -60,7 +60,6 @@ const App = () => {
 
         useEffect(() => {
             // Store the values in localStorage whenever they change
-            //make it so the item is only set if it exists in fakeData
             localStorage.setItem("selectedOption1", selectedOption1);
             localStorage.setItem("selectedOption2", selectedOption2);
             localStorage.setItem("selectedOption3", JSON.stringify(selectedOption3));
@@ -95,6 +94,7 @@ const App = () => {
                            element={loggedInUser ? (<SustainableDevelopmentComparison {...props} />) : (
                                <Navigate to="/login"/>)}
                     />
+                    <Route path="*" element={<Login fakeData={props.fakeData}/>} />
                 </Routes>
             </Router>
         );
