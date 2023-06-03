@@ -25,28 +25,31 @@ const EnvironmentalComparison = ({
 
                                      difficultyLabel,
                                      difficultylabelLeft,
-                                     difficultyValueRightBar,
-                                     difficultyValueLeftBar,
+                                     difficultyValue,
+
                                      restrionctionLabel,
                                      rrestrictionlabelLeft,
-                                     restrictionValueRightBar,
-                                     restrictionValueLeftBar,
+                                     restrictionValue,
+
+
                                      environeLabel,
                                      environmentlabelLeft,
-                                     environmentValueRightBar,
-                                     environmentValueLeftBar,
+                                     environmentValue,
+
+
                                      currentContributionLabel,
                                      currentContributionlabelLeft,
-                                     currentContributionValueRightBar,
-                                     currentContributionValueLeftBar,
+                                     currentContributionValue,
+
+
                                      allowMeToLabel,
                                      allowMeTolabelLeft,
-                                     allowMeToValueRightBar,
-                                     allowMeToValueLeftBar,
+                                     allowMeToValue,
+
                                      sustainableDevelopmentLabel,
                                      sustainableDevelopmentlabelLeft,
-                                     sustainableDevelopmentValueRightBar,
-                                     sustainableDevelopmentValueLeftBar,
+                                     sustainableDevelopmentValue,
+
                                  }) => {
 
     return (
@@ -80,8 +83,8 @@ const EnvironmentalComparison = ({
                                         leftLabel={environmentlabelLeft}
                                         squaredLabelRight={difficultyLabel}
                                         rightLabel={difficultylabelLeft}
-                                        difficultyValueLeftBar={environmentValueLeftBar}
-                                        difficultyValueRightBar={difficultyValueRightBar}
+                                        difficultyValueLeftBar={environmentValue}
+                                        difficultyValueRightBar={difficultyValue}
                                         selectedOption3={selectedOption3}
                                         selectedOption2={selectedOption2}
                                         selectedOption1={selectedOption1}
@@ -94,8 +97,8 @@ const EnvironmentalComparison = ({
                                         leftLabel={environmentlabelLeft}
                                         squaredLabelRight={currentContributionLabel}
                                         rightLabel={currentContributionlabelLeft}
-                                        difficultyValueLeftBar={environmentValueLeftBar}
-                                        difficultyValueRightBar={currentContributionValueRightBar}
+                                        difficultyValueLeftBar={environmentValue}
+                                        difficultyValueRightBar={currentContributionValue}
                                         selectedOption3={selectedOption3}
                                         selectedOption2={selectedOption2}
                                         selectedOption1={selectedOption1}
@@ -111,8 +114,8 @@ const EnvironmentalComparison = ({
                                         leftLabel={environmentlabelLeft}
                                         squaredLabelRight={restrionctionLabel}
                                         rightLabel={rrestrictionlabelLeft}
-                                        difficultyValueLeftBar={environmentValueLeftBar}
-                                        difficultyValueRightBar={restrictionValueRightBar}
+                                        difficultyValueLeftBar={environmentValue}
+                                        difficultyValueRightBar={restrictionValue}
                                         selectedOption3={selectedOption3}
                                         selectedOption2={selectedOption2}
                                         selectedOption1={selectedOption1}
@@ -126,8 +129,8 @@ const EnvironmentalComparison = ({
                                         leftLabel={environmentlabelLeft}
                                         squaredLabelRight={allowMeToLabel}
                                         rightLabel={allowMeTolabelLeft}
-                                        difficultyValueLeftBar={environmentValueLeftBar}
-                                        difficultyValueRightBar={allowMeToValueRightBar}
+                                        difficultyValueLeftBar={environmentValue}
+                                        difficultyValueRightBar={allowMeToValue}
                                         selectedOption3={selectedOption3}
                                         selectedOption2={selectedOption2}
                                         selectedOption1={selectedOption1}
@@ -160,8 +163,8 @@ const EnvironmentalComparison = ({
                                         leftLabel={environmentlabelLeft}
                                         squaredLabelRight={sustainableDevelopmentLabel}
                                         rightLabel={sustainableDevelopmentlabelLeft}
-                                        difficultyValueLeftBar={environmentValueLeftBar}
-                                        difficultyValueRightBar={sustainableDevelopmentValueRightBar}
+                                        difficultyValueLeftBar={environmentValue}
+                                        difficultyValueRightBar={sustainableDevelopmentValue}
                                         selectedOption3={selectedOption3}
                                         selectedOption2={selectedOption2}
                                         selectedOption1={selectedOption1}

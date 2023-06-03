@@ -14,8 +14,6 @@ import {fakeData} from "./data/fakeData";
 
 /**
  * The main App component.
- *
- * @returns {JSX.Element} The rendered App component.
  */
 const App = () => {
 
@@ -23,36 +21,6 @@ const App = () => {
         const [selectedOption2, setSelectedOption2] = useState('Challenge');
         const [selectedOption3, setSelectedOption3] = useState([]);
         const loggedInUser = localStorage.getItem('loggedInUser');
-
-        const difficultyLabel = "Schwierigkeit"
-        const difficultylabelLeft = ["Leicht", "Mittel", "Schwer"] //FLIPPED
-        const difficultyValueRightBar = getValueAttributeOnlyGroup("difficulty", selectedOption3, fakeData, selectedOption2)
-        const difficultyValueLeftBar = getValueAttributeOnlyGroup("difficulty", selectedOption3, fakeData, selectedOption2)
-
-        const restrionctionLabel = "Einschränkung"
-        const rrestrictionlabelLeft = ["Befreit", "Mittel", "Viel"] //FLIPPED
-        const restrictionValueRightBar = getValueAttributeOnlyGroup("restriction", selectedOption3, fakeData, selectedOption2)
-        const restrictionValueLeftBar = getValueAttributeOnlyGroup("restriction", selectedOption3, fakeData, selectedOption2)
-
-        const environeLabel = "Umfeldreaktion"
-        const environmentlabelLeft = ["positiv", "neutral", "negativ"] //FLIPPED
-        const environmentValueRightBar = getValueAttributeOnlyGroup("environment", selectedOption3, fakeData, selectedOption2)
-        const environmentValueLeftBar = getValueAttributeOnlyGroup("environment", selectedOption3, fakeData, selectedOption2)
-
-        const currentContributionLabel = "Beitrag"
-        const currentContributionlabelLeft = ["Gering", "Mittel", "Hoch"]
-        const currentContributionValueRightBar = getValueAttributeOnlyGroup("currentContribution", selectedOption3, fakeData, selectedOption2)
-        const currentContributionValueLeftBar = getValueAttributeOnlyGroup("currentContribution", selectedOption3, fakeData, selectedOption2)
-
-        const allowMeToLabel = "Übernehme"
-        const allowMeTolabelLeft = ["Verantwortung", "Beides", "Erwartungen"]
-        const allowMeToValueRightBar = getValueAttributeOnlyGroup("allowsMeTo", selectedOption3, fakeData, selectedOption2)
-        const allowMeToValueLeftBar = getValueAttributeOnlyGroup("allowsMeTo", selectedOption3, fakeData, selectedOption2)
-
-        const sustainableDevelopmentLabel = "Entwicklung"
-        const sustainableDevelopmentlabelLeft = ["Wenig", "Mittel", "Viel"] //FLIPPED
-        const sustainableDevelopmentValueRightBar = getValueAttributeOnlyGroup("sustainableDevelopment", selectedOption3, fakeData, selectedOption2)
-        const sustainableDevelopmentValueLeftBar = getValueAttributeOnlyGroup("sustainableDevelopment", selectedOption3, fakeData, selectedOption2)
 
         const props = {
             fakeData: fakeData,
@@ -62,30 +30,30 @@ const App = () => {
             setSelectedOption2: setSelectedOption2,
             selectedOption3: selectedOption3,
             setSelectedOption3: setSelectedOption3,
-            difficultyLabel: difficultyLabel,
-            difficultylabelLeft: difficultylabelLeft,
-            difficultyValueRightBar: difficultyValueRightBar,
-            difficultyValueLeftBar: difficultyValueLeftBar,
-            restrionctionLabel: restrionctionLabel,
-            rrestrictionlabelLeft: rrestrictionlabelLeft,
-            restrictionValueRightBar: restrictionValueRightBar,
-            restrictionValueLeftBar: restrictionValueLeftBar,
-            environeLabel: environeLabel,
-            environmentlabelLeft: environmentlabelLeft,
-            environmentValueRightBar: environmentValueRightBar,
-            environmentValueLeftBar: environmentValueLeftBar,
-            currentContributionLabel: currentContributionLabel,
-            currentContributionlabelLeft: currentContributionlabelLeft,
-            currentContributionValueRightBar: currentContributionValueRightBar,
-            currentContributionValueLeftBar: currentContributionValueLeftBar,
-            allowMeToLabel: allowMeToLabel,
-            allowMeTolabelLeft: allowMeTolabelLeft,
-            allowMeToValueRightBar: allowMeToValueRightBar,
-            allowMeToValueLeftBar: allowMeToValueLeftBar,
-            sustainableDevelopmentLabel: sustainableDevelopmentLabel,
-            sustainableDevelopmentlabelLeft: sustainableDevelopmentlabelLeft,
-            sustainableDevelopmentValueRightBar: sustainableDevelopmentValueRightBar,
-            sustainableDevelopmentValueLeftBar: sustainableDevelopmentValueLeftBar
+
+            difficultyLabel: "Schwierigkeit",
+            difficultylabelLeft: ["Leicht", "Mittel", "Schwer"], //FLIPPED
+            difficultyValue: getValueAttributeOnlyGroup("difficulty", selectedOption3, fakeData, selectedOption2),
+
+            restrionctionLabel: "Einschränkung",
+            rrestrictionlabelLeft: ["Befreit", "Mittel", "Viel"], //FLIPPED
+            restrictionValue: getValueAttributeOnlyGroup("restriction", selectedOption3, fakeData, selectedOption2),
+
+            environeLabel: "Umfeldreaktion",
+            environmentlabelLeft: ["positiv", "neutral", "negativ"], //FLIPPED
+            environmentValue: getValueAttributeOnlyGroup("environment", selectedOption3, fakeData, selectedOption2),
+
+            currentContributionLabel: "Beitrag",
+            currentContributionlabelLeft: ["Gering", "Mittel", "Hoch"],
+            currentContributionValue: getValueAttributeOnlyGroup("currentContribution", selectedOption3, fakeData, selectedOption2),
+
+            allowMeToLabel: "Übernehme",
+            allowMeTolabelLeft: ["Verantwortung", "Beides", "Erwartungen"],
+            allowMeToValue: getValueAttributeOnlyGroup("allowsMeTo", selectedOption3, fakeData, selectedOption2),
+
+            sustainableDevelopmentLabel: "Entwicklung",
+            sustainableDevelopmentlabelLeft: ["Wenig", "Mittel", "Viel"], //FLIPPED
+            sustainableDevelopmentValue: getValueAttributeOnlyGroup("sustainableDevelopment", selectedOption3, fakeData, selectedOption2),
         }
 
         return (

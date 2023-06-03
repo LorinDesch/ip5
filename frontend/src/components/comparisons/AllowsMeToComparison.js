@@ -49,6 +49,8 @@ export function getValueAttributeOnlyGroup(attribute, selectedOption3, fakeData,
  * @returns {number[]} The value of the attribute for the selected user and group.
  */
 const AllowMeToComparison = ({
+                                 width,
+                                 height,
                                  fakeData,
                                  selectedOption1,
                                  selectedOption3,
@@ -59,28 +61,31 @@ const AllowMeToComparison = ({
 
                                  difficultyLabel,
                                  difficultylabelLeft,
-                                 difficultyValueRightBar,
-                                 difficultyValueLeftBar,
+                                 difficultyValue,
+
                                  restrionctionLabel,
                                  rrestrictionlabelLeft,
-                                 restrictionValueRightBar,
-                                 restrictionValueLeftBar,
+                                 restrictionValue,
+
+
                                  environeLabel,
                                  environmentlabelLeft,
-                                 environmentValueRightBar,
-                                 environmentValueLeftBar,
+                                 environmentValue,
+
+
                                  currentContributionLabel,
                                  currentContributionlabelLeft,
-                                 currentContributionValueRightBar,
-                                 currentContributionValueLeftBar,
+                                 currentContributionValue,
+
+
                                  allowMeToLabel,
                                  allowMeTolabelLeft,
-                                 allowMeToValueRightBar,
-                                 allowMeToValueLeftBar,
+                                 allowMeToValue,
+
                                  sustainableDevelopmentLabel,
                                  sustainableDevelopmentlabelLeft,
-                                 sustainableDevelopmentValueRightBar,
-                                 sustainableDevelopmentValueLeftBar,
+                                 sustainableDevelopmentValue,
+
                              }) => {
 
     return (
@@ -114,8 +119,8 @@ const AllowMeToComparison = ({
                                         leftLabel={allowMeTolabelLeft}
                                         squaredLabelRight={difficultyLabel}
                                         rightLabel={difficultylabelLeft}
-                                        difficultyValueLeftBar={allowMeToValueLeftBar}
-                                        difficultyValueRightBar={difficultyValueRightBar}
+                                        difficultyValueLeftBar={allowMeToValue}
+                                        difficultyValueRightBar={difficultyValue}
                                         selectedOption3={selectedOption3}
                                         selectedOption2={selectedOption2}
                                         selectedOption1={selectedOption1}
@@ -130,8 +135,8 @@ const AllowMeToComparison = ({
                                         leftLabel={allowMeTolabelLeft}
                                         squaredLabelRight={currentContributionLabel}
                                         rightLabel={currentContributionlabelLeft}
-                                        difficultyValueLeftBar={allowMeToValueLeftBar}
-                                        difficultyValueRightBar={currentContributionValueRightBar}
+                                        difficultyValueLeftBar={allowMeToValue}
+                                        difficultyValueRightBar={currentContributionValue}
                                         selectedOption3={selectedOption3}
                                         selectedOption2={selectedOption2}
                                         selectedOption1={selectedOption1}
@@ -147,8 +152,8 @@ const AllowMeToComparison = ({
                                         leftLabel={allowMeTolabelLeft}
                                         squaredLabelRight={restrionctionLabel}
                                         rightLabel={rrestrictionlabelLeft}
-                                        difficultyValueLeftBar={allowMeToValueLeftBar}
-                                        difficultyValueRightBar={restrictionValueRightBar}
+                                        difficultyValueLeftBar={allowMeToValue}
+                                        difficultyValueRightBar={restrictionValue}
                                         selectedOption3={selectedOption3}
                                         selectedOption2={selectedOption2}
                                         selectedOption1={selectedOption1}
@@ -180,8 +185,8 @@ const AllowMeToComparison = ({
                                         leftLabel={allowMeTolabelLeft}
                                         squaredLabelRight={environeLabel}
                                         rightLabel={environmentlabelLeft}
-                                        difficultyValueLeftBar={allowMeToValueLeftBar}
-                                        difficultyValueRightBar={environmentValueRightBar}
+                                        difficultyValueLeftBar={allowMeToValue}
+                                        difficultyValueRightBar={environmentValue}
                                         selectedOption3={selectedOption3}
                                         selectedOption2={selectedOption2}
                                         selectedOption1={selectedOption1}
@@ -195,8 +200,8 @@ const AllowMeToComparison = ({
                                         leftLabel={allowMeTolabelLeft}
                                         squaredLabelRight={sustainableDevelopmentLabel}
                                         rightLabel={sustainableDevelopmentlabelLeft}
-                                        difficultyValueLeftBar={allowMeToValueLeftBar}
-                                        difficultyValueRightBar={sustainableDevelopmentValueRightBar}
+                                        difficultyValueLeftBar={allowMeToValue}
+                                        difficultyValueRightBar={sustainableDevelopmentValue}
                                         selectedOption3={selectedOption3}
                                         selectedOption2={selectedOption2}
                                         selectedOption1={selectedOption1}

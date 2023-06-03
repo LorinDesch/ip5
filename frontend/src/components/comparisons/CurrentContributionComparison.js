@@ -25,28 +25,31 @@ const CurrentContributionComparison = ({
 
                                            difficultyLabel,
                                            difficultylabelLeft,
-                                           difficultyValueRightBar,
-                                           difficultyValueLeftBar,
+                                           difficultyValue,
+
                                            restrionctionLabel,
                                            rrestrictionlabelLeft,
-                                           restrictionValueRightBar,
-                                           restrictionValueLeftBar,
+                                           restrictionValue,
+
+
                                            environeLabel,
                                            environmentlabelLeft,
-                                           environmentValueRightBar,
-                                           environmentValueLeftBar,
+                                           environmentValue,
+
+
                                            currentContributionLabel,
                                            currentContributionlabelLeft,
-                                           currentContributionValueRightBar,
-                                           currentContributionValueLeftBar,
+                                           currentContributionValue,
+
+
                                            allowMeToLabel,
                                            allowMeTolabelLeft,
-                                           allowMeToValueRightBar,
-                                           allowMeToValueLeftBar,
+                                           allowMeToValue,
+
                                            sustainableDevelopmentLabel,
                                            sustainableDevelopmentlabelLeft,
-                                           sustainableDevelopmentValueRightBar,
-                                           sustainableDevelopmentValueLeftBar,
+                                           sustainableDevelopmentValue,
+
 
                                        }) => {
 
@@ -82,8 +85,8 @@ const CurrentContributionComparison = ({
                                         leftLabel={currentContributionlabelLeft}
                                         squaredLabelRight={difficultyLabel}
                                         rightLabel={difficultylabelLeft}
-                                        difficultyValueRightBar={difficultyValueRightBar}
-                                        difficultyValueLeftBar={currentContributionValueLeftBar}
+                                        difficultyValueRightBar={difficultyValue}
+                                        difficultyValueLeftBar={currentContributionValue}
                                         selectedOption3={selectedOption3}
                                         selectedOption2={selectedOption2}
                                         selectedOption1={selectedOption1}
@@ -114,8 +117,8 @@ const CurrentContributionComparison = ({
                                         leftLabel={currentContributionlabelLeft}
                                         squaredLabelRight={restrionctionLabel}
                                         rightLabel={rrestrictionlabelLeft}
-                                        difficultyValueRightBar={restrictionValueRightBar}
-                                        difficultyValueLeftBar={currentContributionValueLeftBar}
+                                        difficultyValueRightBar={restrictionValue}
+                                        difficultyValueLeftBar={currentContributionValue}
                                         selectedOption3={selectedOption3}
                                         selectedOption2={selectedOption2}
                                         selectedOption1={selectedOption1}
@@ -130,8 +133,8 @@ const CurrentContributionComparison = ({
                                         leftLabel={currentContributionlabelLeft}
                                         squaredLabelRight={allowMeToLabel}
                                         rightLabel={allowMeTolabelLeft}
-                                        difficultyValueRightBar={allowMeToValueRightBar}
-                                        difficultyValueLeftBar={currentContributionValueLeftBar}
+                                        difficultyValueRightBar={allowMeToValue}
+                                        difficultyValueLeftBar={currentContributionValue}
                                         selectedOption3={selectedOption3}
                                         selectedOption2={selectedOption2}
                                         selectedOption1={selectedOption1}
@@ -147,8 +150,8 @@ const CurrentContributionComparison = ({
                                         leftLabel={currentContributionlabelLeft}
                                         squaredLabelRight={environeLabel}
                                         rightLabel={environmentlabelLeft}
-                                        difficultyValueRightBar={environmentValueRightBar}
-                                        difficultyValueLeftBar={currentContributionValueLeftBar}
+                                        difficultyValueRightBar={environmentValue}
+                                        difficultyValueLeftBar={currentContributionValue}
                                         selectedOption3={selectedOption3}
                                         selectedOption2={selectedOption2}
                                         selectedOption1={selectedOption1}
@@ -162,8 +165,8 @@ const CurrentContributionComparison = ({
                                         leftLabel={currentContributionlabelLeft}
                                         squaredLabelRight={sustainableDevelopmentLabel}
                                         rightLabel={sustainableDevelopmentlabelLeft}
-                                        difficultyValueRightBar={sustainableDevelopmentValueRightBar}
-                                        difficultyValueLeftBar={currentContributionValueLeftBar}
+                                        difficultyValueRightBar={sustainableDevelopmentValue}
+                                        difficultyValueLeftBar={currentContributionValue}
                                         selectedOption3={selectedOption3}
                                         selectedOption2={selectedOption2}
                                         selectedOption1={selectedOption1}
