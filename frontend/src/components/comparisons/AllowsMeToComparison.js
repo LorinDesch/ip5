@@ -5,86 +5,18 @@ import SideNavbar from "../SideNavbar";
 import {Col, Container, Row} from "react-bootstrap";
 
 /**
- * Retrieves the second difficulty value for each group in the selectedOption3 array,
- * based on the provided attribute, selectedOption2, and fakeData.
- * If a valid commitment ID is found for selectedOption2, the function searches for the group.userIds
- * in fakeData and returns an array of second difficulty values for each group.
- * If no valid commitment ID is found, an array of zeros is returned.
+ * Component for rendering the AllowMeToComparison subsite.
  */
-export function getValueAttributeOnlyGroup(attribute, selectedOption3, fakeData, selectedOption2) {
-    const cId = fakeData.commitments.find(commitment => commitment.commitmentname === selectedOption2)?.commitmentid;
-    const zeros = [];
-    if (cId > 0) {
-        //for each selectedOption3 find the group.userIds and get the second difficulty value for each group
-        const selectedGroupsDifficulties = selectedOption3.flatMap(groupName => fakeData.groups.find(group => group.groupname === groupName) || [])
-            .map(group => group.users.flatMap(userId => {
-                const diary = fakeData.diary.find(diary => diary.userid === userId && diary.commitmentid === cId);
-                return diary ? diary[attribute][1] : [];
-            }).reduce((acc, val, idx, arr) => {
-                acc += val;
-                if (idx === arr.length - 1) {
-                    acc /= arr.length;
-                }
-                return acc;
-            }, 0));
-        return selectedGroupsDifficulties.length > 0 ? selectedGroupsDifficulties : zeros;
-    }
-    return zeros;
-}
-
-
-/**
- * Component for rendering the subsite AllowMeToComparison.
- */
-const AllowMeToComparison = ({
-                                 width,
-                                 height,
-                                 fakeData,
-                                 selectedOption1,
-                                 selectedOption3,
-                                 selectedOption2,
-                                 setSelectedOption1,
-                                 setSelectedOption2,
-                                 setSelectedOption3,
-
-                                 difficultyLabel,
-                                 difficultylabelLeft,
-                                 difficultyValue,
-
-                                 restrionctionLabel,
-                                 rrestrictionlabelLeft,
-                                 restrictionValue,
-
-
-                                 environeLabel,
-                                 environmentlabelLeft,
-                                 environmentValue,
-
-
-                                 currentContributionLabel,
-                                 currentContributionlabelLeft,
-                                 currentContributionValue,
-
-
-                                 allowMeToLabel,
-                                 allowMeTolabelLeft,
-                                 allowMeToValue,
-
-                                 sustainableDevelopmentLabel,
-                                 sustainableDevelopmentlabelLeft,
-                                 sustainableDevelopmentValue,
-
-                             }) => {
-
+const AllowMeToComparison = (props) => {
     return (
         <>
             <header style={{marginLeft: '7rem', marginTop: '0.5rem'}}>
-                <TopNavbar fakeData={fakeData} selectedOption1={selectedOption1}
-                           setSelectedOption1={setSelectedOption1}
-                           selectedOption2={selectedOption2}
-                           setSelectedOption2={setSelectedOption2}
-                           selectedOption3={selectedOption3}
-                           setSelectedOption3={setSelectedOption3}/>
+                <TopNavbar fakeData={props.fakeData} selectedOption1={props.selectedOption1}
+                           setSelectedOption1={props.setSelectedOption1}
+                           selectedOption2={props.selectedOption2}
+                           setSelectedOption2={props.setSelectedOption2}
+                           selectedOption3={props.selectedOption3}
+                           setSelectedOption3={props.setSelectedOption3}/>
             </header>
             <div style={{
                 position: 'fixed',
@@ -103,31 +35,30 @@ const AllowMeToComparison = ({
                     <Col md={6}>
                         <div style={{marginLeft: '10rem'}}>
                             <Comparison width={700} height={250}
-                                        squaredLabelLeft={allowMeToLabel}
-                                        leftLabel={allowMeTolabelLeft}
-                                        squaredLabelRight={difficultyLabel}
-                                        rightLabel={difficultylabelLeft}
-                                        difficultyValueLeftBar={allowMeToValue}
-                                        difficultyValueRightBar={difficultyValue}
-                                        selectedOption3={selectedOption3}
-                                        selectedOption2={selectedOption2}
-                                        selectedOption1={selectedOption1}
+                                        squaredLabelLeft={props.allowMeToLabel}
+                                        leftLabel={props.allowMeTolabelLeft}
+                                        squaredLabelRight={props.difficultyLabel}
+                                        rightLabel={props.difficultylabelLeft}
+                                        difficultyValueLeftBar={props.allowMeToValue}
+                                        difficultyValueRightBar={props.difficultyValue}
+                                        selectedOption3={props.selectedOption3}
+                                        selectedOption2={props.selectedOption2}
+                                        selectedOption1={props.selectedOption1}
                             />
-
                         </div>
                     </Col>
                     <Col md={6}>
                         <div style={{marginLeft: '5rem'}}>
                             <Comparison width={700} height={250}
-                                        squaredLabelLeft={allowMeToLabel}
-                                        leftLabel={allowMeTolabelLeft}
-                                        squaredLabelRight={currentContributionLabel}
-                                        rightLabel={currentContributionlabelLeft}
-                                        difficultyValueLeftBar={allowMeToValue}
-                                        difficultyValueRightBar={currentContributionValue}
-                                        selectedOption3={selectedOption3}
-                                        selectedOption2={selectedOption2}
-                                        selectedOption1={selectedOption1}
+                                        squaredLabelLeft={props.allowMeToLabel}
+                                        leftLabel={props.allowMeTolabelLeft}
+                                        squaredLabelRight={props.currentContributionLabel}
+                                        rightLabel={props.currentContributionlabelLeft}
+                                        difficultyValueLeftBar={props.allowMeToValue}
+                                        difficultyValueRightBar={props.currentContributionValue}
+                                        selectedOption3={props.selectedOption3}
+                                        selectedOption2={props.selectedOption2}
+                                        selectedOption1={props.selectedOption1}
                             />
                         </div>
                     </Col>
@@ -136,15 +67,15 @@ const AllowMeToComparison = ({
                     <Col md={6}>
                         <div style={{marginLeft: '10rem'}}>
                             <Comparison width={700} height={250}
-                                        squaredLabelLeft={allowMeToLabel}
-                                        leftLabel={allowMeTolabelLeft}
-                                        squaredLabelRight={restrionctionLabel}
-                                        rightLabel={rrestrictionlabelLeft}
-                                        difficultyValueLeftBar={allowMeToValue}
-                                        difficultyValueRightBar={restrictionValue}
-                                        selectedOption3={selectedOption3}
-                                        selectedOption2={selectedOption2}
-                                        selectedOption1={selectedOption1}
+                                        squaredLabelLeft={props.allowMeToLabel}
+                                        leftLabel={props.allowMeTolabelLeft}
+                                        squaredLabelRight={props.restrionctionLabel}
+                                        rightLabel={props.rrestrictionlabelLeft}
+                                        difficultyValueLeftBar={props.allowMeToValue}
+                                        difficultyValueRightBar={props.restrictionValue}
+                                        selectedOption3={props.selectedOption3}
+                                        selectedOption2={props.selectedOption2}
+                                        selectedOption1={props.selectedOption1}
                             />
                         </div>
                     </Col>
@@ -169,30 +100,30 @@ const AllowMeToComparison = ({
                     <Col md={6}>
                         <div style={{marginLeft: '10rem'}}>
                             <Comparison width={700} height={250}
-                                        squaredLabelLeft={allowMeToLabel}
-                                        leftLabel={allowMeTolabelLeft}
-                                        squaredLabelRight={environeLabel}
-                                        rightLabel={environmentlabelLeft}
-                                        difficultyValueLeftBar={allowMeToValue}
-                                        difficultyValueRightBar={environmentValue}
-                                        selectedOption3={selectedOption3}
-                                        selectedOption2={selectedOption2}
-                                        selectedOption1={selectedOption1}
+                                        squaredLabelLeft={props.allowMeToLabel}
+                                        leftLabel={props.allowMeTolabelLeft}
+                                        squaredLabelRight={props.environeLabel}
+                                        rightLabel={props.environmentlabelLeft}
+                                        difficultyValueLeftBar={props.allowMeToValue}
+                                        difficultyValueRightBar={props.environmentValue}
+                                        selectedOption3={props.selectedOption3}
+                                        selectedOption2={props.selectedOption2}
+                                        selectedOption1={props.selectedOption1}
                             />
                         </div>
                     </Col>
                     <Col md={6}>
                         <div style={{marginLeft: '5rem'}}>
                             <Comparison width={700} height={250}
-                                        squaredLabelLeft={allowMeToLabel}
-                                        leftLabel={allowMeTolabelLeft}
-                                        squaredLabelRight={sustainableDevelopmentLabel}
-                                        rightLabel={sustainableDevelopmentlabelLeft}
-                                        difficultyValueLeftBar={allowMeToValue}
-                                        difficultyValueRightBar={sustainableDevelopmentValue}
-                                        selectedOption3={selectedOption3}
-                                        selectedOption2={selectedOption2}
-                                        selectedOption1={selectedOption1}
+                                        squaredLabelLeft={props.allowMeToLabel}
+                                        leftLabel={props.allowMeTolabelLeft}
+                                        squaredLabelRight={props.sustainableDevelopmentLabel}
+                                        rightLabel={props.sustainableDevelopmentlabelLeft}
+                                        difficultyValueLeftBar={props.allowMeToValue}
+                                        difficultyValueRightBar={props.sustainableDevelopmentValue}
+                                        selectedOption3={props.selectedOption3}
+                                        selectedOption2={props.selectedOption2}
+                                        selectedOption1={props.selectedOption1}
                             />
                         </div>
                     </Col>

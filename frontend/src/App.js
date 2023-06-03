@@ -5,12 +5,13 @@ import DifficultyComparison from "./components/comparisons/DifficultyComparison"
 import RestrictionComparison from "./components/comparisons/RestrictionComparison";
 import EnvironmentComparison from "./components/comparisons/EnvironmentComparison";
 import CurrentContributionComparison from "./components/comparisons/CurrentContributionComparison";
-import AllowsMeToComparison, {getValueAttributeOnlyGroup} from "./components/comparisons/AllowsMeToComparison";
 import SustainableDevelopmentComparison from "./components/comparisons/SustainableDevelopmentComparison";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {useState} from "react";
 import Login from "./components/Login";
 import {fakeData} from "./data/fakeData";
+import {getValueAttributeOnlyGroup} from "./components/helperFunctions/HelperFunctions";
+import AllowsMeToComparison from "./components/comparisons/AllowsMeToComparison";
 
 /**
  * The main App component.
@@ -60,7 +61,7 @@ const App = () => {
             <Router>
                 <Routes>
                     {!loggedInUser && <Route path="/*" element={<Navigate to="/login"/>}/>}
-                    <Route path="/login" element={<Login fakeData={fakeData}/>}/>
+                    <Route path="/login" element={<Login fakeData={props.fakeData}/>}/>
                     <Route path="/"
                            element={loggedInUser ? (<Dashboard {...props}/>) : (<Navigate to="/login"/>)}
                     />
