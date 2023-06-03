@@ -4,19 +4,12 @@ import {getSchluesseSelectedDropdown1} from "../Dashboard";
 
 
 /**
- * Component for rendering the Feelings Bar chart.
- *
- * @param {Object} props - The component props.
- * @returns {JSX.Element} The FeelingsBar component.
+ * Component for rendering a Feelings Bar chart.
  */
 function FeelingsBar({
                          fakeData,
                          selectedOption1,
-                         setSelectedOption1,
                          selectedOption2,
-                         setSelectedOption2,
-                         selectedOption3,
-                         setSelectedOption3,
                          width,
                          height
                      }) {

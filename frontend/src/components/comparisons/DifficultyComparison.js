@@ -1,19 +1,13 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {Container, Row, Col} from 'react-bootstrap';
 import TopNavbar from '../TopNavbar';
 import Comparison from "../Charts/Comparison";
 import SideNavbar from "../SideNavbar";
-import {getValueAttributeOnlyGroup} from "./AllowsMeToComparison";
-
 
 /**
- * Component for rendering the DifficultyComparison chart.
- *
- * @param {Object} props - The component props.
- * @returns {JSX.Element} The DifficultyComparison component.
+ * Component for rendering the DifficultyComparison subsite.
  */
 const DifficultyComparison = (props) => {
-
     return (
         <>
             <header style={{marginLeft: '7rem', marginTop: '0.5rem'}}>
@@ -35,7 +29,6 @@ const DifficultyComparison = (props) => {
             }}>
                 <SideNavbar/>
             </div>
-
             <Container fluid className="mt-4">
                 <Row className="text-center mb-4 align-items-center" style={{marginTop: '3rem', marginBottom: '5rem'}}>
                     <Col md={6}>

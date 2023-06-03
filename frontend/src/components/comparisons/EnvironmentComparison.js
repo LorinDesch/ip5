@@ -1,19 +1,13 @@
-import React, {useState} from 'react';
+import React from 'react';
 import TopNavbar from '../TopNavbar';
 import Comparison from "../Charts/Comparison";
 import SideNavbar from "../SideNavbar";
 import {Col, Container, Row} from "react-bootstrap";
-import {getValueAttributeOnlyGroup} from "./AllowsMeToComparison";
-
 
 /**
- * Component for rendering the EnvironmentalComparison chart.
- *
- * @param {Object} props - The component props.
- * @returns {JSX.Element} The EnvironmentalComparison component.
+ * Component for rendering the EnvironmentalComparison subsite.
  */
 const EnvironmentalComparison = (props) => {
-
     return (
         <>
             <header style={{marginLeft: '7rem', marginTop: '0.5rem'}}>
@@ -116,7 +110,6 @@ const EnvironmentalComparison = (props) => {
                                 übernehmen oder Erwartungen nachzukommen? </p>
                             <p style={{margin: '0.2rem'}}>Entwicklung: Wie sehr hat sich das Commitment auf dich
                                 ausgewirkt?</p>
-
                         </div>
                     </Col>
                     <Col md={6}>

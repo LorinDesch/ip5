@@ -1,20 +1,14 @@
-import React, {useState} from 'react';
+import React from 'react';
 import TopNavbar from '../TopNavbar';
 import Comparison from "../Charts/Comparison";
 import SideNavbar from "../SideNavbar";
 import {Col, Container, Row} from "react-bootstrap";
-import {getValueAttributeOnlyGroup} from "./AllowsMeToComparison";
 
 /**
- * Component for rendering the RestrictionComparison chart.
- *
- * @param {Object} props - The component props.
- * @returns {JSX.Element} The RestrictionComparison component.
+ * Component for rendering the RestrictionComparison subsite.
  */
 const RestrictionComparison = (props) => {
-
     return (
-
         <>
             <header style={{marginLeft: '7rem', marginTop: '0.5rem'}}>
                 <TopNavbar fakeData={props.fakeData} selectedOption1={props.selectedOption1}
@@ -51,7 +45,6 @@ const RestrictionComparison = (props) => {
                                         selectedOption2={props.selectedOption2}
                                         selectedOption1={props.selectedOption1}
                             />
-
                         </div>
                     </Col>
                     <Col md={6}>
@@ -85,7 +78,6 @@ const RestrictionComparison = (props) => {
                                 übernehmen oder Erwartungen nachzukommen? </p>
                             <p style={{margin: '0.2rem'}}>Entwicklung: Wie sehr hat sich das Commitment auf dich
                                 ausgewirkt?</p>
-
                         </div>
                     </Col>
                     <Col md={6}>

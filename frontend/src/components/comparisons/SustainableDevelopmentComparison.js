@@ -1,16 +1,13 @@
-import React, {useState} from 'react';
+import React from 'react';
 import TopNavbar from '../TopNavbar';
 import Comparison from "../Charts/Comparison";
 import SideNavbar from "../SideNavbar";
 import {Col, Container, Row} from "react-bootstrap";
-import {getValueAttributeOnlyGroup} from "./AllowsMeToComparison";
 
 /**
  * Component for rendering the SustainabilityComparison chart.
- *
  */
 const SustainabilityComparison = (props) => {
-
     return (
         <>
             <header style={{marginLeft: '7rem', marginTop: '0.5rem'}}>
@@ -33,7 +30,6 @@ const SustainabilityComparison = (props) => {
             }}>
                 <SideNavbar/>
             </div>
-
             <Container fluid className="mt-4">
                 <Row className="text-center mb-4 align-items-center" style={{marginTop: '3rem', marginBottom: '5rem'}}>
                     <Col md={6}>

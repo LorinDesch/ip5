@@ -2,10 +2,7 @@ import React, {useEffect, useRef} from 'react';
 import * as d3 from 'd3';
 
 /**
- * Component for rendering the Comparison chart.
- *
- * @param {Object} props - The component props.
- * @returns {JSX.Element} The Comparison component.
+ * Component for rendering a Comparison Bar chart.
  */
 function Comparison({
                         width,
@@ -17,8 +14,6 @@ function Comparison({
                         difficultyValueLeftBar,
                         difficultyValueRightBar,
                         selectedOption3,
-                        selectedOption2,
-                        selectedOption1
                     }) {
 
     //this needs to be here, otherwise the chart will not be rendered (idk why)
