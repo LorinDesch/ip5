@@ -1,16 +1,12 @@
-import React, {useState} from 'react';
+import React from 'react';
 import TopNavbar from '../TopNavbar';
 import Comparison from "../Charts/Comparison";
 import SideNavbar from "../SideNavbar";
 import {Col, Container, Row} from "react-bootstrap";
-import {getValueAttributeOnlyGroup} from "./AllowsMeToComparison";
 
 
 /**
- * Component for rendering the CurrentContributionComparison chart.
- *
- * @param {Object} props - The component props.
- * @returns {JSX.Element} The CurrentContributionComparison component.
+ * Component for rendering the subsite CurrentContributionComparison.
  */
 const CurrentContributionComparison = ({
                                            width,

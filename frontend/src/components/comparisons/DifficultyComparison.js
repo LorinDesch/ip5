@@ -7,10 +7,7 @@ import {getValueAttributeOnlyGroup} from "./AllowsMeToComparison";
 
 
 /**
- * Component for rendering the DifficultyComparison chart.
- *
- * @param {Object} props - The component props.
- * @returns {JSX.Element} The DifficultyComparison component.
+ * Component for rendering the subsite DifficultyComparison.
  */
 const DifficultyComparison = ({
                                   width,

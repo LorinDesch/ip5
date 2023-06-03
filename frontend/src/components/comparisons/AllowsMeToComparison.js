@@ -10,12 +10,6 @@ import {Col, Container, Row} from "react-bootstrap";
  * If a valid commitment ID is found for selectedOption2, the function searches for the group.userIds
  * in fakeData and returns an array of second difficulty values for each group.
  * If no valid commitment ID is found, an array of zeros is returned.
- *
- * @param {string} attribute - The attribute to retrieve from the diary data.
- * @param {string[]} selectedOption3 - An array of group names.
- * @param {Object} fakeData - The fake data object containing commitments, groups, and diary data.
- * @param {string} selectedOption2 - The selected option 2 value.
- * @returns {number[]} - An array of second difficulty values for each group, or an array of zeros.
  */
 export function getValueAttributeOnlyGroup(attribute, selectedOption3, fakeData, selectedOption2) {
     const cId = fakeData.commitments.find(commitment => commitment.commitmentname === selectedOption2)?.commitmentid;
@@ -40,13 +34,7 @@ export function getValueAttributeOnlyGroup(attribute, selectedOption3, fakeData,
 
 
 /**
- * Retrieves the value of a specific attribute for a selected user and group.
- *
- * @param {string} attribute - The attribute to retrieve the value for.
- * @param {string} selectedOption1 - The selected user.
- * @param {string} selectedOption2 - The selected commitment.
- * @param {Object} fakeData - The fake data object.
- * @returns {number[]} The value of the attribute for the selected user and group.
+ * Component for rendering the subsite AllowMeToComparison.
  */
 const AllowMeToComparison = ({
                                  width,
