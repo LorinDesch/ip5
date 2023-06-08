@@ -1,10 +1,11 @@
 import React, {useState, useEffect} from 'react';
-import {FaHome, FaChartBar, FaComments} from 'react-icons/fa';
+import {FaChartBar, FaRegComments} from 'react-icons/fa';
 import { CgTrees } from "react-icons/cg";
-import { TiChartAreaOutline} from "react-icons/ti"
+import { TiChartAreaOutline, TiWarningOutline, TiHomeOutline} from "react-icons/ti"
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { RxMixerHorizontal } from "react-icons/rx";
-import { CiWarning } from "react-icons/ci";
+import { TbAlertTriangleFilled } from "react-icons/tb";
+import { VscSearchStop } from "react-icons/vsc";
 
 /**
  * Component for the side navigation bar.
@@ -38,7 +39,7 @@ const SideNavbar = () => {
         >
             <div className="d-flex flex-column align-items-center justify-content-center text-center"style={{ marginRight: '1rem' }}>
                 <div className="mb-2">Home</div>
-                <FaHome
+                <TiHomeOutline
                     size={'3vw'}
                     className="nav-icon rounded border border-secondary p-2"
                     onMouseEnter={handleIconHover}
@@ -48,7 +49,7 @@ const SideNavbar = () => {
             </div>
             <div className="d-flex flex-column align-items-center justify-content-center text-center"style={{ marginRight: '1rem' }}>
                 <div className="mb-2">Schwierigkeit</div>
-                <CiWarning
+                <TiWarningOutline
                     size={'3vw'}
                     className="nav-icon rounded border border-secondary p-2"
                     onMouseEnter={handleIconHover}
@@ -58,7 +59,7 @@ const SideNavbar = () => {
             </div>
             <div className="d-flex flex-column align-items-center justify-content-center text-center"style={{ marginRight: '1rem' }}>
                 <div className="mb-2">Ein-<br/>schränkung</div>
-                <FaChartBar
+                <VscSearchStop
                     size={'3vw'}
                     className="nav-icon rounded border border-secondary p-2"
                     onMouseEnter={handleIconHover}
@@ -68,7 +69,7 @@ const SideNavbar = () => {
             </div>
             <div className="d-flex flex-column align-items-center justify-content-center text-center"style={{ marginRight: '1rem' }}>
                 <div className="mb-2">Umfeld</div>
-                <FaComments
+                <FaRegComments
                     size={'3vw'}
                     className="nav-icon rounded border border-secondary p-2"
                     onMouseEnter={handleIconHover}
