@@ -1,4 +1,6 @@
 import React from 'react';
+import './style.css';
+
 
 /**
  * Retrieves the left index value for the TreeImages component.
@@ -132,9 +134,9 @@ const TreeImages = ({
     };
 
     return (
-        <div>
+        <div className = "tree-image">
             <h3 style={{marginTop:"4rem"}}>Hast Du das Commitment öfter <br/> erreicht als die ausgewählten Gruppen?</h3>
-            <div style={containerStyles}>
+            <div className = "tree-image" style={containerStyles}>
 
                 <img src={leftImagePath} alt={`left tree ${leftIndex}`} style={imageStylesLeft}/>
                 <img src={rightImagePath} alt={`right tree ${rightIndex}`} style={imageStylesRight}/>

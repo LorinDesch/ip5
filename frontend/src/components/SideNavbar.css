@@ -1,0 +1,47 @@
+/* SideNavbar.css */
+
+.side-navbar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 200px;
+    background-color: #f5f5f5;
+    transition: width 0.3s ease-in-out;
+    z-index: 100;
+}
+
+.side-navbar.open {
+    width: 200px; /* Breite der geöffneten Seitenleiste */
+}
+
+.side-navbar.closed {
+    width: 50px; /* Breite der geschlossenen Seitenleiste */
+}
+
+.toggle-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    cursor: pointer;
+    background-color: #f5f5f5;
+    border-bottom: 1px solid #ddd;
+}
+
+.toggle-button:hover {
+    background-color: #e5e5e5;
+}
+
+.nav-icon {
+    display: block;
+    margin: 10px auto;
+    color: black;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.nav-icon:hover {
+    color: #5e7839;
+    transform: scale(1.2);
+}
+
+/* Weitere benutzerdefinierte CSS-Stile für die Sidebar-Elemente */
