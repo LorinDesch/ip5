@@ -3,9 +3,9 @@
 .side-navbar {
     position: fixed;
     left: 0;
-    top: 75px; /* Ändere den Wert, um die SideNavbar nach unten zu verschieben */
+    top: 90px; /* Ändere den Wert, um die SideNavbar nach unten zu verschieben */
     width: 200px;
-    background-color: #b75050;
+    background-color: #ffffff;
     transition: width 0.3s ease-in-out;
     z-index: 100;
 }
@@ -41,6 +41,10 @@
     margin: 10px auto;
     color: black;
     transition: color 0.3s, transform 0.3s;
+    min-width: 40px;
+    min-height: 40px;
+    max-width: 80px;
+    max-height: 80px;
 }
 
 .nav-icon:hover {
@@ -51,6 +55,7 @@
 /* Weitere benutzerdefinierte CSS-Stile für die Sidebar-Elemente */
 .sidebar-item {
     text-align: center;
+    min-width: 100px;
 }
 
 .sidebar-text {

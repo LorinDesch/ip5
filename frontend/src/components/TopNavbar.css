@@ -1,0 +1,60 @@
+/* TopNavbar.css */
+
+.top-navbar {
+    display: flex;
+    align-items: flex-start; /* Dropdowns links ausrichten */
+    justify-content: flex-start; /* Menü ganz nach links verschieben */
+    border-bottom: 1px solid black;
+    padding-bottom: 1rem;
+    margin-top: 1rem;
+}
+
+.top-navbar > button.menu-button {
+    padding: 1px 1px;
+    border: none;
+    background-color: transparent;
+    font-family: sans-serif;
+    font-size: 16px;
+    cursor: pointer;
+    align-self: flex-start; /* Text "Menü" links ausrichten */
+}
+
+@media (min-width: 768px) {
+    .top-navbar {
+        display: grid;
+        grid-template-columns: 1.2fr 2fr 1fr auto;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    .top-navbar > button.menu-button {
+        display: none;
+    }
+
+    .top-navbar > div:nth-child(2) {
+        justify-self: center;
+        margin-left: 6rem;
+    }
+
+    .top-navbar > div:nth-child(3) {
+        justify-self: flex-end;
+        margin-right: 5rem;
+    }
+
+    .top-navbar > div:nth-child(4) {
+        justify-self: flex-end;
+        margin-right: 0.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .top-navbar {
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+
+    .top-navbar > div {
+        margin: 0.5rem;
+        align-self: flex-start; /* Dropdowns links ausrichten */
+    }
+}
