@@ -1,10 +1,9 @@
 import React, {useState, useEffect} from 'react';
-import {FaChartBar, FaRegComments} from 'react-icons/fa';
+import {FaRegComments} from 'react-icons/fa';
 import { CgTrees } from "react-icons/cg";
 import { TiChartAreaOutline, TiWarningOutline, TiHomeOutline} from "react-icons/ti"
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { RxMixerHorizontal } from "react-icons/rx";
-import { TbAlertTriangleFilled } from "react-icons/tb";
 import { VscSearchStop } from "react-icons/vsc";
 
 /**
