@@ -44,7 +44,7 @@ function Dashboard({
                 left: 0,
                 bottom: 0,
                 width: '5rem',
-                backgroundColor: '#f8f9fa',
+                backgroundColor: 'rgba(255,255,255,0)',
                 zIndex: 1
             }}>
                 <SideNavbar/>
