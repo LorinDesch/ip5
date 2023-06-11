@@ -29,8 +29,8 @@ function Dashboard({
 
     return (
 
-        <div style={{display: 'flex', flexDirection: 'column', minHeight: '100vh'}}>
-            <header style={{marginLeft: '7rem', marginTop: '0.5rem'}}>
+        <div style={{display: 'flex', flexDirection: 'column', minHeight: '0px'}}>
+            <header>
                 <TopNavbar fakeData={fakeData} selectedOption1={selectedOption1}
                            setSelectedOption1={setSelectedOption1}
                            selectedOption2={selectedOption2}

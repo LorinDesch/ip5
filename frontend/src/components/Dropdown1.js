@@ -18,7 +18,7 @@ const Dropdown1 = ({ fakeData, onChange, styling, options, changeableFakeData, s
     options = [selectedUser, selectedGroup];
 
     return (
-        <select value={selectedOptions1} onChange={onChange} style={{...styling, width: '16rem'}}>
+        <select value={selectedOptions1} onChange={onChange} style={{...styling}}>
             {options.map((option) => (
                 <option key={option} style={styling}>
                     {option}

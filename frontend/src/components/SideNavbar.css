@@ -12,6 +12,12 @@
 
 }
 
+@media (max-width: 768px) {
+    .side-navbar {
+        top: 55px;
+    }
+}
+
 .side-navbar.open {
     width: 100px; /* Breite der geöffneten Seitenleiste */
     border-right: 1px solid #000; /* Ändere #000 auf die gewünschte Farbe der Linie */
@@ -30,12 +36,12 @@
     justify-content: center;
     height: 50px;
     cursor: pointer;
-    background-color: #f5f5f5;
+    background-color: rgba(245, 245, 245, 0.42);
     border-bottom: 1px solid #ddd;
 }
 
 .toggle-button:hover {
-    background-color: #e5e5e5;
+    background-color: rgba(229, 229, 229, 0.39);
 }
 
 .nav-icon {
@@ -63,3 +69,4 @@
 .sidebar-text {
     margin-top: 5px;
 }
+
