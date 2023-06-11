@@ -10,7 +10,7 @@
     }
 
     .feelingsbar {
-        transform: scale(0.65) translateX(-30px) translateY(-300px);
+        transform: scale(0.65) translateX(-190px) translateY(-300px);
     }
 
     .commitmentsbar {
@@ -23,7 +23,7 @@
 }
 
 .tree {
-    transform: scale(0.9) translateY(-60px);
+    transform: scale(0.9) translateY(-400px);
     margin-top: 10px;
 }
 
