@@ -1,29 +1,17 @@
+@media (max-width: 768px) {
 
-/*    img {*/
-/*        max-width: 90%;*/
-/*    }*/
+    .tree-image {
+        scale: 0.7;
+    }
 
-/*    .order1 {*/
-/*        order: 1;*/
-/*    }*/
+    .schluesseText {
+        font-size: 10px;
+        margin-top: 0.5rem;
+    }
 
-/*    .order2 {*/
-/*        order: 2;*/
-/*    }*/
+}
 
-/*    .order3 {*/
-/*        order: 3;*/
-/*    }*/
 
-/*    .order4 {*/
-/*        order: 4;*/
-/*    }*/
-
-/*    .order5 {*/
-/*        order: 5;*/
-/*    }*/
-
-/*    .order6 {*/
-/*        order: 6;*/
-/*    }*/
-/*}*/
+.tree-image {
+    /*scale: 0.5;*/
+}

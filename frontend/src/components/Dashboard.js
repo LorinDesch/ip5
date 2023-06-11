@@ -136,41 +136,46 @@ function Dashboard({
                 <Container>
                     <div>
                         <Row>
-
-                            <Col style={{backgroundColor: 'red'}}>
+                            <Col md={3} style={{backgroundColor: 'red'}}>
                                 <Row style={{backgroundColor: 'blue'}}>
-                                    <SchluesseAusChallenge schluesse={schluesseSelectedDropdown1}/>
+                                    <SchluesseAusChallenge schluesse={schluesseSelectedDropdown1}
+                                    />
                                 </Row>
                                 <Row style={{backgroundColor: 'darkgray'}}>
-                                    <p>Test</p>
+                                    <FeelingsBar fakeData={fakeData} selectedOption1={selectedOption1}
+                                                 setSelectedOption1={setSelectedOption1}
+                                                 selectedOption2={selectedOption2}
+                                                 setSelectedOption2={setSelectedOption2}
+                                                 selectedOption3={selectedOption3}
+                                                 setSelectedOption3={setSelectedOption3} width={600} height={180}/>
                                 </Row>
                             </Col>
-
-                            <Col style={{backgroundColor: 'green'}}>
-                                <div>
-                                    <TreeImages
-                                        fakeData={fakeData} selectedOption1={selectedOption1}
-                                        setSelectedOption1={setSelectedOption1}
-                                        selectedOption2={selectedOption2}
-                                        setSelectedOption2={setSelectedOption2}
-                                        selectedOption3={selectedOption3}
-                                        setSelectedOption3={setSelectedOption3}/>
-                                </div>
+                            <Col md={3} style={{backgroundColor: 'green'}}>
+                                <TreeImages
+                                    fakeData={fakeData} selectedOption1={selectedOption1}
+                                    setSelectedOption1={setSelectedOption1}
+                                    selectedOption2={selectedOption2}
+                                    setSelectedOption2={setSelectedOption2}
+                                    selectedOption3={selectedOption3}
+                                    setSelectedOption3={setSelectedOption3}/>
                             </Col>
-
-                            <Col style={{backgroundColor: 'yellow'}}>
+                            <Col md={3} style={{backgroundColor: 'yellow'}}>
                                 <Row style={{backgroundColor: 'blue'}}>
                                     <SchluesseAusChallenge schluesse={schluesseSelectedDropdown3}/>
                                 </Row>
                                 <Row style={{backgroundColor: 'darkgray'}}>
-                                    <p>Test</p>
+                                    <CommitmentsBar width={700} height={200}
+                                                    fakeData={fakeData} selectedOption1={selectedOption1}
+                                                    setSelectedOption1={setSelectedOption1}
+                                                    selectedOption2={selectedOption2}
+                                                    setSelectedOption2={setSelectedOption2}
+                                                    selectedOption3={selectedOption3}
+                                                    setSelectedOption3={setSelectedOption3}/>
                                 </Row>
                             </Col>
-
-
                         </Row>
-
                     </div>
+
 
                     {/*<Row>*/}
                     {/*    <Col md={4}>*/}
