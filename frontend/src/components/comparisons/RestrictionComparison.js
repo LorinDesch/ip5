@@ -10,7 +10,7 @@ import {Col, Container, Row} from "react-bootstrap";
 const RestrictionComparison = (props) => {
     return (
         <>
-            <header style={{marginLeft: '7rem', marginTop: '0.5rem'}}>
+            <header>
                 <TopNavbar fakeData={props.fakeData} selectedOption1={props.selectedOption1}
                            setSelectedOption1={props.setSelectedOption1}
                            selectedOption2={props.selectedOption2}
@@ -33,8 +33,9 @@ const RestrictionComparison = (props) => {
             <Container fluid className="mt-4">
                 <Row className="text-center mb-4 align-items-center" style={{marginTop: '3rem', marginBottom: '5rem'}}>
                     <Col md={6}>
-                        <div style={{marginLeft: '5rem'}}>
-                            <Comparison width={700} height={250}
+                        <div className="restrictionFirst" style={{marginLeft: '5rem'}}>
+                            <Comparison width={window.innerWidth <= 768 ? 300 : 700}
+                                        height={window.innerWidth <= 768 ? 180 : 250}
                                         squaredLabelLeft={props.restrionctionLabel}
                                         leftLabel={props.rrestrictionlabelLeft}
                                         squaredLabelRight={props.difficultyLabel}
@@ -48,8 +49,9 @@ const RestrictionComparison = (props) => {
                         </div>
                     </Col>
                     <Col md={6}>
-                        <div style={{marginLeft: '-1.5rem'}}>
-                            <Comparison width={700} height={250}
+                        <div className="restrictionSecond" style={{marginLeft: '-1.5rem'}}>
+                            <Comparison width={window.innerWidth <= 768 ? 300 : 700}
+                                        height={window.innerWidth <= 768 ? 180 : 250}
                                         squaredLabelLeft={props.restrionctionLabel}
                                         leftLabel={props.rrestrictionlabelLeft}
                                         squaredLabelRight={props.currentContributionLabel}
@@ -81,8 +83,9 @@ const RestrictionComparison = (props) => {
                         </div>
                     </Col>
                     <Col md={6}>
-                        <div style={{marginLeft: '-1.5rem'}}>
-                            <Comparison width={700} height={250}
+                        <div className="restrictionThird"  style={{marginLeft: '-1.5rem'}}>
+                            <Comparison width={window.innerWidth <= 768 ? 300 : 700}
+                                        height={window.innerWidth <= 768 ? 180 : 250}
                                         squaredLabelLeft={props.restrionctionLabel}
                                         leftLabel={props.rrestrictionlabelLeft}
                                         squaredLabelRight={props.allowMeToLabel}
@@ -98,8 +101,9 @@ const RestrictionComparison = (props) => {
                 </Row>
                 <Row className="text-center mb-4 align-items-center" style={{marginTop: '3rem', marginBottom: '5rem'}}>
                     <Col md={6}>
-                        <div style={{marginLeft: '5rem'}}>
-                            <Comparison width={700} height={250}
+                        <div className="restrictionFourth" style={{marginLeft: '5rem'}}>
+                            <Comparison width={window.innerWidth <= 768 ? 300 : 700}
+                                        height={window.innerWidth <= 768 ? 180 : 250}
                                         squaredLabelLeft={props.restrionctionLabel}
                                         leftLabel={props.rrestrictionlabelLeft}
                                         squaredLabelRight={props.environeLabel}
@@ -113,8 +117,9 @@ const RestrictionComparison = (props) => {
                         </div>
                     </Col>
                     <Col md={6}>
-                        <div style={{marginLeft: '-1.5rem'}}>
-                            <Comparison width={700} height={250}
+                        <div className="restrictionFifth" style={{marginLeft: '-1.5rem'}}>
+                            <Comparison width={window.innerWidth <= 768 ? 300 : 700}
+                                        height={window.innerWidth <= 768 ? 180 : 250}
                                         squaredLabelLeft={props.restrionctionLabel}
                                         leftLabel={props.rrestrictionlabelLeft}
                                         squaredLabelRight={props.sustainableDevelopmentLabel}

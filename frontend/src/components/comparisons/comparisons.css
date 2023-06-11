@@ -1,0 +1,77 @@
+@media (max-width: 768px) {
+
+    .difficultFirst {
+        /*transform: translateX(-px);*/
+        transform: translateY(50px);
+    }
+
+    .difficultSecond {
+        transform: translateX(-50px) translateY(50px);
+        /*transform: translateY(50px);*/
+
+    }
+
+    .difficultThird {
+        /*transform: translateX(-300px);*/
+        transform: translateY(100px);
+
+    }
+
+    .difficultFourth {
+        transform: translateX(-50px) translateY(150px);
+    }
+
+    .difficultFifth {
+        /*transform: translateX(-500px);*/
+        transform: translateY(200px);
+    }
+
+    .text {
+        margin-right: 30px;
+    }
+
+
+    .restrictionFirst {
+        transform: translateY(50px);
+    }
+
+    .restrictionSecond {
+        transform: translateX(-50px) translateY(50px);
+    }
+
+    .restrictionThird {
+        transform: translateY(100px);
+    }
+
+    .restrictionFourth {
+        transform: translateX(-50px) translateY(150px);
+    }
+
+    .restrictionFifth {
+        transform: translateY(200px);
+    }
+
+
+    .contribubtionFirst {
+        transform: translateY(50px);
+    }
+
+    .contribubtionSecond {
+        transform: translateX(-50px) translateY(50px);
+    }
+
+    .contribubtionThird {
+        transform: translateY(100px);
+    }
+
+    .contribubtionFourth {
+        transform: translateX(-50px) translateY(150px);
+    }
+
+    .contribubtionFifth {
+        transform: translateY(200px);
+    }
+
+
+
+}

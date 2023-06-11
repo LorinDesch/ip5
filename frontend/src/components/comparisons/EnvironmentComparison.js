@@ -10,7 +10,7 @@ import {Col, Container, Row} from "react-bootstrap";
 const EnvironmentalComparison = (props) => {
     return (
         <>
-            <header style={{marginLeft: '7rem', marginTop: '0.5rem'}}>
+            <header>
                 <TopNavbar fakeData={props.fakeData} selectedOption1={props.selectedOption1}
                            setSelectedOption1={props.setSelectedOption1}
                            selectedOption2={props.selectedOption2}

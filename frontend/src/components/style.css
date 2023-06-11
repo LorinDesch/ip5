@@ -1,6 +1,8 @@
 @media (max-width: 768px) {
     .tree {
-        scale: 0.45;
+        scale: 0.5;
+        /*transform: translateY(-400px);*/
+        /*margin-bottom: 400px;*/
     }
 
     .schluesseText {
@@ -20,11 +22,13 @@
     .untereSchluesse {
         transform: translateY(-400px);
     }
+
+
 }
 
 .tree {
-    transform: scale(0.9) translateY(-400px);
-    margin-top: 10px;
+    transform: scale(0.9);
+    /*margin-top: 350px;*/
 }
 
 .feelingsbar {

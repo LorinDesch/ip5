@@ -10,7 +10,7 @@ import {Col, Container, Row} from "react-bootstrap";
 const CurrentContributionComparison = (props) => {
     return (
         <>
-            <header style={{marginLeft: '7rem', marginTop: '0.5rem'}}>
+            <header>
                 <TopNavbar fakeData={props.fakeData} selectedOption1={props.selectedOption1}
                            setSelectedOption1={props.setSelectedOption1}
                            selectedOption2={props.selectedOption2}
@@ -33,8 +33,9 @@ const CurrentContributionComparison = (props) => {
             <Container fluid className="mt-4">
                 <Row className="text-center mb-4 align-items-center" style={{marginTop: '3rem', marginBottom: '5rem'}}>
                     <Col md={6}>
-                        <div style={{marginLeft: '5rem'}}>
-                            <Comparison width={700} height={250}
+                        <div className="contributionFirst" style={{marginLeft: '5rem'}}>
+                            <Comparison     width={window.innerWidth <= 768 ? 300 : 700}
+                                            height={window.innerWidth <= 768 ? 180 : 250}
                                         squaredLabelLeft={props.currentContributionLabel}
                                         leftLabel={props.currentContributionlabelLeft}
                                         squaredLabelRight={props.difficultyLabel}
@@ -65,8 +66,9 @@ const CurrentContributionComparison = (props) => {
                 </Row>
                 <Row className="text-center mb-4 align-items-center" style={{marginTop: '3rem', marginBottom: '5rem'}}>
                     <Col md={6}>
-                        <div style={{marginLeft: '5rem'}}>
-                            <Comparison width={700} height={250}
+                        <div className="contributionSecond" style={{marginLeft: '5rem'}}>
+                            <Comparison     width={window.innerWidth <= 768 ? 300 : 700}
+                                            height={window.innerWidth <= 768 ? 180 : 250}
                                         squaredLabelLeft={props.currentContributionLabel}
                                         leftLabel={props.currentContributionlabelLeft}
                                         squaredLabelRight={props.restrionctionLabel}
@@ -81,8 +83,9 @@ const CurrentContributionComparison = (props) => {
                         </div>
                     </Col>
                     <Col md={6}>
-                        <div style={{marginLeft: '-1.5rem'}}>
-                            <Comparison width={700} height={250}
+                        <div className="contributionThird" style={{marginLeft: '-1.5rem'}}>
+                            <Comparison     width={window.innerWidth <= 768 ? 300 : 700}
+                                            height={window.innerWidth <= 768 ? 180 : 250}
                                         squaredLabelLeft={props.currentContributionLabel}
                                         leftLabel={props.currentContributionlabelLeft}
                                         squaredLabelRight={props.allowMeToLabel}
@@ -98,8 +101,9 @@ const CurrentContributionComparison = (props) => {
                 </Row>
                 <Row className="text-center mb-4 align-items-center" style={{marginTop: '3rem', marginBottom: '5rem'}}>
                     <Col md={6}>
-                        <div style={{marginLeft: '5rem'}}>
-                            <Comparison width={700} height={250}
+                        <div className="contributionFourth" style={{marginLeft: '5rem'}}>
+                            <Comparison     width={window.innerWidth <= 768 ? 300 : 700}
+                                            height={window.innerWidth <= 768 ? 180 : 250}
                                         squaredLabelLeft={props.currentContributionLabel}
                                         leftLabel={props.currentContributionlabelLeft}
                                         squaredLabelRight={props.environeLabel}
@@ -113,8 +117,9 @@ const CurrentContributionComparison = (props) => {
                         </div>
                     </Col>
                     <Col md={6}>
-                        <div style={{marginLeft: '-1.5rem'}}>
-                            <Comparison width={700} height={250}
+                        <div className="contributionFifth" style={{marginLeft: '-1.5rem'}}>
+                            <Comparison     width={window.innerWidth <= 768 ? 300 : 700}
+                                            height={window.innerWidth <= 768 ? 180 : 250}
                                         squaredLabelLeft={props.currentContributionLabel}
                                         leftLabel={props.currentContributionlabelLeft}
                                         squaredLabelRight={props.sustainableDevelopmentLabel}

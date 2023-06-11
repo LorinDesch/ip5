@@ -3,6 +3,7 @@ import {Container, Row, Col} from 'react-bootstrap';
 import TopNavbar from '../TopNavbar';
 import Comparison from "../Charts/Comparison";
 import SideNavbar from "../SideNavbar";
+import './comparisons.css'
 
 /**
  * Component for rendering the DifficultyComparison subsite.
@@ -10,7 +11,7 @@ import SideNavbar from "../SideNavbar";
 const DifficultyComparison = (props) => {
     return (
         <>
-            <header style={{marginLeft: '7rem', marginTop: '0.5rem'}}>
+            <header >
                 <TopNavbar fakeData={props.fakeData} selectedOption1={props.selectedOption1}
                            setSelectedOption1={props.setSelectedOption1}
                            selectedOption2={props.selectedOption2}
@@ -31,8 +32,8 @@ const DifficultyComparison = (props) => {
             </div>
             <Container fluid className="mt-4">
                 <Row className="text-center mb-4 align-items-center" style={{marginTop: '3rem', marginBottom: '5rem'}}>
-                    <Col md={6}>
-                        <div style={{marginLeft: '5rem'}}>
+                    <Col  md={6}>
+                        <div className="text" style={{marginLeft: '5rem'}}>
                             <h1 className="text-center mb-1">Vergleiche wie schwer <br/>das Commitment war</h1>
                             <p style={{margin: '0.2rem'}}>Schwierigkeit: Wie schwer war das Commitment?</p>
                             <p style={{margin: '0.2rem'}}>Einschränkung: Wie stark hat dich das Commitment
@@ -47,8 +48,11 @@ const DifficultyComparison = (props) => {
                         </div>
                     </Col>
                     <Col md={6}>
-                        <div style={{marginLeft: '-1.5rem'}}>
-                            <Comparison width={700} height={250}
+                        <div className="difficultFirst" style={{marginLeft: '-1.5rem'}}>
+                            <Comparison
+                                width={window.innerWidth <= 768 ? 300 : 700}
+                                height={window.innerWidth <= 768 ? 180 : 250}
+                                // width={700} height={250}
                                         squaredLabelLeft={props.difficultyLabel}
                                         leftLabel={props.difficultylabelLeft}
                                         squaredLabelRight={props.currentContributionLabel}
@@ -64,8 +68,11 @@ const DifficultyComparison = (props) => {
                 </Row>
                 <Row className="text-center mb-4 align-items-center" style={{marginTop: '3rem', marginBottom: '5rem'}}>
                     <Col md={6}>
-                        <div style={{marginLeft: '5rem'}}>
-                            <Comparison width={700} height={250}
+                        <div className="difficultSecond" style={{marginLeft: '5rem'}}>
+                            <Comparison
+                                        width={window.innerWidth <= 768 ? 300 : 700}
+                                        height={window.innerWidth <= 768 ? 180 : 250}
+                                // width={700} height={250}
                                         squaredLabelLeft={props.difficultyLabel}
                                         leftLabel={props.difficultylabelLeft}
                                         squaredLabelRight={props.restrionctionLabel}
@@ -79,8 +86,10 @@ const DifficultyComparison = (props) => {
                         </div>
                     </Col>
                     <Col md={6}>
-                        <div style={{marginLeft: '-1.5rem'}}>
-                            <Comparison width={700} height={250}
+                        <div className="difficultThird" style={{marginLeft: '-1.5rem'}}>
+                            <Comparison
+                                        width={window.innerWidth <= 768 ? 300 : 700}
+                                        height={window.innerWidth <= 768 ? 180 : 250}                                // width={700} height={250}
                                         squaredLabelLeft={props.difficultyLabel}
                                         leftLabel={props.difficultylabelLeft}
                                         squaredLabelRight={props.allowMeToLabel}
@@ -96,8 +105,11 @@ const DifficultyComparison = (props) => {
                 </Row>
                 <Row className="text-center mb-4 align-items-center" style={{marginTop: '3rem', marginBottom: '5rem'}}>
                     <Col md={6}>
-                        <div style={{marginLeft: '5rem'}}>
-                            <Comparison width={700} height={250}
+                        <div className="difficultFourth" style={{marginLeft: '5rem'}}>
+                            <Comparison
+                                        width={window.innerWidth <= 768 ? 300 : 700}
+                                        height={window.innerWidth <= 768 ? 180 : 250}
+                                // width={700} height={250}
                                         squaredLabelLeft={props.difficultyLabel}
                                         leftLabel={props.difficultylabelLeft}
                                         squaredLabelRight={props.environeLabel}
@@ -111,8 +123,11 @@ const DifficultyComparison = (props) => {
                         </div>
                     </Col>
                     <Col md={6}>
-                        <div style={{marginLeft: '-1.5rem'}}>
-                            <Comparison width={700} height={250}
+                        <div className="difficultFifth" style={{marginLeft: '-1.5rem'}}>
+                            <Comparison
+                                        width={window.innerWidth <= 768 ? 300 : 700}
+                                        height={window.innerWidth <= 768 ? 180 : 250}
+                                // width={700} height={250}
                                         squaredLabelLeft={props.difficultyLabel}
                                         leftLabel={props.difficultylabelLeft}
                                         squaredLabelRight={props.sustainableDevelopmentLabel}
