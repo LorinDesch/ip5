@@ -171,7 +171,7 @@ function CommitmentsBar({
     }, [data, groups, height, width, selectedOption3]);
 
 
-    return <svg ref={svgRef}/>;
+    return <svg className="commitmentsbar" ref={svgRef}/>;
 }
 
 export default CommitmentsBar;

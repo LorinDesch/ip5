@@ -185,7 +185,7 @@ function FeelingsBar({
             });
     }, [data, height, width, colors]);
 
-    return (<svg ref={svgRef}>
+    return (<svg className="feelingsbar" ref={svgRef}>
         <text x={width / 2} y={-40} textAnchor="middle" fontWeight="bold">
             Wie hast du dich über den Verlauf des Selfcommitments gefühlt?
         </text>

@@ -133,24 +133,35 @@ function Dashboard({
 
 
             <div>
-                <Container>
+                <Container fluid>
                     <div>
-                        <Row>
-                            <Col md={3} style={{backgroundColor: 'red'}}>
-                                <Row style={{backgroundColor: 'blue'}}>
-                                    <SchluesseAusChallenge schluesse={schluesseSelectedDropdown1}
+                        <Row className="justify-content-center">
+                            <Col md={4}
+                                 // style={{backgroundColor: 'red'}}
+                            >
+                                <Row
+                                    // style={{backgroundColor: 'blue'}}
+                                >
+                                    <SchluesseAusChallenge className="schluesseLinks" schluesse={schluesseSelectedDropdown1}
                                     />
                                 </Row>
-                                <Row style={{backgroundColor: 'darkgray'}}>
-                                    <FeelingsBar fakeData={fakeData} selectedOption1={selectedOption1}
+                                <Row
+                                    // style={{backgroundColor: 'darkgray'}}
+                                >
+                                    <FeelingsBar className="feelingsbar"
+                                        fakeData={fakeData} selectedOption1={selectedOption1}
                                                  setSelectedOption1={setSelectedOption1}
                                                  selectedOption2={selectedOption2}
                                                  setSelectedOption2={setSelectedOption2}
                                                  selectedOption3={selectedOption3}
-                                                 setSelectedOption3={setSelectedOption3} width={600} height={180}/>
+                                                 setSelectedOption3={setSelectedOption3}
+                                                 width={window.innerWidth <= 768 ? 500 : 600}
+                                                 height={window.innerWidth <= 768 ? 150 : 180}/>
                                 </Row>
                             </Col>
-                            <Col md={3} style={{backgroundColor: 'green'}}>
+                            <Col md={3}
+                                 // style={{backgroundColor: 'green'}}
+                            >
                                 <TreeImages
                                     fakeData={fakeData} selectedOption1={selectedOption1}
                                     setSelectedOption1={setSelectedOption1}
@@ -159,82 +170,30 @@ function Dashboard({
                                     selectedOption3={selectedOption3}
                                     setSelectedOption3={setSelectedOption3}/>
                             </Col>
-                            <Col md={3} style={{backgroundColor: 'yellow'}}>
-                                <Row style={{backgroundColor: 'blue'}}>
-                                    <SchluesseAusChallenge schluesse={schluesseSelectedDropdown3}/>
+                            <Col md={3}
+                                 // style={{backgroundColor: 'yellow'}}
+                            >
+                                <Row
+                                    // style={{backgroundColor: 'blue'}}
+                                >
+                                    <SchluesseAusChallenge className="schluesseRechts" schluesse={schluesseSelectedDropdown3}/>
                                 </Row>
-                                <Row style={{backgroundColor: 'darkgray'}}>
-                                    <CommitmentsBar width={700} height={200}
-                                                    fakeData={fakeData} selectedOption1={selectedOption1}
-                                                    setSelectedOption1={setSelectedOption1}
-                                                    selectedOption2={selectedOption2}
-                                                    setSelectedOption2={setSelectedOption2}
-                                                    selectedOption3={selectedOption3}
-                                                    setSelectedOption3={setSelectedOption3}/>
+                                <Row
+                                    // style={{backgroundColor: 'darkgray'}}
+                                >
+                                    <CommitmentsBar className="commitmentsbar"
+                                        width={window.innerWidth <= 768 ? 400 : 700}
+                                        height={window.innerWidth <= 768 ? 180 : 200}
+                                        fakeData={fakeData} selectedOption1={selectedOption1}
+                                        setSelectedOption1={setSelectedOption1}
+                                        selectedOption2={selectedOption2}
+                                        setSelectedOption2={setSelectedOption2}
+                                        selectedOption3={selectedOption3}
+                                        setSelectedOption3={setSelectedOption3}/>
                                 </Row>
                             </Col>
                         </Row>
                     </div>
-
-
-                    {/*<Row>*/}
-                    {/*    <Col md={4}>*/}
-                    {/*        <div>*/}
-                    {/*            <div>*/}
-                    {/*                <SchluesseAusChallenge schluesse={schluesseSelectedDropdown1}/>*/}
-                    {/*            </div>*/}
-                    {/*        </div>*/}
-                    {/*    </Col>*/}
-
-                    {/*    <Col md={4}>*/}
-                    {/*        <div>*/}
-
-                    {/*        </div>*/}
-                    {/*    </Col>*/}
-                    {/*    <Col md={4}>*/}
-                    {/*        <div>*/}
-                    {/*            <div style={{height: '300px'}}>*/}
-                    {/*                <SchluesseAusChallenge schluesse={schluesseSelectedDropdown3}/>*/}
-                    {/*            </div>*/}
-                    {/*        </div>*/}
-                    {/*    </Col>*/}
-
-                    {/*</Row>*/}
-
-                    {/*<Row>*/}
-                    {/*    <Col md={4}>*/}
-                    {/*        <div>*/}
-                    {/*            <FeelingsBar fakeData={fakeData} selectedOption1={selectedOption1}*/}
-                    {/*                         setSelectedOption1={setSelectedOption1}*/}
-                    {/*                         selectedOption2={selectedOption2}*/}
-                    {/*                         setSelectedOption2={setSelectedOption2}*/}
-                    {/*                         selectedOption3={selectedOption3}*/}
-                    {/*                         setSelectedOption3={setSelectedOption3} width={600} height={180}/>*/}
-                    {/*        </div>*/}
-                    {/*    </Col>*/}
-                    {/*    <Col md={4}>*/}
-                    {/*        <div>*/}
-                    {/*            <TreeImages*/}
-                    {/*                fakeData={fakeData} selectedOption1={selectedOption1}*/}
-                    {/*                setSelectedOption1={setSelectedOption1}*/}
-                    {/*                selectedOption2={selectedOption2}*/}
-                    {/*                setSelectedOption2={setSelectedOption2}*/}
-                    {/*                selectedOption3={selectedOption3}*/}
-                    {/*                setSelectedOption3={setSelectedOption3}/>*/}
-                    {/*        </div>*/}
-                    {/*    </Col>*/}
-                    {/*    <Col md={4}>*/}
-                    {/*        <div>*/}
-                    {/*            <CommitmentsBar width={700} height={200}*/}
-                    {/*                            fakeData={fakeData} selectedOption1={selectedOption1}*/}
-                    {/*                            setSelectedOption1={setSelectedOption1}*/}
-                    {/*                            selectedOption2={selectedOption2}*/}
-                    {/*                            setSelectedOption2={setSelectedOption2}*/}
-                    {/*                            selectedOption3={selectedOption3}*/}
-                    {/*                            setSelectedOption3={setSelectedOption3}/>*/}
-                    {/*        </div>*/}
-                    {/*    </Col>*/}
-                    {/*</Row>*/}
                 </Container>
             </div>
         </div>
@@ -242,3 +201,119 @@ function Dashboard({
 }
 
 export default Dashboard;
+{/*</div>*/
+}
+
+
+{/*<Row>*/
+}
+{/*    <Col md={4}>*/
+}
+{/*        <div>*/
+}
+{/*            <div>*/
+}
+{/*                <SchluesseAusChallenge schluesse={schluesseSelectedDropdown1}/>*/
+}
+{/*            </div>*/
+}
+{/*        </div>*/
+}
+{/*    </Col>*/
+}
+
+{/*    <Col md={4}>*/
+}
+{/*        <div>*/
+}
+
+{/*        </div>*/
+}
+{/*    </Col>*/
+}
+{/*    <Col md={4}>*/
+}
+{/*        <div>*/
+}
+{/*            <div style={{height: '300px'}}>*/
+}
+{/*                <SchluesseAusChallenge schluesse={schluesseSelectedDropdown3}/>*/
+}
+{/*            </div>*/
+}
+{/*        </div>*/
+}
+{/*    </Col>*/
+}
+
+{/*</Row>*/
+}
+
+{/*<Row>*/
+}
+{/*    <Col md={4}>*/
+}
+{/*        <div>*/
+}
+{/*            <FeelingsBar fakeData={fakeData} selectedOption1={selectedOption1}*/
+}
+{/*                         setSelectedOption1={setSelectedOption1}*/
+}
+{/*                         selectedOption2={selectedOption2}*/
+}
+{/*                         setSelectedOption2={setSelectedOption2}*/
+}
+{/*                         selectedOption3={selectedOption3}*/
+}
+{/*                         setSelectedOption3={setSelectedOption3} width={600} height={180}/>*/
+}
+{/*        </div>*/
+}
+{/*    </Col>*/
+}
+{/*    <Col md={4}>*/
+}
+{/*        <div>*/
+}
+{/*            <TreeImages*/
+}
+{/*                fakeData={fakeData} selectedOption1={selectedOption1}*/
+}
+{/*                setSelectedOption1={setSelectedOption1}*/
+}
+{/*                selectedOption2={selectedOption2}*/
+}
+{/*                setSelectedOption2={setSelectedOption2}*/
+}
+{/*                selectedOption3={selectedOption3}*/
+}
+{/*                setSelectedOption3={setSelectedOption3}/>*/
+}
+{/*        </div>*/
+}
+{/*    </Col>*/
+}
+{/*    <Col md={4}>*/
+}
+{/*        <div>*/
+}
+{/*            <CommitmentsBar width={700} height={200}*/
+}
+{/*                            fakeData={fakeData} selectedOption1={selectedOption1}*/
+}
+{/*                            setSelectedOption1={setSelectedOption1}*/
+}
+{/*                            selectedOption2={selectedOption2}*/
+}
+{/*                            setSelectedOption2={setSelectedOption2}*/
+}
+{/*                            selectedOption3={selectedOption3}*/
+}
+{/*                            setSelectedOption3={setSelectedOption3}/>*/
+}
+{/*        </div>*/
+}
+{/*    </Col>*/
+}
+{/*</Row>*/
+}
