@@ -1,8 +1,13 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import './style.css';
 
 /**
  * Component for displaying conclusions from the challenge.
+ *
+ * @param {Object} props - The component props.
+ * @param {Array} props.schluesse - The conclusions from the challenge.
+ * @returns {JSX.Element} The rendered SchluesseAusChallenge component.
  */
 const SchluesseAusChallenge = ({schluesse}) => {
     const beiDirSelbst = schluesse[2];
@@ -11,34 +16,34 @@ const SchluesseAusChallenge = ({schluesse}) => {
     const produkt = schluesse[1];
 
     return (
-        <div className="container" style={{textAlign: 'center', maxWidth: '400px', paddingTop: '1rem'}}>
-            <h1 style={{fontSize: '1.5rem', marginBottom: '1rem'}}> Schlüsse aus der Challenge</h1>
+        <div>
+            <h1> Schlüsse aus der Challenge</h1>
 
-            <div className="row">
+            <div>
                 <div className="col-md-12">
-                    <h2 style={{fontSize: '1.2rem', marginBottom: '0.5rem'}}>bei dir selbst</h2>
-                    <p style={{fontSize: '1rem'}}>{beiDirSelbst}</p>
+                    <h2>bei dir selbst</h2>
+                    <p>{beiDirSelbst}</p>
                 </div>
             </div>
 
             <div className="row">
                 <div className="col-md-12">
-                    <h2 style={{fontSize: '1.2rem', marginBottom: '0.5rem'}}>in deinem sozialen Umfeld</h2>
-                    <p style={{fontSize: '1rem'}}>{sozialUmfeld}</p>
+                    <h2>in deinem sozialen Umfeld</h2>
+                    <p>{sozialUmfeld}</p>
                 </div>
             </div>
 
             <div className="row">
                 <div className="col-md-12">
-                    <h2 style={{fontSize: '1.2rem', marginBottom: '0.5rem'}}>auf politischer Ebene</h2>
-                    <p style={{fontSize: '1rem'}}>{politisch}</p>
+                    <h2>auf politischer Ebene</h2>
+                    <p>{politisch}</p>
                 </div>
             </div>
 
             <div className="row">
                 <div className="col-md-12">
-                    <h2 style={{fontSize: '1.2rem', marginBottom: '0.5rem'}}>auf Ebene Produktherstellung</h2>
-                    <p style={{fontSize: '1rem'}}>{produkt}</p>
+                    <h2>auf Ebene Produktherstellung</h2>
+                    <p>{produkt}</p>
                 </div>
             </div>
         </div>

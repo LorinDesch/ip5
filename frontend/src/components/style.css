@@ -1,0 +1,47 @@
+@media (max-width: 768px) {
+    .tree {
+        scale: 0.45;
+    }
+
+    .schluesseText {
+        font-size: 10px;
+        margin-top: 0.5rem;
+        transform: translateY(-400px);
+    }
+
+    .feelingsbar {
+        transform: scale(0.65) translateX(-30px) translateY(-300px);
+    }
+
+    .commitmentsbar {
+        transform: scale(0.85) translateX(-15px) translateY(-250px);
+    }
+
+    .untereSchluesse {
+        transform: translateY(-400px);
+    }
+}
+
+.tree {
+    transform: scale(0.9) translateY(-60px);
+    margin-top: 10px;
+}
+
+.feelingsbar {
+    margin-top: 350px;
+    margin-left: 100px;
+}
+
+.commitmentsbar {
+    margin-top: 270px;
+    margin-right: 500px;
+}
+
+.schluesseLinks {
+    margin-right: 200px;
+    transform: translateX(-100px);
+}
+
+.schluesseRechts {
+    margin-left: 200px;
+}
