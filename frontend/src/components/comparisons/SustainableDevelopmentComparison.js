@@ -33,8 +33,9 @@ const SustainabilityComparison = (props) => {
             <Container fluid className="mt-4">
                 <Row className="text-center mb-4 align-items-center" style={{marginTop: '3rem', marginBottom: '5rem'}}>
                     <Col md={6}>
-                        <div style={{marginLeft: '5rem'}}>
-                            <Comparison width={700} height={250}
+                        <div className="sustainableFirst" style={{marginLeft: '5rem'}}>
+                            <Comparison width={window.innerWidth <= 768 ? 300 : 700}
+                                        height={window.innerWidth <= 768 ? 180 : 250}
                                         squaredLabelLeft={props.sustainableDevelopmentLabel}
                                         leftLabel={props.sustainableDevelopmentlabelLeft}
                                         squaredLabelRight={props.difficultyLabel}
@@ -48,8 +49,9 @@ const SustainabilityComparison = (props) => {
                         </div>
                     </Col>
                     <Col md={6}>
-                        <div style={{marginLeft: '-1.5rem'}}>
-                            <Comparison width={700} height={250}
+                        <div className="sustainableSecond" style={{marginLeft: '-1.5rem'}}>
+                            <Comparison width={window.innerWidth <= 768 ? 300 : 700}
+                                        height={window.innerWidth <= 768 ? 180 : 250}
                                         squaredLabelLeft={props.sustainableDevelopmentLabel}
                                         leftLabel={props.sustainableDevelopmentlabelLeft}
                                         squaredLabelRight={props.currentContributionLabel}
@@ -65,8 +67,9 @@ const SustainabilityComparison = (props) => {
                 </Row>
                 <Row className="text-center mb-4 align-items-center" style={{marginTop: '3rem', marginBottom: '5rem'}}>
                     <Col md={6}>
-                        <div style={{marginLeft: '5rem'}}>
-                            <Comparison width={700} height={250}
+                        <div className="sustainableThird" style={{marginLeft: '5rem'}}>
+                            <Comparison width={window.innerWidth <= 768 ? 300 : 700}
+                                        height={window.innerWidth <= 768 ? 180 : 250}
                                         squaredLabelLeft={props.sustainableDevelopmentLabel}
                                         leftLabel={props.sustainableDevelopmentlabelLeft}
                                         squaredLabelRight={props.restrionctionLabel}
@@ -80,8 +83,9 @@ const SustainabilityComparison = (props) => {
                         </div>
                     </Col>
                     <Col md={6}>
-                        <div style={{marginLeft: '-1.5rem'}}>
-                            <Comparison width={700} height={250}
+                        <div className="sustainableFourth" style={{marginLeft: '-1.5rem'}}>
+                            <Comparison width={window.innerWidth <= 768 ? 300 : 700}
+                                        height={window.innerWidth <= 768 ? 180 : 250}
                                         squaredLabelLeft={props.sustainableDevelopmentLabel}
                                         leftLabel={props.sustainableDevelopmentlabelLeft}
                                         squaredLabelRight={props.allowMeToLabel}
@@ -97,8 +101,9 @@ const SustainabilityComparison = (props) => {
                 </Row>
                 <Row className="text-center mb-4 align-items-center" style={{marginTop: '3rem', marginBottom: '5rem'}}>
                     <Col md={6}>
-                        <div style={{marginLeft: '5rem'}}>
-                            <Comparison width={700} height={250}
+                        <div className="sustainableFifth" style={{marginLeft: '5rem'}}>
+                            <Comparison width={window.innerWidth <= 768 ? 300 : 700}
+                                        height={window.innerWidth <= 768 ? 180 : 250}
                                         squaredLabelLeft={props.sustainableDevelopmentLabel}
                                         leftLabel={props.sustainableDevelopmentlabelLeft}
                                         squaredLabelRight={props.environeLabel}
@@ -112,7 +117,7 @@ const SustainabilityComparison = (props) => {
                         </div>
                     </Col>
                     <Col md={6}>
-                        <div style={{marginLeft: '3rem'}}>
+                        <div className="sustainableText" style={{marginLeft: '3rem'}}>
                             <h1 className="text-center mb-1">Vergleiche ob das Commitment<br/> zu einer nachhaltigen
                                 Entwicklung beiträgt</h1>
                             <p style={{margin: '0.2rem'}}>Schwierigkeit: Wie schwer war das Commitment?</p>

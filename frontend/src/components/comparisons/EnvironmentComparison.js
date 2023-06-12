@@ -33,8 +33,9 @@ const EnvironmentalComparison = (props) => {
             <Container fluid className="mt-4">
                 <Row className="text-center mb-4 align-items-center" style={{marginTop: '3rem', marginBottom: '5rem'}}>
                     <Col md={6}>
-                        <div style={{marginLeft: '5rem'}}>
-                            <Comparison width={700} height={250}
+                        <div className="environmentFirst" style={{marginLeft: '5rem'}}>
+                            <Comparison width={window.innerWidth <= 768 ? 300 : 700}
+                                        height={window.innerWidth <= 768 ? 180 : 250}
                                         squaredLabelLeft={props.environeLabel}
                                         leftLabel={props.environmentlabelLeft}
                                         squaredLabelRight={props.difficultyLabel}
@@ -48,8 +49,9 @@ const EnvironmentalComparison = (props) => {
                         </div>
                     </Col>
                     <Col md={6}>
-                        <div style={{marginLeft: '-1.5rem'}}>
-                            <Comparison width={700} height={250}
+                        <div className="environmentSecond" style={{marginLeft: '-1.5rem'}}>
+                            <Comparison width={window.innerWidth <= 768 ? 300 : 700}
+                                        height={window.innerWidth <= 768 ? 180 : 250}
                                         squaredLabelLeft={props.environeLabel}
                                         leftLabel={props.environmentlabelLeft}
                                         squaredLabelRight={props.currentContributionLabel}
@@ -65,8 +67,9 @@ const EnvironmentalComparison = (props) => {
                 </Row>
                 <Row className="text-center mb-4 align-items-center" style={{marginTop: '3rem', marginBottom: '5rem'}}>
                     <Col md={6}>
-                        <div style={{marginLeft: '5rem'}}>
-                            <Comparison width={700} height={250}
+                        <div className="environmentThird" style={{marginLeft: '5rem'}}>
+                            <Comparison width={window.innerWidth <= 768 ? 300 : 700}
+                                        height={window.innerWidth <= 768 ? 180 : 250}
                                         squaredLabelLeft={props.environeLabel}
                                         leftLabel={props.environmentlabelLeft}
                                         squaredLabelRight={props.restrionctionLabel}
@@ -80,8 +83,9 @@ const EnvironmentalComparison = (props) => {
                         </div>
                     </Col>
                     <Col md={6}>
-                        <div style={{marginLeft: '-1.5rem'}}>
-                            <Comparison width={700} height={250}
+                        <div className="environmentFourth" style={{marginLeft: '-1.5rem'}}>
+                            <Comparison width={window.innerWidth <= 768 ? 300 : 700}
+                                        height={window.innerWidth <= 768 ? 180 : 250}
                                         squaredLabelLeft={props.environeLabel}
                                         leftLabel={props.environmentlabelLeft}
                                         squaredLabelRight={props.allowMeToLabel}
@@ -97,7 +101,7 @@ const EnvironmentalComparison = (props) => {
                 </Row>
                 <Row className="text-center mb-4 align-items-center" style={{marginTop: '3rem', marginBottom: '5rem'}}>
                     <Col md={6}>
-                        <div style={{marginLeft: '5rem'}}>
+                        <div className="environmentText" style={{marginLeft: '5rem'}}>
                             <h1 className="text-center mb-1">Vergleiche darüber <br/>wie das Umfeld auf das
                                 Commitment <br/> reagiert das</h1>
                             <p style={{margin: '0.2rem'}}>Schwierigkeit: Wie schwer war das Commitment?</p>
@@ -113,8 +117,9 @@ const EnvironmentalComparison = (props) => {
                         </div>
                     </Col>
                     <Col md={6}>
-                        <div style={{marginLeft: '-1.5rem'}}>
-                            <Comparison width={700} height={250}
+                        <div className="environmentFifth" style={{marginLeft: '-1.5rem'}}>
+                            <Comparison width={window.innerWidth <= 768 ? 300 : 700}
+                                        height={window.innerWidth <= 768 ? 180 : 250}
                                         squaredLabelLeft={props.environeLabel}
                                         leftLabel={props.environmentlabelLeft}
                                         squaredLabelRight={props.sustainableDevelopmentLabel}

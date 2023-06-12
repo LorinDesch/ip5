@@ -33,8 +33,9 @@ const AllowMeToComparison = (props) => {
             <Container fluid className="mt-4">
                 <Row className="text-center mb-4 align-items-center" style={{marginTop: '3rem', marginBottom: '5rem'}}>
                     <Col md={6}>
-                        <div style={{marginLeft: '10rem'}}>
-                            <Comparison width={700} height={250}
+                        <div className="allowsMeFirst" style={{marginLeft: '10rem'}}>
+                            <Comparison width={window.innerWidth <= 768 ? 300 : 700}
+                                        height={window.innerWidth <= 768 ? 180 : 250}
                                         squaredLabelLeft={props.allowMeToLabel}
                                         leftLabel={props.allowMeTolabelLeft}
                                         squaredLabelRight={props.difficultyLabel}
@@ -48,8 +49,9 @@ const AllowMeToComparison = (props) => {
                         </div>
                     </Col>
                     <Col md={6}>
-                        <div style={{marginLeft: '5rem'}}>
-                            <Comparison width={700} height={250}
+                        <div className="allowsMeSecond" style={{marginLeft: '5rem'}}>
+                            <Comparison width={window.innerWidth <= 768 ? 300 : 700}
+                                        height={window.innerWidth <= 768 ? 180 : 250}
                                         squaredLabelLeft={props.allowMeToLabel}
                                         leftLabel={props.allowMeTolabelLeft}
                                         squaredLabelRight={props.currentContributionLabel}
@@ -65,8 +67,9 @@ const AllowMeToComparison = (props) => {
                 </Row>
                 <Row className="text-center mb-4 align-items-center" style={{marginTop: '3rem', marginBottom: '5rem'}}>
                     <Col md={6}>
-                        <div style={{marginLeft: '10rem'}}>
-                            <Comparison width={700} height={250}
+                        <div className="allowsMeThird" style={{marginLeft: '10rem'}}>
+                            <Comparison width={window.innerWidth <= 768 ? 300 : 700}
+                                        height={window.innerWidth <= 768 ? 180 : 250}
                                         squaredLabelLeft={props.allowMeToLabel}
                                         leftLabel={props.allowMeTolabelLeft}
                                         squaredLabelRight={props.restrionctionLabel}
@@ -80,7 +83,7 @@ const AllowMeToComparison = (props) => {
                         </div>
                     </Col>
                     <Col md={6}>
-                        <div style={{marginLeft: '3rem'}}>
+                        <div className="allowsMeText" style={{marginLeft: '3rem'}}>
                             <h1 className="text-center mb-1">Vergleiche darüber ob der Nutzer<br/>Verantwortung
                                 übernehmen kann<br/> oder Erwartungen nachkommt</h1>
                             <p style={{margin: '0.2rem'}}>Schwierigkeit: Wie schwer war das Commitment?</p>
@@ -98,8 +101,9 @@ const AllowMeToComparison = (props) => {
                 </Row>
                 <Row className="text-center mb-4 align-items-center" style={{marginTop: '3rem', marginBottom: '5rem'}}>
                     <Col md={6}>
-                        <div style={{marginLeft: '10rem'}}>
-                            <Comparison width={700} height={250}
+                        <div className="allowsMeFourth" style={{marginLeft: '10rem'}}>
+                            <Comparison width={window.innerWidth <= 768 ? 300 : 700}
+                                        height={window.innerWidth <= 768 ? 180 : 250}
                                         squaredLabelLeft={props.allowMeToLabel}
                                         leftLabel={props.allowMeTolabelLeft}
                                         squaredLabelRight={props.environeLabel}
@@ -113,8 +117,9 @@ const AllowMeToComparison = (props) => {
                         </div>
                     </Col>
                     <Col md={6}>
-                        <div style={{marginLeft: '5rem'}}>
-                            <Comparison width={700} height={250}
+                        <div className="allowsMeFifth" style={{marginLeft: '5rem'}}>
+                            <Comparison width={window.innerWidth <= 768 ? 300 : 700}
+                                        height={window.innerWidth <= 768 ? 180 : 250}
                                         squaredLabelLeft={props.allowMeToLabel}
                                         leftLabel={props.allowMeTolabelLeft}
                                         squaredLabelRight={props.sustainableDevelopmentLabel}

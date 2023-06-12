@@ -1,76 +1,169 @@
 @media (max-width: 768px) {
 
+    .text {
+        margin-right: 30px;
+    }
+
     .difficultFirst {
         /*transform: translateX(-px);*/
-        transform: translateY(50px);
+        transform: translateY(80px);
     }
 
     .difficultSecond {
-        transform: translateX(-50px) translateY(50px);
+        transform: translateX(-50px) translateY(100px);
         /*transform: translateY(50px);*/
 
     }
 
     .difficultThird {
         /*transform: translateX(-300px);*/
-        transform: translateY(100px);
+        transform: translateY(175px);
 
     }
 
     .difficultFourth {
-        transform: translateX(-50px) translateY(150px);
+        transform: translateX(-50px) translateY(200px);
     }
 
     .difficultFifth {
         /*transform: translateX(-500px);*/
-        transform: translateY(200px);
+        transform: translateY(275px);
     }
 
-    .text {
-        margin-right: 30px;
-    }
+
+
 
 
     .restrictionFirst {
-        transform: translateY(50px);
+        transform: translateX(-70px) translateY(50px);
     }
 
     .restrictionSecond {
-        transform: translateX(-50px) translateY(50px);
+        transform: translateX(-10px) translateY(125px);
     }
 
     .restrictionThird {
-        transform: translateY(100px);
+        transform: translateY(80px);
     }
 
     .restrictionFourth {
-        transform: translateX(-50px) translateY(150px);
+        transform: translateX(-70px) translateY(150px);
     }
 
     .restrictionFifth {
-        transform: translateY(200px);
+        transform: translateX(-10px) translateY(250px);
+    }
+
+    .restrictionText {
+        margin-right: 10px;
+        margin-top: 125px;
     }
 
 
-    .contribubtionFirst {
-        transform: translateY(50px);
+    .contributionFirst {
+        transform: translateX(-70px) translateY(10px);
     }
 
-    .contribubtionSecond {
-        transform: translateX(-50px) translateY(50px);
+    .contributionText {
+        margin-right: 10px;
+        margin-top: 75px;
     }
 
-    .contribubtionThird {
-        transform: translateY(100px);
+    .contributionSecond {
+        transform: translateX(-60px) translateY(50px);
     }
 
-    .contribubtionFourth {
+    .contributionThird {
+        transform: translateY(125px);
+    }
+
+    .contributionFourth {
         transform: translateX(-50px) translateY(150px);
     }
 
-    .contribubtionFifth {
-        transform: translateY(200px);
+    .contributionFifth {
+        transform: translateY(250px);
     }
+
+
+    .environmentFirst {
+        transform: translateX(-60px);
+    }
+
+    .environmentSecond {
+        transform: translateY(70px);
+    }
+
+    .environmentThird {
+        transform: translateX(-60px) translateY(100px);
+    }
+
+    .environmentFourth {
+        transform: translateX(-10px) translateY(175px);
+    }
+
+    .environmentFifth {
+        transform: translateY(100px);
+    }
+
+    .environmentText {
+        margin-right: 10px;
+        margin-top: 225px;
+    }
+
+
+    .allowsMeFirst {
+        transform: scale(0.9) translateX(-125px) translateY(10px);
+    }
+
+    .allowsMeSecond {
+        transform: scale(0.9) translateX(-45px) translateY(90px);
+    }
+
+    .allowsMeThird {
+        transform: scale(0.9) translateX(-130px) translateY(125px);
+    }
+
+    .allowsMeText {
+        margin-right: 10px;
+        margin-top: 200px;
+    }
+
+    .allowsMeFourth {
+        transform:scale(0.9)  translateX(-130px) translateY(100px);
+    }
+
+    .allowsMeFifth {
+        transform: scale(0.9) translateX(-50px) translateY(200px);
+    }
+
+
+
+    .sustainableFirst {
+        transform: translateX(-65px)
+    }
+
+    .sustainableSecond {
+        transform: translateY(90px);
+    }
+
+    .sustainableThird {
+        transform: translateX(-60px) translateY(125px);
+    }
+
+    .sustainableFourth {
+        transform: scale(0.9) translateX(-30px) translateY(240px);
+    }
+
+    .sustainableFifth {
+        transform: translateX(-70px) translateY(250px);
+    }
+
+    .sustainableText {
+        margin-right: 10px;
+        margin-top: 350px;
+    }
+
 
 
 

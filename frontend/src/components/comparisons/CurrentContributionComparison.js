@@ -34,8 +34,8 @@ const CurrentContributionComparison = (props) => {
                 <Row className="text-center mb-4 align-items-center" style={{marginTop: '3rem', marginBottom: '5rem'}}>
                     <Col md={6}>
                         <div className="contributionFirst" style={{marginLeft: '5rem'}}>
-                            <Comparison     width={window.innerWidth <= 768 ? 300 : 700}
-                                            height={window.innerWidth <= 768 ? 180 : 250}
+                            <Comparison width={window.innerWidth <= 768 ? 300 : 700}
+                                        height={window.innerWidth <= 768 ? 180 : 250}
                                         squaredLabelLeft={props.currentContributionLabel}
                                         leftLabel={props.currentContributionlabelLeft}
                                         squaredLabelRight={props.difficultyLabel}
@@ -49,7 +49,7 @@ const CurrentContributionComparison = (props) => {
                         </div>
                     </Col>
                     <Col md={6}>
-                        <div style={{marginLeft: '3rem'}}>
+                        <div className="contributionText" style={{marginLeft: '3rem'}}>
                             <h1 className="text-center mb-1">Vergleiche darüber <br/> wie der aktuelle Beitrag ist</h1>
                             <p style={{margin: '0.2rem'}}>Schwierigkeit: Wie schwer war das Commitment?</p>
                             <p style={{margin: '0.2rem'}}>Einschränkung: Wie stark hat dich das Commitment
@@ -67,8 +67,8 @@ const CurrentContributionComparison = (props) => {
                 <Row className="text-center mb-4 align-items-center" style={{marginTop: '3rem', marginBottom: '5rem'}}>
                     <Col md={6}>
                         <div className="contributionSecond" style={{marginLeft: '5rem'}}>
-                            <Comparison     width={window.innerWidth <= 768 ? 300 : 700}
-                                            height={window.innerWidth <= 768 ? 180 : 250}
+                            <Comparison width={window.innerWidth <= 768 ? 300 : 700}
+                                        height={window.innerWidth <= 768 ? 180 : 250}
                                         squaredLabelLeft={props.currentContributionLabel}
                                         leftLabel={props.currentContributionlabelLeft}
                                         squaredLabelRight={props.restrionctionLabel}
@@ -84,8 +84,8 @@ const CurrentContributionComparison = (props) => {
                     </Col>
                     <Col md={6}>
                         <div className="contributionThird" style={{marginLeft: '-1.5rem'}}>
-                            <Comparison     width={window.innerWidth <= 768 ? 300 : 700}
-                                            height={window.innerWidth <= 768 ? 180 : 250}
+                            <Comparison width={window.innerWidth <= 768 ? 300 : 700}
+                                        height={window.innerWidth <= 768 ? 180 : 250}
                                         squaredLabelLeft={props.currentContributionLabel}
                                         leftLabel={props.currentContributionlabelLeft}
                                         squaredLabelRight={props.allowMeToLabel}
@@ -102,8 +102,8 @@ const CurrentContributionComparison = (props) => {
                 <Row className="text-center mb-4 align-items-center" style={{marginTop: '3rem', marginBottom: '5rem'}}>
                     <Col md={6}>
                         <div className="contributionFourth" style={{marginLeft: '5rem'}}>
-                            <Comparison     width={window.innerWidth <= 768 ? 300 : 700}
-                                            height={window.innerWidth <= 768 ? 180 : 250}
+                            <Comparison width={window.innerWidth <= 768 ? 300 : 700}
+                                        height={window.innerWidth <= 768 ? 180 : 250}
                                         squaredLabelLeft={props.currentContributionLabel}
                                         leftLabel={props.currentContributionlabelLeft}
                                         squaredLabelRight={props.environeLabel}
@@ -118,8 +118,8 @@ const CurrentContributionComparison = (props) => {
                     </Col>
                     <Col md={6}>
                         <div className="contributionFifth" style={{marginLeft: '-1.5rem'}}>
-                            <Comparison     width={window.innerWidth <= 768 ? 300 : 700}
-                                            height={window.innerWidth <= 768 ? 180 : 250}
+                            <Comparison width={window.innerWidth <= 768 ? 300 : 700}
+                                        height={window.innerWidth <= 768 ? 180 : 250}
                                         squaredLabelLeft={props.currentContributionLabel}
                                         leftLabel={props.currentContributionlabelLeft}
                                         squaredLabelRight={props.sustainableDevelopmentLabel}
