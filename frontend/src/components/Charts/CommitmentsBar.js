@@ -1,5 +1,6 @@
 import React, {useEffect, useRef} from 'react';
 import * as d3 from 'd3';
+import '../style.css';
 
 /**
  * Helper function to retrieve the array of feelings (eingeloeste) based on selected options.
@@ -171,7 +172,9 @@ function CommitmentsBar({
     }, [data, groups, height, width, selectedOption3]);
 
 
-    return <svg className="commitmentsbar" ref={svgRef}/>;
+    return <svg
+        className="commitmentsbar"
+        ref={svgRef}/>;
 }
 
 export default CommitmentsBar;

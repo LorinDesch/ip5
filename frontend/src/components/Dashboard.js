@@ -136,13 +136,13 @@ function Dashboard({
                 <Container fluid>
                     <div>
                         <Row className="justify-content-center">
-                            <Col md={4}
+                            <Col className="spaceBetween" md={4}
                                 // style={{backgroundColor: 'red'}}
                             >
-                                <Row
+                                <Row className="schluesseLinks"
                                     // style={{backgroundColor: 'blue'}}
                                 >
-                                    <SchluesseAusChallenge className="schluesseLinks" schluesse={schluesseSelectedDropdown1}
+                                    <SchluesseAusChallenge schluesse={schluesseSelectedDropdown1}
                                     />
                                 </Row>
                                 <Row
@@ -155,11 +155,11 @@ function Dashboard({
                                                  setSelectedOption2={setSelectedOption2}
                                                  selectedOption3={selectedOption3}
                                                  setSelectedOption3={setSelectedOption3}
-                                                 width={window.innerWidth <= 768 ? 500 : 600}
+                                                 width={window.innerWidth <= 768 ? 500 : 450}
                                                  height={window.innerWidth <= 768 ? 150 : 180}/>
                                 </Row>
                             </Col>
-                            <Col md={3}
+                            <Col md={4}
                                 // style={{backgroundColor: 'green'}}
                             >
                                 <TreeImages
@@ -170,19 +170,20 @@ function Dashboard({
                                     selectedOption3={selectedOption3}
                                     setSelectedOption3={setSelectedOption3}/>
                             </Col>
-                            <Col md={3}
+                            <Col className="spaceBetween" md={4}
                                 // style={{backgroundColor: 'yellow'}}
                             >
-                                <Row
+                                <Row className="schluesseRechts"
                                     // style={{backgroundColor: 'blue'}}
                                 >
-                                    <SchluesseAusChallenge className="schluesseRechts" schluesse={schluesseSelectedDropdown3}/>
+                                    <SchluesseAusChallenge  schluesse={schluesseSelectedDropdown3}/>
                                 </Row>
-                                <Row
+                                <Row className="commitmentsbar"
                                     // style={{backgroundColor: 'darkgray'}}
                                 >
-                                    <CommitmentsBar className="commitmentsbar"
-                                                    width={window.innerWidth <= 768 ? 400 : 700}
+                                    <CommitmentsBar
+                                        // className="commitmentsbar"
+                                                    width={window.innerWidth <= 768 ? 400 : 600}
                                                     height={window.innerWidth <= 768 ? 180 : 200}
                                                     fakeData={fakeData} selectedOption1={selectedOption1}
                                                     setSelectedOption1={setSelectedOption1}
