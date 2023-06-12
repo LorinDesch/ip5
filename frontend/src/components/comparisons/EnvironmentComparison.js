@@ -101,7 +101,7 @@ const EnvironmentalComparison = (props) => {
                 </Row>
                 <Row className="text-center mb-4 align-items-center" style={{marginTop: '3rem', marginBottom: '5rem'}}>
                     <Col md={6}>
-                        <div className="environmentText" style={{marginLeft: '5rem'}}>
+                        <div className="environmentText">
                             <h1 className="text-center mb-1">Vergleiche darüber <br/>wie das Umfeld auf das
                                 Commitment <br/> reagiert das</h1>
                             <p style={{margin: '0.2rem'}}>Schwierigkeit: Wie schwer war das Commitment?</p>

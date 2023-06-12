@@ -75,7 +75,7 @@
 }
 
 .hamburger.open span:nth-child(1) {
-    transform: rotate(20deg) translate(2px, 2px);
+    transform: rotate(45deg) translate(8px, 4px);
 }
 
 .hamburger.open span:nth-child(2) {
@@ -83,7 +83,7 @@
 }
 
 .hamburger.open span:nth-child(3) {
-    transform: rotate(-20deg) translate(2px, -2px);
+    transform: rotate(-45deg) translate(4px, -0px);
 }
 
 .logout-button {

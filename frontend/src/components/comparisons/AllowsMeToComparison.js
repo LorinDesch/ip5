@@ -83,7 +83,7 @@ const AllowMeToComparison = (props) => {
                         </div>
                     </Col>
                     <Col md={6}>
-                        <div className="allowsMeText" style={{marginLeft: '3rem'}}>
+                        <div className="allowsMeText">
                             <h1 className="text-center mb-1">Vergleiche darüber ob der Nutzer<br/>Verantwortung
                                 übernehmen kann<br/> oder Erwartungen nachkommt</h1>
                             <p style={{margin: '0.2rem'}}>Schwierigkeit: Wie schwer war das Commitment?</p>

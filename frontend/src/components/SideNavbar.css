@@ -3,25 +3,18 @@
     position: fixed;
     left: 0;
     top: 90px; /* Ändere den Wert, um die SideNavbar nach unten zu verschieben */
-
     width: 200px;
     background-color: #ffffff;
     transition: width 0.3s ease-in-out;
     z-index: 100;
     /*border-right: 1px solid #000;*/
-
 }
 
-@media (max-width: 768px) {
-    .side-navbar {
-        top: 55px;
-    }
-}
+
 
 .side-navbar.open {
     width: 100px; /* Breite der geöffneten Seitenleiste */
     border-right: 1px solid #000; /* Ändere #000 auf die gewünschte Farbe der Linie */
-
 }
 
 .side-navbar.closed {
@@ -46,7 +39,7 @@
 
 .nav-icon {
     display: block;
-    margin: 10px auto;
+    margin: 10px auto 50px; /* Hinzugefügter Abstand nach unten */
     color: black;
     transition: color 0.3s, transform 0.3s;
     min-width: 40px;
@@ -67,6 +60,22 @@
 }
 
 .sidebar-text {
-    margin-top: 5px;
+    margin-top: 15px; /* Vergrößerter Abstand zum Text */
 }
 
+@media (max-width: 768px) {
+    .side-navbar {
+        top: 55px;
+    }
+
+    .nav-icon {
+        margin: 10px auto;
+    }
+
+}
+
+@media (max-height: 1100px) {
+    .nav-icon {
+        margin: 10px auto;
+    }
+}

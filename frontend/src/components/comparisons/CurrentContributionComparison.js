@@ -49,7 +49,7 @@ const CurrentContributionComparison = (props) => {
                         </div>
                     </Col>
                     <Col md={6}>
-                        <div className="contributionText" style={{marginLeft: '3rem'}}>
+                        <div className="contributionText">
                             <h1 className="text-center mb-1">Vergleiche darüber <br/> wie der aktuelle Beitrag ist</h1>
                             <p style={{margin: '0.2rem'}}>Schwierigkeit: Wie schwer war das Commitment?</p>
                             <p style={{margin: '0.2rem'}}>Einschränkung: Wie stark hat dich das Commitment

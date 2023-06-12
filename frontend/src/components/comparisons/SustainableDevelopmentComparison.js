@@ -117,7 +117,7 @@ const SustainabilityComparison = (props) => {
                         </div>
                     </Col>
                     <Col md={6}>
-                        <div className="sustainableText" style={{marginLeft: '3rem'}}>
+                        <div className="sustainableText">
                             <h1 className="text-center mb-1">Vergleiche ob das Commitment<br/> zu einer nachhaltigen
                                 Entwicklung beiträgt</h1>
                             <p style={{margin: '0.2rem'}}>Schwierigkeit: Wie schwer war das Commitment?</p>
