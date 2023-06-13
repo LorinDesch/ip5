@@ -155,7 +155,7 @@ function Dashboard({
                                                  setSelectedOption2={setSelectedOption2}
                                                  selectedOption3={selectedOption3}
                                                  setSelectedOption3={setSelectedOption3}
-                                                 width={window.innerWidth <= 768 ? 500 : 450}
+                                                 width={window.innerWidth <= 768 ? 500 : 500}
                                                  height={window.innerWidth <= 768 ? 150 : 180}/>
                                 </Row>
                             </Col>
