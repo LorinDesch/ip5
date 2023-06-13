@@ -10,7 +10,7 @@ import {VscSearchStop} from "react-icons/vsc";
 
 const SideNavbar = () => {
     const [containerHeight, setContainerHeight] = useState(0);
-    const [isSidebarOpen, setIsSidebarOpen] = useState(true);
+    const [isSidebarOpen, setIsSidebarOpen] = useState(false);
     useEffect(() => {
         const updateContainerHeight = () => {
             setContainerHeight(window.innerHeight);
