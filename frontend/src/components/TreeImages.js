@@ -12,10 +12,7 @@ const TreeImages = ({
                         fakeData,
                         selectedOption2,
                         selectedOption3,
-                        setSelectedOption1,
                         selectedOption1,
-                        setSelectedOption2,
-                        setSelectedOption3
                     }) => {
 
 
