@@ -5,10 +5,6 @@
 
 /**
  * Handles the diary data retrieval for the logged-in user.
- *
- * @param {Object} responseData - The response data containing the user's token.
- * @returns {Promise<Object>} A Promise that resolves to the updated data with diary information.
- * @throws {Error} If there's an error fetching or processing the diary data.
  */
 export const handleDiaryData = async (responseData) => {
     try {
@@ -36,10 +32,6 @@ export const handleDiaryData = async (responseData) => {
 
 /**
  * Handles the challenge data retrieval for the logged-in user.
- *
- * @param {Object} responseData - The response data containing the user's token.
- * @returns {Promise<Object>} A Promise that resolves to the updated data with challenge information.
- * @throws {Error} If there's an error fetching or processing the challenge data.
  */
 export const handleChallengeData = async (responseData) => {
     try {
@@ -69,10 +61,6 @@ export const handleChallengeData = async (responseData) => {
 
 /**
  * Handles the group data retrieval for the logged-in user.
- *
- * @param {Object} responseData - The response data containing the user's token.
- * @returns {Promise<Object>} A Promise that resolves to the updated data with group information.
- * @throws {Error} If there's an error fetching or processing the group data.
  */
 export const handleGroupData = async (responseData) => {
     try {
@@ -128,11 +116,6 @@ export const handleGroupData = async (responseData) => {
 
 /**
  * Handles the login process for the user.
- *
- * @param {string} username - The username of the user.
- * @param {string} password - The password of the user.
- * @returns {Promise<Object>} A Promise that resolves to the updated data after successful login.
- * @throws {Error} If there's an error during the login process or fetching group data.
  */
 export const handleLogin = async (username, password) => {
     try {

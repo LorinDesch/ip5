@@ -13,7 +13,7 @@ const app = express();
 
 const allowedOrigins = ['http://localhost:3000'];
 
-// enable CORS for the allowed origins
+// Enable CORS for the allowed origins
 app.use(cors({
     origin: function (origin, callback) {
         if (!origin || allowedOrigins.indexOf(origin) !== -1) {
@@ -24,7 +24,10 @@ app.use(cors({
     }
 }));
 
-// handle POST requests to the /account/ route
+/**
+ * Handle POST requests to the /account/ route.
+ * Proxies the request to a remote server and forwards the response.
+ */
 app.post('/account/', (req, res) => {
     const options = {
         hostname: '86.119.43.87',
@@ -55,7 +58,6 @@ app.post('/account/', (req, res) => {
     req.pipe(proxyReq);
 
     proxyReq.on('error', (err) => {
-
         console.log(err);
 
         if (err.code === 'ECONNREFUSED') {
@@ -64,11 +66,12 @@ app.post('/account/', (req, res) => {
             res.status(401).send('Invalid Credentials');
         }
     });
-
 });
 
-
-//Handle GET requests to the /groups/ route
+/**
+ * Handle GET requests to the /groups/ route.
+ * Proxies the request to a remote server and forwards the response.
+ */
 app.get('/groups', async (req, res) => {
     try {
         const token = req.headers.authorization.split(' ')[1];
@@ -92,7 +95,10 @@ app.get('/groups', async (req, res) => {
     }
 });
 
-//Handle GET requests to the /groups/:groupId/groupAffiliations/ route
+/**
+ * Handle GET requests to the /groups/:groupId/groupAffiliations/ route.
+ * Proxies the request to a remote server and forwards the response.
+ */
 app.get('/groups/:groupId/groupAffiliations/', async (req, res) => {
     try {
         const token = req.headers.authorization.split(' ')[1];
@@ -117,7 +123,10 @@ app.get('/groups/:groupId/groupAffiliations/', async (req, res) => {
     }
 });
 
-//Handle GET requests to the /groups/ route
+/**
+ * Handle GET requests to the /challenges/ route.
+ * Proxies the request to a remote server and forwards the response.
+ */
 app.get('/challenges', async (req, res) => {
     try {
         const token = req.headers.authorization.split(' ')[1];
@@ -141,7 +150,10 @@ app.get('/challenges', async (req, res) => {
     }
 });
 
-// Handle GET requests to the /diary/ route
+/**
+ * Handle GET requests to the /diary/ route.
+ * Proxies the request to a remote server and forwards the response.
+ */
 app.get('/diary/', async (req, res) => {
     try {
         const token = req.headers.authorization.split(' ')[1];
@@ -165,7 +177,9 @@ app.get('/diary/', async (req, res) => {
     }
 });
 
-
+/**
+ * Start the server and listen on port 3001.
+ */
 app.listen(3001, () => {
     console.log('Server listening on port 3001');
 });
