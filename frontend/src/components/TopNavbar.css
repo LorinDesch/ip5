@@ -21,7 +21,7 @@
 @media (min-width: 768px) {
     .top-navbar {
         display: grid;
-        grid-template-columns: 2fr 2fr 0.5fr 1fr;
+        grid-template-columns: 2fr 1fr 0.5fr 1fr;
         justify-content: flex-start;
         align-items: center;
         margin-left: 1rem;
@@ -97,3 +97,4 @@
         margin-left: 0; /* Kein Abstand zur SideNavbar, wenn sie eingeklappt ist */
     }
 }
+
