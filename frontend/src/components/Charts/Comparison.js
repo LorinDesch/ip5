@@ -17,8 +17,6 @@ function Comparison({
                         difficultyValueLeftBar,
                         difficultyValueRightBar,
                         selectedOption3,
-                        selectedOption2,
-                        selectedOption1
                     }) {
 
     //this needs to be here, otherwise the chart will not be rendered (idk why)

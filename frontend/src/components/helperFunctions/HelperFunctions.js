@@ -145,3 +145,32 @@ export function getRightIndex(fakeData, selectedOption1, selectedOption2, select
     rightIndex = Math.round(sum / uniqueSelectedUsers.length || 0);
     return rightIndex;
 }
+
+/**
+ * Helper function to retrieve the array of feelings (eingeloeste) based on selected options.
+ *
+ * @param {Object} fakeData - The fake data object.
+ * @param {string} selectedOption1 - The selected option 1.
+ * @param {string} selectedOption2 - The selected option 2.
+ * @param {string[]} selectedOption3 - The selected option 3.
+ * @returns {number[]} The array of feelings (eingeloeste).
+ */
+export function getFeelingsArray(fakeData, selectedOption1, selectedOption2, selectedOption3) {
+    let eingeloeste = [];
+
+    const cId = fakeData.commitments.filter(commitment => commitment.commitmentname === selectedOption2)[0].commitmentid;
+
+    if (cId >= 0) {
+        selectedOption3.map(option => {
+            const groupOfUsers = fakeData.groups.filter(group => group.groupname === option)[0].users;
+            const diariesFromCiD = fakeData.diary.filter(diary => diary.commitmentid === cId);
+            const selectedDiaries = diariesFromCiD.filter(diary => groupOfUsers.includes(diary.userid));
+            const eingeloest = selectedDiaries.map(diary => diary.eingeloest);
+            const sum = eingeloest.reduce((a, b) => a + b, 0);
+            const avg = sum / groupOfUsers.length || 0;
+            eingeloeste.push(avg);
+            return avg;
+        });
+    }
+    return eingeloeste;
+}

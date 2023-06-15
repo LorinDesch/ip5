@@ -1,35 +1,7 @@
 import React, {useEffect, useRef} from 'react';
 import * as d3 from 'd3';
 import '../style.css';
-
-/**
- * Helper function to retrieve the array of feelings (eingeloeste) based on selected options.
- *
- * @param {Object} fakeData - The fake data object.
- * @param {string} selectedOption1 - The selected option 1.
- * @param {string} selectedOption2 - The selected option 2.
- * @param {string[]} selectedOption3 - The selected option 3.
- * @returns {number[]} The array of feelings (eingeloeste).
- */
-function getFeelingsArray(fakeData, selectedOption1, selectedOption2, selectedOption3) {
-    let eingeloeste = [];
-
-    const cId = fakeData.commitments.filter(commitment => commitment.commitmentname === selectedOption2)[0].commitmentid;
-
-    if (cId >= 0) {
-        selectedOption3.map(option => {
-            const groupOfUsers = fakeData.groups.filter(group => group.groupname === option)[0].users;
-            const diariesFromCiD = fakeData.diary.filter(diary => diary.commitmentid === cId);
-            const selectedDiaries = diariesFromCiD.filter(diary => groupOfUsers.includes(diary.userid));
-            const eingeloest = selectedDiaries.map(diary => diary.eingeloest);
-            const sum = eingeloest.reduce((a, b) => a + b, 0);
-            const avg = sum / groupOfUsers.length || 0;
-            eingeloeste.push(avg);
-            return avg;
-        });
-    }
-    return eingeloeste;
-}
+import {getFeelingsArray} from "../helperFunctions/HelperFunctions";
 
 /**
  * Component for rendering the Commitments Bar chart.
@@ -44,9 +16,6 @@ function CommitmentsBar({
                             selectedOption1,
                             selectedOption2,
                             selectedOption3,
-                            setSelectedOption1,
-                            setSelectedOption2,
-                            setSelectedOption3
                         }) {
 
     let eingeloeste = getFeelingsArray(fakeData, selectedOption1, selectedOption2, selectedOption3);
@@ -133,17 +102,7 @@ function CommitmentsBar({
                     .attr('y1', yScale(28))
                     .attr('x2', xScale(i) + xScale.bandwidth() / 2 + 15)
                     .attr('y2', yScale(28) - 30)
-                    // .attr('stroke', 'grey')
                     .attr('stroke-width', 1);
-
-                // d3.select(this)
-                //     .append('text')
-                //     .attr('class', 'group-label')
-                //     .attr('x', xScale(i) + xScale.bandwidth() / 2 + 15)
-                //     .attr('y', yScale(28) - 35)
-                //     // .text(`Klasse ${groupIndex + 1}`)
-                //     .style('font-size', '12px')
-                //     .style('text-anchor', 'middle');
             }
         });
 

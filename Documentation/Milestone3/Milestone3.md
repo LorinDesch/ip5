@@ -1,0 +1,1 @@
+Implementierung der Platform, keine relevante Dokumentation

@@ -8,6 +8,9 @@ import {TiChartAreaOutline, TiWarningOutline, TiHomeOutline} from "react-icons/t
 import {RxMixerHorizontal} from "react-icons/rx";
 import {VscSearchStop} from "react-icons/vsc";
 
+/**
+ * Component for displaying the side navigation bar.
+ */
 const SideNavbar = () => {
     const [containerHeight, setContainerHeight] = useState(0);
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);

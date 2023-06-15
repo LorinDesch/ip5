@@ -1,22 +1,15 @@
 import React, {useEffect, useRef} from 'react';
 import * as d3 from 'd3';
-import {getSchluesseSelectedDropdown1} from "../Dashboard";
+import {getSchluesseSelectedDropdown1} from "../helperFunctions/HelperFunctions";
 
 
 /**
  * Component for rendering the Feelings Bar chart.
- *
- * @param {Object} props - The component props.
- * @returns {JSX.Element} The FeelingsBar component.
  */
 function FeelingsBar({
                          fakeData,
                          selectedOption1,
-                         setSelectedOption1,
                          selectedOption2,
-                         setSelectedOption2,
-                         selectedOption3,
-                         setSelectedOption3,
                          width,
                          height
                      }) {

@@ -1,13 +1,12 @@
 const express = require('express');
 const cors = require('cors');
 const http = require('http');
-const jwt = require('jsonwebtoken');
-const cookie = require('cookie');
 
 
 /**
  * Server.js got setup for handling login requests from the frontend. It is not used in the Project, since there were
  * Errors with the retreiving Server at the time of implementation.
+ *
  */
 
 const app = express();

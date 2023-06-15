@@ -9,9 +9,9 @@ import SustainableDevelopmentComparison from "./components/comparisons/Sustainab
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {useState} from "react";
 import Login from "./components/Login";
-import {fakeData} from "./data/fakeData";
 import {getValueAttributeOnlyGroup} from "./components/helperFunctions/HelperFunctions";
 import AllowsMeToComparison from "./components/comparisons/AllowsMeToComparison";
+import {fakeData} from "./data/fakeData";
 
 /**
  * The main App component.

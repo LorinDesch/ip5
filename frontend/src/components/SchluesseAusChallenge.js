@@ -5,9 +5,6 @@ import './style.css';
 /**
  * Component for displaying conclusions from the challenge.
  *
- * @param {Object} props - The component props.
- * @param {Array} props.schluesse - The conclusions from the challenge.
- * @returns {JSX.Element} The rendered SchluesseAusChallenge component.
  */
 const SchluesseAusChallenge = ({schluesse}) => {
     const beiDirSelbst = schluesse[2];

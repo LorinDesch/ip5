@@ -5,7 +5,6 @@ import React from 'react';
  */
 const Dropdown1 = ({ fakeData, onChange, styling, options, changeableFakeData, setChangeableFakeData, selectedOptions1 }) => {
 
-    console.log(fakeData)
     //select the user where user.username === the user in localstorage
     const user = fakeData.users.find(user => user.username === localStorage.getItem('loggedInUser'));
     //select the group where the user is a member of

@@ -1,6 +1,6 @@
 /**
- * Api.js got setup for handling login requests from the frontend. It is not used in the Project, since there were
- * Errors with the retreiving Server at the time of implementation.
+ * api.js got setup for handling login requests from the besmarth API.
+ * It is not used in the Project, since there were Errors with the retreiving Server at the time of implementation.
  */
 
 /**

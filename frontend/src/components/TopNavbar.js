@@ -5,6 +5,9 @@ import Dropdown2 from './Dropdown2';
 import Dropdown3 from './Dropdown3';
 import './TopNavbar.css';
 
+/**
+ * Component for displaying the top nav bar.
+ */
 const TopNavbar = ({
                        fakeData,
                        selectedOption3,
