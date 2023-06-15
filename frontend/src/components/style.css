@@ -18,8 +18,6 @@
         transform: scale(0.45) translateX(300px) translateY(-100px);
     }
 
-
-
     /*oben*/
     .schluesseLinks {
         padding-left: 20px;
@@ -35,6 +33,7 @@
 .tree {
     transform: scale(0.85) translateY(-100px);
 }
+
 
 .feelingsbar {
     margin-left: 200px;
