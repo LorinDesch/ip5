@@ -1,21 +1,17 @@
 @media (max-width: 768px) {
     .tree {
         scale: 0.5;
-        /*translateY: 300px;*/
-        /*transform: scale(0.5) translateY(-100px);*/
         margin-bottom: 20px;
         margin-top: -200px;
     }
 
     .treeText {
         margin-top: 10px;
-        /*margin-bottom: 10px;*/
     }
 
 
     .feelingsbar {
         transform: scale(0.65) translateX(-340px) translateY(100px);
-        /*margin-right: 350px;*/
     }
 
     .commitmentsbar {
@@ -27,33 +23,20 @@
     /*oben*/
     .schluesseLinks {
         padding-left: 20px;
-        /*transform: translateY(-300px);*/
-        /*font-size: 10px;*/
-        /*margin-top: 0.5rem;*/
-        /*transform: translateY(-400px);*/
-
     }
 
     /*unten*/
     .schluesseRechts {
-        /*padding-left: 20px;*/
-        /*transform: translateY(-300px);*/
-        /*font-size: 10px;*/
         margin-top: -200px;
-        /*transform: translateY(-400px);*/
         margin-bottom: 100px;
     }
 }
 
 .tree {
     transform: scale(0.85) translateY(-100px);
-    /*translateY(-100px);*/
-    /*margin-top: 350px;*/
-    /*margin-bottom: 40px;*/
 }
 
 .feelingsbar {
-    /*margin-top: 350px;*/
     margin-left: 200px;
     margin-bottom: 200px;
 }
@@ -62,18 +45,14 @@
     margin-bottom: 90px;
     margin-right: 2000px;
     transform: scale(0.9);
-    /*margin-right: 100px;*/
 }
 
 .schluesseLinks {
-    /*margin-right: 200px;*/
-    /*transform: translateX(-100px);*/
     transform: scale(0.9);
     margin-left: 60px;
 }
 
 .schluesseRechts {
-    /*margin-left: 200px;*/
     margin-left: 50px;
     transform: scale(0.9);
 
