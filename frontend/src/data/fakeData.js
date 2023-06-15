@@ -293,10 +293,10 @@ export const fakeData  = {
             userid: 5,
             commitmentid: 3,
             schluesse: {
-                selbst: 'Generated random data',
-                sozial: 'Generated random data',
-                politik: 'Generated random data',
-                produkt: 'Generated random data'
+                selbst: "Es war mir zu kalt",
+                sozial: "Meine Freunde haben grad mitgemacht",
+                politik: "Politiker sind nicht so interessiert",
+                produkt: "Alles ist 3x verpackt",
             },
             eingeloest: 14,
             feelings: [
@@ -317,10 +317,10 @@ export const fakeData  = {
             userid: 17,
             commitmentid: 1,
             schluesse: {
-                selbst: 'Generated random data',
-                sozial: 'Generated random data',
-                politik: 'Generated random data',
-                produkt: 'Generated random data'
+                selbst: "Ich habe gelernt, dass ich mit kleinen Dingen einen grossen Beitrag leisten kann.",
+                sozial: "Meine Eltern haben micht erst nicht so unterstützt",
+                politik: "Politiker ist es eigentlich egal",
+                produkt: "Diese sind auch nur auf Profit aus",
             },
             eingeloest: 0,
             feelings: [
@@ -341,10 +341,10 @@ export const fakeData  = {
             userid: 18,
             commitmentid: 3,
             schluesse: {
-                selbst: 'Generated random data',
-                sozial: 'Generated random data',
-                politik: 'Generated random data',
-                produkt: 'Generated random data'
+                selbst: "Ich dusche jetzt kürzer",
+                sozial: "Meine Freunde haben grad mitgemacht",
+                politik: "Politiker sind nicht so interessiert",
+                produkt: "Alles ist 3x verpackt",
             },
             eingeloest: 19,
             feelings: [
@@ -389,10 +389,10 @@ export const fakeData  = {
             userid: 16,
             commitmentid: 1,
             schluesse: {
-                selbst: 'Generated random data',
-                sozial: 'Generated random data',
-                politik: 'Generated random data',
-                produkt: 'Generated random data'
+                selbst: "Ich habe gelernt, dass ich mit kleinen Dingen einen grossen Beitrag leisten kann.",
+                sozial: "Meine Eltern haben micht erst nicht so unterstützt",
+                politik: "Politiker ist es eigentlich egal",
+                produkt: "Diese sind auch nur auf Profit aus",
             },
             eingeloest: 27,
             feelings: [
@@ -438,10 +438,10 @@ export const fakeData  = {
             userid: 1,
             commitmentid: 3,
             schluesse: {
-                selbst: 'Generated random data',
-                sozial: 'Generated random data',
-                politik: 'Generated random data',
-                produkt: 'Generated random data'
+                selbst: "Ich dusche jetzt kürzer",
+                sozial: "Meine Freunde haben grad mitgemacht",
+                politik: "Politiker sind nicht so interessiert",
+                produkt: "Alles ist 3x verpackt",
             },
             eingeloest: 21,
             feelings: [
@@ -463,10 +463,10 @@ export const fakeData  = {
             userid: 15,
             commitmentid: 3,
             schluesse: {
-                selbst: 'Generated random data',
-                sozial: 'Generated random data',
-                politik: 'Generated random data',
-                produkt: 'Generated random data'
+                selbst: "Es war mir zu kalt",
+                sozial: "Meine Freunde haben grad mitgemacht",
+                politik: "Politiker sind nicht so interessiert",
+                produkt: "Alles ist 3x verpackt",
             },
             eingeloest: 5,
             feelings: [
@@ -487,10 +487,10 @@ export const fakeData  = {
             userid: 4,
             commitmentid: 2,
             schluesse: {
-                selbst: 'Generated random data',
-                sozial: 'Generated random data',
-                politik: 'Generated random data',
-                produkt: 'Generated random data'
+                selbst: "Ich ernähre mich jetzt gesünder",
+                sozial: "Meine Freunde haben grad mitgemacht",
+                politik: "Politiker sind nicht so interessiert",
+                produkt: "Alles ist 3x verpackt",
             },
             eingeloest: 3,
             feelings: [
@@ -536,10 +536,10 @@ export const fakeData  = {
             userid: 7,
             commitmentid: 3,
             schluesse: {
-                selbst: 'Generated random data',
-                sozial: 'Generated random data',
-                politik: 'Generated random data',
-                produkt: 'Generated random data'
+                selbst: "Ich dusche jetzt kürzer",
+                sozial: "Meine Freunde haben grad mitgemacht",
+                politik: "Politiker sind nicht so interessiert",
+                produkt: "Alles ist 3x verpackt",
             },
             eingeloest: 14,
             feelings: [
@@ -560,10 +560,10 @@ export const fakeData  = {
             userid: 7,
             commitmentid: 2,
             schluesse: {
-                selbst: 'Generated random data',
-                sozial: 'Generated random data',
-                politik: 'Generated random data',
-                produkt: 'Generated random data'
+                selbst: "Ich ernähre mich jetzt gesünder",
+                sozial: "Meine Freunde haben grad mitgemacht",
+                politik: "Politiker sind nicht so interessiert",
+                produkt: "Alles ist 3x verpackt",
             },
             eingeloest: 11,
             feelings: [
@@ -609,10 +609,10 @@ export const fakeData  = {
             userid: 8,
             commitmentid: 2,
             schluesse: {
-                selbst: 'Generated random data',
-                sozial: 'Generated random data',
-                politik: 'Generated random data',
-                produkt: 'Generated random data'
+                selbst: "Ich ernähre mich jetzt gesünder",
+                sozial: "Meine Freunde haben grad mitgemacht",
+                politik: "Politiker sind nicht so interessiert",
+                produkt: "Alles ist 3x verpackt",
             },
             eingeloest: 16,
             feelings: [
@@ -633,10 +633,10 @@ export const fakeData  = {
             userid: 3,
             commitmentid: 1,
             schluesse: {
-                selbst: 'Generated random data',
-                sozial: 'Generated random data',
-                politik: 'Generated random data',
-                produkt: 'Generated random data'
+                selbst: "Ich ernähre mich jetzt gesünder",
+                sozial: "Meine Freunde haben grad mitgemacht",
+                politik: "Politiker sind nicht so interessiert",
+                produkt: "Alles ist 3x verpackt",
             },
             eingeloest: 23,
             feelings: [
@@ -657,10 +657,10 @@ export const fakeData  = {
             userid: 8,
             commitmentid: 3,
             schluesse: {
-                selbst: 'Generated random data',
-                sozial: 'Generated random data',
-                politik: 'Generated random data',
-                produkt: 'Generated random data'
+                selbst: "Ich dusche jetzt kürzer",
+                sozial: "Meine Freunde haben grad mitgemacht",
+                politik: "Politiker sind nicht so interessiert",
+                produkt: "Alles ist 3x verpackt",
             },
             eingeloest: 14,
             feelings: [
@@ -705,10 +705,10 @@ export const fakeData  = {
             userid: 13,
             commitmentid: 2,
             schluesse: {
-                selbst: 'Generated random data',
-                sozial: 'Generated random data',
-                politik: 'Generated random data',
-                produkt: 'Generated random data'
+                selbst: "Ich ernähre mich jetzt gesünder",
+                sozial: "Meine Freunde haben grad mitgemacht",
+                politik: "Politiker sind nicht so interessiert",
+                produkt: "Alles ist 3x verpackt",
             },
             eingeloest: 9,
             feelings: [
@@ -729,10 +729,10 @@ export const fakeData  = {
             userid: 20,
             commitmentid: 1,
             schluesse: {
-                selbst: 'Generated random data',
-                sozial: 'Generated random data',
-                politik: 'Generated random data',
-                produkt: 'Generated random data'
+                selbst: "Ich habe gelernt, dass ich mit kleinen Dingen einen grossen Beitrag leisten kann.",
+                sozial: "Meine Eltern haben micht erst nicht so unterstützt",
+                politik: "Politiker ist es eigentlich egal",
+                produkt: "Diese sind auch nur auf Profit aus",
             },
             eingeloest: 17,
             feelings: [
@@ -753,10 +753,10 @@ export const fakeData  = {
             userid: 13,
             commitmentid: 3,
             schluesse: {
-                selbst: 'Generated random data',
-                sozial: 'Generated random data',
-                politik: 'Generated random data',
-                produkt: 'Generated random data'
+                selbst: "Es war mir zu kalt",
+                sozial: "Meine Freunde haben grad mitgemacht",
+                politik: "Politiker sind nicht so interessiert",
+                produkt: "Alles ist 3x verpackt",
             },
             eingeloest: 10,
             feelings: [
@@ -826,10 +826,10 @@ export const fakeData  = {
             userid: 14,
             commitmentid: 2,
             schluesse: {
-                selbst: 'Generated random data',
-                sozial: 'Generated random data',
-                politik: 'Generated random data',
-                produkt: 'Generated random data'
+                selbst: "Ich ernähre mich jetzt gesünder",
+                sozial: "Meine Freunde haben grad mitgemacht",
+                politik: "Politiker sind nicht so interessiert",
+                produkt: "Alles ist 3x verpackt",
             },
             eingeloest: 26,
             feelings: [
@@ -850,10 +850,10 @@ export const fakeData  = {
             userid: 5,
             commitmentid: 3,
             schluesse: {
-                selbst: 'Generated random data',
-                sozial: 'Generated random data',
-                politik: 'Generated random data',
-                produkt: 'Generated random data'
+                selbst: "Ich dusche jetzt kürzer",
+                sozial: "Meine Freunde haben grad mitgemacht",
+                politik: "Politiker sind nicht so interessiert",
+                produkt: "Alles ist 3x verpackt",
             },
             eingeloest: 18,
             feelings: [
@@ -898,10 +898,10 @@ export const fakeData  = {
             userid: 13,
             commitmentid: 3,
             schluesse: {
-                selbst: 'Generated random data',
-                sozial: 'Generated random data',
-                politik: 'Generated random data',
-                produkt: 'Generated random data'
+                selbst: "Ich dusche jetzt kürzer",
+                sozial: "Meine Freunde haben grad mitgemacht",
+                politik: "Politiker sind nicht so interessiert",
+                produkt: "Alles ist 3x verpackt",
             },
             eingeloest: 27,
             feelings: [
@@ -946,10 +946,10 @@ export const fakeData  = {
             userid: 9,
             commitmentid: 3,
             schluesse: {
-                selbst: 'Generated random data',
-                sozial: 'Generated random data',
-                politik: 'Generated random data',
-                produkt: 'Generated random data'
+                selbst: "Ich dusche jetzt kürzer",
+                sozial: "Meine Freunde haben grad mitgemacht",
+                politik: "Politiker sind nicht so interessiert",
+                produkt: "Alles ist 3x verpackt",
             },
             eingeloest: 11,
             feelings: [
@@ -971,10 +971,10 @@ export const fakeData  = {
             userid: 14,
             commitmentid: 1,
             schluesse: {
-                selbst: 'Generated random data',
-                sozial: 'Generated random data',
-                politik: 'Generated random data',
-                produkt: 'Generated random data'
+                selbst: "Ich ernähre mich jetzt gesünder",
+                sozial: "Meine Freunde haben grad mitgemacht",
+                politik: "Politiker sind nicht so interessiert",
+                produkt: "Alles ist 3x verpackt",
             },
             eingeloest: 6,
             feelings: [
