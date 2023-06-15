@@ -56,7 +56,7 @@ function Dashboard({
                             >
                                 <Row className="schluesseLinks"
                                     // style={{backgroundColor: 'blue'}}
-                                >
+                                    >
                                     <SchluesseAusChallenge schluesse={schluesseSelectedDropdown1}
                                     />
                                 </Row>
