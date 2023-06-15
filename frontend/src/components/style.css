@@ -15,7 +15,7 @@
     }
 
     .commitmentsbar {
-        transform: scale(0.75) translateX(20px) translateY(-100px);
+        transform: scale(0.75) translateX(10px) translateY(-50px);
     }
 
     /*oben*/
@@ -47,8 +47,7 @@
 
 .commitmentsbar {
     margin-bottom: 90px;
-    margin-right: 2000px;
-
+    margin-right: 280px;
 }
 
 .schluesseLinks {

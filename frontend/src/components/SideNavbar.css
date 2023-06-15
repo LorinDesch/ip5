@@ -10,8 +10,6 @@
     /*border-right: 1px solid #000;*/
 }
 
-
-
 .side-navbar.open {
     width: 100px; /* Breite der geöffneten Seitenleiste */
     border-right: 1px solid #000; /* Ändere #000 auf die gewünschte Farbe der Linie */
