@@ -1,6 +1,6 @@
 import React from 'react';
 import TopNavbar from '../TopNavbar';
-import Comparison from "../Charts/Comparison";
+import ComparisonBar from "../Charts/ComparisonBar";
 import SideNavbar from "../SideNavbar";
 import {Col, Container, Row} from "react-bootstrap";
 
@@ -34,33 +34,33 @@ const RestrictionComparison = (props) => {
                 <Row className="text-center mb-4 align-items-center" style={{marginTop: '3rem', marginBottom: '5rem'}}>
                     <Col md={6}>
                         <div className="restrictionFirst" style={{marginLeft: '5rem'}}>
-                            <Comparison width={window.innerWidth <= 768 ? 300 : 700}
-                                        height={window.innerWidth <= 768 ? 180 : 250}
-                                        squaredLabelLeft={props.restrionctionLabel}
-                                        leftLabel={props.rrestrictionlabelLeft}
-                                        squaredLabelRight={props.difficultyLabel}
-                                        rightLabel={props.difficultylabelLeft}
-                                        difficultyValueLeftBar={props.restrictionValue}
-                                        difficultyValueRightBar={props.difficultyValue}
-                                        selectedOption3={props.selectedOption3}
-                                        selectedOption2={props.selectedOption2}
-                                        selectedOption1={props.selectedOption1}
+                            <ComparisonBar width={window.innerWidth <= 768 ? 300 : 700}
+                                           height={window.innerWidth <= 768 ? 180 : 250}
+                                           squaredLabelLeft={props.restrionctionLabel}
+                                           leftLabel={props.rrestrictionlabelLeft}
+                                           squaredLabelRight={props.difficultyLabel}
+                                           rightLabel={props.difficultylabelLeft}
+                                           difficultyValueLeftBar={props.restrictionValue}
+                                           difficultyValueRightBar={props.difficultyValue}
+                                           selectedOption3={props.selectedOption3}
+                                           selectedOption2={props.selectedOption2}
+                                           selectedOption1={props.selectedOption1}
                             />
                         </div>
                     </Col>
                     <Col md={6}>
                         <div className="restrictionSecond" style={{marginLeft: '-1.5rem'}}>
-                            <Comparison width={window.innerWidth <= 768 ? 300 : 700}
-                                        height={window.innerWidth <= 768 ? 180 : 250}
-                                        squaredLabelLeft={props.restrionctionLabel}
-                                        leftLabel={props.rrestrictionlabelLeft}
-                                        squaredLabelRight={props.currentContributionLabel}
-                                        rightLabel={props.currentContributionlabelLeft}
-                                        difficultyValueLeftBar={props.restrictionValue}
-                                        difficultyValueRightBar={props.currentContributionValue}
-                                        selectedOption3={props.selectedOption3}
-                                        selectedOption2={props.selectedOption2}
-                                        selectedOption1={props.selectedOption1}
+                            <ComparisonBar width={window.innerWidth <= 768 ? 300 : 700}
+                                           height={window.innerWidth <= 768 ? 180 : 250}
+                                           squaredLabelLeft={props.restrionctionLabel}
+                                           leftLabel={props.rrestrictionlabelLeft}
+                                           squaredLabelRight={props.currentContributionLabel}
+                                           rightLabel={props.currentContributionlabelLeft}
+                                           difficultyValueLeftBar={props.restrictionValue}
+                                           difficultyValueRightBar={props.currentContributionValue}
+                                           selectedOption3={props.selectedOption3}
+                                           selectedOption2={props.selectedOption2}
+                                           selectedOption1={props.selectedOption1}
                             />
                         </div>
                     </Col>
@@ -84,17 +84,17 @@ const RestrictionComparison = (props) => {
                     </Col>
                     <Col md={6}>
                         <div className="restrictionThird"  style={{marginLeft: '-1.5rem'}}>
-                            <Comparison width={window.innerWidth <= 768 ? 300 : 700}
-                                        height={window.innerWidth <= 768 ? 180 : 250}
-                                        squaredLabelLeft={props.restrionctionLabel}
-                                        leftLabel={props.rrestrictionlabelLeft}
-                                        squaredLabelRight={props.allowMeToLabel}
-                                        rightLabel={props.allowMeTolabelLeft}
-                                        difficultyValueLeftBar={props.restrictionValue}
-                                        difficultyValueRightBar={props.allowMeToValue}
-                                        selectedOption3={props.selectedOption3}
-                                        selectedOption2={props.selectedOption2}
-                                        selectedOption1={props.selectedOption1}
+                            <ComparisonBar width={window.innerWidth <= 768 ? 300 : 700}
+                                           height={window.innerWidth <= 768 ? 180 : 250}
+                                           squaredLabelLeft={props.restrionctionLabel}
+                                           leftLabel={props.rrestrictionlabelLeft}
+                                           squaredLabelRight={props.allowMeToLabel}
+                                           rightLabel={props.allowMeTolabelLeft}
+                                           difficultyValueLeftBar={props.restrictionValue}
+                                           difficultyValueRightBar={props.allowMeToValue}
+                                           selectedOption3={props.selectedOption3}
+                                           selectedOption2={props.selectedOption2}
+                                           selectedOption1={props.selectedOption1}
                             />
                         </div>
                     </Col>
@@ -102,33 +102,33 @@ const RestrictionComparison = (props) => {
                 <Row className="text-center mb-4 align-items-center" style={{marginTop: '3rem', marginBottom: '5rem'}}>
                     <Col md={6}>
                         <div className="restrictionFourth" style={{marginLeft: '5rem'}}>
-                            <Comparison width={window.innerWidth <= 768 ? 300 : 700}
-                                        height={window.innerWidth <= 768 ? 180 : 250}
-                                        squaredLabelLeft={props.restrionctionLabel}
-                                        leftLabel={props.rrestrictionlabelLeft}
-                                        squaredLabelRight={props.environeLabel}
-                                        rightLabel={props.environmentlabelLeft}
-                                        difficultyValueLeftBar={props.restrictionValue}
-                                        difficultyValueRightBar={props.environmentValue}
-                                        selectedOption3={props.selectedOption3}
-                                        selectedOption2={props.selectedOption2}
-                                        selectedOption1={props.selectedOption1}
+                            <ComparisonBar width={window.innerWidth <= 768 ? 300 : 700}
+                                           height={window.innerWidth <= 768 ? 180 : 250}
+                                           squaredLabelLeft={props.restrionctionLabel}
+                                           leftLabel={props.rrestrictionlabelLeft}
+                                           squaredLabelRight={props.environeLabel}
+                                           rightLabel={props.environmentlabelLeft}
+                                           difficultyValueLeftBar={props.restrictionValue}
+                                           difficultyValueRightBar={props.environmentValue}
+                                           selectedOption3={props.selectedOption3}
+                                           selectedOption2={props.selectedOption2}
+                                           selectedOption1={props.selectedOption1}
                             />
                         </div>
                     </Col>
                     <Col md={6}>
                         <div className="restrictionFifth" style={{marginLeft: '-1.5rem'}}>
-                            <Comparison width={window.innerWidth <= 768 ? 300 : 700}
-                                        height={window.innerWidth <= 768 ? 180 : 250}
-                                        squaredLabelLeft={props.restrionctionLabel}
-                                        leftLabel={props.rrestrictionlabelLeft}
-                                        squaredLabelRight={props.sustainableDevelopmentLabel}
-                                        rightLabel={props.sustainableDevelopmentlabelLeft}
-                                        difficultyValueLeftBar={props.restrictionValue}
-                                        difficultyValueRightBar={props.sustainableDevelopmentValue}
-                                        selectedOption3={props.selectedOption3}
-                                        selectedOption2={props.selectedOption2}
-                                        selectedOption1={props.selectedOption1}
+                            <ComparisonBar width={window.innerWidth <= 768 ? 300 : 700}
+                                           height={window.innerWidth <= 768 ? 180 : 250}
+                                           squaredLabelLeft={props.restrionctionLabel}
+                                           leftLabel={props.rrestrictionlabelLeft}
+                                           squaredLabelRight={props.sustainableDevelopmentLabel}
+                                           rightLabel={props.sustainableDevelopmentlabelLeft}
+                                           difficultyValueLeftBar={props.restrictionValue}
+                                           difficultyValueRightBar={props.sustainableDevelopmentValue}
+                                           selectedOption3={props.selectedOption3}
+                                           selectedOption2={props.selectedOption2}
+                                           selectedOption1={props.selectedOption1}
                             />
                         </div>
                     </Col>

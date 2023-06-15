@@ -1,6 +1,6 @@
 import React from 'react';
 import TopNavbar from '../TopNavbar';
-import Comparison from "../Charts/Comparison";
+import ComparisonBar from "../Charts/ComparisonBar";
 import SideNavbar from "../SideNavbar";
 import {Col, Container, Row} from "react-bootstrap";
 
@@ -34,33 +34,33 @@ const SustainabilityComparison = (props) => {
                 <Row className="text-center mb-4 align-items-center" style={{marginTop: '3rem', marginBottom: '5rem'}}>
                     <Col md={6}>
                         <div className="sustainableFirst" style={{marginLeft: '5rem'}}>
-                            <Comparison width={window.innerWidth <= 768 ? 300 : 700}
-                                        height={window.innerWidth <= 768 ? 180 : 250}
-                                        squaredLabelLeft={props.sustainableDevelopmentLabel}
-                                        leftLabel={props.sustainableDevelopmentlabelLeft}
-                                        squaredLabelRight={props.difficultyLabel}
-                                        rightLabel={props.difficultylabelLeft}
-                                        difficultyValueRightBar={props.difficultyValue}
-                                        difficultyValueLeftBar={props.sustainableDevelopmentValue}
-                                        selectedOption3={props.selectedOption3}
-                                        selectedOption2={props.selectedOption2}
-                                        selectedOption1={props.selectedOption1}
+                            <ComparisonBar width={window.innerWidth <= 768 ? 300 : 700}
+                                           height={window.innerWidth <= 768 ? 180 : 250}
+                                           squaredLabelLeft={props.sustainableDevelopmentLabel}
+                                           leftLabel={props.sustainableDevelopmentlabelLeft}
+                                           squaredLabelRight={props.difficultyLabel}
+                                           rightLabel={props.difficultylabelLeft}
+                                           difficultyValueRightBar={props.difficultyValue}
+                                           difficultyValueLeftBar={props.sustainableDevelopmentValue}
+                                           selectedOption3={props.selectedOption3}
+                                           selectedOption2={props.selectedOption2}
+                                           selectedOption1={props.selectedOption1}
                             />
                         </div>
                     </Col>
                     <Col md={6}>
                         <div className="sustainableSecond" style={{marginLeft: '-1.5rem'}}>
-                            <Comparison width={window.innerWidth <= 768 ? 300 : 700}
-                                        height={window.innerWidth <= 768 ? 180 : 250}
-                                        squaredLabelLeft={props.sustainableDevelopmentLabel}
-                                        leftLabel={props.sustainableDevelopmentlabelLeft}
-                                        squaredLabelRight={props.currentContributionLabel}
-                                        rightLabel={props.currentContributionlabelLeft}
-                                        difficultyValueLeftBar={props.sustainableDevelopmentValue}
-                                        difficultyValueRightBar={props.currentContributionValue}
-                                        selectedOption3={props.selectedOption3}
-                                        selectedOption2={props.selectedOption2}
-                                        selectedOption1={props.selectedOption1}
+                            <ComparisonBar width={window.innerWidth <= 768 ? 300 : 700}
+                                           height={window.innerWidth <= 768 ? 180 : 250}
+                                           squaredLabelLeft={props.sustainableDevelopmentLabel}
+                                           leftLabel={props.sustainableDevelopmentlabelLeft}
+                                           squaredLabelRight={props.currentContributionLabel}
+                                           rightLabel={props.currentContributionlabelLeft}
+                                           difficultyValueLeftBar={props.sustainableDevelopmentValue}
+                                           difficultyValueRightBar={props.currentContributionValue}
+                                           selectedOption3={props.selectedOption3}
+                                           selectedOption2={props.selectedOption2}
+                                           selectedOption1={props.selectedOption1}
                             />
                         </div>
                     </Col>
@@ -68,33 +68,33 @@ const SustainabilityComparison = (props) => {
                 <Row className="text-center mb-4 align-items-center" style={{marginTop: '3rem', marginBottom: '5rem'}}>
                     <Col md={6}>
                         <div className="sustainableThird" style={{marginLeft: '5rem'}}>
-                            <Comparison width={window.innerWidth <= 768 ? 300 : 700}
-                                        height={window.innerWidth <= 768 ? 180 : 250}
-                                        squaredLabelLeft={props.sustainableDevelopmentLabel}
-                                        leftLabel={props.sustainableDevelopmentlabelLeft}
-                                        squaredLabelRight={props.restrionctionLabel}
-                                        rightLabel={props.rrestrictionlabelLeft}
-                                        difficultyValueLeftBar={props.sustainableDevelopmentValue}
-                                        difficultyValueRightBar={props.restrictionValue}
-                                        selectedOption3={props.selectedOption3}
-                                        selectedOption2={props.selectedOption2}
-                                        selectedOption1={props.selectedOption1}
+                            <ComparisonBar width={window.innerWidth <= 768 ? 300 : 700}
+                                           height={window.innerWidth <= 768 ? 180 : 250}
+                                           squaredLabelLeft={props.sustainableDevelopmentLabel}
+                                           leftLabel={props.sustainableDevelopmentlabelLeft}
+                                           squaredLabelRight={props.restrionctionLabel}
+                                           rightLabel={props.rrestrictionlabelLeft}
+                                           difficultyValueLeftBar={props.sustainableDevelopmentValue}
+                                           difficultyValueRightBar={props.restrictionValue}
+                                           selectedOption3={props.selectedOption3}
+                                           selectedOption2={props.selectedOption2}
+                                           selectedOption1={props.selectedOption1}
                             />
                         </div>
                     </Col>
                     <Col md={6}>
                         <div className="sustainableFourth" style={{marginLeft: '-1.5rem'}}>
-                            <Comparison width={window.innerWidth <= 768 ? 300 : 700}
-                                        height={window.innerWidth <= 768 ? 180 : 250}
-                                        squaredLabelLeft={props.sustainableDevelopmentLabel}
-                                        leftLabel={props.sustainableDevelopmentlabelLeft}
-                                        squaredLabelRight={props.allowMeToLabel}
-                                        rightLabel={props.allowMeTolabelLeft}
-                                        difficultyValueLeftBar={props.sustainableDevelopmentValue}
-                                        difficultyValueRightBar={props.allowMeToValue}
-                                        selectedOption3={props.selectedOption3}
-                                        selectedOption2={props.selectedOption2}
-                                        selectedOption1={props.selectedOption1}
+                            <ComparisonBar width={window.innerWidth <= 768 ? 300 : 700}
+                                           height={window.innerWidth <= 768 ? 180 : 250}
+                                           squaredLabelLeft={props.sustainableDevelopmentLabel}
+                                           leftLabel={props.sustainableDevelopmentlabelLeft}
+                                           squaredLabelRight={props.allowMeToLabel}
+                                           rightLabel={props.allowMeTolabelLeft}
+                                           difficultyValueLeftBar={props.sustainableDevelopmentValue}
+                                           difficultyValueRightBar={props.allowMeToValue}
+                                           selectedOption3={props.selectedOption3}
+                                           selectedOption2={props.selectedOption2}
+                                           selectedOption1={props.selectedOption1}
                             />
                         </div>
                     </Col>
@@ -102,17 +102,17 @@ const SustainabilityComparison = (props) => {
                 <Row className="text-center mb-4 align-items-center" style={{marginTop: '3rem', marginBottom: '5rem'}}>
                     <Col md={6}>
                         <div className="sustainableFifth" style={{marginLeft: '5rem'}}>
-                            <Comparison width={window.innerWidth <= 768 ? 300 : 700}
-                                        height={window.innerWidth <= 768 ? 180 : 250}
-                                        squaredLabelLeft={props.sustainableDevelopmentLabel}
-                                        leftLabel={props.sustainableDevelopmentlabelLeft}
-                                        squaredLabelRight={props.environeLabel}
-                                        rightLabel={props.environmentlabelLeft}
-                                        difficultyValueLeftBar={props.sustainableDevelopmentValue}
-                                        difficultyValueRightBar={props.environmentValue}
-                                        selectedOption3={props.selectedOption3}
-                                        selectedOption2={props.selectedOption2}
-                                        selectedOption1={props.selectedOption1}
+                            <ComparisonBar width={window.innerWidth <= 768 ? 300 : 700}
+                                           height={window.innerWidth <= 768 ? 180 : 250}
+                                           squaredLabelLeft={props.sustainableDevelopmentLabel}
+                                           leftLabel={props.sustainableDevelopmentlabelLeft}
+                                           squaredLabelRight={props.environeLabel}
+                                           rightLabel={props.environmentlabelLeft}
+                                           difficultyValueLeftBar={props.sustainableDevelopmentValue}
+                                           difficultyValueRightBar={props.environmentValue}
+                                           selectedOption3={props.selectedOption3}
+                                           selectedOption2={props.selectedOption2}
+                                           selectedOption1={props.selectedOption1}
                             />
                         </div>
                     </Col>

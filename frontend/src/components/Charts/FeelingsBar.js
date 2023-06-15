@@ -49,7 +49,6 @@ function FeelingsBar({
                     return acc.map((value, index) => (value + feelings[index]) / 2);
                 }
             }, []);
-
         }
     }
 

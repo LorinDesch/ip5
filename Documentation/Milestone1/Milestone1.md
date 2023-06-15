@@ -1,5 +1,7 @@
 # Milestone 1
 
+> Notizen:
+
 ### #1 Issue Have clear understanding of current App
 
 > In den letzten Jahren hat sich ein Trend hin zu einem 

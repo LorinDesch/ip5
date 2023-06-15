@@ -1,7 +1,7 @@
 import React from 'react';
 import {Container, Row, Col} from 'react-bootstrap';
 import TopNavbar from '../TopNavbar';
-import Comparison from "../Charts/Comparison";
+import ComparisonBar from "../Charts/ComparisonBar";
 import SideNavbar from "../SideNavbar";
 import './comparisons.css'
 
@@ -49,7 +49,7 @@ const DifficultyComparison = (props) => {
                     </Col>
                     <Col md={6}>
                         <div className="difficultFirst" style={{marginLeft: '-1.5rem'}}>
-                            <Comparison
+                            <ComparisonBar
                                 width={window.innerWidth <= 768 ? 300 : 700}
                                 height={window.innerWidth <= 768 ? 180 : 250}
                                 // width={700} height={250}
@@ -69,7 +69,7 @@ const DifficultyComparison = (props) => {
                 <Row className="text-center mb-4 align-items-center" style={{marginTop: '3rem', marginBottom: '5rem'}}>
                     <Col md={6}>
                         <div className="difficultSecond" style={{marginLeft: '5rem'}}>
-                            <Comparison
+                            <ComparisonBar
                                         width={window.innerWidth <= 768 ? 300 : 700}
                                         height={window.innerWidth <= 768 ? 180 : 250}
                                 // width={700} height={250}
@@ -87,7 +87,7 @@ const DifficultyComparison = (props) => {
                     </Col>
                     <Col md={6}>
                         <div className="difficultThird" style={{marginLeft: '-1.5rem'}}>
-                            <Comparison
+                            <ComparisonBar
                                         width={window.innerWidth <= 768 ? 300 : 700}
                                         height={window.innerWidth <= 768 ? 180 : 250}                                // width={700} height={250}
                                         squaredLabelLeft={props.difficultyLabel}
@@ -106,7 +106,7 @@ const DifficultyComparison = (props) => {
                 <Row className="text-center mb-4 align-items-center" style={{marginTop: '3rem', marginBottom: '5rem'}}>
                     <Col md={6}>
                         <div className="difficultFourth" style={{marginLeft: '5rem'}}>
-                            <Comparison
+                            <ComparisonBar
                                         width={window.innerWidth <= 768 ? 300 : 700}
                                         height={window.innerWidth <= 768 ? 180 : 250}
                                 // width={700} height={250}
@@ -124,7 +124,7 @@ const DifficultyComparison = (props) => {
                     </Col>
                     <Col md={6}>
                         <div className="difficultFifth" style={{marginLeft: '-1.5rem'}}>
-                            <Comparison
+                            <ComparisonBar
                                         width={window.innerWidth <= 768 ? 300 : 700}
                                         height={window.innerWidth <= 768 ? 180 : 250}
                                 // width={700} height={250}

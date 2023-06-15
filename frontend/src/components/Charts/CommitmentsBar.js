@@ -6,8 +6,6 @@ import {getFeelingsArray} from "../helperFunctions/HelperFunctions";
 /**
  * Component for rendering the Commitments Bar chart.
  *
- * @param {Object} props - The component props.
- * @returns {JSX.Element} The CommitmentsBar component.
  */
 function CommitmentsBar({
                             width,

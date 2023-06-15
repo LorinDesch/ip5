@@ -1,5 +1,7 @@
 # Milestone 2
 
+> Notizen:
+
 ### #10 Create High-Fidelity Design
 > Entwicklung des Designs:
 > ![](Images/img.png)

@@ -1,6 +1,6 @@
 import React from 'react';
 import TopNavbar from '../TopNavbar';
-import Comparison from "../Charts/Comparison";
+import ComparisonBar from "../Charts/ComparisonBar";
 import SideNavbar from "../SideNavbar";
 import {Col, Container, Row} from "react-bootstrap";
 
@@ -34,33 +34,33 @@ const AllowMeToComparison = (props) => {
                 <Row className="text-center mb-4 align-items-center" style={{marginTop: '3rem', marginBottom: '5rem'}}>
                     <Col md={6}>
                         <div className="allowsMeFirst" style={{marginLeft: '10rem'}}>
-                            <Comparison width={window.innerWidth <= 768 ? 300 : 700}
-                                        height={window.innerWidth <= 768 ? 180 : 250}
-                                        squaredLabelLeft={props.allowMeToLabel}
-                                        leftLabel={props.allowMeTolabelLeft}
-                                        squaredLabelRight={props.difficultyLabel}
-                                        rightLabel={props.difficultylabelLeft}
-                                        difficultyValueLeftBar={props.allowMeToValue}
-                                        difficultyValueRightBar={props.difficultyValue}
-                                        selectedOption3={props.selectedOption3}
-                                        selectedOption2={props.selectedOption2}
-                                        selectedOption1={props.selectedOption1}
+                            <ComparisonBar width={window.innerWidth <= 768 ? 300 : 700}
+                                           height={window.innerWidth <= 768 ? 180 : 250}
+                                           squaredLabelLeft={props.allowMeToLabel}
+                                           leftLabel={props.allowMeTolabelLeft}
+                                           squaredLabelRight={props.difficultyLabel}
+                                           rightLabel={props.difficultylabelLeft}
+                                           difficultyValueLeftBar={props.allowMeToValue}
+                                           difficultyValueRightBar={props.difficultyValue}
+                                           selectedOption3={props.selectedOption3}
+                                           selectedOption2={props.selectedOption2}
+                                           selectedOption1={props.selectedOption1}
                             />
                         </div>
                     </Col>
                     <Col md={6}>
                         <div className="allowsMeSecond" style={{marginLeft: '5rem'}}>
-                            <Comparison width={window.innerWidth <= 768 ? 300 : 700}
-                                        height={window.innerWidth <= 768 ? 180 : 250}
-                                        squaredLabelLeft={props.allowMeToLabel}
-                                        leftLabel={props.allowMeTolabelLeft}
-                                        squaredLabelRight={props.currentContributionLabel}
-                                        rightLabel={props.currentContributionlabelLeft}
-                                        difficultyValueLeftBar={props.allowMeToValue}
-                                        difficultyValueRightBar={props.currentContributionValue}
-                                        selectedOption3={props.selectedOption3}
-                                        selectedOption2={props.selectedOption2}
-                                        selectedOption1={props.selectedOption1}
+                            <ComparisonBar width={window.innerWidth <= 768 ? 300 : 700}
+                                           height={window.innerWidth <= 768 ? 180 : 250}
+                                           squaredLabelLeft={props.allowMeToLabel}
+                                           leftLabel={props.allowMeTolabelLeft}
+                                           squaredLabelRight={props.currentContributionLabel}
+                                           rightLabel={props.currentContributionlabelLeft}
+                                           difficultyValueLeftBar={props.allowMeToValue}
+                                           difficultyValueRightBar={props.currentContributionValue}
+                                           selectedOption3={props.selectedOption3}
+                                           selectedOption2={props.selectedOption2}
+                                           selectedOption1={props.selectedOption1}
                             />
                         </div>
                     </Col>
@@ -68,17 +68,17 @@ const AllowMeToComparison = (props) => {
                 <Row className="text-center mb-4 align-items-center" style={{marginTop: '3rem', marginBottom: '5rem'}}>
                     <Col md={6}>
                         <div className="allowsMeThird" style={{marginLeft: '10rem'}}>
-                            <Comparison width={window.innerWidth <= 768 ? 300 : 700}
-                                        height={window.innerWidth <= 768 ? 180 : 250}
-                                        squaredLabelLeft={props.allowMeToLabel}
-                                        leftLabel={props.allowMeTolabelLeft}
-                                        squaredLabelRight={props.restrionctionLabel}
-                                        rightLabel={props.rrestrictionlabelLeft}
-                                        difficultyValueLeftBar={props.allowMeToValue}
-                                        difficultyValueRightBar={props.restrictionValue}
-                                        selectedOption3={props.selectedOption3}
-                                        selectedOption2={props.selectedOption2}
-                                        selectedOption1={props.selectedOption1}
+                            <ComparisonBar width={window.innerWidth <= 768 ? 300 : 700}
+                                           height={window.innerWidth <= 768 ? 180 : 250}
+                                           squaredLabelLeft={props.allowMeToLabel}
+                                           leftLabel={props.allowMeTolabelLeft}
+                                           squaredLabelRight={props.restrionctionLabel}
+                                           rightLabel={props.rrestrictionlabelLeft}
+                                           difficultyValueLeftBar={props.allowMeToValue}
+                                           difficultyValueRightBar={props.restrictionValue}
+                                           selectedOption3={props.selectedOption3}
+                                           selectedOption2={props.selectedOption2}
+                                           selectedOption1={props.selectedOption1}
                             />
                         </div>
                     </Col>
@@ -102,33 +102,33 @@ const AllowMeToComparison = (props) => {
                 <Row className="text-center mb-4 align-items-center" style={{marginTop: '3rem', marginBottom: '5rem'}}>
                     <Col md={6}>
                         <div className="allowsMeFourth" style={{marginLeft: '10rem'}}>
-                            <Comparison width={window.innerWidth <= 768 ? 300 : 700}
-                                        height={window.innerWidth <= 768 ? 180 : 250}
-                                        squaredLabelLeft={props.allowMeToLabel}
-                                        leftLabel={props.allowMeTolabelLeft}
-                                        squaredLabelRight={props.environeLabel}
-                                        rightLabel={props.environmentlabelLeft}
-                                        difficultyValueLeftBar={props.allowMeToValue}
-                                        difficultyValueRightBar={props.environmentValue}
-                                        selectedOption3={props.selectedOption3}
-                                        selectedOption2={props.selectedOption2}
-                                        selectedOption1={props.selectedOption1}
+                            <ComparisonBar width={window.innerWidth <= 768 ? 300 : 700}
+                                           height={window.innerWidth <= 768 ? 180 : 250}
+                                           squaredLabelLeft={props.allowMeToLabel}
+                                           leftLabel={props.allowMeTolabelLeft}
+                                           squaredLabelRight={props.environeLabel}
+                                           rightLabel={props.environmentlabelLeft}
+                                           difficultyValueLeftBar={props.allowMeToValue}
+                                           difficultyValueRightBar={props.environmentValue}
+                                           selectedOption3={props.selectedOption3}
+                                           selectedOption2={props.selectedOption2}
+                                           selectedOption1={props.selectedOption1}
                             />
                         </div>
                     </Col>
                     <Col md={6}>
                         <div className="allowsMeFifth" style={{marginLeft: '5rem'}}>
-                            <Comparison width={window.innerWidth <= 768 ? 300 : 700}
-                                        height={window.innerWidth <= 768 ? 180 : 250}
-                                        squaredLabelLeft={props.allowMeToLabel}
-                                        leftLabel={props.allowMeTolabelLeft}
-                                        squaredLabelRight={props.sustainableDevelopmentLabel}
-                                        rightLabel={props.sustainableDevelopmentlabelLeft}
-                                        difficultyValueLeftBar={props.allowMeToValue}
-                                        difficultyValueRightBar={props.sustainableDevelopmentValue}
-                                        selectedOption3={props.selectedOption3}
-                                        selectedOption2={props.selectedOption2}
-                                        selectedOption1={props.selectedOption1}
+                            <ComparisonBar width={window.innerWidth <= 768 ? 300 : 700}
+                                           height={window.innerWidth <= 768 ? 180 : 250}
+                                           squaredLabelLeft={props.allowMeToLabel}
+                                           leftLabel={props.allowMeTolabelLeft}
+                                           squaredLabelRight={props.sustainableDevelopmentLabel}
+                                           rightLabel={props.sustainableDevelopmentlabelLeft}
+                                           difficultyValueLeftBar={props.allowMeToValue}
+                                           difficultyValueRightBar={props.sustainableDevelopmentValue}
+                                           selectedOption3={props.selectedOption3}
+                                           selectedOption2={props.selectedOption2}
+                                           selectedOption1={props.selectedOption1}
                             />
                         </div>
                     </Col>

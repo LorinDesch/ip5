@@ -1,1 +1,3 @@
-Implementierung der Platform, keine relevante Dokumentation
+> Notizen:
+
+> Implementierung der Platform, keine relevante schriftliche Dokumentation
