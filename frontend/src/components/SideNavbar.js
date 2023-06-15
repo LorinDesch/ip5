@@ -1,5 +1,4 @@
 import React, {useState, useEffect} from 'react';
-import {FaHome, FaChartBar} from 'react-icons/fa';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './SideNavbar.css';
 import {FaRegComments} from 'react-icons/fa';
